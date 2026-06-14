@@ -55,7 +55,8 @@
       "Bash(python -u experiments/run_az_pretrain.py --epochs 15 --batch 64)",
       "Bash(python -u experiments/run_az_pretrain.py --epochs 15 --batch 16)",
       "Bash(python -u experiments/run_az_pretrain.py --epochs 40 --batch 32)",
-      "Bash(python -u experiments/run_az_policy_eval.py --n 50)"
+      "Bash(python -u experiments/run_az_policy_eval.py --n 50)",
+      "Bash(python experiments/run_udc_positions.py --quick)"
     ]
   },
   "disabledMcpjsonServers": [

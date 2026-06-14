@@ -1,0 +1,7 @@
+family,adversarial,opening,rail,random,selfplay
+adjacent,34,10,24,2,12
+bridge_fork,28,6,23,0,2
+kink_bridge,180,33,145,5,18
+rail,15,0,2,0,5
+rail_fork,5,0,0,0,0
+rail_ladder,58,22,55,2,14

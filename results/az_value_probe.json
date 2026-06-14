@@ -1,0 +1,637 @@
+{
+  "self_play": {
+    "az_policy_t03": {
+      "black": "az_policy_t03",
+      "white": "az_policy_t03",
+      "n_games": 40,
+      "max_moves": 240,
+      "wall_time": 90.54641859999901,
+      "wins_black": 12,
+      "wins_white": 10,
+      "unfinished": 18,
+      "mean_length": 167.525,
+      "lengths": [
+        240,
+        176,
+        17,
+        17,
+        240,
+        240,
+        107,
+        240,
+        240,
+        240,
+        158,
+        88,
+        203,
+        240,
+        240,
+        17,
+        92,
+        240,
+        240,
+        240,
+        73,
+        198,
+        158,
+        240,
+        240,
+        240,
+        106,
+        240,
+        210,
+        120,
+        217,
+        148,
+        240,
+        11,
+        54,
+        146,
+        240,
+        240,
+        48,
+        17
+      ],
+      "ci_black": [
+        0.18074670915695296,
+        0.454303106543204
+      ],
+      "ci_white": [
+        0.14186967895549518,
+        0.40194259066970106
+      ]
+    },
+    "az_value_t0k4": {
+      "black": "az_value_t0k4",
+      "white": "az_value_t0k4",
+      "n_games": 40,
+      "max_moves": 240,
+      "wall_time": 34.197005199999694,
+      "wins_black": 40,
+      "wins_white": 0,
+      "unfinished": 0,
+      "mean_length": 48.0,
+      "lengths": [
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "ci_black": [
+        0.9123754607496077,
+        1.0
+      ],
+      "ci_white": [
+        0.0,
+        0.08762453925039232
+      ]
+    }
+  },
+  "vs_ladder": {
+    "combo": {
+      "az_policy_t03": {
+        "wins_var": 2,
+        "wins_opp": 18,
+        "n_games": 20,
+        "as_black": {
+          "black": "az_policy_t03",
+          "white": "combo",
+          "n_games": 10,
+          "max_moves": 240,
+          "wall_time": 2.855586100002256,
+          "wins_black": 0,
+          "wins_white": 10,
+          "unfinished": 0,
+          "mean_length": 46.4,
+          "lengths": [
+            50,
+            111,
+            19,
+            46,
+            22,
+            27,
+            42,
+            78,
+            46,
+            23
+          ],
+          "ci_black": [
+            0.0,
+            0.2775401687666166
+          ],
+          "ci_white": [
+            0.7224598312333834,
+            1.0
+          ]
+        },
+        "as_white": {
+          "black": "combo",
+          "white": "az_policy_t03",
+          "n_games": 10,
+          "max_moves": 240,
+          "wall_time": 4.612987599997723,
+          "wins_black": 8,
+          "wins_white": 2,
+          "unfinished": 0,
+          "mean_length": 55.5,
+          "lengths": [
+            24,
+            176,
+            12,
+            11,
+            48,
+            48,
+            11,
+            100,
+            69,
+            56
+          ],
+          "ci_black": [
+            0.49015684672072335,
+            0.9433190520193067
+          ],
+          "ci_white": [
+            0.056680947980693314,
+            0.5098431532792765
+          ]
+        }
+      },
+      "az_value_t0k4": {
+        "wins_var": 0,
+        "wins_opp": 20,
+        "n_games": 20,
+        "as_black": {
+          "black": "az_value_t0k4",
+          "white": "combo",
+          "n_games": 10,
+          "max_moves": 240,
+          "wall_time": 3.146418899999844,
+          "wins_black": 0,
+          "wins_white": 10,
+          "unfinished": 0,
+          "mean_length": 31.0,
+          "lengths": [
+            18,
+            23,
+            27,
+            35,
+            42,
+            27,
+            46,
+            27,
+            39,
+            26
+          ],
+          "ci_black": [
+            0.0,
+            0.2775401687666166
+          ],
+          "ci_white": [
+            0.7224598312333834,
+            1.0
+          ]
+        },
+        "as_white": {
+          "black": "combo",
+          "white": "az_value_t0k4",
+          "n_games": 10,
+          "max_moves": 240,
+          "wall_time": 1.6005810999995447,
+          "wins_black": 10,
+          "wins_white": 0,
+          "unfinished": 0,
+          "mean_length": 16.1,
+          "lengths": [
+            20,
+            13,
+            16,
+            20,
+            13,
+            16,
+            16,
+            17,
+            17,
+            13
+          ],
+          "ci_black": [
+            0.7224598312333834,
+            1.0
+          ],
+          "ci_white": [
+            0.0,
+            0.2775401687666166
+          ]
+        }
+      }
+    },
+    "ca_combo_v2": {
+      "az_policy_t03": {
+        "wins_var": 2,
+        "wins_opp": 18,
+        "n_games": 20,
+        "as_black": {
+          "black": "az_policy_t03",
+          "white": "ca_combo_v2",
+          "n_games": 10,
+          "max_moves": 240,
+          "wall_time": 4.876033500000631,
+          "wins_black": 1,
+          "wins_white": 9,
+          "unfinished": 0,
+          "mean_length": 52.8,
+          "lengths": [
+            58,
+            178,
+            82,
+            31,
+            31,
+            27,
+            42,
+            27,
+            25,
+            27
+          ],
+          "ci_black": [
+            0.01787574951572113,
+            0.4041563854975721
+          ],
+          "ci_white": [
+            0.5958436145024278,
+            0.9821242504842788
+          ]
+        },
+        "as_white": {
+          "black": "ca_combo_v2",
+          "white": "az_policy_t03",
+          "n_games": 10,
+          "max_moves": 240,
+          "wall_time": 6.6294952999996895,
+          "wins_black": 9,
+          "wins_white": 1,
+          "unfinished": 0,
+          "mean_length": 68.3,
+          "lengths": [
+            52,
+            11,
+            100,
+            61,
+            197,
+            28,
+            65,
+            93,
+            44,
+            32
+          ],
+          "ci_black": [
+            0.5958436145024278,
+            0.9821242504842788
+          ],
+          "ci_white": [
+            0.01787574951572113,
+            0.4041563854975721
+          ]
+        }
+      },
+      "az_value_t0k4": {
+        "wins_var": 0,
+        "wins_opp": 20,
+        "n_games": 20,
+        "as_black": {
+          "black": "az_value_t0k4",
+          "white": "ca_combo_v2",
+          "n_games": 10,
+          "max_moves": 240,
+          "wall_time": 4.3531503999984125,
+          "wins_black": 0,
+          "wins_white": 10,
+          "unfinished": 0,
+          "mean_length": 36.2,
+          "lengths": [
+            30,
+            91,
+            27,
+            18,
+            47,
+            27,
+            18,
+            35,
+            42,
+            27
+          ],
+          "ci_black": [
+            0.0,
+            0.2775401687666166
+          ],
+          "ci_white": [
+            0.7224598312333834,
+            1.0
+          ]
+        },
+        "as_white": {
+          "black": "ca_combo_v2",
+          "white": "az_value_t0k4",
+          "n_games": 10,
+          "max_moves": 240,
+          "wall_time": 1.5005917999988014,
+          "wins_black": 10,
+          "wins_white": 0,
+          "unfinished": 0,
+          "mean_length": 15.2,
+          "lengths": [
+            13,
+            17,
+            17,
+            13,
+            13,
+            13,
+            17,
+            17,
+            16,
+            16
+          ],
+          "ci_black": [
+            0.7224598312333834,
+            1.0
+          ],
+          "ci_white": [
+            0.0,
+            0.2775401687666166
+          ]
+        }
+      }
+    },
+    "fork_aware": {
+      "az_policy_t03": {
+        "wins_var": 0,
+        "wins_opp": 17,
+        "n_games": 20,
+        "as_black": {
+          "black": "az_policy_t03",
+          "white": "fork_aware",
+          "n_games": 10,
+          "max_moves": 240,
+          "wall_time": 6.447291300002689,
+          "wins_black": 0,
+          "wins_white": 9,
+          "unfinished": 1,
+          "mean_length": 51.4,
+          "lengths": [
+            14,
+            50,
+            240,
+            31,
+            19,
+            39,
+            54,
+            31,
+            14,
+            22
+          ],
+          "ci_black": [
+            0.0,
+            0.2775401687666166
+          ],
+          "ci_white": [
+            0.5958436145024278,
+            0.9821242504842788
+          ]
+        },
+        "as_white": {
+          "black": "fork_aware",
+          "white": "az_policy_t03",
+          "n_games": 10,
+          "max_moves": 240,
+          "wall_time": 12.274928200000431,
+          "wins_black": 8,
+          "wins_white": 0,
+          "unfinished": 2,
+          "mean_length": 85.0,
+          "lengths": [
+            240,
+            64,
+            21,
+            49,
+            37,
+            45,
+            240,
+            37,
+            52,
+            65
+          ],
+          "ci_black": [
+            0.49015684672072335,
+            0.9433190520193067
+          ],
+          "ci_white": [
+            0.0,
+            0.2775401687666166
+          ]
+        }
+      },
+      "az_value_t0k4": {
+        "wins_var": 0,
+        "wins_opp": 20,
+        "n_games": 20,
+        "as_black": {
+          "black": "az_value_t0k4",
+          "white": "fork_aware",
+          "n_games": 10,
+          "max_moves": 240,
+          "wall_time": 1.9625923999992665,
+          "wins_black": 0,
+          "wins_white": 10,
+          "unfinished": 0,
+          "mean_length": 19.3,
+          "lengths": [
+            22,
+            27,
+            35,
+            14,
+            18,
+            14,
+            19,
+            11,
+            11,
+            22
+          ],
+          "ci_black": [
+            0.0,
+            0.2775401687666166
+          ],
+          "ci_white": [
+            0.7224598312333834,
+            1.0
+          ]
+        },
+        "as_white": {
+          "black": "fork_aware",
+          "white": "az_value_t0k4",
+          "n_games": 10,
+          "max_moves": 240,
+          "wall_time": 1.6209402000022237,
+          "wins_black": 10,
+          "wins_white": 0,
+          "unfinished": 0,
+          "mean_length": 15.8,
+          "lengths": [
+            13,
+            12,
+            16,
+            20,
+            12,
+            12,
+            20,
+            24,
+            12,
+            17
+          ],
+          "ci_black": [
+            0.7224598312333834,
+            1.0
+          ],
+          "ci_white": [
+            0.0,
+            0.2775401687666166
+          ]
+        }
+      }
+    }
+  },
+  "h2h": {
+    "value_as_black": {
+      "black": "az_value_t0k4",
+      "white": "az_policy_t03",
+      "n_games": 20,
+      "max_moves": 240,
+      "wall_time": 11.633898599997337,
+      "wins_black": 4,
+      "wins_white": 16,
+      "unfinished": 0,
+      "mean_length": 44.85,
+      "lengths": [
+        60,
+        32,
+        19,
+        19,
+        54,
+        38,
+        42,
+        54,
+        32,
+        30,
+        28,
+        30,
+        54,
+        30,
+        67,
+        22,
+        155,
+        35,
+        58,
+        38
+      ],
+      "ci_black": [
+        0.0806563532712,
+        0.41602172202575993
+      ],
+      "ci_white": [
+        0.5839782779742401,
+        0.9193436467288
+      ]
+    },
+    "value_as_white": {
+      "black": "az_policy_t03",
+      "white": "az_value_t0k4",
+      "n_games": 20,
+      "max_moves": 240,
+      "wall_time": 5.7080582000016875,
+      "wins_black": 2,
+      "wins_white": 18,
+      "unfinished": 0,
+      "mean_length": 23.05,
+      "lengths": [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        22,
+        18,
+        18,
+        18,
+        18,
+        17,
+        18,
+        18,
+        18,
+        18,
+        116
+      ],
+      "ci_black": [
+        0.027865893984153206,
+        0.30103820641179335
+      ],
+      "ci_white": [
+        0.6989617935882066,
+        0.9721341060158468
+      ]
+    }
+  },
+  "_wall_time": 193.9672937000032,
+  "_params": {
+    "n_self": 40,
+    "n_vs": 20,
+    "n_h2h": 20,
+    "max_moves": 240,
+    "seed": 20260419,
+    "opponents": [
+      "combo",
+      "ca_combo_v2",
+      "fork_aware"
+    ],
+    "variants": [
+      "az_policy_t03",
+      "az_value_t0k4"
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "candidate_cells": 5,
+  "depth": 1,
+  "openings": [
+    {
+      "best_black_reply": [
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "black_bulk_pressure": 3.0,
+      "black_obligations": 0,
+      "black_tau": 0,
+      "cache_hits": 2,
+      "effective_candidate_cells": 5,
+      "effective_depth": 1,
+      "estimated_tree_nodes": 11,
+      "final_class": "screened_or_balanced",
+      "naive_leaf_nodes": 561,
+      "nodes": 11,
+      "opening_id": "O0001",
+      "principal_variation": [
+        {
+          "move": [
+            [
+              0,
+              -1
+            ],
+            [
+              -1,
+              -1
+            ]
+          ],
+          "player": "black",
+          "score": 0.9799999999999999
+        }
+      ],
+      "pruning_mode": "alpha_beta",
+      "radius": 3,
+      "score": 0.9799999999999999,
+      "white_bulk_pressure": 0.2,
+      "white_obligations": 0,
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "white_tau": 0
+    }
+  ],
+  "radius": 3
+}

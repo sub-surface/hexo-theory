@@ -1,0 +1,397 @@
+{
+  "candidate_cells": 10,
+  "depth": 3,
+  "openings": [
+    {
+      "best_black_reply": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "black_bulk_pressure": 6.4,
+      "black_obligations": 0,
+      "black_tau": 0,
+      "cache_hits": 513,
+      "final_class": "black_bulk_edge",
+      "nodes": 2504,
+      "opening_id": "O0001",
+      "principal_variation": [
+        {
+          "move": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "player": "black",
+          "score": 0.06999999999999999
+        },
+        {
+          "move": [
+            [
+              2,
+              -1
+            ],
+            [
+              0,
+              -2
+            ]
+          ],
+          "player": "white",
+          "score": 0.06999999999999999
+        },
+        {
+          "move": [
+            [
+              1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ],
+          "player": "black",
+          "score": 0.06999999999999999
+        }
+      ],
+      "radius": 3,
+      "score": 0.06999999999999999,
+      "white_bulk_pressure": 1.0,
+      "white_obligations": 0,
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "white_tau": 0
+    },
+    {
+      "best_black_reply": [
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "black_bulk_pressure": 6.4,
+      "black_obligations": 0,
+      "black_tau": 0,
+      "cache_hits": 430,
+      "final_class": "black_bulk_edge",
+      "nodes": 1762,
+      "opening_id": "O0002",
+      "principal_variation": [
+        {
+          "move": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "player": "black",
+          "score": 1.0499999999999998
+        },
+        {
+          "move": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ],
+          "player": "white",
+          "score": 1.0499999999999998
+        },
+        {
+          "move": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ],
+          "player": "black",
+          "score": 1.0499999999999998
+        }
+      ],
+      "radius": 3,
+      "score": 1.0499999999999998,
+      "white_bulk_pressure": 0.4,
+      "white_obligations": 0,
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "white_tau": 0
+    },
+    {
+      "best_black_reply": [
+        [
+          1,
+          -1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "black_bulk_pressure": 5.0,
+      "black_obligations": 0,
+      "black_tau": 0,
+      "cache_hits": 200,
+      "final_class": "screened_or_balanced",
+      "nodes": 1004,
+      "opening_id": "O0003",
+      "principal_variation": [
+        {
+          "move": [
+            [
+              1,
+              -1
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "player": "black",
+          "score": 6621.45
+        },
+        {
+          "move": [
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "player": "white",
+          "score": 6621.45
+        },
+        {
+          "move": [
+            [
+              2,
+              -1
+            ],
+            [
+              -1,
+              -1
+            ]
+          ],
+          "player": "black",
+          "score": 6621.45
+        }
+      ],
+      "radius": 3,
+      "score": 6621.45,
+      "white_bulk_pressure": 0.4,
+      "white_obligations": 0,
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "white_tau": 0
+    },
+    {
+      "best_black_reply": [
+        [
+          1,
+          -1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "black_bulk_pressure": 5.2,
+      "black_obligations": 0,
+      "black_tau": 0,
+      "cache_hits": 204,
+      "final_class": "screened_or_balanced",
+      "nodes": 3356,
+      "opening_id": "O0004",
+      "principal_variation": [
+        {
+          "move": [
+            [
+              1,
+              -1
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "player": "black",
+          "score": 6620.82
+        },
+        {
+          "move": [
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "player": "white",
+          "score": 6620.82
+        },
+        {
+          "move": [
+            [
+              2,
+              -1
+            ],
+            [
+              -1,
+              -1
+            ]
+          ],
+          "player": "black",
+          "score": 6620.82
+        }
+      ],
+      "radius": 3,
+      "score": 6620.82,
+      "white_bulk_pressure": 0.2,
+      "white_obligations": 0,
+      "white_pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ]
+      ],
+      "white_tau": 0
+    },
+    {
+      "best_black_reply": [
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "black_bulk_pressure": 3.4,
+      "black_obligations": 0,
+      "black_tau": 0,
+      "cache_hits": 423,
+      "final_class": "screened_or_balanced",
+      "nodes": 2888,
+      "opening_id": "O0005",
+      "principal_variation": [
+        {
+          "move": [
+            [
+              0,
+              -1
+            ],
+            [
+              -1,
+              0
+            ]
+          ],
+          "player": "black",
+          "score": 1.26
+        },
+        {
+          "move": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "player": "white",
+          "score": 1.26
+        },
+        {
+          "move": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              -1
+            ]
+          ],
+          "player": "black",
+          "score": 1.26
+        }
+      ],
+      "radius": 3,
+      "score": 1.26,
+      "white_bulk_pressure": 0.0,
+      "white_obligations": 0,
+      "white_pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          2
+        ]
+      ],
+      "white_tau": 0
+    }
+  ],
+  "radius": 3
+}

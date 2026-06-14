@@ -1,0 +1,257 @@
+{
+  "candidate_cells": 8,
+  "depth": 1,
+  "openings": [
+    {
+      "best_black_reply": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "black_bulk_pressure": 6.4,
+      "black_obligations": 0,
+      "black_tau": 0,
+      "cache_hits": 9,
+      "final_class": "black_bulk_edge",
+      "nodes": 29,
+      "opening_id": "O0001",
+      "principal_variation": [
+        {
+          "move": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "player": "black",
+          "score": 1.89
+        }
+      ],
+      "radius": 3,
+      "score": 1.89,
+      "white_bulk_pressure": 1.0,
+      "white_obligations": 0,
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "white_tau": 0
+    },
+    {
+      "best_black_reply": [
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "black_bulk_pressure": 6.4,
+      "black_obligations": 0,
+      "black_tau": 0,
+      "cache_hits": 10,
+      "final_class": "black_bulk_edge",
+      "nodes": 29,
+      "opening_id": "O0002",
+      "principal_variation": [
+        {
+          "move": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "player": "black",
+          "score": 2.0999999999999996
+        }
+      ],
+      "radius": 3,
+      "score": 2.0999999999999996,
+      "white_bulk_pressure": 0.4,
+      "white_obligations": 0,
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "white_tau": 0
+    },
+    {
+      "best_black_reply": [
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "black_bulk_pressure": 6.8,
+      "black_obligations": 0,
+      "black_tau": 0,
+      "cache_hits": 15,
+      "final_class": "black_bulk_edge",
+      "nodes": 29,
+      "opening_id": "O0003",
+      "principal_variation": [
+        {
+          "move": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "player": "black",
+          "score": 2.2399999999999998
+        }
+      ],
+      "radius": 3,
+      "score": 2.2399999999999998,
+      "white_bulk_pressure": 0.4,
+      "white_obligations": 0,
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "white_tau": 0
+    },
+    {
+      "best_black_reply": [
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "black_bulk_pressure": 7.0,
+      "black_obligations": 0,
+      "black_tau": 0,
+      "cache_hits": 0,
+      "final_class": "black_bulk_edge",
+      "nodes": 29,
+      "opening_id": "O0004",
+      "principal_variation": [
+        {
+          "move": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "player": "black",
+          "score": 2.38
+        }
+      ],
+      "radius": 3,
+      "score": 2.38,
+      "white_bulk_pressure": 0.2,
+      "white_obligations": 0,
+      "white_pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ]
+      ],
+      "white_tau": 0
+    },
+    {
+      "best_black_reply": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "black_bulk_pressure": 6.800000000000001,
+      "black_obligations": 0,
+      "black_tau": 0,
+      "cache_hits": 12,
+      "final_class": "black_bulk_edge",
+      "nodes": 29,
+      "opening_id": "O0005",
+      "principal_variation": [
+        {
+          "move": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "player": "black",
+          "score": 2.38
+        }
+      ],
+      "radius": 3,
+      "score": 2.38,
+      "white_bulk_pressure": 0.0,
+      "white_obligations": 0,
+      "white_pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          2
+        ]
+      ],
+      "white_tau": 0
+    }
+  ],
+  "radius": 3
+}

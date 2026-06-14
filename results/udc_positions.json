@@ -1,0 +1,258 @@
+{
+  "experiment": "udc_positions",
+  "config": {
+    "t_values": [
+      1,
+      2,
+      3
+    ],
+    "window_radii": [
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      16.0
+    ],
+    "target_n": 600,
+    "diffraction_grid": 72,
+    "geometries": [
+      "eisenstein",
+      "gaussian",
+      "z12"
+    ],
+    "seed": 20260522,
+    "quick": false
+  },
+  "wall_time_sec": 22.78751492500305,
+  "udc_records": [
+    {
+      "label": "eisenstein_t1",
+      "geometry": "eisenstein",
+      "t": 1,
+      "split_primes": [
+        7
+      ],
+      "unit_scale": 2.6457513110645907,
+      "n_translations": 2,
+      "n_stones": 903,
+      "nu_unit_pairs": 806,
+      "nu_per_n": 0.8925802879291251,
+      "bragg99": 0.8536853194236755,
+      "moment_6": 0.11345990081296191,
+      "moment_12": 0.04998481962350341,
+      "d6_jaccard": 0.5384986724595704,
+      "sector_entropy": 0.8785815664215602,
+      "box_dimension": 1.720824860885247
+    },
+    {
+      "label": "eisenstein_t2",
+      "geometry": "eisenstein",
+      "t": 2,
+      "split_primes": [
+        7,
+        13
+      ],
+      "unit_scale": 9.539392014169456,
+      "n_translations": 4,
+      "n_stones": 888,
+      "nu_unit_pairs": 1110,
+      "nu_per_n": 1.25,
+      "bragg99": 0.852559506893158,
+      "moment_6": 0.1276501878821216,
+      "moment_12": 0.04603522645474354,
+      "d6_jaccard": 0.5279352540318761,
+      "sector_entropy": 0.8755423700833301,
+      "box_dimension": 1.7117678102538196
+    },
+    {
+      "label": "eisenstein_t3",
+      "geometry": "eisenstein",
+      "t": 3,
+      "split_primes": [
+        7,
+        13,
+        19
+      ],
+      "unit_scale": 41.58124577258358,
+      "n_translations": 8,
+      "n_stones": 22951,
+      "nu_unit_pairs": 61154,
+      "nu_per_n": 2.664546207136944,
+      "bragg99": 0.056556735187768936,
+      "moment_6": 0.09037725749415454,
+      "moment_12": 0.039515355131556,
+      "d6_jaccard": 0.1032247903543602,
+      "sector_entropy": 0.8884191037109563,
+      "box_dimension": 0.6486438110455891
+    },
+    {
+      "label": "gaussian_t1",
+      "geometry": "gaussian",
+      "t": 1,
+      "split_primes": [
+        5
+      ],
+      "unit_scale": 2.23606797749979,
+      "n_translations": 2,
+      "n_stones": 797,
+      "nu_unit_pairs": 726,
+      "nu_per_n": 0.9109159347553325,
+      "bragg99": 0.8515864610671997,
+      "moment_6": 0.018635577864642816,
+      "moment_12": 0.014533025223117004,
+      "d6_jaccard": 0.6973811833171677,
+      "sector_entropy": 0.9669452279215237,
+      "box_dimension": 1.820622392942107
+    },
+    {
+      "label": "gaussian_t2",
+      "geometry": "gaussian",
+      "t": 2,
+      "split_primes": [
+        5,
+        13
+      ],
+      "unit_scale": 8.06225774829855,
+      "n_translations": 4,
+      "n_stones": 797,
+      "nu_unit_pairs": 1086,
+      "nu_per_n": 1.3626097867001254,
+      "bragg99": 0.8515864610671997,
+      "moment_6": 0.018635577864642816,
+      "moment_12": 0.014533025223117004,
+      "d6_jaccard": 0.6973811833171677,
+      "sector_entropy": 0.9669452279215237,
+      "box_dimension": 1.820622392942107
+    },
+    {
+      "label": "gaussian_t3",
+      "geometry": "gaussian",
+      "t": 3,
+      "split_primes": [
+        5,
+        13,
+        17
+      ],
+      "unit_scale": 33.24154027718932,
+      "n_translations": 8,
+      "n_stones": 13901,
+      "nu_unit_pairs": 38098,
+      "nu_per_n": 2.7406661391266813,
+      "bragg99": 0.05637027695775032,
+      "moment_6": 0.010905739854850391,
+      "moment_12": 0.023366920068353624,
+      "d6_jaccard": 0.1254344891809361,
+      "sector_entropy": 0.9682049333553439,
+      "box_dimension": 0.8788274659588944
+    },
+    {
+      "label": "z12_t1",
+      "geometry": "z12",
+      "t": 1,
+      "split_primes": [
+        13
+      ],
+      "unit_scale": 3.605551275463989,
+      "n_translations": 2,
+      "n_stones": 755,
+      "nu_unit_pairs": 635,
+      "nu_per_n": 0.8410596026490066,
+      "bragg99": 0.8499849438667297,
+      "moment_6": 0.12237435729746897,
+      "moment_12": 0.030504970691201595,
+      "d6_jaccard": 0.5279563453657513,
+      "sector_entropy": 0.8713294017954686,
+      "box_dimension": 1.7992722602688254
+    },
+    {
+      "label": "z12_t2",
+      "geometry": "z12",
+      "t": 2,
+      "split_primes": [
+        13,
+        37
+      ],
+      "unit_scale": 21.93171219946131,
+      "n_translations": 4,
+      "n_stones": 6405,
+      "nu_unit_pairs": 8603,
+      "nu_per_n": 1.3431693989071039,
+      "bragg99": 0.0873698964715004,
+      "moment_6": 0.0958137645848385,
+      "moment_12": 0.04425397385845496,
+      "d6_jaccard": 0.16603872841875497,
+      "sector_entropy": 0.913306653801184,
+      "box_dimension": 1.233142592164953
+    },
+    {
+      "label": "z12_t3",
+      "geometry": "z12",
+      "t": 3,
+      "split_primes": [
+        13,
+        37,
+        61
+      ],
+      "unit_scale": 171.29214809792072,
+      "n_translations": 8,
+      "n_stones": 379267,
+      "nu_unit_pairs": 1003514,
+      "nu_per_n": 2.6459301758391844,
+      "bragg99": 0.05707215517759323,
+      "moment_6": 0.11063660001820252,
+      "moment_12": 0.031998313002937984,
+      "d6_jaccard": 0.08494791583041829,
+      "sector_entropy": 0.8943800654135382,
+      "box_dimension": 0.06019976563578127
+    }
+  ],
+  "random_baseline": {
+    "n_stones": 903,
+    "bragg99": 0.25877678394317627,
+    "moment_6": 0.10567560325131067
+  },
+  "hex_ball_baseline": {
+    "n_stones": 903,
+    "bragg99": 0.8714490532875061,
+    "moment_6": 0.040154534143529236
+  },
+  "geometry_means": {
+    "eisenstein": {
+      "mean_bragg99": 0.5876005205015341,
+      "mean_moment_6": 0.11049578206307935,
+      "mean_d6_jaccard": 0.38988623894860225
+    },
+    "gaussian": {
+      "mean_bragg99": 0.5865143996973833,
+      "mean_moment_6": 0.01605896519471201,
+      "mean_d6_jaccard": 0.5067322852717572
+    },
+    "z12": {
+      "mean_bragg99": 0.3314756651719411,
+      "mean_moment_6": 0.10960824063350333,
+      "mean_d6_jaccard": 0.25964766320497484
+    }
+  },
+  "p6_verdicts": {
+    "primary_geometry": "eisenstein",
+    "p6a_bragg99_above_random": [
+      true,
+      true,
+      false
+    ],
+    "p6b_moment6_above_random": [
+      true,
+      true,
+      false
+    ],
+    "p6c_bragg99_monotone_in_t": false,
+    "p6d_gamma_fit": 1.6176971170535892
+  },
+  "figures": [
+    "figures\\fig_udc_positions_bragg.png",
+    "figures\\fig_udc_positions_gallery.png",
+    "figures\\fig_udc_positions_harmonics.png",
+    "figures\\fig_udc_positions_geometry.png"
+  ]
+}

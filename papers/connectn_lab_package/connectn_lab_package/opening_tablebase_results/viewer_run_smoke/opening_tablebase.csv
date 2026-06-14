@@ -1,0 +1,2 @@
+opening_id,radius,effective_depth,effective_candidate_cells,white_pair,best_black_reply,score,nodes,cache_hits,estimated_tree_nodes,naive_leaf_nodes,pruning_mode,final_class,black_tau,white_tau,black_obligations,white_obligations,black_bulk_pressure,white_bulk_pressure,principal_variation,wlu
+O0001,3,1,5,"[[-1, 0], [-1, 1]]","[[0, -1], [-1, -1]]",0.98,11,2,11,561,alpha_beta,screened_or_balanced,0,0,0,0,3.0,0.2,"[{""move"": [[0, -1], [-1, -1]], ""player"": ""black"", ""score"": 0.9799999999999999}]",U

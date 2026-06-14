@@ -1,0 +1,34 @@
+{
+  "p3a_horizon": {
+    "udc_ceiling": 0.84,
+    "rows": [
+      {
+        "horizon": 240,
+        "n_games": 40,
+        "mean_terminal_stones": 100.7,
+        "mean_bragg99": 0.33793602511286736,
+        "std_bragg99": 0.13094083340589938,
+        "mean_moment_6": 0.13564619986290222,
+        "udc_ceiling_gap": 0.5020639748871326
+      },
+      {
+        "horizon": 480,
+        "n_games": 40,
+        "mean_terminal_stones": 154.825,
+        "mean_bragg99": 0.35662542283535004,
+        "std_bragg99": 0.1523883954519585,
+        "mean_moment_6": 0.13315575865138007,
+        "udc_ceiling_gap": 0.48337457716464993
+      },
+      {
+        "horizon": 960,
+        "n_games": 40,
+        "mean_terminal_stones": 262.825,
+        "mean_bragg99": 0.3643971741199493,
+        "std_bragg99": 0.1640985693463879,
+        "mean_moment_6": 0.12852565132537058,
+        "udc_ceiling_gap": 0.47560282588005065
+      }
+    ]
+  }
+}

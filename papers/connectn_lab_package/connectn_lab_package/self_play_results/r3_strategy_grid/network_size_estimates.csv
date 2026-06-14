@@ -1,0 +1,7 @@
+radius,board_cells,full_pair_actions,candidate_cells,candidate_pair_actions,feature_channels,trunk_width,blocks,factorized_policy_params,full_policy_params,value_head_params,total_factorized_params,total_full_policy_params,boundary_to_bulk_ratio,generalization_index,recommended_architecture,generalization_regime
+3,37,666,8,28,12,64,2,6464,42624,8321,134849,171009,0.486486,0.513514,tiny_factorized_mlp,memorisation_dominated
+4,61,1830,8,28,14,96,3,15072,175680,12417,423969,584577,0.393443,0.606557,small_residual_hex_cnn,opening_transfer
+5,91,4095,8,28,14,96,3,17952,393120,12417,426849,802017,0.32967,0.67033,small_residual_hex_cnn,opening_transfer
+6,127,8001,8,28,16,128,4,32640,1024128,16513,980993,1972481,0.283465,0.716535,local_message_passing,local_atom_generalisation
+7,169,14196,8,28,16,128,4,38016,1817088,16513,986369,2765441,0.248521,0.751479,local_message_passing,local_atom_generalisation
+8,217,23436,8,28,18,192,5,78528,4499712,24705,2707905,7129089,0.221198,0.778802,d6_equivariant_message_passing,infinite_proxy

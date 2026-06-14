@@ -54,16 +54,18 @@ AGENT_FACTORIES = {
 }
 
 
-def corpus_path(name: str, n: int) -> Path:
-    return CORPORA_DIR / f"{name}_N{n}.pkl.gz"
+def corpus_path(name: str, n: int, horizon: int = 150) -> Path:
+    tag = f"{name}_N{n}" if horizon == 150 else f"{name}_N{n}_T{horizon}"
+    return CORPORA_DIR / f"{tag}.pkl.gz"
 
 
-def get_or_generate(name: str, n: int, seed: int = 0, force: bool = False) -> Corpus:
-    p = corpus_path(name, n)
+def get_or_generate(name: str, n: int, seed: int = 0, force: bool = False,
+                    horizon: int = 150) -> Corpus:
+    p = corpus_path(name, n, horizon)
     if p.exists() and not force:
         return Corpus.load(p)
     fac = AGENT_FACTORIES[name]
-    c = generate_corpus(fac, fac, n_games=n, seed=seed)
+    c = generate_corpus(fac, fac, n_games=n, seed=seed, max_moves=horizon)
     c.save(p)
     return c
 
@@ -128,6 +130,77 @@ def programme_E_pareto(n_per_agent: int) -> dict:
         points[name] = {"prog_bytes": prog, "H_T_bits": ce}
         print(f"  {name:12s}  |P|={prog:>5d} B  H_T={ce:5.2f} bits/move")
     return points
+
+
+def programme_P3a_horizon(horizons: list[int], n_games: int, diffraction_grid: int) -> dict:
+    """
+    P3a: does self-play Bragg99 converge toward the UDC algebraic ceiling (0.84)?
+
+    For each horizon T, generate Combo self-play, extract terminal stone
+    positions, and measure Bragg99 + harmonic moments.  Per the UDC theory
+    note (docs/theory/2026-05-22-udc-positions.md), if strong self-play
+    crystallinity rises with horizon toward 0.84 the Pisot conjecture (P3)
+    is supported.
+    """
+    from engine.crystal import crystal_observables
+
+    print(f"\n── Programme P3a: horizon scan (T={horizons}, N={n_games} games) ──")
+    UDC_CEILING = 0.84  # udc_t1/t2 Bragg99 from run_udc_positions.py
+    rows = []
+    for T in horizons:
+        t0 = time.time()
+        c = get_or_generate("combo", n_games, seed=314159, horizon=T)
+        b99s, m6s, sizes = [], [], []
+        for game in c.games:
+            cells = list(game.moves)
+            if len(cells) < 2:
+                continue
+            obs = crystal_observables(cells, diffraction_grid=diffraction_grid)
+            b99s.append(float(obs["bragg99"]))
+            m6s.append(float(obs["moment_6"]))
+            sizes.append(len(cells))
+        mean_b99 = float(np.mean(b99s)) if b99s else float("nan")
+        std_b99 = float(np.std(b99s)) if b99s else float("nan")
+        mean_m6 = float(np.mean(m6s)) if m6s else float("nan")
+        mean_n = float(np.mean(sizes)) if sizes else 0.0
+        rows.append({
+            "horizon": T,
+            "n_games": len(c.games),
+            "mean_terminal_stones": mean_n,
+            "mean_bragg99": mean_b99,
+            "std_bragg99": std_b99,
+            "mean_moment_6": mean_m6,
+            "udc_ceiling_gap": UDC_CEILING - mean_b99,
+        })
+        print(f"  T={T:>4d}  <n>={mean_n:6.1f}  Bragg99={mean_b99:.3f}±{std_b99:.3f}  "
+              f"moment_6={mean_m6:.3f}  gap-to-UDC={UDC_CEILING - mean_b99:+.3f}  "
+              f"({time.time()-t0:.1f}s)")
+    return {"udc_ceiling": UDC_CEILING, "rows": rows}
+
+
+def plot_p3a_horizon(data: dict, out: Path) -> None:
+    rows = data["rows"]
+    Ts = np.array([r["horizon"] for r in rows], dtype=float)
+    b99 = np.array([r["mean_bragg99"] for r in rows])
+    std = np.array([r["std_bragg99"] for r in rows])
+    ceiling = data["udc_ceiling"]
+
+    fig, ax = plt.subplots(figsize=(8.5, 5.5))
+    ax.errorbar(Ts, b99, yerr=std, marker="o", color="#d62728",
+                capsize=4, linewidth=1.6, label="Combo self-play (terminal Bragg99)")
+    ax.axhline(ceiling, color="#1f77b4", linestyle="--", linewidth=1.4,
+               label=f"UDC algebraic ceiling = {ceiling:.2f}")
+    ax.fill_between(Ts, b99 - std, b99 + std, color="#d62728", alpha=0.12)
+    ax.set_xlabel("game horizon  T (max moves)")
+    ax.set_ylabel(r"terminal-position Bragg99")
+    ax.set_ylim(0, 1.0)
+    ax.set_title("P3a — does self-play crystallinity rise toward the UDC ceiling?\n"
+                 "(convergence supports the Pisot conjecture P3)")
+    ax.grid(alpha=0.3)
+    ax.legend()
+    plt.tight_layout()
+    fig.savefig(out, dpi=140)
+    plt.close(fig)
 
 
 def plot_paradox1(reports: dict, out: Path) -> None:
@@ -235,29 +308,44 @@ def main():
     parser.add_argument("--sizes", type=int, nargs="*", default=None)
     parser.add_argument("--n_paradox", type=int, default=None)
     parser.add_argument("--n_pareto", type=int, default=None)
+    parser.add_argument("--horizons", type=int, nargs="*", default=None,
+                        help="P3a horizon scan: game horizons T (default 240 480 960)")
+    parser.add_argument("--n_horizon", type=int, default=None,
+                        help="games per horizon in the P3a scan")
+    parser.add_argument("--p3a_only", action="store_true",
+                        help="run only the P3a horizon scan")
     args = parser.parse_args()
 
     if args.quick:
         sizes = [50, 100, 200]
         n_paradox = 200
         n_pareto = 100
+        horizons = args.horizons or [120, 240]
+        n_horizon = args.n_horizon or 12
     else:
         sizes = args.sizes or [50, 100, 200, 500, 1000]
         n_paradox = args.n_paradox or 500
         n_pareto = args.n_pareto or 200
+        horizons = args.horizons or [240, 480, 960]
+        n_horizon = args.n_horizon or 40
 
     out = {}
-    out["paradox1"] = programme_A_paradox1(n_paradox, quick=args.quick)
-    out["scaling"]  = programme_D_scaling(sizes)
-    out["pareto"]   = programme_E_pareto(n_pareto)
+    if not args.p3a_only:
+        out["paradox1"] = programme_A_paradox1(n_paradox, quick=args.quick)
+        out["scaling"]  = programme_D_scaling(sizes)
+        out["pareto"]   = programme_E_pareto(n_pareto)
+    out["p3a_horizon"] = programme_P3a_horizon(horizons, n_horizon,
+                                               diffraction_grid=72)
 
     RESULTS_PATH = RESULTS_DIR / "epiplexity_scan.json"
     RESULTS_PATH.write_text(json.dumps(out, indent=2))
     print(f"\n[saved] {RESULTS_PATH}")
 
-    plot_paradox1(out["paradox1"], FIGURES_DIR / "fig_A_paradox1.png")
-    plot_scaling(out["scaling"],   FIGURES_DIR / "fig_D_scaling.png")
-    plot_pareto(out["pareto"],     FIGURES_DIR / "fig_E_pareto.png")
+    if not args.p3a_only:
+        plot_paradox1(out["paradox1"], FIGURES_DIR / "fig_A_paradox1.png")
+        plot_scaling(out["scaling"],   FIGURES_DIR / "fig_D_scaling.png")
+        plot_pareto(out["pareto"],     FIGURES_DIR / "fig_E_pareto.png")
+    plot_p3a_horizon(out["p3a_horizon"], FIGURES_DIR / "fig_P3a_horizon.png")
     print(f"[saved] figures in {FIGURES_DIR}/")
 
 

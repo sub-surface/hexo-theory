@@ -1,0 +1,77 @@
+{
+  "preset": "rich",
+  "specs": [
+    {
+      "abstract_atoms": 1,
+      "k": 4,
+      "lattice": "A2_hex",
+      "p": 2,
+      "radius": 2,
+      "records": 6
+    },
+    {
+      "abstract_atoms": 2,
+      "k": 4,
+      "lattice": "Z2_diag",
+      "p": 2,
+      "radius": 2,
+      "records": 96
+    },
+    {
+      "abstract_atoms": 0,
+      "k": 4,
+      "lattice": "Z2_rook",
+      "p": 2,
+      "radius": 2,
+      "records": 0
+    },
+    {
+      "abstract_atoms": 0,
+      "k": 5,
+      "lattice": "A2_hex",
+      "p": 2,
+      "radius": 2,
+      "records": 0
+    },
+    {
+      "abstract_atoms": 2,
+      "k": 5,
+      "lattice": "Z2_diag",
+      "p": 2,
+      "radius": 2,
+      "records": 38
+    },
+    {
+      "abstract_atoms": 0,
+      "k": 5,
+      "lattice": "Z2_rook",
+      "p": 2,
+      "radius": 2,
+      "records": 0
+    },
+    {
+      "abstract_atoms": 1,
+      "k": 6,
+      "lattice": "A2_hex",
+      "p": 2,
+      "radius": 3,
+      "records": 6
+    },
+    {
+      "abstract_atoms": 2,
+      "k": 6,
+      "lattice": "Z2_diag",
+      "p": 2,
+      "radius": 3,
+      "records": 423
+    },
+    {
+      "abstract_atoms": 0,
+      "k": 6,
+      "lattice": "Z2_rook",
+      "p": 2,
+      "radius": 3,
+      "records": 0
+    }
+  ]
+}

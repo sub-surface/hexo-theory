@@ -2,10 +2,16 @@ __pycache__/
 *.pyc
 *.pyo
 .pytest_cache/
+pytest-cache-files-*/
+.claude/worktrees/
+__marimo__/
+corpora/
+games/
 
 # Large generated outputs -- scripts to regenerate are in experiments/.
 data/
 artifacts/
 checkpoints/
+results/charlies-artifacts/
 training_log.txt
 .claude/scheduled_tasks.lock

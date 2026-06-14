@@ -1,0 +1,13 @@
+[package]
+name = "hex_threat_microscope"
+version = "0.1.0"
+edition = "2021"
+
+# Zero external dependencies by design:
+# cargo run --release -- --radius 8 --candidates 160 --seed 7 --out out
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"

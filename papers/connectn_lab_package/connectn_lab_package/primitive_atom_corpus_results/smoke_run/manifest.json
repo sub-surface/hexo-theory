@@ -1,0 +1,29 @@
+{
+  "preset": "smoke",
+  "specs": [
+    {
+      "abstract_atoms": 1,
+      "k": 4,
+      "lattice": "A2_hex",
+      "p": 2,
+      "radius": 2,
+      "records": 6
+    },
+    {
+      "abstract_atoms": 2,
+      "k": 4,
+      "lattice": "Z2_diag",
+      "p": 2,
+      "radius": 2,
+      "records": 96
+    },
+    {
+      "abstract_atoms": 0,
+      "k": 4,
+      "lattice": "Z2_rook",
+      "p": 2,
+      "radius": 2,
+      "records": 0
+    }
+  ]
+}

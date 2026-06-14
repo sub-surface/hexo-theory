@@ -29,17 +29,24 @@ Phase 0 (this file, along with run_az_pretrain.py):
     - pretrain the trunk on static_positions data with:
         L_total = L_policy + lambda_t * L_threat
                         + lambda_w * L_win + lambda_f * L_fork
-                        + lambda_p * L_potential  (+ L_value later)
+                        + lambda_p * L_potential  + lambda_v * L_value
     - no self-play needed; just regress on cached npz files.
 
-Phase 1/2 (engine.alphazero.AlphaZeroAgent + MCTS, TBD):
-    - value head trained via MCTS-bootstrapped TD target
+Phase 2a (MC value, landing 2026-04-19):
+    - value target = Monte-Carlo λ=1 return: rec["value"] ∈ {-1, 0, +1}
+      from the to-move player's perspective (backfilled from final game
+      outcome). ~42% of samples have non-zero target; the 58% of
+      mid-game positions with value=0 are legitimate ties vs
+      uninformative-ignore -- we regress on all of them and let MSE
+      shrink predictions toward 0 in uncertain positions.
+    - this is the λ=1 limit of TD(λ): no bootstrapping, just the
+      final return. The cheapest valid test of whether the value head
+      can learn anything useful before we invest in self-play TD.
+
+Phase 2b+ (MCTS + TD(λ) self-play, TBD):
+    - value head trained via MCTS-bootstrapped TD target (λ<1)
     - policy head distilled against MCTS visit counts
     - auxiliary heads stay active as regularisers
-
-For Phase 0 we only need the trunk + policy + threat + win + fork +
-potential heads. The value head is wired up but not trained yet (the
-static corpus has value=0 for unfinished games, which is the majority).
 
 Key design choices:
     * NO inference-mode toggle calls anywhere in the public API --
@@ -279,6 +286,8 @@ def pretrain_trunk(
     lambda_fork: float = 0.3,
     lambda_pot: float = 0.3,
     lambda_policy: float = 1.0,
+    lambda_value: float = 1.0,
+    mask_zero_value: bool = False,
     device: str = "cuda",
     seed: int = 42,
     val_every: int = 2,
@@ -286,9 +295,11 @@ def pretrain_trunk(
 ) -> tuple[UnifiedNet, dict]:
     """Supervised trunk pretrain.
 
-    Trains policy + threat + win + fork + potential heads on labels from
-    engine.analysis. Value head is untouched in Phase 0 (no usable TD
-    target from static positions).
+    Trains policy + threat + win + fork + potential + value heads on
+    labels from engine.analysis. Value target is the Monte-Carlo λ=1
+    return stored in rec["value"] by gen_static_positions.py (+1 if the
+    to-move player ends up winning, -1 if losing, 0 for draws or
+    unresolved games). ~42% of samples have |value|=1.
 
     Returns (model, history) with per-epoch train/val losses + accuracy.
     """
@@ -324,6 +335,8 @@ def pretrain_trunk(
         "train_policy_acc": [], "val_policy_acc": [],
         "train_threat_f1": [], "val_threat_f1": [],
         "train_win_f1": [], "val_win_f1": [],
+        "train_value_mse": [], "val_value_mse": [],
+        "train_value_sign_acc": [], "val_value_sign_acc": [],
     }
 
     def _run_split(ds: StaticPositionDataset, train: bool, keys: np.ndarray) -> dict:
@@ -341,10 +354,12 @@ def pretrain_trunk(
         n_batches = max(1, (len(ds) + batch_size - 1) // batch_size)
         totals = {
             "loss": 0.0, "policy": 0.0, "threat": 0.0, "win": 0.0,
-            "fork": 0.0, "pot": 0.0,
+            "fork": 0.0, "pot": 0.0, "value": 0.0,
             "policy_correct": 0, "policy_total": 0,
             "threat_tp": 0, "threat_fp": 0, "threat_fn": 0,
             "win_tp": 0, "win_fp": 0, "win_fn": 0,
+            "value_sq_err": 0.0, "value_n": 0,
+            "value_sign_correct": 0, "value_sign_total": 0,
         }
         def _batch_step(c: dict) -> None:
             x = c["x"]
@@ -386,11 +401,27 @@ def pretrain_trunk(
             pot_target = labels[:, 3]
             loss_pot = F.mse_loss(torch.sigmoid(pot_logits), pot_target)
 
+            value_pred = out["value"]
+            value_target = c["value"]
+            # MSE on tanh output vs {-1, 0, +1} target. Both in [-1, 1].
+            # Optionally mask out v=0 samples -- 58% of the corpus has
+            # value=0 (unresolved mid-game positions) and regressing on
+            # them teaches the head to always predict 0. See design §13.2.
+            if mask_zero_value:
+                nonzero = value_target.abs() > 0.5
+                if nonzero.any():
+                    loss_value = F.mse_loss(value_pred[nonzero], value_target[nonzero])
+                else:
+                    loss_value = torch.zeros((), device=device)
+            else:
+                loss_value = F.mse_loss(value_pred, value_target)
+
             loss = (lambda_policy * loss_policy
                     + lambda_threat * loss_threat
                     + lambda_win * loss_win
                     + lambda_fork * loss_fork
-                    + lambda_pot * loss_pot)
+                    + lambda_pot * loss_pot
+                    + lambda_value * loss_value)
 
             if train:
                 loss.backward()
@@ -403,6 +434,18 @@ def pretrain_trunk(
             totals["win"] += float(loss_win.detach().cpu()) * B
             totals["fork"] += float(loss_fork.detach().cpu()) * B
             totals["pot"] += float(loss_pot.detach().cpu()) * B
+            totals["value"] += float(loss_value.detach().cpu()) * B
+
+            # Value probes: per-sample MSE, and sign accuracy on |target|=1.
+            vp = value_pred.detach()
+            vt = value_target.detach()
+            totals["value_sq_err"] += float(((vp - vt) ** 2).sum().cpu())
+            totals["value_n"] += int(B)
+            decisive = vt.abs() > 0.5
+            if decisive.any():
+                sign_correct = (vp[decisive].sign() == vt[decisive].sign()).sum()
+                totals["value_sign_correct"] += int(sign_correct.cpu())
+                totals["value_sign_total"] += int(decisive.sum().cpu())
 
             # Detach the probes so we don't retain the graph.
             t_pred = (torch.sigmoid(threat_logits.detach()) > 0.5).float()
@@ -447,11 +490,16 @@ def pretrain_trunk(
             "win_loss": totals["win"] / n_total,
             "fork_loss": totals["fork"] / n_total,
             "pot_loss": totals["pot"] / n_total,
+            "value_loss": totals["value"] / n_total,
             "policy_acc": (
                 totals["policy_correct"] / max(1, totals["policy_total"])
             ),
             "threat_f1": _f1(totals["threat_tp"], totals["threat_fp"], totals["threat_fn"]),
             "win_f1": _f1(totals["win_tp"], totals["win_fp"], totals["win_fn"]),
+            "value_mse": totals["value_sq_err"] / max(1, totals["value_n"]),
+            "value_sign_acc": (
+                totals["value_sign_correct"] / max(1, totals["value_sign_total"])
+            ),
         }
 
     for ep in range(epochs):
@@ -461,25 +509,35 @@ def pretrain_trunk(
         history["train_policy_acc"].append(tr["policy_acc"])
         history["train_threat_f1"].append(tr["threat_f1"])
         history["train_win_f1"].append(tr["win_f1"])
+        history["train_value_mse"].append(tr["value_mse"])
+        history["train_value_sign_acc"].append(tr["value_sign_acc"])
         log = (f"ep{ep:03d}  tr loss={tr['loss']:.4f}"
                f"  pol_acc={tr['policy_acc']:.3f}"
                f"  thr_f1={tr['threat_f1']:.3f}"
-               f"  win_f1={tr['win_f1']:.3f}")
+               f"  win_f1={tr['win_f1']:.3f}"
+               f"  v_mse={tr['value_mse']:.3f}"
+               f"  v_sign={tr['value_sign_acc']:.3f}")
         if ep % val_every == 0 or ep == epochs - 1:
             va = _run_split(val_ds, train=False, keys=val_keys)
             history["val_loss"].append(va["loss"])
             history["val_policy_acc"].append(va["policy_acc"])
             history["val_threat_f1"].append(va["threat_f1"])
             history["val_win_f1"].append(va["win_f1"])
+            history["val_value_mse"].append(va["value_mse"])
+            history["val_value_sign_acc"].append(va["value_sign_acc"])
             log += (f"  |  va loss={va['loss']:.4f}"
                     f"  pol_acc={va['policy_acc']:.3f}"
                     f"  thr_f1={va['threat_f1']:.3f}"
-                    f"  win_f1={va['win_f1']:.3f}")
+                    f"  win_f1={va['win_f1']:.3f}"
+                    f"  v_mse={va['value_mse']:.3f}"
+                    f"  v_sign={va['value_sign_acc']:.3f}")
         else:
             history["val_loss"].append(float("nan"))
             history["val_policy_acc"].append(float("nan"))
             history["val_threat_f1"].append(float("nan"))
             history["val_win_f1"].append(float("nan"))
+            history["val_value_mse"].append(float("nan"))
+            history["val_value_sign_acc"].append(float("nan"))
         print(log)
 
     return model, history

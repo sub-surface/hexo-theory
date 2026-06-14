@@ -151,6 +151,72 @@ _f_nca_trained_erdos_selfridge  = _make_trained_factory("erdos_selfridge")
 _f_nca_trained_combo            = _make_trained_factory("combo")
 
 
+def _f_az_policy() -> object:
+    """Pretrained UnifiedNet policy head (no MCTS). Needs CUDA + az_pretrain.pt.
+    Temperature=0 replays deterministic ca_combo_v2 imitation; temperature>0
+    samples from the softened policy.
+
+    The seed is inherited from the Python `random` state at factory-call
+    time, so parallel workers in harness._play_one (which call
+    `random.seed(seed)` per-game) get distinct RNG streams for the
+    per-move softmax sampling.
+    """
+    from engine.az_agent import make_az_agent
+    ckpt = Path(os.path.dirname(os.path.dirname(__file__))) / "artifacts" / "checkpoints" / "az_pretrain.pt"
+    return make_az_agent(str(ckpt), temperature=0.0, seed=random.randint(0, 2**31 - 1))
+
+
+def _f_az_policy_t03() -> object:
+    """Pretrained trunk, temperature=0.3 -- softened-argmax. At t=0 the
+    per-game trajectory is a deterministic function of (black_net,
+    white_net), so n_games iid-with-seed is effectively n=1 for self-play
+    measurements. At t=0.3 the policy retains most of its top-move
+    preference (~70-90% mass on argmax for typical logit gaps) while
+    breaking determinism so FMA/self-play measurements are well-posed.
+    """
+    from engine.az_agent import make_az_agent
+    ckpt = Path(os.path.dirname(os.path.dirname(__file__))) / "artifacts" / "checkpoints" / "az_pretrain.pt"
+    return make_az_agent(str(ckpt), temperature=0.3, seed=random.randint(0, 2**31 - 1))
+
+
+def _f_az_policy_t05() -> object:
+    """Pretrained trunk, temperature=0.5 -- diffuser sampling. At t=0.5 the
+    policy often loses decisive signal on the infinite lattice; games
+    stagnate (50/50 unfinished observed in the n=15 quick run). Kept
+    for the temperature sensitivity panel."""
+    from engine.az_agent import make_az_agent
+    ckpt = Path(os.path.dirname(os.path.dirname(__file__))) / "artifacts" / "checkpoints" / "az_pretrain.pt"
+    return make_az_agent(str(ckpt), temperature=0.5, seed=random.randint(0, 2**31 - 1))
+
+
+def _f_az_value_t0k4() -> object:
+    """Phase 2b: pretrained trunk + value-head 1-ply tie-break, K=4.
+
+    At t=0 the policy argmax alone is deterministic (see design §12.1).
+    Here we take the top-4 policy candidates, apply each to a clone,
+    evaluate V(s') from the to-move POV of the successor position, and
+    pick the move that maximises our own V. Breaks the trivial looping
+    observed in az_policy t=0 self-play; also a direct test of whether
+    the MC-trained value head transfers to decision-time tie-breaking.
+    Needs Phase-2a checkpoint.
+    """
+    from engine.az_agent import make_az_agent
+    ckpt = Path(os.path.dirname(os.path.dirname(__file__))) / "artifacts" / "checkpoints" / "az_pretrain.pt"
+    return make_az_agent(str(ckpt), temperature=0.0,
+                         seed=random.randint(0, 2**31 - 1),
+                         value_topk=4)
+
+
+def _f_az_value_t03k4() -> object:
+    """Same trunk, t=0.3 softmax *without* value tie-break -- paired
+    control for _f_az_value_t0k4. (Value tie-break only fires at t<=0.)"""
+    from engine.az_agent import make_az_agent
+    ckpt = Path(os.path.dirname(os.path.dirname(__file__))) / "artifacts" / "checkpoints" / "az_pretrain.pt"
+    return make_az_agent(str(ckpt), temperature=0.3,
+                         seed=random.randint(0, 2**31 - 1),
+                         value_topk=0)
+
+
 def default_registry() -> dict[str, Callable[[], object]]:
     """Top-level factories keyed by short name."""
     return {
@@ -176,6 +242,11 @@ def default_registry() -> dict[str, Callable[[], object]]:
         "nca_trained_line_detector":    _f_nca_trained_line_detector,
         "nca_trained_erdos_selfridge":  _f_nca_trained_erdos_selfridge,
         "nca_trained_combo":            _f_nca_trained_combo,
+        "az_policy":                    _f_az_policy,
+        "az_policy_t03":                _f_az_policy_t03,
+        "az_policy_t05":                _f_az_policy_t05,
+        "az_value_t0k4":                _f_az_value_t0k4,
+        "az_value_t03k4":               _f_az_value_t03k4,
     }
 
 

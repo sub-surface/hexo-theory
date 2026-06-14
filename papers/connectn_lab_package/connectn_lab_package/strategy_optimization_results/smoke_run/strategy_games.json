@@ -1,0 +1,1280 @@
+[
+  {
+    "black": [
+      [
+        0,
+        -2
+      ],
+      [
+        0,
+        -1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        -3
+      ]
+    ],
+    "black_strategy": "attacker",
+    "candidate_limit": 9,
+    "k": 6,
+    "radius": 5,
+    "terminal_turn": 2,
+    "turn_records": [
+      {
+        "black_bulk_pressure": 16.4,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 3,
+        "black_strategy": "attacker",
+        "black_tau": 0,
+        "turn": 0,
+        "value_after_black": -12.299999999999999,
+        "value_after_white": 0,
+        "white_bulk_pressure": 5.0,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 2,
+        "white_strategy": "min_tau",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 35.599999999999994,
+        "black_family_max": 3,
+        "black_move": [
+          [
+            0,
+            -2
+          ],
+          [
+            1,
+            -3
+          ]
+        ],
+        "black_obligations": 3,
+        "black_pair_atoms": 0,
+        "black_stones": 5,
+        "black_strategy": "attacker",
+        "black_tau": 2,
+        "turn": 1,
+        "value_after_black": -14876.7,
+        "value_after_white": -800,
+        "white_bulk_pressure": 11.8,
+        "white_family_max": 1,
+        "white_move": [
+          [
+            1,
+            -2
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "white_obligations": 1,
+        "white_pair_atoms": 0,
+        "white_stones": 4,
+        "white_strategy": "min_tau",
+        "white_tau": 1,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 35.599999999999994,
+        "black_family_max": 3,
+        "black_move": [],
+        "black_obligations": 3,
+        "black_pair_atoms": 0,
+        "black_stones": 5,
+        "black_strategy": "attacker",
+        "black_tau": 2,
+        "turn": 2,
+        "value_after_black": null,
+        "value_after_white": -1000000000.0,
+        "white_bulk_pressure": 1027.8,
+        "white_family_max": 1,
+        "white_move": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "white_obligations": 1,
+        "white_pair_atoms": 0,
+        "white_stones": 6,
+        "white_strategy": "min_tau",
+        "white_tau": 1,
+        "winner": "white"
+      }
+    ],
+    "turns": 8,
+    "white": [
+      [
+        1,
+        -2
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "white_strategy": "min_tau",
+    "winner": "white"
+  },
+  {
+    "black": [
+      [
+        0,
+        -2
+      ],
+      [
+        0,
+        -1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        -3
+      ]
+    ],
+    "black_strategy": "attacker",
+    "candidate_limit": 9,
+    "k": 6,
+    "radius": 5,
+    "terminal_turn": 2,
+    "turn_records": [
+      {
+        "black_bulk_pressure": 16.4,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 3,
+        "black_strategy": "attacker",
+        "black_tau": 0,
+        "turn": 0,
+        "value_after_black": -12.299999999999999,
+        "value_after_white": -0.6800000000000004,
+        "white_bulk_pressure": 5.0,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 2,
+        "white_strategy": "hybrid",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 35.599999999999994,
+        "black_family_max": 3,
+        "black_move": [
+          [
+            0,
+            -2
+          ],
+          [
+            1,
+            -3
+          ]
+        ],
+        "black_obligations": 3,
+        "black_pair_atoms": 0,
+        "black_stones": 5,
+        "black_strategy": "attacker",
+        "black_tau": 2,
+        "turn": 1,
+        "value_after_black": -14876.7,
+        "value_after_white": -3999.6600000000003,
+        "white_bulk_pressure": 11.8,
+        "white_family_max": 1,
+        "white_move": [
+          [
+            1,
+            -2
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "white_obligations": 1,
+        "white_pair_atoms": 0,
+        "white_stones": 4,
+        "white_strategy": "hybrid",
+        "white_tau": 1,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 35.599999999999994,
+        "black_family_max": 3,
+        "black_move": [],
+        "black_obligations": 3,
+        "black_pair_atoms": 0,
+        "black_stones": 5,
+        "black_strategy": "attacker",
+        "black_tau": 2,
+        "turn": 2,
+        "value_after_black": null,
+        "value_after_white": -1000000000.0,
+        "white_bulk_pressure": 1027.8,
+        "white_family_max": 1,
+        "white_move": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "white_obligations": 1,
+        "white_pair_atoms": 0,
+        "white_stones": 6,
+        "white_strategy": "hybrid",
+        "white_tau": 1,
+        "winner": "white"
+      }
+    ],
+    "turns": 8,
+    "white": [
+      [
+        1,
+        -2
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "white_strategy": "hybrid",
+    "winner": "white"
+  },
+  {
+    "black": [
+      [
+        -5,
+        3
+      ],
+      [
+        -3,
+        0
+      ],
+      [
+        -2,
+        -1
+      ],
+      [
+        -2,
+        5
+      ],
+      [
+        -1,
+        -2
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        0,
+        -3
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        -4
+      ],
+      [
+        1,
+        -3
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        -1
+      ]
+    ],
+    "black_strategy": "min_bulk",
+    "candidate_limit": 9,
+    "k": 6,
+    "radius": 5,
+    "terminal_turn": null,
+    "turn_records": [
+      {
+        "black_bulk_pressure": 10.6,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 3,
+        "black_strategy": "min_bulk",
+        "black_tau": 0,
+        "turn": 0,
+        "value_after_black": -1.7099999999999995,
+        "value_after_white": 0,
+        "white_bulk_pressure": 2.0,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 2,
+        "white_strategy": "min_tau",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 14.599999999999998,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 5,
+        "black_strategy": "min_bulk",
+        "black_tau": 0,
+        "turn": 1,
+        "value_after_black": -0.10999999999999766,
+        "value_after_white": 0,
+        "white_bulk_pressure": 5.000000000000001,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            0,
+            -1
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 4,
+        "white_strategy": "min_tau",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 6.600000000000002,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            -1,
+            0
+          ],
+          [
+            -2,
+            -1
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 7,
+        "black_strategy": "min_bulk",
+        "black_tau": 0,
+        "turn": 2,
+        "value_after_black": 0.29000000000000004,
+        "value_after_white": 0,
+        "white_bulk_pressure": 2.6000000000000005,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            2,
+            0
+          ],
+          [
+            -1,
+            -1
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 6,
+        "white_strategy": "min_tau",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 28.19999999999999,
+        "black_family_max": 1,
+        "black_move": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "black_obligations": 1,
+        "black_pair_atoms": 0,
+        "black_stones": 9,
+        "black_strategy": "min_bulk",
+        "black_tau": 1,
+        "turn": 3,
+        "value_after_black": -3.069999999999995,
+        "value_after_white": 0,
+        "white_bulk_pressure": 6.800000000000001,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            -2,
+            0
+          ],
+          [
+            -2,
+            2
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 8,
+        "white_strategy": "min_tau",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 4.800000000000001,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            1,
+            -3
+          ],
+          [
+            -5,
+            3
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 11,
+        "black_strategy": "min_bulk",
+        "black_tau": 0,
+        "turn": 4,
+        "value_after_black": 1.3200000000000007,
+        "value_after_white": 0,
+        "white_bulk_pressure": 3.000000000000001,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            0,
+            -2
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 10,
+        "white_strategy": "min_tau",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 7.400000000000002,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            2,
+            1
+          ],
+          [
+            -2,
+            5
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 13,
+        "black_strategy": "min_bulk",
+        "black_tau": 0,
+        "turn": 5,
+        "value_after_black": -1.3900000000000008,
+        "value_after_white": -400,
+        "white_bulk_pressure": 1.2,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            -2,
+            3
+          ],
+          [
+            -2,
+            4
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 12,
+        "white_strategy": "min_tau",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 12.6,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            0,
+            -3
+          ],
+          [
+            -1,
+            -2
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 15,
+        "black_strategy": "min_bulk",
+        "black_tau": 0,
+        "turn": 6,
+        "value_after_black": -3.0099999999999993,
+        "value_after_white": 0,
+        "white_bulk_pressure": 1.4,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 14,
+        "white_strategy": "min_tau",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 59.6,
+        "black_family_max": 3,
+        "black_move": [
+          [
+            -3,
+            0
+          ],
+          [
+            1,
+            -4
+          ]
+        ],
+        "black_obligations": 3,
+        "black_pair_atoms": 0,
+        "black_stones": 17,
+        "black_strategy": "min_bulk",
+        "black_tau": 2,
+        "turn": 7,
+        "value_after_black": -18.66,
+        "value_after_white": 0,
+        "white_bulk_pressure": 2.2,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            3,
+            -3
+          ],
+          [
+            2,
+            -3
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 16,
+        "white_strategy": "min_tau",
+        "white_tau": 0,
+        "winner": null
+      }
+    ],
+    "turns": 8,
+    "white": [
+      [
+        -2,
+        0
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        3
+      ],
+      [
+        -2,
+        4
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        0,
+        -2
+      ],
+      [
+        0,
+        -1
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        -3
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        -3
+      ],
+      [
+        3,
+        -2
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    "white_strategy": "min_tau",
+    "winner": null
+  },
+  {
+    "black": [
+      [
+        -4,
+        4
+      ],
+      [
+        -3,
+        0
+      ],
+      [
+        -3,
+        4
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        -2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        -2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        -3
+      ],
+      [
+        4,
+        -1
+      ]
+    ],
+    "black_strategy": "min_bulk",
+    "candidate_limit": 9,
+    "k": 6,
+    "radius": 5,
+    "terminal_turn": null,
+    "turn_records": [
+      {
+        "black_bulk_pressure": 10.6,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 3,
+        "black_strategy": "min_bulk",
+        "black_tau": 0,
+        "turn": 0,
+        "value_after_black": -1.7099999999999995,
+        "value_after_white": -0.6800000000000004,
+        "white_bulk_pressure": 2.0,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 2,
+        "white_strategy": "hybrid",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 9.000000000000002,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            -1,
+            0
+          ],
+          [
+            -1,
+            -1
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 5,
+        "black_strategy": "min_bulk",
+        "black_tau": 0,
+        "turn": 1,
+        "value_after_black": -0.3500000000000001,
+        "value_after_white": -0.7599999999999998,
+        "white_bulk_pressure": 2.8000000000000003,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            0,
+            -1
+          ],
+          [
+            -2,
+            1
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 4,
+        "white_strategy": "hybrid",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 11.0,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            -2,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 7,
+        "black_strategy": "min_bulk",
+        "black_tau": 0,
+        "turn": 2,
+        "value_after_black": -1.8499999999999996,
+        "value_after_white": -0.39000000000000024,
+        "white_bulk_pressure": 2.0,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            -1,
+            1
+          ],
+          [
+            -2,
+            0
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 6,
+        "white_strategy": "hybrid",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 26.999999999999993,
+        "black_family_max": 1,
+        "black_move": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "black_obligations": 1,
+        "black_pair_atoms": 0,
+        "black_stones": 9,
+        "black_strategy": "min_bulk",
+        "black_tau": 1,
+        "turn": 3,
+        "value_after_black": -6.649999999999997,
+        "value_after_white": 0.79,
+        "white_bulk_pressure": 2.8000000000000003,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            2,
+            0
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 8,
+        "white_strategy": "hybrid",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 8.799999999999997,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 11,
+        "black_strategy": "min_bulk",
+        "black_tau": 0,
+        "turn": 4,
+        "value_after_black": -0.6799999999999988,
+        "value_after_white": -0.7800000000000002,
+        "white_bulk_pressure": 2.4,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            2,
+            -1
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 10,
+        "white_strategy": "hybrid",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 5.200000000000001,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            2,
+            -2
+          ],
+          [
+            1,
+            -2
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 13,
+        "black_strategy": "min_bulk",
+        "black_tau": 0,
+        "turn": 5,
+        "value_after_black": -0.22000000000000042,
+        "value_after_white": -0.18000000000000016,
+        "white_bulk_pressure": 1.5999999999999999,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            3,
+            0
+          ],
+          [
+            -3,
+            3
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 12,
+        "white_strategy": "hybrid",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 2.4,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            3,
+            -3
+          ],
+          [
+            -3,
+            0
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 15,
+        "black_strategy": "min_bulk",
+        "black_tau": 0,
+        "turn": 6,
+        "value_after_black": -0.23999999999999988,
+        "value_after_white": -0.45999999999999996,
+        "white_bulk_pressure": 0.6000000000000001,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            3,
+            -2
+          ],
+          [
+            -3,
+            -2
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 14,
+        "white_strategy": "hybrid",
+        "white_tau": 0,
+        "winner": null
+      },
+      {
+        "black_bulk_pressure": 6.4,
+        "black_family_max": 0,
+        "black_move": [
+          [
+            -4,
+            4
+          ],
+          [
+            -3,
+            4
+          ]
+        ],
+        "black_obligations": 0,
+        "black_pair_atoms": 0,
+        "black_stones": 17,
+        "black_strategy": "min_bulk",
+        "black_tau": 0,
+        "turn": 7,
+        "value_after_black": -1.6399999999999997,
+        "value_after_white": 0.06,
+        "white_bulk_pressure": 0.6000000000000001,
+        "white_family_max": 0,
+        "white_move": [
+          [
+            0,
+            -3
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "white_obligations": 0,
+        "white_pair_atoms": 0,
+        "white_stones": 16,
+        "white_strategy": "hybrid",
+        "white_tau": 0,
+        "winner": null
+      }
+    ],
+    "turns": 8,
+    "white": [
+      [
+        -3,
+        -2
+      ],
+      [
+        -3,
+        3
+      ],
+      [
+        -2,
+        0
+      ],
+      [
+        -2,
+        1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        0,
+        -3
+      ],
+      [
+        0,
+        -1
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        -1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        -2
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    "white_strategy": "hybrid",
+    "winner": null
+  }
+]

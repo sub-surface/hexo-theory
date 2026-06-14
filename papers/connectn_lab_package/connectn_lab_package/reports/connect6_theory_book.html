@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Little Book of Seeded Connect6</title>
+<style>
+    :root { color-scheme: light; }
+    body {
+      margin: 0;
+      background: #f5f3ee;
+      color: #1f2933;
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.62;
+    }
+    main {
+      width: min(860px, calc(100% - 36px));
+      margin: 0 auto;
+      background: #fffdf8;
+      min-height: 100vh;
+      padding: 42px 48px 72px;
+      box-shadow: 0 0 0 1px #e5dece, 0 22px 55px rgba(15, 23, 42, 0.12);
+    }
+    h1, h2, h3 { font-family: 'Trebuchet MS', Arial, sans-serif; line-height: 1.12; }
+    h1 { font-size: clamp(2.1rem, 5vw, 4.4rem); margin: 0 0 0.6rem; }
+    h2 { margin-top: 2.4rem; padding-top: 0.7rem; border-top: 2px solid #242424; font-size: 1.65rem; }
+    h3 { margin-top: 1.7rem; font-size: 1.15rem; color: #334155; }
+    p, li { font-size: 1.02rem; }
+    pre {
+      background: #18202f;
+      color: #f8fafc;
+      padding: 16px 18px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 0.92rem;
+    }
+    code { font-family: Consolas, 'Liberation Mono', monospace; }
+    figure { margin: 1.2rem 0 0.2rem; }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      background: white;
+    }
+    figcaption {
+      color: #52616f;
+      font-size: 0.94rem;
+      text-align: center;
+      margin: 0.35rem 0 1.3rem;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+    }
+    th, td { border: 1px solid #d8d2c5; padding: 7px 9px; text-align: left; }
+    th { background: #efe8d8; }
+    </style>
+</head>
+<body>
+<main>
+<h1>The Little Book of Seeded Connect6</h1>
+<h2>A playful laboratory monograph on rooted Hex, obligations, atoms, and budget symmetry</h2>
+<p>This is a working theory book for the Connect6 lab. It is written as a playbook rather than a finished paper: positions get names, diagrams carry the burden, and conjectures are allowed to stand where the proofs are still being hunted.</p>
+<p>The main claim is simple enough to fit on a slate:</p>
+<pre><code>
+Seeded Hex Connect6 is a rooted progression-hypergraph game.
+The visible stones are only the surface.
+The tactical state is the live obligation hypergraph.
+The opening question is whether Black&#x27;s one-stone seed defect leaks through the later two-stone budget symmetry.
+</code></pre>
+<p>Our current answer is:</p>
+<pre><code>
+The defect survives as a quiet resource leak, not as an immediate shallow win.
+</code></pre>
+<h2>1. The Board That Is Not The Board</h2>
+<p>Normal Hex Connect6 is played on the A2 hex lattice. In axial coordinates the board cells are pairs <code>(q, r)</code>, and the three line directions are <code>(1, 0)</code>, <code>(0, 1)</code>, and <code>(1, -1)</code>. A player wins by occupying six consecutive cells on one of those lines.</p>
+<figure><img src="connect6_theory_book_figures/hex_d6_board.png" alt="The rooted A2 board: the seed destroys translation symmetry but leaves a D6 stabiliser."></figure>
+<figcaption>The rooted A2 board: the seed destroys translation symmetry but leaves a D6 stabiliser.</figcaption>
+<p>The first move is the unusual move: Black places one stone. After that both players place two stones per turn. The game therefore begins with a defect, then immediately puts both players on equal budget. That is the source of the central tension.</p>
+<figure><img src="connect6_theory_book_figures/length6_progression.png" alt="A length-6 progression is a winning hyperedge."></figure>
+<figcaption>A length-6 progression is a winning hyperedge.</figcaption>
+<p>The right object is not the board graph. It is the hypergraph of winning progressions:</p>
+<pre><code>
+H = {x, x+d, x+2d, x+3d, x+4d, x+5d}
+</code></pre>
+<p>where <code>d</code> ranges over the three Hex directions.</p>
+<h2>2. Obligations</h2>
+<p>For a live line <code>L</code>, write:</p>
+<pre><code>
+b_L = number of Black stones on L
+w_L = number of White stones on L
+e_L = empty cells of L
+</code></pre>
+<p>If <code>w_L = 0</code> and <code>0 &lt; |e_L| &lt;= 2</code>, then <code>e_L</code> is an urgent Black obligation: White must hit it immediately or Black can complete the line next turn.</p>
+<p>So the position produces a family of missing-cell sets:</p>
+<pre><code>
+O = {missing cells of each urgent line}
+</code></pre>
+<p>White&#x27;s local survival question is not &quot;how many threats are there?&quot; It is:</p>
+<pre><code>
+What is tau(O), the smallest number of cells that hits every obligation?
+</code></pre>
+<p>For Connect6 the defender has budget <code>p = 2</code>, so the local forcing threshold is:</p>
+<pre><code>
+tau(O) &gt; 2
+</code></pre>
+<figure><img src="connect6_theory_book_figures/obligation_hitting.png" alt="Obligations form a small hitting problem; tactics live in the transversal, not the threat count."></figure>
+<figcaption>Obligations form a small hitting problem; tactics live in the transversal, not the threat count.</figcaption>
+<h2>3. Threats Are Not Numbers</h2>
+<p>The first trap in this game is counting threats as if they were coins. Three threats may be harmless if one stone blocks all of them. Two threats may be decisive if they are badly separated and the defender is short of tempo.</p>
+<p>Two small positions deserve names:</p>
+<figure><img src="connect6_theory_book_figures/obligation_triads.png" alt="Two primitive bills: singleton and pair triads both force tau = 3 against a two-stone defender."></figure>
+<figcaption>Two primitive bills: singleton and pair triads both force tau = 3 against a two-stone defender.</figcaption>
+<p>The moral:</p>
+<pre><code>
+raw threat count != tactical force
+transversal structure = tactical force
+</code></pre>
+<p>A forcing atom is a minor-minimal obligation family with <code>tau(O) &gt; p</code>. The word &quot;minor&quot; matters: if a smaller subfamily already forces, the larger object is decoration. The atom is the part that actually bites.</p>
+<h2>4. The Seed Defect</h2>
+<p>The 1-2-2 rule is usually introduced as a balancing patch. The hypergraph view makes it stranger. Black&#x27;s first stone breaks translation symmetry forever:</p>
+<pre><code>
+A2 semidirect D6  -&gt;  D6
+</code></pre>
+<p>White can restore material count, but White cannot unroot the game.</p>
+<p>This gives the defect-vs-budget question:</p>
+<pre><code>
+Does White&#x27;s two-stone budget wash out the seed,
+or can Black keep converting the seed into rooted obligation debt?
+</code></pre>
+<p>The opening probes suggest a middle answer. The seed does not produce a quick certified win. But the equal budget does not create exact symmetry either.</p>
+<h2>5. The Toll Gate: One-Cap Cooling</h2>
+<p>The smallest useful cartoon is one-dimensional. Suppose White has an adjacent pair on a length-6 line. If Black ignores it, White can spend two stones to raise a full two-stone tax. If Black places one adjacent cap, White&#x27;s best line tax drops to one.</p>
+<figure><img src="connect6_theory_book_figures/one_cap_cooling.png" alt="One-cap cooling: Black spends one stone to reduce White&#x27;s next line tax from tau = 2 to tau = 1."></figure>
+<figcaption>One-cap cooling: Black spends one stone to reduce White&#x27;s next line tax from tau = 2 to tau = 1.</figcaption>
+<p>This is the current best name for the phenomenon:</p>
+<pre><code>
+one-cap cooling
+</code></pre>
+<p>It explains why the defect survives quietly. Black can often spend one stone to cool White&#x27;s even-budget local threat while investing the other stone into rooted debt. That is not a proof of a win. It is a resource leak.</p>
+<h3>Puzzle 1</h3>
+<p>White has stones at <code>0</code> and <code>1</code> on a length-6 line. Black may place one cap at <code>-1</code> or <code>2</code>. What is White&#x27;s strongest two-stone continuation after each cap? What changes if Black places no cap?</p>
+<p>Answer in the lab notes: no cap permits a full <code>tau = 2</code> tax; one cap cools the line to <code>tau = 1</code>; two caps kill that line but spend Black&#x27;s whole move.</p>
+<h2>6. Opening Evidence</h2>
+<p>The finite searches were not proofs of the infinite game. They were microscopes aimed at the seed-budget interaction.</p>
+<p>The exact reply scans found:</p>
+<pre><code>
+radius 3: tau 0 = 33111, tau 1 = 3915, tau 2 = 0, tau &gt; 2 = 0
+radius 4: tau 0 = 234708, tau 1 = 44304, tau 2 = 5304, tau &gt; 2 = 0
+</code></pre>
+<figure><img src="connect6_theory_book_figures/opening_evidence.png" alt="White&#x27;s early overload search: the scans found taxes, not overloads."></figure>
+<figcaption>White&#x27;s early overload search: the scans found taxes, not overloads.</figcaption>
+<p>The radius-3 tablebase corpus contains <code>66</code> canonical openings. W/L/U counts: <code>U: 66</code>. Final classes: <code>black_bulk_edge: 36, screened_or_balanced: 30</code>. The largest estimated naive tree in that corpus was <code>93196</code> leaves before pruning.</p>
+<p>The important reading is not &quot;Black is proven winning.&quot; It is:</p>
+<pre><code>
+White does not appear to get an immediate tau &gt; 2 symmetry-restoring overload.
+Black&#x27;s problem is therefore quiet debt building, not shallow tactical conversion.
+</code></pre>
+<h2>7. Atoms Of Play</h2>
+<p>The atom programme asks a Conway-style question:</p>
+<pre><code>
+What are the indivisible local games?
+</code></pre>
+<p>For this lab, an atom is a minor-minimal obligation family where <code>tau(O) &gt; p</code>. It has an abstract form and a geometric realisation.</p>
+<figure><img src="connect6_theory_book_figures/atom_pipeline.png" alt="The atom-mining loop turns zone failures into canonical forcing witnesses."></figure>
+<figcaption>The atom-mining loop turns zone failures into canonical forcing witnesses.</figcaption>
+<p>The current rich atom corpus has <code>569</code> geometric rows. The most common named families include: <code>C5 pair atom: 557, K4 pair atom: 12</code>. The mean observed integrality gap is <code>0.511</code>.</p>
+<p>Especially interesting are atoms where:</p>
+<pre><code>
+tau(O) &gt; p but tau*(O) &lt;= p
+</code></pre>
+<p>Those are discrete tactical effects invisible to smooth density heuristics.</p>
+<h2>8. Strategy Families</h2>
+<p>The self-play runner is not a perfect-play oracle. It is a way to compare temperaments. Some strategies try to maximise bulk pressure. Some minimise the opponent&#x27;s obligations. Some screen first. Some chase atom load.</p>
+<figure><img src="connect6_theory_book_figures/strategy_matrix.png" alt="Strategy families compared by mean tactical score in the radius-3 self-play grid."></figure>
+<figcaption>Strategy families compared by mean tactical score in the radius-3 self-play grid.</figcaption>
+<p>The current radius-3 strategy grid ran <code>128</code> games: Black wins <code>0</code>, White wins <code>6</code>, undecided <code>122</code>.</p>
+<p>This supports the earlier observation that optimal-looking Black and White play may be structurally different. Black wants rooted debt and branching. White wants cooling, screening, and budget denial.</p>
+<h2>9. Odd, Even, Prime</h2>
+<p>Changing the connect length <code>k</code> changes the rhythm. The naive slogan is:</p>
+<pre><code>
+even k gives White more natural budget symmetry
+odd k leaves Black closer to the tempo edge
+</code></pre>
+<p>The data is still small, but it is already useful as a diagnostic.</p>
+<figure><img src="connect6_theory_book_figures/parity_sweep.png" alt="Connect-k sweep: prime and odd/even lengths as rhythm probes, not final theorems."></figure>
+<figcaption>Connect-k sweep: prime and odd/even lengths as rhythm probes, not final theorems.</figcaption>
+<table><tbody>
+<tr><th>k</th><th>parity</th><th>prime</th><th>tempo owner</th><th>White max tau</th><th>Black reply max tau</th></tr>
+<tr><td>3</td><td>odd</td><td>True</td><td>black</td><td>4</td><td>4</td></tr>
+<tr><td>4</td><td>even</td><td>False</td><td>white</td><td>2</td><td>4</td></tr>
+<tr><td>5</td><td>odd</td><td>True</td><td>black</td><td>0</td><td>2</td></tr>
+<tr><td>6</td><td>even</td><td>False</td><td>white</td><td>0</td><td>0</td></tr>
+<tr><td>7</td><td>odd</td><td>True</td><td>black</td><td>0</td><td>0</td></tr>
+<tr><td>8</td><td>even</td><td>False</td><td>white</td><td>0</td><td>0</td></tr>
+<tr><td>9</td><td>odd</td><td>False</td><td>black</td><td>0</td><td>0</td></tr>
+<tr><td>10</td><td>even</td><td>False</td><td>white</td><td>0</td><td>0</td></tr>
+</tbody></table>
+<p>Connect-3 is almost too hot: it behaves like an immediate tactical fire. Connect-4 begins to look like a game. Connect-6 is in the interesting middle, where the seed matters but does not simply explode.</p>
+<h2>10. The Unproved Kingdom</h2>
+<p>The current lab result can be stated cautiously:</p>
+<pre><code>
+Defect-vs-budget symmetry is leaky.
+The seed survives as a resource asymmetry.
+Finite opening probes find no immediate White tau &gt; 2 overload.
+One-cap cooling explains how Black can spend one stone defensively and keep one stone for rooted debt.
+</code></pre>
+<p>What is not proved:</p>
+<ul>
+<li>Black has not been certified to win infinite Hex Connect6.</li>
+<li>The finite radius tablebases are not complete infinite-board certificates.</li>
+<li>Boundary effects can exaggerate one-sided caps.</li>
+<li>The spectral and atom pictures are strong organising hypotheses, not replacement proofs.</li>
+</ul>
+<p>The next theorem target is a resource ledger:</p>
+<pre><code>
+required Black cooling stones
+versus
+free Black debt-building stones
+versus
+White&#x27;s ability to split independent obligations
+</code></pre>
+<h3>Conjecture A: One-Cap Cooling Lemma</h3>
+<p>In the length-6 line abstraction, one adjacent Black cap reduces a White adjacent-pair continuation from a full-budget <code>tau = 2</code> tax to a <code>tau = 1</code> partial tax.</p>
+<h3>Conjecture B: Defect Leakage</h3>
+<p>In infinite Hex Connect6, the rooted seed allows Black to repeatedly cool local even-budget threats with one stone while using the other stone to accumulate rooted obligation debt, unless White can force independent obligations faster than Black can cool them.</p>
+<h3>Conjecture C: Atom-Preserving Relevance</h3>
+<p>A relevance zone is strategically valid only when it preserves the minor-minimal <code>tau &gt; p</code> atoms reachable at the searched depth.</p>
+<h3>Puzzle 2</h3>
+<p>Find the smallest A2 position where White&#x27;s best reply is not to block the largest apparent Black threat, but to block a lower-count obligation that prevents a future atom. That is the sort of position a threat counter misses and an obligation atlas should catch.</p>
+<h2>Coda</h2>
+<p>This book is deliberately unfinished. Its job is to make the game easier to think with. The next edition should add:</p>
+<ul>
+<li>certified outside-slack proof trees,</li>
+<li>a table of named atoms,</li>
+<li>boundary-shadow diagrams,</li>
+<li>spectral mode cartoons,</li>
+<li>and a small gallery of opening positions classified by the resource ledger.</li>
+</ul>
+<p>The rule of thumb for the lab remains:</p>
+<pre><code>
+Do not count threats.
+Count the cheapest way to hit them.
+Then ask who paid the bill.
+</code></pre>
+</main>
+</body>
+</html>

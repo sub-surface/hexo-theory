@@ -1,0 +1,19 @@
+{
+  "coordinate_system": "Axial coordinates q,r equivalent to Eisenstein integers a + b*omega; axes (1,0), (0,1), (1,-1).",
+  "game": "Infinite hex Connect-6 / HexGo, 1-2-2 rule, six in a row on Eisenstein axes.",
+  "literature_claims": [
+    "HexGo Theory frames the game as an infinite Eisenstein-lattice Connect6 variant and proposes D6 symmetry and quasicrystal/substitution questions.",
+    "Connect6 uses one first stone and two stones thereafter; threat-based algorithms exploit the fact that a player can block at most two cells per turn.",
+    "Axial/cube hex coordinates make rotations, reflections, distances and rings simple enough for exact code.",
+    "Population-risk / signal-reservoir language suggests treating live tactical constraints as signal and irrelevant infinity as reservoir."
+  ],
+  "references": [
+    "sub-surface. HexGo Theory: number-theoretic and combinatorial investigation of optimal play in HexGo, GitHub repository, accessed 2026-05-10. https://github.com/sub-surface/hexgo-theory",
+    "Wu, I.-C. and Huang, D.-Y. (2006). A new family of k-in-a-row games. ICGA Journal 29(1), 26-34.",
+    "Vipin, K. and Fahmy, S. A. (2011). A threat based Connect6 implementation on FPGA. FPT 2011.",
+    "Patel, A. Red Blob Games: Hexagonal Grids, continuously updated guide, accessed 2026-05-10. https://www.redblobgames.com/grids/hexagons/",
+    "Litman, E. and Guo, G. (2026). A Theory of Generalization in Deep Learning. arXiv:2605.01172v1.",
+    "Berlekamp, E. R., Conway, J. H. and Guy, R. K. (1982). Winning Ways for your Mathematical Plays. Academic Press.",
+    "Erdos, P. and Selfridge, J. L. (1973). On a combinatorial game. Journal of Combinatorial Theory, Series A 14, 298-301."
+  ]
+}

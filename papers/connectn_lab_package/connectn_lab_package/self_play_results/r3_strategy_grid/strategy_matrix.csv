@@ -1,0 +1,17 @@
+black_strategy,white_strategy,games,black_wins,white_wins,undecided,black_win_rate,white_win_rate,mean_terminal_ply,mean_final_black_tau,mean_final_white_tau,mean_black_bulk_pressure,mean_white_bulk_pressure,mean_tactical_score
+attacker,min_bulk,8,0,0,8,0.0,0.0,8,0,0,0.0,0.0,0.0
+attacker,min_family,8,0,0,8,0.0,0.0,8,0,0,0.0,0.75,-0.2625
+attacker,min_tau,8,0,2,6,0.0,0.25,7.75,0.375,0,7.375,250.0,2391.20625
+attacker,screen_counter,8,0,1,7,0.0,0.125,7.625,0.25,0,6.25,125.0,1609.1875
+debt_builder,min_bulk,8,0,0,8,0.0,0.0,8,0,0,0.0,0.0,0.0
+debt_builder,min_family,8,0,0,8,0.0,0.0,8,0,0,0.0,0.0,0.0
+debt_builder,min_tau,8,0,2,6,0.0,0.25,7.75,0.375,0,7.25,250.0,2391.1625
+debt_builder,screen_counter,8,0,1,7,0.0,0.125,7.625,0.25,0,6.25,125.0,1609.1875
+hybrid,min_bulk,8,0,0,8,0.0,0.0,8,0,0,0.0,0.0,0.0
+hybrid,min_family,8,0,0,8,0.0,0.0,8,0,0,0.0,0.0,0.0
+hybrid,min_tau,8,0,0,8,0.0,0.0,8,0,0,0.0,0.0,0.0
+hybrid,screen_counter,8,0,0,8,0.0,0.0,8,0,0,0.0,0.0,0.0
+min_bulk,min_bulk,8,0,0,8,0.0,0.0,8,0,0,0.0,0.0,0.0
+min_bulk,min_family,8,0,0,8,0.0,0.0,8,0,0,0.0,0.0,0.0
+min_bulk,min_tau,8,0,0,8,0.0,0.0,8,0,0,0.0,0.0,0.0
+min_bulk,screen_counter,8,0,0,8,0.0,0.0,8,0,0,0.0,0.0,0.0

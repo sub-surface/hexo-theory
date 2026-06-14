@@ -1,0 +1,11 @@
+signature,rows,groups,compression_ratio,mean_group_size,max_group_size,tau_purity,pressure_purity,family_purity,manifold_label_purity,atom_presence_purity
+size_signature,296,73,4.054795,4.054795,47,1.0,1.0,0.702703,0.804054,1.0
+coarse_noether_signature,296,184,1.608696,1.608696,15,1.0,1.0,0.85473,0.918919,1.0
+noether_line_signature,296,296,1.0,1.0,1,1.0,1.0,1.0,1.0,1.0
+coarse_boundary_flux_signature,296,208,1.423077,1.423077,23,1.0,1.0,0.915541,1.0,1.0
+boundary_flux_signature,296,240,1.233333,1.233333,23,1.0,1.0,0.945946,1.0,1.0
+coarse_holographic_signature,296,252,1.174603,1.174603,6,1.0,1.0,0.952703,1.0,1.0
+holographic_boundary_signature,296,296,1.0,1.0,1,1.0,1.0,1.0,1.0,1.0
+abstract_signature,296,73,4.054795,4.054795,47,1.0,1.0,0.702703,0.804054,1.0
+integer_fingerprint,296,35,8.457143,8.457143,132,1.0,1.0,0.577703,0.743243,0.844595
+family,296,5,59.2,59.2,160,0.550676,0.550676,1.0,0.733108,0.743243

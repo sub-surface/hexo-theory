@@ -1,0 +1,718 @@
+{
+  "meta": {
+    "quick": true,
+    "timestamp": "2026-04-15T00:51:26",
+    "total_wall_s": 7099.8
+  },
+  "scaling": {
+    "random": [
+      {
+        "N": 100,
+        "seed": 0,
+        "n_tokens": 15000,
+        "markov_H": 12.336920211730474,
+        "markov_S_bits": 2404232,
+        "gzip_bpt": 13.011733333333334,
+        "gzip_total_bits": 195176,
+        "wall_s": 0.83
+      },
+      {
+        "N": 100,
+        "seed": 1,
+        "n_tokens": 15000,
+        "markov_H": 12.273756014889054,
+        "markov_S_bits": 2400016,
+        "gzip_bpt": 12.985066666666667,
+        "gzip_total_bits": 194776,
+        "wall_s": 0.78
+      },
+      {
+        "N": 300,
+        "seed": 0,
+        "n_tokens": 45000,
+        "markov_H": 12.467425260706497,
+        "markov_S_bits": 6792736,
+        "gzip_bpt": 13.043555555555555,
+        "gzip_total_bits": 586960,
+        "wall_s": 2.74
+      },
+      {
+        "N": 300,
+        "seed": 1,
+        "n_tokens": 45000,
+        "markov_H": 12.471675871195773,
+        "markov_S_bits": 6785384,
+        "gzip_bpt": 13.049422222222223,
+        "gzip_total_bits": 587224,
+        "wall_s": 2.76
+      }
+    ],
+    "greedy": [
+      {
+        "N": 100,
+        "seed": 0,
+        "n_tokens": 1100,
+        "markov_H": 0.3305667903856918,
+        "markov_S_bits": 2880,
+        "gzip_bpt": 0.4290909090909091,
+        "gzip_total_bits": 472,
+        "wall_s": 0.01
+      },
+      {
+        "N": 100,
+        "seed": 1,
+        "n_tokens": 1100,
+        "markov_H": 0.3305667903856918,
+        "markov_S_bits": 2880,
+        "gzip_bpt": 0.4290909090909091,
+        "gzip_total_bits": 472,
+        "wall_s": 0.01
+      },
+      {
+        "N": 300,
+        "seed": 0,
+        "n_tokens": 3300,
+        "markov_H": 0.3199223547819429,
+        "markov_S_bits": 2872,
+        "gzip_bpt": 0.17212121212121212,
+        "gzip_total_bits": 568,
+        "wall_s": 0.02
+      },
+      {
+        "N": 300,
+        "seed": 1,
+        "n_tokens": 3300,
+        "markov_H": 0.3199223547819429,
+        "markov_S_bits": 2872,
+        "gzip_bpt": 0.17212121212121212,
+        "gzip_total_bits": 568,
+        "wall_s": 0.02
+      }
+    ],
+    "fork_a2": [
+      {
+        "N": 100,
+        "seed": 0,
+        "n_tokens": 15000,
+        "markov_H": 0.28990239938527407,
+        "markov_S_bits": 26344,
+        "gzip_bpt": 0.1984,
+        "gzip_total_bits": 2976,
+        "wall_s": 0.11
+      },
+      {
+        "N": 100,
+        "seed": 1,
+        "n_tokens": 15000,
+        "markov_H": 0.28990239938527407,
+        "markov_S_bits": 26344,
+        "gzip_bpt": 0.1984,
+        "gzip_total_bits": 2976,
+        "wall_s": 0.11
+      },
+      {
+        "N": 300,
+        "seed": 0,
+        "n_tokens": 45000,
+        "markov_H": 0.13412753615956044,
+        "markov_S_bits": 26344,
+        "gzip_bpt": 0.11431111111111111,
+        "gzip_total_bits": 5144,
+        "wall_s": 0.34
+      },
+      {
+        "N": 300,
+        "seed": 1,
+        "n_tokens": 45000,
+        "markov_H": 0.13412753615956044,
+        "markov_S_bits": 26344,
+        "gzip_bpt": 0.11431111111111111,
+        "gzip_total_bits": 5144,
+        "wall_s": 0.32
+      }
+    ],
+    "fork_a4": [
+      {
+        "N": 100,
+        "seed": 0,
+        "n_tokens": 15000,
+        "markov_H": 0.28990239938527407,
+        "markov_S_bits": 26344,
+        "gzip_bpt": 0.1984,
+        "gzip_total_bits": 2976,
+        "wall_s": 0.12
+      },
+      {
+        "N": 100,
+        "seed": 1,
+        "n_tokens": 15000,
+        "markov_H": 0.28990239938527407,
+        "markov_S_bits": 26344,
+        "gzip_bpt": 0.1984,
+        "gzip_total_bits": 2976,
+        "wall_s": 0.12
+      },
+      {
+        "N": 300,
+        "seed": 0,
+        "n_tokens": 45000,
+        "markov_H": 0.13412753615956044,
+        "markov_S_bits": 26344,
+        "gzip_bpt": 0.11431111111111111,
+        "gzip_total_bits": 5144,
+        "wall_s": 0.34
+      },
+      {
+        "N": 300,
+        "seed": 1,
+        "n_tokens": 45000,
+        "markov_H": 0.13412753615956044,
+        "markov_S_bits": 26344,
+        "gzip_bpt": 0.11431111111111111,
+        "gzip_total_bits": 5144,
+        "wall_s": 0.33
+      }
+    ],
+    "potgrad": [
+      {
+        "N": 100,
+        "seed": 0,
+        "n_tokens": 2900,
+        "markov_H": 0.21479689963306622,
+        "markov_S_bits": 5720,
+        "gzip_bpt": 0.2482758620689655,
+        "gzip_total_bits": 720,
+        "wall_s": 0.02
+      },
+      {
+        "N": 100,
+        "seed": 1,
+        "n_tokens": 2900,
+        "markov_H": 0.21479689963306622,
+        "markov_S_bits": 5720,
+        "gzip_bpt": 0.2482758620689655,
+        "gzip_total_bits": 720,
+        "wall_s": 0.02
+      },
+      {
+        "N": 300,
+        "seed": 0,
+        "n_tokens": 8700,
+        "markov_H": 0.18360027574310409,
+        "markov_S_bits": 5712,
+        "gzip_bpt": 0.1167816091954023,
+        "gzip_total_bits": 1016,
+        "wall_s": 0.05
+      },
+      {
+        "N": 300,
+        "seed": 1,
+        "n_tokens": 8700,
+        "markov_H": 0.18360027574310409,
+        "markov_S_bits": 5712,
+        "gzip_bpt": 0.1167816091954023,
+        "gzip_total_bits": 1016,
+        "wall_s": 0.06
+      }
+    ],
+    "combo": [
+      {
+        "N": 100,
+        "seed": 0,
+        "n_tokens": 7568,
+        "markov_H": 8.068079402766479,
+        "markov_S_bits": 825928,
+        "gzip_bpt": 8.719873150105709,
+        "gzip_total_bits": 65992,
+        "wall_s": 0.23
+      },
+      {
+        "N": 100,
+        "seed": 1,
+        "n_tokens": 7386,
+        "markov_H": 8.089139128534974,
+        "markov_S_bits": 828016,
+        "gzip_bpt": 8.974817221770918,
+        "gzip_total_bits": 66288,
+        "wall_s": 0.24
+      },
+      {
+        "N": 300,
+        "seed": 0,
+        "n_tokens": 22669,
+        "markov_H": 7.7171427230804,
+        "markov_S_bits": 2146008,
+        "gzip_bpt": 8.247386298469275,
+        "gzip_total_bits": 186960,
+        "wall_s": 0.68
+      },
+      {
+        "N": 300,
+        "seed": 1,
+        "n_tokens": 21326,
+        "markov_H": 7.732096385510526,
+        "markov_S_bits": 1955560,
+        "gzip_bpt": 8.087405045484385,
+        "gzip_total_bits": 172472,
+        "wall_s": 0.61
+      }
+    ],
+    "_tuned_weights": {
+      "random": [
+        0.6666666666666666,
+        0.3333333333333333,
+        0.0,
+        5.551115123125783e-17
+      ],
+      "greedy": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fork_a2": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "fork_a4": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "potgrad": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "combo": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "orderings": {
+    "greedy": {
+      "temporal": {
+        "H_T": 0.3199223547819429,
+        "S_T_bits": 2872,
+        "H_shannon_bits": 3.4594316186372973,
+        "n_tokens": 3300,
+        "wall_s": 0.11
+      },
+      "reverse": {
+        "H_T": 0.3199223547819429,
+        "S_T_bits": 2936,
+        "H_shannon_bits": 3.4594316186372973,
+        "n_tokens": 3300,
+        "wall_s": 0.11
+      },
+      "radial_in": {
+        "H_T": 0.3199223547819429,
+        "S_T_bits": 2896,
+        "H_shannon_bits": 3.4594316186372973,
+        "n_tokens": 3300,
+        "wall_s": 0.13
+      },
+      "radial_out": {
+        "H_T": 0.3199223547819429,
+        "S_T_bits": 2984,
+        "H_shannon_bits": 3.4594316186372973,
+        "n_tokens": 3300,
+        "wall_s": 0.13
+      },
+      "axis": {
+        "H_T": 0.3199223547819429,
+        "S_T_bits": 2872,
+        "H_shannon_bits": 3.4594316186372973,
+        "n_tokens": 3300,
+        "wall_s": 0.12
+      },
+      "d6_canonical": {
+        "H_T": 0.45972167341247067,
+        "S_T_bits": 3016,
+        "H_shannon_bits": 3.2776134368191157,
+        "n_tokens": 3300,
+        "wall_s": 0.13
+      }
+    },
+    "combo": {
+      "temporal": {
+        "H_T": 7.7171427230804,
+        "S_T_bits": 2146008,
+        "H_shannon_bits": 9.377913708695306,
+        "n_tokens": 22669,
+        "wall_s": 3.06
+      },
+      "reverse": {
+        "H_T": 7.708313396501309,
+        "S_T_bits": 2158376,
+        "H_shannon_bits": 9.377913708695306,
+        "n_tokens": 22669,
+        "wall_s": 2.82
+      },
+      "radial_in": {
+        "H_T": 6.169421349420688,
+        "S_T_bits": 1679152,
+        "H_shannon_bits": 9.377913708695306,
+        "n_tokens": 22669,
+        "wall_s": 2.93
+      },
+      "radial_out": {
+        "H_T": 6.157743750172341,
+        "S_T_bits": 1696008,
+        "H_shannon_bits": 9.377913708695306,
+        "n_tokens": 22669,
+        "wall_s": 2.85
+      },
+      "axis": {
+        "H_T": 5.476649878920125,
+        "S_T_bits": 1419448,
+        "H_shannon_bits": 9.377913708695306,
+        "n_tokens": 22669,
+        "wall_s": 3.17
+      },
+      "d6_canonical": {
+        "H_T": 4.069505885325715,
+        "S_T_bits": 937144,
+        "H_shannon_bits": 6.2208332389053185,
+        "n_tokens": 22669,
+        "wall_s": 1.28
+      }
+    }
+  },
+  "pareto": {
+    "agents": {
+      "random": {
+        "prog_bytes": 151,
+        "H_T_on": {
+          "random": 16.86799073998513,
+          "greedy": 12.648501549877201,
+          "combo": 14.284074988744178
+        }
+      },
+      "greedy": {
+        "prog_bytes": 496,
+        "H_T_on": {
+          "random": 16.863404024477706,
+          "greedy": 0.02914634565951619,
+          "combo": 13.652252512098158
+        }
+      },
+      "fork_a2": {
+        "prog_bytes": 522,
+        "H_T_on": {
+          "random": 16.866394619528343,
+          "greedy": 10.133360996520969,
+          "combo": 13.593522582650927
+        }
+      },
+      "fork_a4": {
+        "prog_bytes": 522,
+        "H_T_on": {
+          "random": 16.866394619528343,
+          "greedy": 10.133360996520969,
+          "combo": 13.593522582650927
+        }
+      },
+      "potgrad": {
+        "prog_bytes": 881,
+        "H_T_on": {
+          "random": 16.865314333026824,
+          "greedy": 11.394572309480832,
+          "combo": 2.3916225029124463
+        }
+      },
+      "combo": {
+        "prog_bytes": 198,
+        "H_T_on": {
+          "random": 16.864947707150584,
+          "greedy": 11.29454131896073,
+          "combo": 2.4541137654503307
+        }
+      }
+    },
+    "ref_corpora": [
+      "random",
+      "greedy",
+      "combo"
+    ],
+    "N": 100
+  },
+  "matchups": {
+    "matrix": {
+      "random": {
+        "random": {
+          "wins": 0,
+          "losses": 0,
+          "draws": 0,
+          "games": 0
+        },
+        "greedy": {
+          "wins": 0,
+          "losses": 20,
+          "draws": 0,
+          "games": 20
+        },
+        "fork_a2": {
+          "wins": 0,
+          "losses": 20,
+          "draws": 0,
+          "games": 20
+        },
+        "fork_a4": {
+          "wins": 0,
+          "losses": 20,
+          "draws": 0,
+          "games": 20
+        },
+        "potgrad": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 17,
+          "games": 20
+        },
+        "combo": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 17,
+          "games": 20
+        }
+      },
+      "greedy": {
+        "random": {
+          "wins": 20,
+          "losses": 0,
+          "draws": 0,
+          "games": 20
+        },
+        "greedy": {
+          "wins": 0,
+          "losses": 0,
+          "draws": 0,
+          "games": 0
+        },
+        "fork_a2": {
+          "wins": 20,
+          "losses": 0,
+          "draws": 0,
+          "games": 20
+        },
+        "fork_a4": {
+          "wins": 20,
+          "losses": 0,
+          "draws": 0,
+          "games": 20
+        },
+        "potgrad": {
+          "wins": 0,
+          "losses": 20,
+          "draws": 0,
+          "games": 20
+        },
+        "combo": {
+          "wins": 2,
+          "losses": 18,
+          "draws": 0,
+          "games": 20
+        }
+      },
+      "fork_a2": {
+        "random": {
+          "wins": 20,
+          "losses": 0,
+          "draws": 0,
+          "games": 20
+        },
+        "greedy": {
+          "wins": 20,
+          "losses": 0,
+          "draws": 0,
+          "games": 20
+        },
+        "fork_a2": {
+          "wins": 0,
+          "losses": 0,
+          "draws": 0,
+          "games": 0
+        },
+        "fork_a4": {
+          "wins": 0,
+          "losses": 0,
+          "draws": 20,
+          "games": 20
+        },
+        "potgrad": {
+          "wins": 0,
+          "losses": 0,
+          "draws": 20,
+          "games": 20
+        },
+        "combo": {
+          "wins": 10,
+          "losses": 0,
+          "draws": 10,
+          "games": 20
+        }
+      },
+      "fork_a4": {
+        "random": {
+          "wins": 20,
+          "losses": 0,
+          "draws": 0,
+          "games": 20
+        },
+        "greedy": {
+          "wins": 20,
+          "losses": 0,
+          "draws": 0,
+          "games": 20
+        },
+        "fork_a2": {
+          "wins": 0,
+          "losses": 0,
+          "draws": 20,
+          "games": 20
+        },
+        "fork_a4": {
+          "wins": 0,
+          "losses": 0,
+          "draws": 0,
+          "games": 0
+        },
+        "potgrad": {
+          "wins": 0,
+          "losses": 0,
+          "draws": 20,
+          "games": 20
+        },
+        "combo": {
+          "wins": 10,
+          "losses": 0,
+          "draws": 10,
+          "games": 20
+        }
+      },
+      "potgrad": {
+        "random": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 16,
+          "games": 20
+        },
+        "greedy": {
+          "wins": 0,
+          "losses": 20,
+          "draws": 0,
+          "games": 20
+        },
+        "fork_a2": {
+          "wins": 0,
+          "losses": 20,
+          "draws": 0,
+          "games": 20
+        },
+        "fork_a4": {
+          "wins": 0,
+          "losses": 20,
+          "draws": 0,
+          "games": 20
+        },
+        "potgrad": {
+          "wins": 0,
+          "losses": 0,
+          "draws": 0,
+          "games": 0
+        },
+        "combo": {
+          "wins": 6,
+          "losses": 4,
+          "draws": 10,
+          "games": 20
+        }
+      },
+      "combo": {
+        "random": {
+          "wins": 2,
+          "losses": 0,
+          "draws": 18,
+          "games": 20
+        },
+        "greedy": {
+          "wins": 0,
+          "losses": 20,
+          "draws": 0,
+          "games": 20
+        },
+        "fork_a2": {
+          "wins": 0,
+          "losses": 20,
+          "draws": 0,
+          "games": 20
+        },
+        "fork_a4": {
+          "wins": 0,
+          "losses": 20,
+          "draws": 0,
+          "games": 20
+        },
+        "potgrad": {
+          "wins": 8,
+          "losses": 7,
+          "draws": 5,
+          "games": 20
+        },
+        "combo": {
+          "wins": 0,
+          "losses": 0,
+          "draws": 0,
+          "games": 0
+        }
+      }
+    },
+    "summary": {
+      "random": {
+        "wins": 0,
+        "losses": 66,
+        "draws": 34,
+        "winrate": 0.0
+      },
+      "greedy": {
+        "wins": 62,
+        "losses": 38,
+        "draws": 0,
+        "winrate": 0.62
+      },
+      "fork_a2": {
+        "wins": 50,
+        "losses": 0,
+        "draws": 50,
+        "winrate": 0.5
+      },
+      "fork_a4": {
+        "wins": 50,
+        "losses": 0,
+        "draws": 50,
+        "winrate": 0.5
+      },
+      "potgrad": {
+        "wins": 10,
+        "losses": 64,
+        "draws": 26,
+        "winrate": 0.1
+      },
+      "combo": {
+        "wins": 10,
+        "losses": 67,
+        "draws": 23,
+        "winrate": 0.1
+      }
+    },
+    "games_per_pair": 20
+  }
+}

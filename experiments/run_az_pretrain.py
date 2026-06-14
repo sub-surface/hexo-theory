@@ -46,10 +46,10 @@ FIG_PATH = ROOT / "figures" / "fig_az_pretrain.png"
 
 
 def plot_history(hist: dict, out: Path) -> None:
-    fig, axes = plt.subplots(1, 3, figsize=(15, 4.5))
+    fig, axes = plt.subplots(2, 2, figsize=(13, 9))
     epochs = np.array(hist["epoch"])
 
-    ax = axes[0]
+    ax = axes[0, 0]
     ax.plot(epochs, hist["train_loss"], "-", label="train", color="#4c78a8")
     vl = np.array(hist["val_loss"], dtype=float)
     mask = ~np.isnan(vl)
@@ -60,7 +60,7 @@ def plot_history(hist: dict, out: Path) -> None:
     ax.legend()
     ax.grid(True, alpha=0.3)
 
-    ax = axes[1]
+    ax = axes[0, 1]
     ax.plot(epochs, hist["train_policy_acc"], "-", label="train pol_acc", color="#4c78a8")
     vpa = np.array(hist["val_policy_acc"], dtype=float)
     mask = ~np.isnan(vpa)
@@ -72,7 +72,7 @@ def plot_history(hist: dict, out: Path) -> None:
     ax.legend()
     ax.grid(True, alpha=0.3)
 
-    ax = axes[2]
+    ax = axes[1, 0]
     ax.plot(epochs, hist["train_threat_f1"], "-", label="train threat F1", color="#4c78a8")
     ax.plot(epochs, hist["train_win_f1"], "-", label="train win F1", color="#54a24b")
     vtf = np.array(hist["val_threat_f1"], dtype=float)
@@ -87,9 +87,37 @@ def plot_history(hist: dict, out: Path) -> None:
     ax.legend()
     ax.grid(True, alpha=0.3)
 
+    # Value head: MSE on left y-axis, sign-acc on right.
+    ax = axes[1, 1]
+    ax.plot(epochs, hist["train_value_mse"], "-", label="train MSE", color="#4c78a8")
+    vvm = np.array(hist.get("val_value_mse", []), dtype=float)
+    if len(vvm):
+        m = ~np.isnan(vvm)
+        ax.plot(epochs[m], vvm[m], "o-", label="val MSE", color="#f58518")
+    ax.axhline(0.42, color="black", linestyle=":", alpha=0.4,
+               label="target var (predict 0)")
+    ax.set_xlabel("epoch")
+    ax.set_ylabel("MSE (tanh vs {-1,0,+1})")
+    ax.set_title("Value head: MC (λ=1) regression")
+    ax.legend(loc="upper right", fontsize=8)
+    ax.grid(True, alpha=0.3)
+    ax2 = ax.twinx()
+    ax2.plot(epochs, hist["train_value_sign_acc"], "-",
+             label="train sign acc", color="#54a24b", alpha=0.7)
+    vvs = np.array(hist.get("val_value_sign_acc", []), dtype=float)
+    if len(vvs):
+        m = ~np.isnan(vvs)
+        ax2.plot(epochs[m], vvs[m], "s-", label="val sign acc",
+                 color="#e45756", alpha=0.7)
+    ax2.axhline(0.5, color="grey", linestyle="--", alpha=0.3)
+    ax2.set_ylabel("sign accuracy on |v|=1", color="#54a24b")
+    ax2.set_ylim(0.4, 1.0)
+    ax2.tick_params(axis="y", labelcolor="#54a24b")
+    ax2.legend(loc="lower right", fontsize=8)
+
     fig.suptitle(
-        f"Phase 0 supervised trunk pretrain -- UnifiedNet"
-        f" (hidden=32, depth=6)",
+        f"Phase 0 + 2a supervised pretrain -- UnifiedNet"
+        f" (hidden=32, depth=6, +MC value head)",
         fontsize=12,
     )
     fig.tight_layout()
@@ -108,6 +136,11 @@ def main() -> None:
     parser.add_argument("--lr", type=float, default=3e-4)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--data_dir", type=str, default=str(DATA_DIR))
+    parser.add_argument("--lambda-value", type=float, default=1.0,
+                        help="value-head MSE weight; 0 disables (Phase 0 behaviour)")
+    parser.add_argument("--mask-zero-value", action="store_true",
+                        help="skip v=0 (mid-game) samples in value loss; "
+                             "design note §13.4 (2)")
     args = parser.parse_args()
 
     if args.quick:
@@ -128,6 +161,8 @@ def main() -> None:
         epochs=args.epochs,
         batch_size=args.batch,
         lr=args.lr,
+        lambda_value=args.lambda_value,
+        mask_zero_value=args.mask_zero_value,
         device=device,
         seed=args.seed,
         max_train=max_train,
@@ -159,9 +194,15 @@ def main() -> None:
     va_thr = next((v for v in reversed(history["val_threat_f1"]) if not (v != v)), 0)
     tr_win = history["train_win_f1"][-1] if history["train_win_f1"] else 0
     va_win = next((v for v in reversed(history["val_win_f1"]) if not (v != v)), 0)
+    tr_vm = history.get("train_value_mse", [0])[-1] if history.get("train_value_mse") else 0
+    va_vm = next((v for v in reversed(history.get("val_value_mse", [])) if not (v != v)), 0)
+    tr_vs = history.get("train_value_sign_acc", [0])[-1] if history.get("train_value_sign_acc") else 0
+    va_vs = next((v for v in reversed(history.get("val_value_sign_acc", [])) if not (v != v)), 0)
     print(f"  final: policy_acc tr={tr_pol:.3f} va={va_pol:.3f}")
     print(f"         threat_f1 tr={tr_thr:.3f} va={va_thr:.3f}")
     print(f"         win_f1    tr={tr_win:.3f} va={va_win:.3f}")
+    print(f"         value_mse tr={tr_vm:.3f} va={va_vm:.3f}")
+    print(f"         value_sgn tr={tr_vs:.3f} va={va_vs:.3f}")
 
 
 if __name__ == "__main__":

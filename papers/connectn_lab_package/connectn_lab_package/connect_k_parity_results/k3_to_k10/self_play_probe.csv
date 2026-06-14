@@ -1,0 +1,6 @@
+k,radius,prime,parity,tempo_owner,games,black_wins,white_wins,undecided,classes
+3,3,True,odd,black,4,4,0,0,{'black_forced_line': 4}
+4,3,False,even,white,4,3,1,0,"{'white_counter_line': 1, 'black_forced_line': 3}"
+5,3,True,odd,black,4,0,0,4,{'undecided_balanced': 4}
+6,3,False,even,white,4,0,0,4,{'undecided_balanced': 4}
+7,4,True,odd,black,4,0,0,4,{'undecided_balanced': 4}

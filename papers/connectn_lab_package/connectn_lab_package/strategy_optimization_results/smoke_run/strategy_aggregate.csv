@@ -1,0 +1,5 @@
+side,strategy,games,black_wins,white_wins,no_wins,mean_completed_turns,mean_final_black_tau,mean_final_white_tau,mean_black_obligations,mean_white_obligations,mean_black_pair_atoms,mean_white_pair_atoms
+white,min_tau,2,0,1,1,5.5,2.0,0.5,3.0,0.5,0.0,0.0
+white,hybrid,2,0,1,1,5.5,1.0,0.5,1.5,0.5,0.0,0.0
+black,attacker,2,0,2,0,3.0,2.0,1.0,3.0,1.0,0.0,0.0
+black,min_bulk,2,0,0,2,8.0,1.0,0.0,1.5,0.0,0.0,0.0

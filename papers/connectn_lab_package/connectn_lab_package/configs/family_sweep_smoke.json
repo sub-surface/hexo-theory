@@ -1,0 +1,9 @@
+{
+  "lattices": ["Z2_rook", "Z2_diag", "A2_hex"],
+  "k_values": [5, 6],
+  "p_values": [1, 2],
+  "q_values": [1],
+  "radius": 5,
+  "seed": "central-root",
+  "notes": "Smoke config for seeded biased Connect-n progression-hypergraph experiments."
+}

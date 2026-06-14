@@ -372,28 +372,27 @@ def _compute_activation_ffts(
     For each game, sample the activation field at specified move counts,
     compute 2D FFT power spectrum, and return (mean_power, all_powers).
     Field is zero-meaned before FFT to suppress DC component.
+    Efficient: replays each game once, snapshotting at each target move.
     """
+    sample_set = sorted(set(sample_moves))
+    win = np.outer(np.hanning(grid_size), np.hanning(grid_size))
     all_powers = []
     for game in games:
         history = game.move_history
         board_states = []
-        for target_move in sample_moves:
-            if target_move >= len(history):
-                continue
-            # Reconstruct game state at target_move
-            g_snap = HexGame()
-            for mv in history[:target_move]:
-                g_snap.make(*mv)
-            field, _ = _activation_diff_field(g_snap, grid_size)
-            # Zero-mean to suppress DC
-            field = field - field.mean()
-            # Apply Hanning window to reduce spectral leakage
-            win = np.outer(np.hanning(grid_size), np.hanning(grid_size))
-            field = field * win
-            # 2D FFT — shift so DC is at centre
-            F = np.fft.fft2(field)
-            power = np.abs(np.fft.fftshift(F)) ** 2
-            board_states.append(power)
+        g_snap = HexGame()
+        si = 0  # index into sample_set
+        for move_idx, mv in enumerate(history):
+            g_snap.make(*mv)
+            while si < len(sample_set) and sample_set[si] == move_idx + 1:
+                field, _ = _activation_diff_field(g_snap, grid_size)
+                field = (field - field.mean()) * win
+                F = np.fft.fft2(field)
+                power = np.abs(np.fft.fftshift(F)) ** 2
+                board_states.append(power)
+                si += 1
+            if si >= len(sample_set):
+                break
         if board_states:
             all_powers.append(np.mean(board_states, axis=0))
     if not all_powers:

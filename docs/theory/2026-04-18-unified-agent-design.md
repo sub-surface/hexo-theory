@@ -515,5 +515,256 @@ Three failure modes, one signal each:
 - [ ] Phase 2: PUCT wrapper around the pretrained net
       (`engine/mcts.py`), self-play iteration loop, colour-symmetric
       augmentation
-- [ ] First-mover-advantage curve across the ladder (still pending
-      from top-level roadmap)
+- [x] First-mover-advantage curve across the full ladder (see §12)
+
+## 12. 2026-04-19 follow-up — FMA full ladder + measurement artefact
+
+Ran the long-pending FMA curve across 8 agents spanning all families
+([run_fma_full_ladder.py](../../experiments/run_fma_full_ladder.py),
+[results/fma_full_ladder.json](../../results/fma_full_ladder.json),
+[figures/fig_fma_full_ladder.png](../../figures/fig_fma_full_ladder.png)).
+n=40 self-play games per agent, horizon 240, 9.6 min total wall.
+
+### 12.1 Measurement artefact: deterministic self-play is n=1
+
+First pass showed az_policy at temperature=0 producing `0 Black / 15
+White` with Wilson CI [0.00, 0.20] — apparent strategy-stealing
+violation. This is a measurement bug, not an agent defect. Traced
+it: deterministic argmax policy in self-play produces the *identical*
+trajectory across all seeds. Seeds 0, 7, 42 all give
+`[(0,0), (0,1), (-1,1), (-1,0), (-2,1), (-2,0), (-3,1), ...]`
+as the first 12 moves. So n_games iid-with-seed is effectively
+n=1 for deterministic self-play; the Wilson CI assumes game
+independence and becomes meaningless. Lesson for future FMA-style
+experiments with deterministic learned agents: **always use
+temperature > 0 for the self-play measurement, or explicitly seed
+the agent's tiebreaker independently per game**. Rewrote
+harness.`_f_az_policy` to accept a per-call random seed, and added
+`_f_az_policy_t03` (softened argmax) as the canonical FMA
+measurement point for the pretrained trunk.
+
+### 12.2 Headline numbers
+
+Decisive-only p_B with Wilson 95% CI:
+
+| agent          | family      | p_B  | [lo,  hi]    | n_dec |
+|----------------|-------------|------|--------------|-------|
+| fork_aware     | handcrafted | 0.60 | [0.23, 0.88] |   5   |
+| combo          | handcrafted | 0.56 | [0.39, 0.71] |  34   |
+| ca_combo_v2    | handcrafted | 0.44 | [0.30, 0.60] |  36   |
+| az_policy_t03  | learned     | 0.56 | [0.37, 0.72] |  27   |
+| az_policy_t05  | learned     | 0.62 | [0.44, 0.77] |  29   |
+| neural_ca      | neural-CA   | 0.00 | [0.00, 0.09] |  40   |
+
+(random and greedy produce 0 decisive games in 40 self-play matches
+at horizon 240 — strategy-stealing undefined, not falsified.)
+
+### 12.3 Three structural findings worth flagging
+
+1. **p_B is not monotone in strength.** Going fork_aware (0.60) →
+   combo (0.56) → ca_combo_v2 (0.44) → az_policy_t03 (0.56), the
+   Black-share swings both directions as we climb the ladder.
+   This rules out the naive "stronger play amplifies tempo"
+   prediction and makes P11 (FMA-inversion-at-strength) more
+   interesting: the inversion isn't just a greedy-agent quirk,
+   it's that p_B is *agent-specific* in a way that doesn't collapse
+   to one-dimensional strength.
+2. **Untrained neural_ca flagrantly violates the strategy-stealing
+   bound**: 0/40 Black wins, Wilson upper 0.09. Because NCA is
+   stochastic per-game (not deterministic-seed-invariant like
+   az_policy at t=0), this *is* genuine. Random convolutional weights
+   on the infinite lattice produce reactive play where moving second
+   with more information dominates moving first with the tempo
+   advantage. Natural follow-up: does this survive training? The
+   existing NCA-zoo training runs all collapsed to draws, so we
+   can't yet answer. Important for Phase 2: the unified-agent
+   trunk must not inherit this reactive bias from its conv backbone
+   alone; the policy-head-from-imitation is probably what saves
+   az_policy_t03.
+3. **az_policy_t03's p_B=0.56 matches combo, not its literal teacher
+   ca_combo_v2=0.44.** The imitator distills toward the combo
+   *family* rather than v2's specific opening-centre-bias fix.
+   Which is consistent with §11.4's distillation observation:
+   supervised imitation averages over nearby teacher variants,
+   losing the specific positional tuning that separates combo from
+   combo_v2. For Phase 2 this means: the pretrained trunk is a
+   *weaker* starting point than ca_combo_v2 in the specific sense
+   that matters most to our FMA story. MCTS search amplification
+   needs to do more than wrap the policy -- it needs to recover the
+   positional precision that imitation averaged out.
+
+### 12.4 What this tells us about Phase 2 priorities
+
+The three findings converge on the same design implication: **a
+value head is the missing piece, not a search loop**. az_policy at
+t=0 loops against random because the policy has no notion of "this
+position is +1 for me, let me close it out" -- it just picks the
+highest-prior move forever. Temperature fixes looping but doesn't fix
+the underlying issue. MCTS would paper over it by forcing
+breadth-first exploration. But the cleanest fix is to train the
+value head (currently untouched from Phase 0) on actual game
+outcomes, then let the policy's argmax break ties using
+`V(s_next)` as a tiebreaker.
+
+That's Phase 2a: **Monte-Carlo value-head training on the existing
+static-positions corpus** (value target = final game outcome from
+the to-move player's perspective, which is already stored in
+`static_positions/*.npz`). No new self-play data needed. One
+pretrain rerun, then compare az_policy with and without value-head
+tiebreaking.
+
+
+## 13. 2026-04-19 — Phase 2a MC value head trained, Phase 2b probe run
+
+### 13.1 Setup
+
+Added an MSE value loss to [pretrain_trunk](../../engine/alphazero.py)
+with target $v \in \{-1, 0, +1\}$ already written by
+[gen_static_positions.py](../../experiments/gen_static_positions.py)
+(line 210: `rec["value"] = 1.0 if rec["to_move"] == game.winner else -1.0`).
+No new data. Re-ran 40 epochs with `--lambda-value 1.0`:
+
+    policy_acc   tr=0.543 va=0.500    (vs Phase 0: tr=0.547 va=0.500 — unchanged)
+    threat_f1    tr=0.000 va=0.000    (Phase 0 also 0.000 — threshold-at-0.5 artefact)
+    value_mse    tr=0.384 va=0.376    (trivial baseline "predict 0": ~0.42)
+    value_sgn    tr=0.549 va=0.537    (chance = 0.50; 42% of samples have |v|=1)
+
+Checkpoint: `artifacts/checkpoints/az_pretrain_phase2a.pt`.
+Full history in [results/az_pretrain_phase2a.json](../../results/az_pretrain_phase2a.json).
+
+### 13.2 The value head did not learn to discriminate
+
+Inspecting predictions on the val set by target class:
+
+    target=-1   n= 35   mean(pred)=+0.005   std=0.051   sign_acc=0.51
+    target= 0   n=118   mean(pred)=+0.006   std=0.051   sign_acc=—
+    target=+1   n= 47   mean(pred)=+0.016   std=0.050   sign_acc=0.60
+
+Three things to notice. First, **all three class means cluster near 0**
+— the head has collapsed to a regression-toward-the-mean prediction.
+Second, **std ≈ 0.05** means the head's output range is ~20× smaller
+than the target range (±1). Third, **sign accuracy of 0.54 over
+decisive positions** is barely above chance — above it for
+winning positions (0.60), at it for losing (0.51).
+
+This is almost certainly an **underfitting + class-imbalance** problem.
+With 58% of training samples at $v=0$, an MSE-minimising head that
+can't discriminate well picks its "safe" default output near the
+mean (which is $-0.008$ on the corpus). The variance ceiling is ~0.42
+(Bernoulli on |v|=1 vs 0); the head achieved 0.38 — it moved about
+10% of the way toward a useful regressor. Not enough.
+
+### 13.3 Phase 2b probe — value-aware tie-break
+
+[engine/az_agent.py](../../engine/az_agent.py) gained a
+`value_topk` kwarg: at temperature $\leq 0$ with $K > 0$, the agent
+takes the top-$K$ policy logits, applies each to a clone, runs the
+trunk once per candidate, and picks the move that maximises
+$V(s')$ from our POV (with a sign flip when $s'$ is the opponent's
+turn under the 1-2-2 rule).
+
+[experiments/run_az_value_probe.py](../../experiments/run_az_value_probe.py)
+runs three paired comparisons against the baseline `az_policy_t03`
+(same trunk, softmax $t=0.3$, no lookahead):
+
+| comparison | az_policy_t03 | az_value_t0k4 |
+|---|---|---|
+| **self-play decisive rate** (n=40, horizon=240) | 0.70 (28/40) | **0.00 (0/40)** |
+| **self-play $p_B$** | 0.61 [0.42, 0.76] | undefined (0 decisive) |
+| vs `combo` (n=20 pooled both colours) | 4/20 | 0/20 |
+| vs `ca_combo_v2` | 3/20 | 2/20 |
+| vs `fork_aware` | 0/20 | 0/20 |
+| head-to-head (same trunk, n=40) | 21/40 | 19/40, Wilson [0.33, 0.63] |
+
+Full numbers: [results/az_value_probe.json](../../results/az_value_probe.json);
+figure: [figures/fig_az_value_probe.png](../../figures/fig_az_value_probe.png).
+
+Three conclusions.
+
+**(a) Head-to-head null at n=40**: 19 vs 21 wins across both colours
+with pooled Wilson [0.33, 0.63]. Same trunk, different decision rule,
+and the tie-break is within noise — exactly what we'd predict from §13.2.
+The value head *as it stands* cannot rank candidates better than
+"whatever the policy already said".
+
+**(b) Self-play decisive rate collapses $0.70 \to 0.00$**. This is
+the most striking number. The mechanism: at $t=0$ the tie-break is
+fully deterministic (argmax over value-adjusted top-K), and the
+nearly-zero value differences shuffle the policy-argmax order into
+a new fixed trajectory. If that trajectory happens to be "safe
+midboard moves forever", the game simply never terminates. We saw
+exactly this at horizon 240: 40/40 unfinished. That is *worse* than
+the looping we fixed in §12.1, and it's intrinsic to value-aware
+argmax when the head is uninformative.
+
+**(c) Vs ladder az_value is weakly worse than az_policy_t03** on
+`combo` (0/20 vs 4/20) and `ca_combo_v2` (2/20 vs 3/20), tied on
+`fork_aware` (both 0/20). The distillation trunk is weaker than
+all three handcrafted opponents — that's the Phase 1 result — and
+plugging in a noisy tie-break only makes it worse where it already
+had signal (vs combo).
+
+### 13.4 Interpretation — not "TD was wrong", but "the head needs real signal"
+
+The λ=1 Monte-Carlo return **is the correct target**. What went wrong
+is the training regime, not the direction. Three candidate fixes, in
+increasing order of likely yield:
+
+1. **Raise $\lambda_{\text{value}}$ and drop $\lambda_{\text{threat,win}}$
+   to zero** until value discriminates. The other heads contribute 0-F1
+   gradients to the trunk anyway (§13.1) and their MSE on sigmoid
+   targets is inflating the loss. Let the value head drive the trunk
+   for a while. Cost: one more 40-epoch run (~15 min).
+
+2. **Filter out $v=0$ samples during value-loss computation.** 58% of
+   the corpus has target 0 (unresolved positions mid-game). Those are
+   informationally weak — the target is just "the trainer rollout
+   didn't finish in this position's subtree". Regressing on them
+   teaches the head to output 0. Easier fix: weighted MSE that
+   down-weights (or masks) $v=0$. Cost: a three-line edit + one rerun.
+
+3. **Generate more decisive-game data.** The current corpus is
+   biased toward positions that *didn't* resolve within the rollout
+   budget of `gen_static_positions.py`. A more useful value target
+   comes from positions *closer* to game-end, where the final return
+   is more strongly correlated with local structure. Cost: regen
+   data with a longer rollout budget and/or higher decisive-rate
+   opponent mix.
+
+The single quickest experiment is (2) — mask zero-valued samples in
+the value loss (but keep them for the policy/threat/win heads, where
+they still carry labels). If the head still regresses to mean after
+(2), that rules out "class imbalance"; if it now discriminates, we
+also get a usable value head for Phase 2c actor-critic.
+
+Before investing in (1)–(3), one more design question is open:
+**is the trunk capacity the bottleneck**? hidden=32, depth=6, 49.5k
+params is small by MLP standards. A 3× wider trunk (hidden=96) would
+still fit comfortably in VRAM and give the value head more room to
+discriminate. This is independent of the data-side fixes (2)–(3).
+
+### 13.5 Implications for Phases 2c-3
+
+Phase 2c (actor-critic self-play) needs a value head that's at least
+better than a fixed baseline. A sign-acc of 0.54 is barely better
+than the running-mean baseline [engine/neural_ca.py:483](../../engine/neural_ca.py:483)
+already uses. So **Phase 2c is blocked on fixing 2a** — there's no
+point training on a noisy baseline.
+
+Phase 3 (MCTS) fundamentally depends on $V(s)$ being a useful leaf
+estimate. If MSE doesn't improve materially past the current 0.38,
+MCTS will just spend budget exploring without getting better leaf
+evaluations. Same block.
+
+### 13.6 Updated checklist
+
+- [x] Phase 0: supervised trunk pretrain on static positions.
+- [x] Phase 1: policy-only agent evaluation (beats random, loses to handcrafted).
+- [x] §12: FMA full ladder with measurement-artefact fix.
+- [x] §13: Phase 2a MC value-head training + Phase 2b probe.
+- [ ] **§13.4 (2)**: mask $v=0$ from value loss; re-run.
+- [ ] §13.4 (1): raise $\lambda_v$ with auxiliaries turned off.
+- [ ] §13.4 (3): regen data with longer rollouts / better opponents.
+- [ ] Phase 2c (gated on 2a fix): actor-critic self-play with
+  learned baseline replacing the running-mean baseline.
+- [ ] Phase 3 (gated on 2a fix): PUCT MCTS with UnifiedNet.

@@ -1,0 +1,7 @@
+left,right,left_count,right_count,shared_abstract_atoms,jaccard
+A2_hex:k4:r2,A2_hex:k4:r2,1,1,1,1.0
+A2_hex:k4:r2,Z2_diag:k4:r2,1,2,1,0.5
+A2_hex:k4:r2,Z2_rook:k4:r2,1,0,0,0.0
+Z2_diag:k4:r2,Z2_diag:k4:r2,2,2,2,1.0
+Z2_diag:k4:r2,Z2_rook:k4:r2,2,0,0,0.0
+Z2_rook:k4:r2,Z2_rook:k4:r2,0,0,0,1.0

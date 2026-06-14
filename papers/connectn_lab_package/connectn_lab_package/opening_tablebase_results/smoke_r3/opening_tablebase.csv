@@ -1,0 +1,6 @@
+opening_id,radius,white_pair,best_black_reply,score,nodes,cache_hits,final_class,black_tau,white_tau,black_obligations,white_obligations,black_bulk_pressure,white_bulk_pressure,principal_variation
+O0001,3,"[[-1, 0], [-1, 1]]","[[0, -1], [0, 1]]",1.89,29,9,black_bulk_edge,0,0,0,0,6.4,1.0,"[{""move"": [[0, -1], [0, 1]], ""player"": ""black"", ""score"": 1.89}]"
+O0002,3,"[[-1, 0], [0, 1]]","[[1, -1], [-1, 1]]",2.1,29,10,black_bulk_edge,0,0,0,0,6.4,0.4,"[{""move"": [[1, -1], [-1, 1]], ""player"": ""black"", ""score"": 2.0999999999999996}]"
+O0003,3,"[[-1, 0], [1, 0]]","[[1, -1], [-1, 1]]",2.24,29,15,black_bulk_edge,0,0,0,0,6.8,0.4,"[{""move"": [[1, -1], [-1, 1]], ""player"": ""black"", ""score"": 2.2399999999999998}]"
+O0004,3,"[[-2, 0], [-2, 1]]","[[1, -1], [-1, 1]]",2.38,29,0,black_bulk_edge,0,0,0,0,7.0,0.2,"[{""move"": [[1, -1], [-1, 1]], ""player"": ""black"", ""score"": 2.38}]"
+O0005,3,"[[-2, 0], [-2, 2]]","[[0, -1], [0, 1]]",2.38,29,12,black_bulk_edge,0,0,0,0,6.8,0.0,"[{""move"": [[0, -1], [0, 1]], ""player"": ""black"", ""score"": 2.38}]"

@@ -1,0 +1,1411 @@
+{
+  "eval_radius": 5,
+  "openings": [
+    {
+      "canonical_key": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "max_radius": 1,
+      "min_pair_distance": 1,
+      "opening_id": "O0001",
+      "orbit_size": 6,
+      "pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "max_radius": 1,
+      "min_pair_distance": 2,
+      "opening_id": "O0002",
+      "orbit_size": 6,
+      "pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "max_radius": 1,
+      "min_pair_distance": 2,
+      "opening_id": "O0003",
+      "orbit_size": 3,
+      "pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 1,
+      "opening_id": "O0004",
+      "orbit_size": 12,
+      "pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          2
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 2,
+      "opening_id": "O0005",
+      "orbit_size": 6,
+      "pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          2
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 1,
+      "opening_id": "O0006",
+      "orbit_size": 6,
+      "pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 2,
+      "opening_id": "O0007",
+      "orbit_size": 12,
+      "pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 3,
+      "opening_id": "O0008",
+      "orbit_size": 12,
+      "pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          2
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 3,
+      "opening_id": "O0009",
+      "orbit_size": 12,
+      "pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 4,
+      "opening_id": "O0010",
+      "orbit_size": 6,
+      "pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 3,
+      "opening_id": "O0011",
+      "orbit_size": 6,
+      "pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 4,
+      "opening_id": "O0012",
+      "orbit_size": 12,
+      "pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 4,
+      "opening_id": "O0013",
+      "orbit_size": 3,
+      "pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 2,
+      "opening_id": "O0014",
+      "orbit_size": 6,
+      "pair": [
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 1,
+      "opening_id": "O0015",
+      "orbit_size": 12,
+      "pair": [
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          0
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 2,
+      "opening_id": "O0016",
+      "orbit_size": 12,
+      "pair": [
+        [
+          -2,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          1
+        ],
+        [
+          1,
+          -2
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 3,
+      "opening_id": "O0017",
+      "orbit_size": 6,
+      "pair": [
+        [
+          -2,
+          1
+        ],
+        [
+          1,
+          -2
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 3,
+      "opening_id": "O0018",
+      "orbit_size": 12,
+      "pair": [
+        [
+          -2,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ]
+    },
+    {
+      "canonical_key": [
+        [
+          -2,
+          1
+        ],
+        [
+          2,
+          -1
+        ]
+      ],
+      "max_radius": 2,
+      "min_pair_distance": 4,
+      "opening_id": "O0019",
+      "orbit_size": 3,
+      "pair": [
+        [
+          -2,
+          1
+        ],
+        [
+          2,
+          -1
+        ]
+      ]
+    }
+  ],
+  "preset": "smoke",
+  "rollouts": [
+    {
+      "black_reply": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "debt_builder",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 8.400000000000002,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 4.4,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0001",
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "debt_builder",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 7.400000000000001,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 3.8000000000000003,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0001",
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -2,
+          1
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "hybrid",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 12.399999999999999,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 1.4,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0001",
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -2,
+          1
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "hybrid",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 3.0000000000000004,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 1.2,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0001",
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "debt_builder",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 0.8,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 0.8,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0002",
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "debt_builder",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 10.2,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 4.800000000000001,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0002",
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "hybrid",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 0.4,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0002",
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "hybrid",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 27.79999999999999,
+      "final_black_family_max": 1,
+      "final_black_obligations": 1,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 1,
+      "final_white_bulk_pressure": 6.400000000000001,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 1,
+      "max_black_tau": 1,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0002",
+      "white_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "debt_builder",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 16.0,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 1.5999999999999999,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0014",
+      "white_pair": [
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "debt_builder",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 12.399999999999999,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 8.200000000000001,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 2,
+      "max_black_tau": 1,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0014",
+      "white_pair": [
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "hybrid",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 16.0,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 1.5999999999999999,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0014",
+      "white_pair": [
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "hybrid",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 8.400000000000002,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 3.4000000000000012,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 2,
+      "max_black_tau": 1,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0014",
+      "white_pair": [
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "debt_builder",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 17.599999999999998,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 1.5999999999999999,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0019",
+      "white_pair": [
+        [
+          -2,
+          1
+        ],
+        [
+          2,
+          -1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "debt_builder",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 19.0,
+      "final_black_family_max": 1,
+      "final_black_obligations": 1,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 1,
+      "final_white_bulk_pressure": 5.600000000000001,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 1,
+      "max_black_tau": 1,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0019",
+      "white_pair": [
+        [
+          -2,
+          1
+        ],
+        [
+          2,
+          -1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "hybrid",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 3.4000000000000004,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 0.2,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0019",
+      "white_pair": [
+        [
+          -2,
+          1
+        ],
+        [
+          2,
+          -1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "hybrid",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 8.4,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 5.3999999999999995,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 2,
+      "max_black_tau": 1,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0019",
+      "white_pair": [
+        [
+          -2,
+          1
+        ],
+        [
+          2,
+          -1
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          1,
+          -1
+        ],
+        [
+          -2,
+          2
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "debt_builder",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 1.7999999999999998,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 1.4,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0011",
+      "white_pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          1,
+          -1
+        ],
+        [
+          -2,
+          2
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "debt_builder",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 3.5999999999999996,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 2.8000000000000003,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0011",
+      "white_pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          1,
+          -1
+        ],
+        [
+          -2,
+          2
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "hybrid",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 1.7999999999999998,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 1.4,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0011",
+      "white_pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null
+    },
+    {
+      "black_reply": [
+        [
+          1,
+          -1
+        ],
+        [
+          -2,
+          2
+        ]
+      ],
+      "black_stones": 7,
+      "black_strategy": "hybrid",
+      "completed_turns": 2,
+      "final_black_bulk_pressure": 3.0,
+      "final_black_family_max": 0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_white_bulk_pressure": 2.1999999999999997,
+      "final_white_family_max": 0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "max_black_obligations": 0,
+      "max_black_tau": 0,
+      "max_white_obligations": 0,
+      "max_white_tau": 0,
+      "opening_id": "O0011",
+      "white_pair": [
+        [
+          -2,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null
+    }
+  ],
+  "selected_opening_ids": [
+    "O0001",
+    "O0002",
+    "O0014",
+    "O0019",
+    "O0011"
+  ],
+  "static_radius": 2,
+  "torch_device": "cuda"
+}

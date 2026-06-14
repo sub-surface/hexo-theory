@@ -1,0 +1,6 @@
+opening_id,rollouts,black_wins,white_wins,none,mean_completed_turns,mean_final_black_tau,mean_final_white_tau,max_black_tau,max_white_tau,mean_black_obligations,mean_white_obligations,max_black_obligations,max_white_obligations
+O0002,4,0,0,4,2.0,0.25,0.0,1,0,0.25,0.0,1,0
+O0019,4,0,0,4,2.0,0.25,0.0,1,0,0.25,0.0,2,0
+O0001,4,0,0,4,2.0,0.0,0.0,0,0,0.0,0.0,0,0
+O0014,4,0,0,4,2.0,0.0,0.0,1,0,0.0,0.0,2,0
+O0011,4,0,0,4,2.0,0.0,0.0,0,0,0.0,0.0,0,0

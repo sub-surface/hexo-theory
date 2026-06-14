@@ -1,0 +1,9 @@
+k,radius,prime,parity,tempo_owner,seed_obligations,seed_tau,white_openings,white_urgent_openings,white_forcing_openings,white_mean_tau,white_max_tau,black_immediate_wins,black_no_safe_reply_openings,black_reply_tau_gt2_openings,black_reply_mean_tau,black_reply_max_tau
+3,3,True,odd,black,9,6,48,48,48,4,4,48,0,48,4,4
+4,3,False,even,white,0,0,48,14,0,0.3125,2,0,0,47,3.75,4
+5,3,True,odd,black,0,0,48,0,0,0,0,0,0,0,2,2
+6,3,False,even,white,0,0,48,0,0,0,0,0,0,0,0,0
+7,4,True,odd,black,0,0,48,0,0,0,0,0,0,0,0,0
+8,4,False,even,white,0,0,48,0,0,0,0,0,0,0,0,0
+9,5,False,odd,black,0,0,48,0,0,0,0,0,0,0,0,0
+10,5,False,even,white,0,0,48,0,0,0,0,0,0,0,0,0

@@ -1,0 +1,10009 @@
+{
+  "config": {
+    "black_strategies": [
+      "debt_builder",
+      "attacker",
+      "hybrid",
+      "min_bulk"
+    ],
+    "candidate_limit": 6,
+    "k": 6,
+    "opening_limit": 3,
+    "radius": 3,
+    "turns": 2,
+    "white_strategies": [
+      "screen_counter",
+      "min_tau",
+      "min_bulk",
+      "min_family"
+    ]
+  },
+  "games": [
+    {
+      "black_strategy": "debt_builder",
+      "class": "white_counter_line",
+      "game_id": "G00001",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -2
+            ],
+            [
+              -1,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "white",
+      "tactical_score": 12873.5,
+      "white_strategy": "screen_counter",
+      "wlu": "W"
+    },
+    {
+      "black_strategy": "debt_builder",
+      "class": "undecided_balanced",
+      "game_id": "G00002",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "screen_counter",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "debt_builder",
+      "class": "undecided_balanced",
+      "game_id": "G00003",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              0,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "screen_counter",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "debt_builder",
+      "class": "white_counter_line",
+      "game_id": "G00004",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -2
+            ],
+            [
+              -1,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "white",
+      "tactical_score": 12873.5,
+      "white_strategy": "min_tau",
+      "wlu": "W"
+    },
+    {
+      "black_strategy": "debt_builder",
+      "class": "undecided_balanced",
+      "game_id": "G00005",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_tau",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "debt_builder",
+      "class": "undecided_balanced",
+      "game_id": "G00006",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -3
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_tau",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "debt_builder",
+      "class": "undecided_balanced",
+      "game_id": "G00007",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "min_bulk",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "debt_builder",
+      "class": "undecided_balanced",
+      "game_id": "G00008",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "min_bulk",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "debt_builder",
+      "class": "undecided_balanced",
+      "game_id": "G00009",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              0,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "min_bulk",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "debt_builder",
+      "class": "undecided_balanced",
+      "game_id": "G00010",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "min_family",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "debt_builder",
+      "class": "undecided_balanced",
+      "game_id": "G00011",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_family",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "debt_builder",
+      "class": "undecided_balanced",
+      "game_id": "G00012",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -3
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_family",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "attacker",
+      "class": "white_counter_line",
+      "game_id": "G00013",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -2
+            ],
+            [
+              -1,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "white",
+      "tactical_score": 12873.5,
+      "white_strategy": "screen_counter",
+      "wlu": "W"
+    },
+    {
+      "black_strategy": "attacker",
+      "class": "undecided_balanced",
+      "game_id": "G00014",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "screen_counter",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "attacker",
+      "class": "undecided_balanced",
+      "game_id": "G00015",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              0,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "screen_counter",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "attacker",
+      "class": "white_counter_line",
+      "game_id": "G00016",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -2
+            ],
+            [
+              -1,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "white",
+      "tactical_score": 12873.5,
+      "white_strategy": "min_tau",
+      "wlu": "W"
+    },
+    {
+      "black_strategy": "attacker",
+      "class": "undecided_balanced",
+      "game_id": "G00017",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_tau",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "attacker",
+      "class": "undecided_balanced",
+      "game_id": "G00018",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -3
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_tau",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "attacker",
+      "class": "undecided_balanced",
+      "game_id": "G00019",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              2
+            ],
+            [
+              -1,
+              -2
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "none",
+      "tactical_score": -6611.68,
+      "white_strategy": "min_bulk",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "attacker",
+      "class": "undecided_balanced",
+      "game_id": "G00020",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "min_bulk",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "attacker",
+      "class": "undecided_balanced",
+      "game_id": "G00021",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              0,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "min_bulk",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "attacker",
+      "class": "undecided_balanced",
+      "game_id": "G00022",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "none",
+      "tactical_score": -6605.8,
+      "white_strategy": "min_family",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "attacker",
+      "class": "undecided_balanced",
+      "game_id": "G00023",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_family",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "attacker",
+      "class": "undecided_balanced",
+      "game_id": "G00024",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -3
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_family",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "hybrid",
+      "class": "undecided_balanced",
+      "game_id": "G00025",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "none",
+      "tactical_score": -0.06999999999999999,
+      "white_strategy": "screen_counter",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "hybrid",
+      "class": "undecided_balanced",
+      "game_id": "G00026",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "screen_counter",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "hybrid",
+      "class": "undecided_balanced",
+      "game_id": "G00027",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              0,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "screen_counter",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "hybrid",
+      "class": "undecided_balanced",
+      "game_id": "G00028",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "none",
+      "tactical_score": -0.06999999999999999,
+      "white_strategy": "min_tau",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "hybrid",
+      "class": "undecided_balanced",
+      "game_id": "G00029",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_tau",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "hybrid",
+      "class": "undecided_balanced",
+      "game_id": "G00030",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -3
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_tau",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "hybrid",
+      "class": "undecided_balanced",
+      "game_id": "G00031",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "min_bulk",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "hybrid",
+      "class": "undecided_balanced",
+      "game_id": "G00032",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "min_bulk",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "hybrid",
+      "class": "undecided_balanced",
+      "game_id": "G00033",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              0,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "min_bulk",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "hybrid",
+      "class": "undecided_balanced",
+      "game_id": "G00034",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "min_family",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "hybrid",
+      "class": "undecided_balanced",
+      "game_id": "G00035",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_family",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "hybrid",
+      "class": "undecided_balanced",
+      "game_id": "G00036",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -3
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_family",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "min_bulk",
+      "class": "undecided_balanced",
+      "game_id": "G00037",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "none",
+      "tactical_score": -0.06999999999999999,
+      "white_strategy": "screen_counter",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "min_bulk",
+      "class": "undecided_balanced",
+      "game_id": "G00038",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "screen_counter",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "min_bulk",
+      "class": "undecided_balanced",
+      "game_id": "G00039",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              1
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "screen_counter",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "min_bulk",
+      "class": "undecided_balanced",
+      "game_id": "G00040",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "none",
+      "tactical_score": -0.06999999999999999,
+      "white_strategy": "min_tau",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "min_bulk",
+      "class": "undecided_balanced",
+      "game_id": "G00041",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_tau",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "min_bulk",
+      "class": "undecided_balanced",
+      "game_id": "G00042",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_tau",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "min_bulk",
+      "class": "undecided_balanced",
+      "game_id": "G00043",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "min_bulk",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "min_bulk",
+      "class": "undecided_balanced",
+      "game_id": "G00044",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "min_bulk",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "min_bulk",
+      "class": "undecided_balanced",
+      "game_id": "G00045",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              1
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "min_bulk",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "min_bulk",
+      "class": "undecided_balanced",
+      "game_id": "G00046",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "result": "none",
+      "tactical_score": 0.0,
+      "white_strategy": "min_family",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "min_bulk",
+      "class": "undecided_balanced",
+      "game_id": "G00047",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_family",
+      "wlu": "U"
+    },
+    {
+      "black_strategy": "min_bulk",
+      "class": "undecided_balanced",
+      "game_id": "G00048",
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "result": "none",
+      "tactical_score": -0.7,
+      "white_strategy": "min_family",
+      "wlu": "U"
+    }
+  ],
+  "network_size_estimates": [
+    {
+      "blocks": 2,
+      "board_cells": 37,
+      "boundary_to_bulk_ratio": 0.4864864864864865,
+      "candidate_cells": 6,
+      "candidate_pair_actions": 15,
+      "factorized_policy_params": 6464,
+      "feature_channels": 12,
+      "full_pair_actions": 666,
+      "full_policy_params": 42624,
+      "generalization_index": 0.5135135135135135,
+      "generalization_regime": "memorisation_dominated",
+      "radius": 3,
+      "recommended_architecture": "tiny_factorized_mlp",
+      "total_factorized_params": 134849,
+      "total_full_policy_params": 171009,
+      "trunk_width": 64,
+      "value_head_params": 8321
+    },
+    {
+      "blocks": 3,
+      "board_cells": 61,
+      "boundary_to_bulk_ratio": 0.39344262295081966,
+      "candidate_cells": 6,
+      "candidate_pair_actions": 15,
+      "factorized_policy_params": 15072,
+      "feature_channels": 14,
+      "full_pair_actions": 1830,
+      "full_policy_params": 175680,
+      "generalization_index": 0.6065573770491803,
+      "generalization_regime": "opening_transfer",
+      "radius": 4,
+      "recommended_architecture": "small_residual_hex_cnn",
+      "total_factorized_params": 423969,
+      "total_full_policy_params": 584577,
+      "trunk_width": 96,
+      "value_head_params": 12417
+    },
+    {
+      "blocks": 3,
+      "board_cells": 91,
+      "boundary_to_bulk_ratio": 0.32967032967032966,
+      "candidate_cells": 6,
+      "candidate_pair_actions": 15,
+      "factorized_policy_params": 17952,
+      "feature_channels": 14,
+      "full_pair_actions": 4095,
+      "full_policy_params": 393120,
+      "generalization_index": 0.6703296703296704,
+      "generalization_regime": "opening_transfer",
+      "radius": 5,
+      "recommended_architecture": "small_residual_hex_cnn",
+      "total_factorized_params": 426849,
+      "total_full_policy_params": 802017,
+      "trunk_width": 96,
+      "value_head_params": 12417
+    },
+    {
+      "blocks": 4,
+      "board_cells": 127,
+      "boundary_to_bulk_ratio": 0.28346456692913385,
+      "candidate_cells": 6,
+      "candidate_pair_actions": 15,
+      "factorized_policy_params": 32640,
+      "feature_channels": 16,
+      "full_pair_actions": 8001,
+      "full_policy_params": 1024128,
+      "generalization_index": 0.7165354330708662,
+      "generalization_regime": "local_atom_generalisation",
+      "radius": 6,
+      "recommended_architecture": "local_message_passing",
+      "total_factorized_params": 980993,
+      "total_full_policy_params": 1972481,
+      "trunk_width": 128,
+      "value_head_params": 16513
+    }
+  ],
+  "records": [
+    {
+      "black_stones": 5,
+      "black_strategy": "debt_builder",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 50.0,
+      "final_black_obligations": 2,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 2,
+      "final_class": "white_counter_line",
+      "final_white_bulk_pressure": 1000.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00001",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 1,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -2
+            ],
+            [
+              -1,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 12873.5,
+      "terminal_ply": 5,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": "white",
+      "wlu": "W"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "debt_builder",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00002",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "debt_builder",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00003",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              0,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "debt_builder",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 50.0,
+      "final_black_obligations": 2,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 2,
+      "final_class": "white_counter_line",
+      "final_white_bulk_pressure": 1000.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00004",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 1,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -2
+            ],
+            [
+              -1,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 12873.5,
+      "terminal_ply": 5,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": "white",
+      "wlu": "W"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "debt_builder",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00005",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "debt_builder",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00006",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -3
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "debt_builder",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00007",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_bulk",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "debt_builder",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00008",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_bulk",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "debt_builder",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00009",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              0,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_bulk",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "debt_builder",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00010",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_family",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "debt_builder",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00011",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_family",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "debt_builder",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00012",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -3
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_family",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "attacker",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 50.0,
+      "final_black_obligations": 2,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 2,
+      "final_class": "white_counter_line",
+      "final_white_bulk_pressure": 1000.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00013",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 1,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -2
+            ],
+            [
+              -1,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 12873.5,
+      "terminal_ply": 5,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": "white",
+      "wlu": "W"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "attacker",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00014",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "attacker",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00015",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              0,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "attacker",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 50.0,
+      "final_black_obligations": 2,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 2,
+      "final_class": "white_counter_line",
+      "final_white_bulk_pressure": 1000.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00016",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 1,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -2
+            ],
+            [
+              -1,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 12873.5,
+      "terminal_ply": 5,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": "white",
+      "wlu": "W"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "attacker",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00017",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "attacker",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00018",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -3
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "attacker",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.2,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 25.0,
+      "final_white_obligations": 1,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 1,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00019",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 1,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              2
+            ],
+            [
+              -1,
+              -2
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -6611.68,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_bulk",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "attacker",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00020",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_bulk",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "attacker",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00021",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              0,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_bulk",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "attacker",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 8.0,
+      "final_white_obligations": 1,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 1,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00022",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 1,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -6605.8,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_family",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "attacker",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00023",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_family",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "attacker",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00024",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -3
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_family",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "hybrid",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.2,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00025",
+      "k": 6,
+      "max_black_tau": 1,
+      "max_white_tau": 1,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.06999999999999999,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "hybrid",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00026",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "hybrid",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00027",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              0,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "hybrid",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.2,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00028",
+      "k": 6,
+      "max_black_tau": 1,
+      "max_white_tau": 1,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.06999999999999999,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "hybrid",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00029",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "hybrid",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00030",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -3
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "hybrid",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00031",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_bulk",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "hybrid",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00032",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_bulk",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "hybrid",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00033",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              0,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_bulk",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "hybrid",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00034",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_family",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "hybrid",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00035",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_family",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "hybrid",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00036",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -3
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_family",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "min_bulk",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.2,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00037",
+      "k": 6,
+      "max_black_tau": 1,
+      "max_white_tau": 1,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.06999999999999999,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "min_bulk",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00038",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "min_bulk",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00039",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              1
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "screen_counter",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "min_bulk",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.2,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00040",
+      "k": 6,
+      "max_black_tau": 1,
+      "max_white_tau": 1,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.06999999999999999,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "min_bulk",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00041",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "min_bulk",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00042",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_tau",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "min_bulk",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00043",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_bulk",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "min_bulk",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00044",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_bulk",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "min_bulk",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00045",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              2,
+              -2
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              1
+            ],
+            [
+              -2,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_bulk",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "min_bulk",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 0.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00046",
+      "k": 6,
+      "max_black_tau": 0,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              2,
+              -1
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0001",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": 0.0,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_family",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "min_bulk",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00047",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0002",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_family",
+      "winner": null,
+      "wlu": "U"
+    },
+    {
+      "black_stones": 5,
+      "black_strategy": "min_bulk",
+      "candidate_limit": 6,
+      "final_black_bulk_pressure": 0.0,
+      "final_black_obligations": 0,
+      "final_black_pair_atoms": 0,
+      "final_black_tau": 0,
+      "final_class": "undecided_balanced",
+      "final_white_bulk_pressure": 2.0,
+      "final_white_obligations": 0,
+      "final_white_pair_atoms": 0,
+      "final_white_tau": 0,
+      "first_black_tau_gt2": null,
+      "first_white_tau_gt2": null,
+      "game_id": "G00048",
+      "k": 6,
+      "max_black_tau": 2,
+      "max_white_tau": 0,
+      "moves": [
+        {
+          "color": "black",
+          "stones": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "color": "black",
+          "stones": [
+            [
+              2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ]
+          ]
+        },
+        {
+          "color": "white",
+          "stones": [
+            [
+              3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ]
+          ]
+        }
+      ],
+      "opening_id": "O0003",
+      "opening_pair": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "radius": 3,
+      "tactical_score": -0.7,
+      "terminal_ply": null,
+      "turns": 2,
+      "white_stones": 6,
+      "white_strategy": "min_family",
+      "winner": null,
+      "wlu": "U"
+    }
+  ],
+  "strategy_matrix": [
+    {
+      "black_strategy": "attacker",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 0.06666666666666667,
+      "mean_final_black_tau": 0,
+      "mean_final_white_tau": 0.3333333333333333,
+      "mean_tactical_score": -2203.8933333333334,
+      "mean_terminal_ply": 4,
+      "mean_white_bulk_pressure": 8.333333333333334,
+      "undecided": 3,
+      "white_strategy": "min_bulk",
+      "white_win_rate": 0.0,
+      "white_wins": 0
+    },
+    {
+      "black_strategy": "attacker",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 0.0,
+      "mean_final_black_tau": 0,
+      "mean_final_white_tau": 0.3333333333333333,
+      "mean_tactical_score": -2202.4,
+      "mean_terminal_ply": 4,
+      "mean_white_bulk_pressure": 4.0,
+      "undecided": 3,
+      "white_strategy": "min_family",
+      "white_win_rate": 0.0,
+      "white_wins": 0
+    },
+    {
+      "black_strategy": "attacker",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 16.666666666666668,
+      "mean_final_black_tau": 0.6666666666666666,
+      "mean_final_white_tau": 0,
+      "mean_tactical_score": 4290.7,
+      "mean_terminal_ply": 4.333333333333333,
+      "mean_white_bulk_pressure": 334.6666666666667,
+      "undecided": 2,
+      "white_strategy": "min_tau",
+      "white_win_rate": 0.3333333333333333,
+      "white_wins": 1
+    },
+    {
+      "black_strategy": "attacker",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 16.666666666666668,
+      "mean_final_black_tau": 0.6666666666666666,
+      "mean_final_white_tau": 0,
+      "mean_tactical_score": 4291.166666666667,
+      "mean_terminal_ply": 4.333333333333333,
+      "mean_white_bulk_pressure": 333.3333333333333,
+      "undecided": 2,
+      "white_strategy": "screen_counter",
+      "white_win_rate": 0.3333333333333333,
+      "white_wins": 1
+    },
+    {
+      "black_strategy": "debt_builder",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 0.0,
+      "mean_final_black_tau": 0,
+      "mean_final_white_tau": 0,
+      "mean_tactical_score": 0.0,
+      "mean_terminal_ply": 4,
+      "mean_white_bulk_pressure": 0.0,
+      "undecided": 3,
+      "white_strategy": "min_bulk",
+      "white_win_rate": 0.0,
+      "white_wins": 0
+    },
+    {
+      "black_strategy": "debt_builder",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 0.0,
+      "mean_final_black_tau": 0,
+      "mean_final_white_tau": 0,
+      "mean_tactical_score": -0.4666666666666666,
+      "mean_terminal_ply": 4,
+      "mean_white_bulk_pressure": 1.3333333333333333,
+      "undecided": 3,
+      "white_strategy": "min_family",
+      "white_win_rate": 0.0,
+      "white_wins": 0
+    },
+    {
+      "black_strategy": "debt_builder",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 16.666666666666668,
+      "mean_final_black_tau": 0.6666666666666666,
+      "mean_final_white_tau": 0,
+      "mean_tactical_score": 4290.7,
+      "mean_terminal_ply": 4.333333333333333,
+      "mean_white_bulk_pressure": 334.6666666666667,
+      "undecided": 2,
+      "white_strategy": "min_tau",
+      "white_win_rate": 0.3333333333333333,
+      "white_wins": 1
+    },
+    {
+      "black_strategy": "debt_builder",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 16.666666666666668,
+      "mean_final_black_tau": 0.6666666666666666,
+      "mean_final_white_tau": 0,
+      "mean_tactical_score": 4291.166666666667,
+      "mean_terminal_ply": 4.333333333333333,
+      "mean_white_bulk_pressure": 333.3333333333333,
+      "undecided": 2,
+      "white_strategy": "screen_counter",
+      "white_win_rate": 0.3333333333333333,
+      "white_wins": 1
+    },
+    {
+      "black_strategy": "hybrid",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 0.0,
+      "mean_final_black_tau": 0,
+      "mean_final_white_tau": 0,
+      "mean_tactical_score": 0.0,
+      "mean_terminal_ply": 4,
+      "mean_white_bulk_pressure": 0.0,
+      "undecided": 3,
+      "white_strategy": "min_bulk",
+      "white_win_rate": 0.0,
+      "white_wins": 0
+    },
+    {
+      "black_strategy": "hybrid",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 0.0,
+      "mean_final_black_tau": 0,
+      "mean_final_white_tau": 0,
+      "mean_tactical_score": -0.4666666666666666,
+      "mean_terminal_ply": 4,
+      "mean_white_bulk_pressure": 1.3333333333333333,
+      "undecided": 3,
+      "white_strategy": "min_family",
+      "white_win_rate": 0.0,
+      "white_wins": 0
+    },
+    {
+      "black_strategy": "hybrid",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 0.0,
+      "mean_final_black_tau": 0,
+      "mean_final_white_tau": 0,
+      "mean_tactical_score": -0.49,
+      "mean_terminal_ply": 4,
+      "mean_white_bulk_pressure": 1.4,
+      "undecided": 3,
+      "white_strategy": "min_tau",
+      "white_win_rate": 0.0,
+      "white_wins": 0
+    },
+    {
+      "black_strategy": "hybrid",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 0.0,
+      "mean_final_black_tau": 0,
+      "mean_final_white_tau": 0,
+      "mean_tactical_score": -0.02333333333333333,
+      "mean_terminal_ply": 4,
+      "mean_white_bulk_pressure": 0.06666666666666667,
+      "undecided": 3,
+      "white_strategy": "screen_counter",
+      "white_win_rate": 0.0,
+      "white_wins": 0
+    },
+    {
+      "black_strategy": "min_bulk",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 0.0,
+      "mean_final_black_tau": 0,
+      "mean_final_white_tau": 0,
+      "mean_tactical_score": 0.0,
+      "mean_terminal_ply": 4,
+      "mean_white_bulk_pressure": 0.0,
+      "undecided": 3,
+      "white_strategy": "min_bulk",
+      "white_win_rate": 0.0,
+      "white_wins": 0
+    },
+    {
+      "black_strategy": "min_bulk",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 0.0,
+      "mean_final_black_tau": 0,
+      "mean_final_white_tau": 0,
+      "mean_tactical_score": -0.4666666666666666,
+      "mean_terminal_ply": 4,
+      "mean_white_bulk_pressure": 1.3333333333333333,
+      "undecided": 3,
+      "white_strategy": "min_family",
+      "white_win_rate": 0.0,
+      "white_wins": 0
+    },
+    {
+      "black_strategy": "min_bulk",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 0.0,
+      "mean_final_black_tau": 0,
+      "mean_final_white_tau": 0,
+      "mean_tactical_score": -0.49,
+      "mean_terminal_ply": 4,
+      "mean_white_bulk_pressure": 1.4,
+      "undecided": 3,
+      "white_strategy": "min_tau",
+      "white_win_rate": 0.0,
+      "white_wins": 0
+    },
+    {
+      "black_strategy": "min_bulk",
+      "black_win_rate": 0.0,
+      "black_wins": 0,
+      "games": 3,
+      "mean_black_bulk_pressure": 0.0,
+      "mean_final_black_tau": 0,
+      "mean_final_white_tau": 0,
+      "mean_tactical_score": -0.02333333333333333,
+      "mean_terminal_ply": 4,
+      "mean_white_bulk_pressure": 0.06666666666666667,
+      "undecided": 3,
+      "white_strategy": "screen_counter",
+      "white_win_rate": 0.0,
+      "white_wins": 0
+    }
+  ]
+}
