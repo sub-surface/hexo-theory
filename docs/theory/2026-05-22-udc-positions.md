@@ -53,7 +53,7 @@ The key finding: **small-t UDC positions (t = 1, 2) have Bragg99 ~ 0.84, dramati
 
 1. **Optimistic for P3:** Optimal play evolves toward UDC-like positions from below; measuring the asymptotic limit requires much longer games than our current T <= 120 horizon.
 
-2. **Cautionary for P3:** UDC positions are constructed, not played. They are extremal for unit-distance count but not for winning HexGo — the relevant question is whether *game-optimal* positions are also UDC-like, which is a separate claim.
+2. **Cautionary for P3:** UDC positions are constructed, not played. They are extremal for unit-distance count but not for winning HeXO — the relevant question is whether *game-optimal* positions are also UDC-like, which is a separate claim.
 
 The experiment thus sharpens P3 into two sub-claims:
 - **P3a** (structural): terminal positions of strong self-play approximate UDC positions in their diffraction spectra. Testable by running longer self-play (T ~ 480–960) and comparing Bragg99.
@@ -78,7 +78,7 @@ The experiment thus sharpens P3 into two sub-claims:
 
 3. **P3b:** Write a displacement-vector analyser that takes consecutive stone pairs from self-play and checks whether their Z[omega] difference vector belongs to the small-t ideal factorization lattice (i.e., whether diff = u_S for small t).
 
-## 6. Geometry — which lattice fits the HexGo ruleset?
+## 6. Geometry — which lattice fits the HeXO ruleset?
 
 *Added 2026-05-22 after implementing `--geometries` in `run_udc_positions.py`.*
 
@@ -87,13 +87,13 @@ The UDC machinery does not dictate a unique base lattice. Three candidates:
 | Geometry | Ring | Lattice | Symmetry | Split rule | Fit |
 |---|---|---|---|---|---|
 | `gaussian` | Z[i] | square | D4 | q = 1 mod 4 | Erdos baseline; wrong symmetry |
-| `eisenstein` | Z[omega] | A2 triangular | D6 | q = 1 mod 3 | matches HexGo exactly |
+| `eisenstein` | Z[omega] | A2 triangular | D6 | q = 1 mod 3 | matches HeXO exactly |
 | `z12` | Z[zeta_12] proj. | A2 (q = 1 mod 12) | D6 | q = 1 mod 12 | the true degree-4 CM field K = L(i) |
 
 The engine settles the lattice: [engine/isomorphisms.py](../../engine/isomorphisms.py) uses A2 cube
 coordinates (`cube_coords`) and a 12-element D6 group (`_cube_transforms`), and
 the win axes `(1,0),(0,1),(1,-1)` ([game.py] `AXES`) are the three short A2
-directions. HexGo *is* a game on Z[omega] with D6 symmetry.
+directions. HeXO *is* a game on Z[omega] with D6 symmetry.
 
 **Empirical comparison** (t in {1,2,3}, n ~ 800, seed 20260522):
 
@@ -114,8 +114,8 @@ Three findings:
 2. **moment_6 cleanly separates the geometries: 0.11 (eisenstein, z12) vs 0.016
    (gaussian) — a 7x gap.** This is the decisive discriminator. The A2/D6
    constructions carry hexagonal angular order; the Z[i]/D4 construction does
-   not. Since HexGo's win condition is D6-invariant, *moment_6, not Bragg99,
-   is the right observable for "does this position look like optimal HexGo
+   not. Since HeXO's win condition is D6-invariant, *moment_6, not Bragg99,
+   is the right observable for "does this position look like optimal HeXO
    play."* The Gaussian construction is extremal for unit distances but lives
    in the wrong symmetry class.
 
@@ -126,7 +126,7 @@ Three findings:
    "true" CM field — eisenstein reaches larger measurable t.
 
 **Geometry verdict:** Use `eisenstein` (Z[omega]) as the canonical base lattice.
-It (a) matches HexGo's A2 lattice and D6 symmetry exactly, (b) carries the
+It (a) matches HeXO's A2 lattice and D6 symmetry exactly, (b) carries the
 hexagonal angular order absent from Z[i], and (c) uses the smallest split
 primes, so it stays measurable to the largest t before the resolution wall.
 z12 is the formally-correct degree-4 CM field but offers no measurable gain

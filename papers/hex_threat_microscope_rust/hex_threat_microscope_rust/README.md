@@ -1,6 +1,6 @@
 # Hex Threat Manifold Microscope — Rust
 
-A fast, zero-dependency Rust implementation of the visual experiment we discussed for infinite Hex Connect-6 / HexGo:
+A fast, zero-dependency Rust implementation of the visual experiment we discussed for infinite Hex Connect-6 / HeXO:
 
 - axial hex coordinates;
 - 1-2-2 board model;

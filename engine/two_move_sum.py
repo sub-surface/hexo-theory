@@ -1,4 +1,4 @@
-"""Toy algebra for HexGo's two-placement local-game sums."""
+"""Toy algebra for HeXO's two-placement local-game sums."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -37,7 +37,7 @@ def best_two_move_sum(components: tuple[Component, ...]) -> Choice:
     Best two-placement allocation across local components.
 
     This is deliberately a small empirical model, not a full CGT value system:
-    it tests the HexGo-specific distinction between spending both placements in
+    it tests the HeXO-specific distinction between spending both placements in
     one component and splitting them across two components.
     """
     options: list[Choice] = []

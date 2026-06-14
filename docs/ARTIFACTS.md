@@ -1,4 +1,4 @@
-# HexGo Theory Artifact Ledger
+# HeXO Theory Artifact Ledger
 
 *Last updated: 2026-05-09*
 
@@ -26,8 +26,8 @@ or move data just because it is not yet listed here.
 | `tests/test_cgt.py` | Regression tests for hottest wins, decomposition, potential correlation, rank percentile | `python -m pytest tests/test_cgt.py -q` | Current focused test suite for CGT primitives |
 | `engine/isomorphisms.py` | Exact A2/D6/canonical-board/live-incidence quotients | n/a | Foundation for motif mining and Hackenbush projections |
 | `tests/test_isomorphisms.py` | Regression tests for cube coordinates, D6 orbit size, canonical keys, incidence threats | `python -m pytest tests/test_isomorphisms.py -q` | Guards the exact combinatorial quotient layer |
-| `engine/two_move_sum.py` | Toy algebra for ordinary one-move sums versus HexGo two-placement sums | n/a | First explicit `+_2` model for local games |
-| `tests/test_two_move_sum.py` | Regression tests for split moves and spending both moves in one component | `python -m pytest tests/test_two_move_sum.py -q` | Documents why HexGo is not ordinary disjunctive CGT |
+| `engine/two_move_sum.py` | Toy algebra for ordinary one-move sums versus HeXO two-placement sums | n/a | First explicit `+_2` model for local games |
+| `tests/test_two_move_sum.py` | Regression tests for split moves and spending both moves in one component | `python -m pytest tests/test_two_move_sum.py -q` | Documents why HeXO is not ordinary disjunctive CGT |
 | `experiments/run_cgt_hackenbush.py` | Agent self-play probe for hot-game behavior | direct script | Has `--quick` and configurable sample stride |
 | `results/cgt_hackenbush.json` | Summary and sampled records for CGT probe | `experiments/run_cgt_hackenbush.py` | Current medium run compares random, greedy, potential, ca_combo_v2, mirror |
 | `figures/fig_cgt_hackenbush_summary.png` | Four-panel summary of hot-move play and decomposition | `experiments/run_cgt_hackenbush.py` | Paper-facing diagnostic |

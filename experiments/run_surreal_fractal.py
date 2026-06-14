@@ -1,4 +1,4 @@
-"""Generate verified surreal-strategy fractals for HexGo."""
+"""Generate verified surreal-strategy fractals for HeXO."""
 from __future__ import annotations
 
 import argparse
@@ -73,7 +73,7 @@ def plot_strategy(fractal: StrategyFractal, path: Path) -> None:
         ax.plot(line_xy[:, 0], line_xy[:, 1], color="black", alpha=0.08, linewidth=0.5)
     ax.set_aspect("equal")
     ax.set_title(
-        f"Verified HexGo strategy fractal: depth {fractal.depth}, inflation {fractal.inflation}"
+        f"Verified HeXO strategy fractal: depth {fractal.depth}, inflation {fractal.inflation}"
     )
     ax.set_xlabel("axial q + r/2")
     ax.set_ylabel("sqrt(3) r / 2")
@@ -149,7 +149,7 @@ def build_result(fractal: StrategyFractal, wall_time_sec: float) -> dict:
         ],
         "interpretation": (
             "A verified strategy pattern: every recursive motif is a legal "
-            "HexGo length-6 line for one player. This is not a legal transcript."
+            "HeXO length-6 line for one player. This is not a legal transcript."
         ),
     }
 

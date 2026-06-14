@@ -1,4 +1,4 @@
-"""Exact combinatorial quotients for HexGo positions."""
+"""Exact combinatorial quotients for HeXO positions."""
 from __future__ import annotations
 
 from dataclasses import dataclass

@@ -2,7 +2,7 @@
 Bellman-Turing Instability on Z[omega]
 =======================================
 
-Hypothesis: the Boltzmannized Bellman operator for HexGo has a Turing
+Hypothesis: the Boltzmannized Bellman operator for HeXO has a Turing
 instability — a spatial mode that goes unstable at a non-zero wavenumber k*
 predicted by the D6-symmetric diffusion tensor of Z[omega].
 
@@ -238,7 +238,7 @@ def _turing_wavelength_analytic() -> tuple[float, float, float, float]:
     Analytic prediction of the Turing wavelength from the game's combinatorial
     structure alone (no numerical estimation needed).
 
-    For HexGo on Z[omega]:
+    For HeXO on Z[omega]:
     - WIN_LENGTH L = 6 defines the range of a live window
     - ZOI_MARGIN M = 4-5 defines the range at which the opponent's blocking
       potential inhibits stone placement

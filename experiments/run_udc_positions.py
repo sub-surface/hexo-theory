@@ -24,7 +24,7 @@ We implement this by working over C directly:
   all pairs (x, y) such that (x - y) / |(x - y)| is in {v_S} and |(x-y)|
   is approximately a fixed scale s (one "unit distance" in the construction).
 
-For comparing to HexGo we interpret the Z[omega] points directly as axial
+For comparing to HeXO we interpret the Z[omega] points directly as axial
 hex coordinates (a, b) = (q, r).
 
 Proposition P6 (to falsify or support)
@@ -203,7 +203,7 @@ def _primes_1mod12(n: int) -> list[int]:
 # Three candidate base lattices for the UDC construction.  See the geometry
 # discussion in docs/theory/2026-05-22-udc-positions.md section "Geometry".
 #
-#   eisenstein  Z[omega]    A2 triangular lattice, D6 symmetry -> matches HexGo
+#   eisenstein  Z[omega]    A2 triangular lattice, D6 symmetry -> matches HeXO
 #   gaussian    Z[i]        square lattice, D4 symmetry        -> Erdos baseline
 #   z12         Z[omega] with q = 1 mod 12 split primes        -> CM field Q(zeta12)
 #
@@ -368,19 +368,19 @@ def _to_xy(cells: list[tuple[int, int]]) -> np.ndarray:
     return np.array([axial_to_xy_cell(c) for c in cells], dtype=np.float64)
 
 
-# Stone-colour convention (HexGo): P1 = Black, P2 = White.
+# Stone-colour convention (HeXO): P1 = Black, P2 = White.
 _BLACK = dict(facecolor="#111111", edgecolor="#111111")
 _WHITE = dict(facecolor="#fafafa", edgecolor="#333333")
 
 
 def _udc_owner(cell: tuple[int, int]) -> int:
     """
-    Assign each UDC lattice point a HexGo player.
+    Assign each UDC lattice point a HeXO player.
 
     The A2 lattice Z[omega] is tripartite under (a - b) mod 3, but for a
     two-player game we use the natural sublattice bipartition by parity of
     (a + b): adjacent points along any of the 3 win axes alternate parity,
-    so this colours the unit-distance graph as a HexGo placement order
+    so this colours the unit-distance graph as a HeXO placement order
     (Black on even sites, White on odd) -- a pairing-strategy colouring.
     """
     a, b = cell
@@ -553,7 +553,7 @@ def plot_geometry_comparison(all_records: list[dict], random_b99: float, path: P
         ax.grid(alpha=0.3, linestyle=":")
         ax.legend(fontsize=8)
     fig.suptitle("Lattice geometry comparison for the UDC construction\n"
-                 "(eisenstein = A2/D6 = HexGo lattice; gaussian = Z[i]/D4 = Erdos baseline)")
+                 "(eisenstein = A2/D6 = HeXO lattice; gaussian = Z[i]/D4 = Erdos baseline)")
     plt.tight_layout()
     path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(path, dpi=160)

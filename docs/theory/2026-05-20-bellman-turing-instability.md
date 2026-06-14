@@ -4,7 +4,7 @@
 
 ## The Hypothesis
 
-Optimal play in HexGo generates a spatially structured stone distribution
+Optimal play in HeXO generates a spatially structured stone distribution
 because the Boltzmannized Bellman operator for this game has a **Turing
 instability** — a spatial mode at non-zero wavenumber k* that grows
 spontaneously from any near-uniform initial condition.

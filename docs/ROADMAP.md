@@ -1,4 +1,4 @@
-# HexGo Theory — Roadmap v2 (Epiplexity Overhaul)
+# HeXO Theory — Roadmap v2 (Epiplexity Overhaul)
 
 > **Version:** 2.0 · canonical roadmap (v1 retired 2026-04-17)
 > **Framing paper:** Finzi, Qiu, Jiang, Izmailov, Kolter, Wilson — *From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence*, arXiv:2601.03220v2 (March 2026). Local copy: `papers/finzi-2026-epiplexity.pdf`.
@@ -24,7 +24,7 @@ Three paradoxes of classical information theory dissolve:
 2. **Factorisation order is invariant under Shannon/Kolmogorov** — yet L→R beats R→L on English text. Resolution: order changes `S_T` without changing `H`.
 3. **Likelihood-maximising models are distribution-matching** — yet models can learn more structure than is "in" the generator (Game of Life). Resolution: the generator's program is short; the *unrolled* behaviour has vast epiplexity for a computationally bounded observer.
 
-**Why this matters for HexGo.** HexGo's rules are ~200 bytes of Python. Eisenstein-greedy self-play is deterministic given a tie-break seed. So `K(corpus) ≈ |rules| + |agent| + |seed|` is tiny — yet we empirically see fork structures, threat cascades, and (conjecturally) a Pisot quasi-crystal emerge. This is paradox 3 at a human-tractable scale, where the generating process is fully specified.
+**Why this matters for HeXO.** HeXO's rules are ~200 bytes of Python. Eisenstein-greedy self-play is deterministic given a tie-break seed. So `K(corpus) ≈ |rules| + |agent| + |seed|` is tiny — yet we empirically see fork structures, threat cascades, and (conjecturally) a Pisot quasi-crystal emerge. This is paradox 3 at a human-tractable scale, where the generating process is fully specified.
 
 **The unifying claim of v2:** the Pisot inflation constant `λ` is not a separate mathematical curio from the agent ladder. It *is* the rate at which `S_T` of a self-play corpus saturates with corpus size `N`. A finite substitution system ⟺ `S_T(corpus_N)` grows like `O(log N)` rather than `Ω(N)`. Measuring `S_T` gives a spectroscopic handle on the Pisot conjecture without first enumerating the forcing graph.
 
@@ -71,7 +71,7 @@ Three paradoxes of classical information theory dissolve:
 
 ## 3. Programme B — Paradox 2: *Factorisation-order asymmetry* (Q2)
 
-**Claim under test.** The same game corpus, reordered, has different epiplexity. HexGo is the cleanest possible testbed because the reordering is geometric, not linguistic.
+**Claim under test.** The same game corpus, reordered, has different epiplexity. HeXO is the cleanest possible testbed because the reordering is geometric, not linguistic.
 
 ### B.1 Six canonical orderings of a game
 For each game, produce six token streams from the same underlying move set:
@@ -103,7 +103,7 @@ Shannon entropy of the corpus is invariant under all six. Epiplexity is not.
 
 **Claim under test.** The `ComboAgent`'s move distribution is a valid generator for its own self-play corpus (distribution-matching fixed point). Yet a learned observer trained on that corpus can score moves better than `ComboAgent` itself on held-out positions, because the observer extracts emergent fork-cascade structure that `ComboAgent` does not represent explicitly.
 
-This is the HexGo analogue of "a model trained on Conway's Life outputs learns about gliders even though the rules don't mention them."
+This is the HeXO analogue of "a model trained on Conway's Life outputs learns about gliders even though the rules don't mention them."
 
 ### C.1 Emergent-structure probes
 Define a library of *post-hoc* structural predicates that an agent is not told about at train time:
@@ -225,7 +225,7 @@ The hand-crafted ladder (`random → greedy → fork_aware → combo → ca_comb
 
 | Programme | Kill condition | Graceful exit |
 |-----------|----------------|---------------|
-| A (Paradox 1) | No gap between `S_T(deterministic)` and `S_T(random)` at any corpus size | Investigate whether HexGo is so constrained that greedy play is near-random in predictive structure — would itself be a negative result worth reporting |
+| A (Paradox 1) | No gap between `S_T(deterministic)` and `S_T(random)` at any corpus size | Investigate whether HeXO is so constrained that greedy play is near-random in predictive structure — would itself be a negative result worth reporting |
 | B (Paradox 2) | All six orderings give within-noise identical `S_T` | Reframe: board game moves are already D₆-canonical up to small corrections, so ordering effects may be weaker than in LLMs. Report as null result. |
 | C (Paradox 3) | Linear probes fail on all four structural predicates | Try richer probes (MLP, not linear); if still null, the observer is not extracting the predicates we thought — valuable to know |
 | D (Synthesis) | `S_T` grows linearly with `N` in all regimes | **This falsifies the Pisot conjecture empirically.** Report as major negative result; pivot to characterising the non-substitution structure |
@@ -314,7 +314,7 @@ Added 2026-04-17 to make the completion criterion concrete. The final write-up i
 ### Figure 2 — Diffraction spectrum of long self-play
 - Programmes P4/P5 extended: rerun on the NCA zoo champion at $N \ge 500$ stones per game, $\ge 30$ games. Compute diffraction via [engine/diffraction.py](../engine/diffraction.py).
 - Pure-point component fraction (Bragg99) vs control (random placement).
-- **Reader take-away:** perfect-or-near-perfect HexGo play produces a Meyer set with aperiodic order.
+- **Reader take-away:** perfect-or-near-perfect HeXO play produces a Meyer set with aperiodic order.
 
 ### Figure 3 — $S_T(N)$ vs $\log N$ with $\lambda$ fit
 - Programme D-gate. On the NCA zoo champion's self-play corpus, for corpus sizes $N \in \{10^2, 10^{2.5}, \dots, 10^5\}$, compute the minimum observer-net size achieving loss within $\epsilon$ of irreducible $H_T$. Plot $S_T(N)$ vs $\log N$.

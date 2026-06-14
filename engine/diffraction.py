@@ -1,5 +1,5 @@
 """
-GPU diffraction analyser for HexGo stone configurations.
+GPU diffraction analyser for HeXO stone configurations.
 
 Tests Proposition P4 (docs/theory/2026-04-17-hamkins-synthesis.md):
   the point set of stone positions in a long self-play has a Bragg-peak

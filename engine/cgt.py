@@ -1,10 +1,10 @@
 """
-Combinatorial-game-theory probes for HexGo positions.
+Combinatorial-game-theory probes for HeXO positions.
 
 This module treats the live-line hypergraph as a Hackenbush-like local game:
 live 6-windows are branches, empty cells are possible cuts/extensions, and
 near-complete lines are hot. The numbers here are not exact Conway values.
-They are empirical observables for testing whether HexGo's tactical regions
+They are empirical observables for testing whether HeXO's tactical regions
 decompose into mostly independent hot components.
 """
 from __future__ import annotations

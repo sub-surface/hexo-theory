@@ -1,4 +1,4 @@
-# Scratch notes — epiplexity × HexGo
+# Scratch notes — epiplexity × HeXO
 
 Notes to my future self, written while digesting Finzi et al. 2026 and ROADMAPv2.
 These are working thoughts, not conclusions. Expect them to age.
@@ -13,7 +13,7 @@ concrete.
 
 Most domains where epiplexity matters (LLMs on web text, vision on natural
 images) have *unknown* generating processes — you can measure $S_T$ but you
-cannot compare it to ground truth. HexGo is different:
+cannot compare it to ground truth. HeXO is different:
 
 - The generating process is **~200 bytes of game rules + one deterministic agent**.
 - So the Kolmogorov complexity of any self-play corpus is bounded above *by
@@ -23,7 +23,7 @@ cannot compare it to ground truth. HexGo is different:
 - That gap, measured in bits, is **Paradox 3 at a human-tractable scale**.
 
 Nobody has done this experiment cleanly. The paper waves at Life and AlphaZero
-but doesn't quantify either. HexGo lets us quantify.
+but doesn't quantify either. HeXO lets us quantify.
 
 ## Concerns and technical risks
 
@@ -62,7 +62,7 @@ policy. Budget for this in Q1.
 
 ### 4. The Pisot conjecture might just be wrong
 
-If `HexGo` admits forced winning strategies that are *not* substitution-like
+If `HeXO` admits forced winning strategies that are *not* substitution-like
 (e.g., the game is secretly a trivial pairing strategy), the quasi-crystal
 picture collapses. The `S_T` vs `N` scan (§D.2) is what will tell us. A
 linear scaling would be a clean negative result. Don't get attached to the
@@ -82,7 +82,7 @@ positive hypothesis.
   observer's per-token surprise. Sum surprise over a game = game-level $H_T$.
   Moves where observer surprise is high are candidates for "interesting"
   moves — a data-selection heuristic for opening books.
-- **Transfer across board geometries.** Train observer on HexGo (hex),
+- **Transfer across board geometries.** Train observer on HeXO (hex),
   fine-tune on Connect6 (square). How much epiplexity transfers? This is a
   direct test of the paper's OOD-generalisation claim in a combinatorial
   setting where the *nature* of structural shift is known.
@@ -99,7 +99,7 @@ positive hypothesis.
    finite-sample corrections to $S_T$ estimates may be non-trivial. Check
    Grünwald 2007 ch. 7.
 3. They don't discuss *causal* orderings separately from *observed* orderings.
-   For HexGo the causal arrow is clear (move $t$ causes constraints at $t+1$),
+   For HeXO the causal arrow is clear (move $t$ causes constraints at $t+1$),
    but radial-in and radial-out are both acausal. Worth thinking about.
 
 ## Deliverables checklist (Q1)

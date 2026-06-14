@@ -1,10 +1,10 @@
-# A unified agent for HexGo — design note
+# A unified agent for HeXO — design note
 
 *2026-04-18, after reading [../../results/charlies-artifacts/](../../results/charlies-artifacts/)*
 
 ## 0. Context
 
-Charlie (a friend, working on a similar 32×32 HexGo substrate on a 5070 Ti)
+Charlie (a friend, working on a similar 32×32 HeXO substrate on a 5070 Ti)
 has run a richer program than ours: static-position supervised learning on
 four tactical predicates (`five`, `threat`, `double`, `winning_cells`),
 multi-task and "universal" NCA trunks, SSL reconstruction, a ~20-matchup
@@ -17,11 +17,11 @@ beats SSL-pretrained or random-initialised trunks by a wide margin.**
 Meanwhile his SSL reconstruction head stalls at "always predict empty"
 (val_acc = 0.967 dominated by empty-class correctness, with X-recall 9%,
 O-recall 0%), so the friend's "masked reconstruction tests generality"
-claim does not survive contact with sparse HexGo positions.
+claim does not survive contact with sparse HeXO positions.
 
 This note folds those findings into our roadmap and specifies the agent
 architecture + training pipeline that is our best candidate for the paper's
-flagship "strongest agent on HexGo" figure.
+flagship "strongest agent on HeXO" figure.
 
 ## 1. The design in one sentence
 

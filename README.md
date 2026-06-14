@@ -1,6 +1,6 @@
-# HexGo Theory
+# HeXO Theory
 
-Number-theoretic and combinatorial investigation of optimal play in HexGo — an infinite hexagonal Connect6 variant played on the Eisenstein integer ring **Z[ω]**.
+Number-theoretic and combinatorial investigation of optimal play in HeXO — an infinite hexagonal Connect6 variant played on the Eisenstein integer ring **Z[ω]**.
 
 The goal is to characterise the structure of perfect play: its symmetries, its tiling properties, and whether it exhibits quasi-crystalline (Penrose-like) order.
 
@@ -8,7 +8,7 @@ The goal is to characterise the structure of perfect play: its symmetries, its t
 
 ## The Game
 
-HexGo is played on the infinite hex grid, identified with **Z[ω]** where ω = e^(2πi/3). Two players alternate placing stones; the turn rule is **1-2-2** (P1 places 1 stone on turn 1, both players place 2 per turn thereafter). The win condition is **6 consecutive stones along any of the three Z[ω] unit axes**:
+HeXO is played on the infinite hex grid, identified with **Z[ω]** where ω = e^(2πi/3). Two players alternate placing stones; the turn rule is **1-2-2** (P1 places 1 stone on turn 1, both players place 2 per turn thereafter). The win condition is **6 consecutive stones along any of the three Z[ω] unit axes**:
 
 ```
 u₁ = (1, 0)    q-axis
@@ -20,13 +20,13 @@ A win is exactly a length-6 arithmetic progression in Z[ω] with unit step — a
 
 The strategy-stealing argument proves the game cannot be a second-player win. It is almost certainly a first-player win on an infinite board — empirically, strong-agent self-play gives Black share of decisive games $\ge 0.5$ within Wilson 95% CI (see `results/fma_curve.json`, `results/combo_defect.json`).
 
-Descriptive-set-theoretically, HexGo's payoff ("some player has 6 in a row") is $\Sigma^0_1$ (open), directly determined by Gale–Stewart — two levels below infinite Hex at $\Sigma^0_7$ (Hamkins–Leonessi 2022, Törnä). This is why *finite-horizon* analysis — not Hamkins-style infinitary machinery — is the right tool here.
+Descriptive-set-theoretically, HeXO's payoff ("some player has 6 in a row") is $\Sigma^0_1$ (open), directly determined by Gale–Stewart — two levels below infinite Hex at $\Sigma^0_7$ (Hamkins–Leonessi 2022, Törnä). This is why *finite-horizon* analysis — not Hamkins-style infinitary machinery — is the right tool here.
 
 ---
 
 ## Central Conjecture
 
-> **Perfect play in HexGo produces a quasi-crystalline pattern: aperiodic, D6-symmetric, with a substitution structure whose inflation constant is a Pisot number.**
+> **Perfect play in HeXO produces a quasi-crystalline pattern: aperiodic, D6-symmetric, with a substitution structure whose inflation constant is a Pisot number.**
 
 The reasoning:
 
@@ -44,7 +44,7 @@ The reasoning:
 
 ### Phase 1 — Hand-Crafted Analysis
 
-Use the `EisensteinGreedyAgent` from the main HexGo engine as a substrate:
+Use the `EisensteinGreedyAgent` from the main HeXO engine as a substrate:
 
 - **Self-play of Eisenstein vs. Eisenstein**: collect game trajectories and inspect the spatial structure of occupied cells. The greedy agent is fast (no MCTS), so we can generate thousands of games quickly.
 
@@ -97,7 +97,7 @@ See [docs/theory/2026-04-17-hamkins-synthesis.md](docs/theory/2026-04-17-hamkins
 | Erdős-Selfridge potential | Threat quantification; spatial potential landscape; doubles as CA-prior initialiser |
 | Epiplexity (Finzi et al. 2026) | MDL measurement framework; $S_T$ scaling as a Pisot spectroscope |
 | Combinatorial Game Theory (Berlekamp-Conway-Guy) | Nim-value decomposition for late-game disconnected threat regions |
-| Descriptive set theory (Hamkins-Leonessi) | Position HexGo at $\Sigma^0_1$ vs infinite Hex at $\Sigma^0_7$; MirrorAgent pairing strategy |
+| Descriptive set theory (Hamkins-Leonessi) | Position HeXO at $\Sigma^0_1$ vs infinite Hex at $\Sigma^0_7$; MirrorAgent pairing strategy |
 | Substitution tiling theory (Thurston-Kenyon) | Pisot substitution → aperiodicity proof strategy |
 | A₂ hyperplane arrangement / Coxeter theory | Algebraic structure of the forcing graph |
 | Diffraction theory (Baake-Grimm) | Spectral characterisation of quasi-crystalline order |
@@ -114,7 +114,7 @@ See [docs/theory/2026-04-17-hamkins-synthesis.md](docs/theory/2026-04-17-hamkins
 
 ---
 
-## Relation to the Main HexGo Engine
+## Relation to the Main HeXO Engine
 
 The theoretical work here is designed to feed back into the engine:
 

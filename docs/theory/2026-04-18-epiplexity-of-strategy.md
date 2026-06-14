@@ -1,4 +1,4 @@
-# Epiplexity of HexGo strategies — a measurement plan
+# Epiplexity of HeXO strategies — a measurement plan
 
 *2026-04-18*
 

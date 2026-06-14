@@ -226,7 +226,7 @@ class MirrorAgent:
     """
     Point-reflection pairing strategy: respond to opponent moves through the
     origin. Port of Hamkins-Leonessi §3 mirroring idea (Infinite Hex is a draw,
-    2022) adapted to HexGo's Z[omega] lattice.
+    2022) adapted to HeXO's Z[omega] lattice.
 
     Strategy. Maintain a queue of opponent stones whose reflection we still
     owe. On each call to choose_move, pop the oldest and play -c. If the
@@ -234,7 +234,7 @@ class MirrorAgent:
     then to an immediate-win / immediate-block, then a random legal cell.
 
     Limitations.
-    - Not a proven winning / drawing strategy for HexGo: a Connect-6 line
+    - Not a proven winning / drawing strategy for HeXO: a Connect-6 line
       through c does NOT in general pass through -c (except along axes through
       the origin), so this is a weaker-than-Hamkins pairing. The empirical
       target is Proposition P2 in docs/theory/2026-04-17-hamkins-synthesis.md:

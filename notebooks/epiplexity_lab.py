@@ -1,5 +1,5 @@
 """
-Epiplexity Lab — live scratchpad for HexGo theory v2.
+Epiplexity Lab — live scratchpad for HeXO theory v2.
 
 Run with:  marimo edit notebooks/epiplexity_lab.py
 
@@ -12,7 +12,7 @@ in `results/epiplexity_scan.json`; the notebook picks them up automatically.
 import marimo
 
 __generated_with = "0.9.0"
-app = marimo.App(width="medium", app_title="HexGo Epiplexity Lab")
+app = marimo.App(width="medium", app_title="HeXO Epiplexity Lab")
 
 
 # ── intro ────────────────────────────────────────────────────────────────────
@@ -22,9 +22,9 @@ def _intro():
     import marimo as mo
     mo.md(
         r"""
-        # HexGo Epiplexity Lab
+        # HeXO Epiplexity Lab
 
-        Live measurement of structural information in HexGo self-play corpora.
+        Live measurement of structural information in HeXO self-play corpora.
 
         Each agent in `engine/agents.py` is a time-bounded probabilistic model
         in the sense of Finzi et al. 2026. Two-part MDL:
@@ -256,7 +256,7 @@ def _toy_hex_viz(AGENT_FACTORIES):
     n_moves = mo.ui.slider(2, 60, value=30, label="moves to play")
     seed = mo.ui.number(0, 9999, value=2026, label="seed")
     btn = mo.ui.run_button(label="play!")
-    mo.md("## Live HexGo — play a sample game and render it").callout()
+    mo.md("## Live HeXO — play a sample game and render it").callout()
     mo.hstack([dropdown, n_moves, seed, btn])
     return agent_pairs, btn, dropdown, n_moves, seed
 

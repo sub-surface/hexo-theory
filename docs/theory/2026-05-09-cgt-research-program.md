@@ -1,4 +1,4 @@
-# HexGo CGT Research Program
+# HeXO CGT Research Program
 
 *2026-05-09*
 
@@ -34,7 +34,7 @@ CGT program:
 - `docs/theory/2026-04-17-hamkins-synthesis.md` supplies the falsifiable P1-P5
   table and the descriptive-set-theoretic positioning.
 
-The immediate lesson is that HexGo should be treated as a positional game on a
+The immediate lesson is that HeXO should be treated as a positional game on a
 6-uniform hypergraph, with three compatible quotients:
 
 1. The exact hypergraph quotient: cells are vertices, length-6 axial windows are
@@ -52,11 +52,11 @@ That last point is the new object worth naming.
 ### 1. Two-Move Thermographic Algebra
 
 This is the most original direction. Ordinary CGT studies `G + H`, where a player
-chooses one component and moves there. HexGo after the opening is closer to a
+chooses one component and moves there. HeXO after the opening is closer to a
 compound operator `G +_2 H`: a player may spend both placements in one component
 or split them across two components.
 
-Conjecture: many HexGo tactical positions are not sums of hot games, but
+Conjecture: many HeXO tactical positions are not sums of hot games, but
 two-token sums of hot games. This predicts behaviors that ordinary Hackenbush
 does not model:
 
@@ -71,7 +71,7 @@ First experiment:
 
 - Build a toy evaluator for small finite live-line components.
 - Compare ordinary one-move sum choices with `+_2` choices.
-- Feed sampled HexGo positions from `results/cgt_hackenbush.json` through both
+- Feed sampled HeXO positions from `results/cgt_hackenbush.json` through both
   scoring rules and measure which model better predicts strong-agent moves.
 
 Expected falsifier: if ordinary one-component temperature predicts moves as well
@@ -150,7 +150,7 @@ play, thermography is decorative rather than explanatory.
 
 ### 5. Coding-Theory And Covering Bounds
 
-The defensive side of HexGo resembles a covering-code problem on the A2 lattice:
+The defensive side of HeXO resembles a covering-code problem on the A2 lattice:
 block every length-6 arithmetic progression with as few stones as possible.
 
 First experiment:
@@ -226,7 +226,7 @@ Add only indexes and manifests at first:
 
 No moving until those docs make it obvious what is duplicate, stale, or orphaned.
 
-### Phase 2: Main HexGo Repo Structure
+### Phase 2: Main HeXO Repo Structure
 
 Keep `../hexgo` focused on the playing/training system.
 
@@ -269,5 +269,5 @@ Only after the ledger is complete:
 
 The deliberately Conway-ish slogan for the next week is:
 
-> Do not ask whether HexGo is Hackenbush. Ask which quotient of HexGo becomes
+> Do not ask whether HeXO is Hackenbush. Ask which quotient of HeXO becomes
 > Hackenbush, and which part refuses because each turn has two hands.

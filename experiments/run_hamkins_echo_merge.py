@@ -96,7 +96,7 @@ def main() -> None:
     ax.legend(loc="upper left")
 
     fig.suptitle(
-        "Hamkins echo on HexGo: draws do NOT dominate at long horizons"
+        "Hamkins echo on HeXO: draws do NOT dominate at long horizons"
         " (P5 supported at h=960, n=50/matchup)",
         fontsize=12,
     )

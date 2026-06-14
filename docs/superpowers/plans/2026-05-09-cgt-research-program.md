@@ -2,11 +2,11 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Turn the Conway/Sloane/Hackenbush thread into reproducible HexGo theory experiments without losing existing data.
+**Goal:** Turn the Conway/Sloane/Hackenbush thread into reproducible HeXO theory experiments without losing existing data.
 
 **Architecture:** Keep `hexgo-theory` as the research lab and `hexgo` as the production engine. New theory primitives land under `hexgo-theory/engine/`, reproducible scripts under `hexgo-theory/experiments/`, JSON/CSV summaries under `hexgo-theory/results/`, and PNGs under `hexgo-theory/figures/`.
 
-**Tech Stack:** Python 3.12, pytest, numpy, matplotlib, existing HexGo engine re-exported through `engine/__init__.py`.
+**Tech Stack:** Python 3.12, pytest, numpy, matplotlib, existing HeXO engine re-exported through `engine/__init__.py`.
 
 ---
 
@@ -42,9 +42,9 @@
 Add `docs/theory/2026-05-09-cgt-research-program.md` with:
 
 ```markdown
-# HexGo CGT Research Program
+# HeXO CGT Research Program
 
-The key new object is the two-move sum: after the opening, HexGo is not an
+The key new object is the two-move sum: after the opening, HeXO is not an
 ordinary disjunctive sum of hot local games because each turn has two placements.
 ```
 
@@ -441,5 +441,5 @@ Decision rule:
 - If the 2-move model predicts strong-agent choices better than scalar
   temperature, next section is "Two-Move Thermography".
 - If D6 motif/sequence counts stabilize cleanly first, next section is
-  "A Sloane Catalog For HexGo".
+  "A Sloane Catalog For HeXO".
 - If neither separates strong from random play, pivot to coding-theory blockers.

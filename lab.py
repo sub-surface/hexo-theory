@@ -1,5 +1,5 @@
 """
-HexGo Theory Lab
+HeXO Theory Lab
 Run:  marimo edit lab.py
 
 Sections
@@ -18,7 +18,7 @@ Sections
 import marimo
 
 __generated_with = "0.23.1"
-app = marimo.App(width="medium", app_title="HexGo Theory Lab")
+app = marimo.App(width="medium", app_title="HeXO Theory Lab")
 
 
 @app.cell
@@ -467,7 +467,7 @@ def _F_gap(Corpus, MarkovObserver, corpus, np, plt, tokens):
 def _F_glider(AGENTS, play, plt):
     """Programme F panel 3 -- threat propagation on the Eisenstein lattice.
 
-    A 'glider' in HexGo = a length-2+ chain along one of the 3 axes whose
+    A 'glider' in HeXO = a length-2+ chain along one of the 3 axes whose
     centroid translates by a unit vector turn-to-turn. We count, per move,
     how many player-1 chains of length >=3 exist along each axis. The sum
     is the 'propagation load' the weak observer would need to encode.

@@ -5,7 +5,7 @@
 This note turns the "less biased crystal experiment" into a mathematical target.
 The guiding question is:
 
-> Can HexGo be represented by an infinite sum whose optimal Bellman fixed point
+> Can HeXO be represented by an infinite sum whose optimal Bellman fixed point
 > has a quasi-crystalline support?
 
 The answer is plausibly yes in representation, but not yet in closed-form
@@ -17,7 +17,7 @@ solution. The useful move is to distinguish three levels:
 
 ## 1. Exact Conway/Bellman Recursion
 
-A finite HexGo position is a finite board `B`, a player-to-move `p`, and a turn
+A finite HeXO position is a finite board `B`, a player-to-move `p`, and a turn
 phase `tau in {opening-one-stone, first-of-two, second-of-two}`. Let legal
 single placements be `A_1(B)` and legal turn actions be:
 
@@ -54,7 +54,7 @@ operator introduced in `engine/two_move_sum.py`.
 Lean/mathlib already has the right formal substrate: `PGame` is built from Left
 and Right move types, with Conway induction; surreal numbers are the numeric
 subtype/quotient of these pregames. That means a Lean formalization should start
-with `PGame`, not directly with surreal numbers. Most HexGo positions will be
+with `PGame`, not directly with surreal numbers. Most HeXO positions will be
 hot or fuzzy games, not numeric surreal numbers.
 
 ## 2. Live-Line Infinite Sum
@@ -149,7 +149,7 @@ These are implemented in `engine/crystal.py` and emitted by
 The rule specification is tiny. That is not the same as the strategic depth
 being tiny.
 
-Let `K_U(HexGo)` be the byte length of the shortest program on a fixed universal
+Let `K_U(HeXO)` be the byte length of the shortest program on a fixed universal
 machine that implements:
 
 - `Z[omega]` axial coordinates;
@@ -157,10 +157,10 @@ machine that implements:
 - length-6 win detection;
 - legal placement generation.
 
-Then define a HexGo busy-beaver analogue:
+Then define a HeXO busy-beaver analogue:
 
 ```text
-BB_HexGo(n) =
+BB_HeXO(n) =
   max terminal game length produced by any n-byte deterministic strategy pair
   whose interaction is legal and eventually terminal.
 ```

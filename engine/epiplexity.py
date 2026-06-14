@@ -1,5 +1,5 @@
 """
-Epiplexity — time-bounded two-part MDL measurements for HexGo corpora.
+Epiplexity — time-bounded two-part MDL measurements for HeXO corpora.
 
 Finzi et al. 2026, Def. 8: MDL_T(X) = |P*| + E[log 1/P*(X)]
                                   = S_T(X)  + H_T(X)

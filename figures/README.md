@@ -18,7 +18,7 @@ Current important CGT figures:
 - `fig_cgt_sequences.png`: Sloane-style sequence trajectories for live lines,
   D6 candidate orbits, hot components, and thermal entropy.
 - `fig_surreal_fractal_strategy.png`: verified recursive strategy pattern on the
-  HexGo lattice, colored by recursion level.
+  HeXO lattice, colored by recursion level.
 - `fig_surreal_fractal_shells.png`: log-scale branching profile for the
   surreal/fractal strategy generator.
 - `fig_crystal_survey_gallery.png`: real-space sample gallery across agents,

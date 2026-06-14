@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Run a less biased, multi-representation survey of large-scale HexGo crystal structure across agents, controls, recursive constructions, and symmetry metrics.
+**Goal:** Run a less biased, multi-representation survey of large-scale HeXO crystal structure across agents, controls, recursive constructions, and symmetry metrics.
 
 **Architecture:** Put reusable observables in `engine/crystal.py`; put data collection, Rust detection, controls, JSON, and figures in `experiments/run_crystal_survey.py`; put the exact-sum/symmetry-breaking conjectures in `docs/theory/2026-05-09-bounded-crystal-sum.md`.
 
@@ -80,7 +80,7 @@ Quick mode should run a small survey in under a few minutes.
 
 Include:
 
-- exact Conway pregame recursion for finite HexGo positions;
+- exact Conway pregame recursion for finite HeXO positions;
 - live-line infinite-sum representation over all length-6 APs;
 - two-handed Bellman/Conway operator;
 - beta-to-infinity partition sum as an optimal-play approximation;

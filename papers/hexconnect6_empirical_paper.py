@@ -2,7 +2,7 @@
 """
 hexconnect6_empirical_paper.py
 
-Empirical paper generator for Infinite Hex Connect-6 / HexGo (1-2-2 rule).
+Empirical paper generator for Infinite Hex Connect-6 / HeXO (1-2-2 rule).
 
 What it does
 ------------
@@ -91,7 +91,7 @@ OPEN_WEIGHTS = {0: 0.0, 1: 1.0, 2: 4.0, 3: 18.0, 4: 250.0, 5: 2500.0, 6: 1_000_0
 
 # Stable references embedded in the generated paper. They are not fetched at runtime.
 REFERENCES = [
-    "sub-surface. HexGo Theory: number-theoretic and combinatorial investigation of optimal play in HexGo, GitHub repository, accessed 2026-05-10. https://github.com/sub-surface/hexgo-theory",
+    "sub-surface. HeXO Theory: number-theoretic and combinatorial investigation of optimal play in HeXO, GitHub repository, accessed 2026-05-10. https://github.com/sub-surface/hexgo-theory",
     "Wu, I.-C. and Huang, D.-Y. (2006). A new family of k-in-a-row games. ICGA Journal 29(1), 26-34.",
     "Vipin, K. and Fahmy, S. A. (2011). A threat based Connect6 implementation on FPGA. FPT 2011.",
     "Patel, A. Red Blob Games: Hexagonal Grids, continuously updated guide, accessed 2026-05-10. https://www.redblobgames.com/grids/hexagons/",
@@ -1269,21 +1269,21 @@ def make_markdown_paper(args, out: Path, games: pd.DataFrame, states: pd.DataFra
 
     paper = f"""# A Threat-Reservoir Theory of Infinite Hex Connect-6
 
-**Subtitle.** Experiments on HexGo as an Eisenstein-lattice forcing game.
+**Subtitle.** Experiments on HeXO as an Eisenstein-lattice forcing game.
 
 **Generated.** {time.strftime('%Y-%m-%d %H:%M:%S')}
 
 ## Abstract
 
-We study infinite Hex Connect-6, or HexGo: a two-player game on the infinite hexagonal lattice in which the opening move places one stone, every later turn places two stones, and six consecutive stones on any of the three Eisenstein axes wins. The experiments in this paper treat the game not as a solved object but as a measurable dynamical system. A bounded-frontier engine generates self-play trajectories, threat hypergraphs, opening-response scans, diffraction spectra, and noisy tactical-learning datasets. The central conjecture is that strong finite-horizon play is governed by a small signal channel - the live length-6 arithmetic progressions in Z[omega] - while almost all other stones behave as a reservoir: present on the board but invisible to the next forcing calculation. The data support a sharp threat-load transition: once the immediate-threat hypergraph has hitting number at least 3, the defender's two stones are insufficient. We therefore conjecture that HexGo's practical complexity is not the size of the infinite board but the epiplexity of a moving threat hypergraph.
+We study infinite Hex Connect-6, or HeXO: a two-player game on the infinite hexagonal lattice in which the opening move places one stone, every later turn places two stones, and six consecutive stones on any of the three Eisenstein axes wins. The experiments in this paper treat the game not as a solved object but as a measurable dynamical system. A bounded-frontier engine generates self-play trajectories, threat hypergraphs, opening-response scans, diffraction spectra, and noisy tactical-learning datasets. The central conjecture is that strong finite-horizon play is governed by a small signal channel - the live length-6 arithmetic progressions in Z[omega] - while almost all other stones behave as a reservoir: present on the board but invisible to the next forcing calculation. The data support a sharp threat-load transition: once the immediate-threat hypergraph has hitting number at least 3, the defender's two stones are insufficient. We therefore conjecture that HeXO's practical complexity is not the size of the infinite board but the epiplexity of a moving threat hypergraph.
 
 ## Background
 
-HexGo is naturally represented on the Eisenstein integer lattice Z[omega]. In axial coordinates the three unit axes are u1=(1,0), u2=(0,1), and u3=(1,-1). A winning line is exactly a length-6 arithmetic progression with one of these unit steps. This follows the coordinate philosophy used by the HexGo Theory repository and the standard axial/cube-coordinate treatment of hex grids.
+HeXO is naturally represented on the Eisenstein integer lattice Z[omega]. In axial coordinates the three unit axes are u1=(1,0), u2=(0,1), and u3=(1,-1). A winning line is exactly a length-6 arithmetic progression with one of these unit steps. This follows the coordinate philosophy used by the HeXO Theory repository and the standard axial/cube-coordinate treatment of hex grids.
 
 Connect6 was introduced as a k-in-a-row family with the balancing rule that Black places one first stone and then both players place two stones per turn. Existing Connect6 work emphasizes threat calculation: a player can defend at most two cells per turn, so three independent immediate threats are decisive. The infinite hex variant makes that principle more algebraic: threats are small hyperedges in the family of length-6 Eisenstein progressions.
 
-The machine-learning analogy used here is borrowed from the population-risk/reservoir language of Litman and Guo: a learned or searched system has a signal channel and a reservoir. For HexGo, the signal channel is the live threat hypergraph. The reservoir is the immense complement of stones and cells that do not affect any live six-window in the current finite horizon.
+The machine-learning analogy used here is borrowed from the population-risk/reservoir language of Litman and Guo: a learned or searched system has a signal channel and a reservoir. For HeXO, the signal channel is the live threat hypergraph. The reservoir is the immense complement of stones and cells that do not affect any live six-window in the current finite horizon.
 
 ## Rules and notation
 
@@ -1297,7 +1297,7 @@ If after player p moves, tau_p(B) >= 3 and the opponent has not already won, the
 
 ## Central conjectures
 
-**Conjecture A - finite signal, infinite reservoir.** In strong HexGo play, the strategically relevant state at ply t is captured, up to small error, by the threat hypergraph induced by live length-6 progressions within O(1) of occupied stones. The rest of the infinite board is a reservoir.
+**Conjecture A - finite signal, infinite reservoir.** In strong HeXO play, the strategically relevant state at ply t is captured, up to small error, by the threat hypergraph induced by live length-6 progressions within O(1) of occupied stones. The rest of the infinite board is a reservoir.
 
 **Conjecture B - epiplexity peak.** The apparent difficulty of a position is maximized not at the widest frontier, but just before the first tau>=3 transition, where many replies remain plausible while a small number of threat hyperedges begin to couple.
 
@@ -1393,7 +1393,7 @@ To connect the game experiment back to the signal/reservoir learning picture, I 
 
 The infinite board is a red herring until the players deliberately make it matter. Every finite play history occupies a finite set; every immediate win is a length-6 arithmetic progression touching that finite set; and every boundedly rational agent can be studied through the small family of still-live progressions. This is the core analogy with signal/reservoir decomposition: the live windows form the signal channel, while the uncountably intimidating rest of 'infinity' is test-invisible to the next tactical calculation.
 
-The most Conway-like feature of the game is that the local theorem is tiny but the global consequence is wild. A threat family with hitting number three is an elementary hypergraph object. But self-play consists of steering this hypergraph through the A2 geometry of Z[omega], and small local forks can propagate outward as if they were substitution rules. That is where the Hamkins/Conway mood enters: infinite HexGo is determined by finite certificates of victory, yet the search for perfect play may reveal tiling-like structure rather than a compact joseki book.
+The most Conway-like feature of the game is that the local theorem is tiny but the global consequence is wild. A threat family with hitting number three is an elementary hypergraph object. But self-play consists of steering this hypergraph through the A2 geometry of Z[omega], and small local forks can propagate outward as if they were substitution rules. That is where the Hamkins/Conway mood enters: infinite HeXO is determined by finite certificates of victory, yet the search for perfect play may reveal tiling-like structure rather than a compact joseki book.
 
 ## Limitations
 
@@ -1526,7 +1526,7 @@ def zip_folder(folder: Path, zip_path: Path) -> None:
 
 
 def parse_args() -> argparse.Namespace:
-    ap = argparse.ArgumentParser(description="Generate an empirical PDF paper for infinite hex Connect-6 / HexGo.")
+    ap = argparse.ArgumentParser(description="Generate an empirical PDF paper for infinite hex Connect-6 / HeXO.")
     ap.add_argument("--out", type=str, default="hexconnect6_paper_out", help="Output folder.")
     ap.add_argument("--mode", choices=["quick", "full"], default="full", help="quick for smoke test, full for more data.")
     ap.add_argument("--seed", type=int, default=20260510)
@@ -1566,10 +1566,10 @@ def main() -> None:
 
     # Write a literature/research note as separate machine-readable file.
     research_note = {
-        "game": "Infinite hex Connect-6 / HexGo, 1-2-2 rule, six in a row on Eisenstein axes.",
+        "game": "Infinite hex Connect-6 / HeXO, 1-2-2 rule, six in a row on Eisenstein axes.",
         "coordinate_system": "Axial coordinates q,r equivalent to Eisenstein integers a + b*omega; axes (1,0), (0,1), (1,-1).",
         "literature_claims": [
-            "HexGo Theory frames the game as an infinite Eisenstein-lattice Connect6 variant and proposes D6 symmetry and quasicrystal/substitution questions.",
+            "HeXO Theory frames the game as an infinite Eisenstein-lattice Connect6 variant and proposes D6 symmetry and quasicrystal/substitution questions.",
             "Connect6 uses one first stone and two stones thereafter; threat-based algorithms exploit the fact that a player can block at most two cells per turn.",
             "Axial/cube hex coordinates make rotations, reflections, distances and rings simple enough for exact code.",
             "Population-risk / signal-reservoir language suggests treating live tactical constraints as signal and irrelevant infinity as reservoir.",

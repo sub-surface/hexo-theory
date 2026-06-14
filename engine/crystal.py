@@ -1,4 +1,4 @@
-"""Large-scale crystal and symmetry observables for HexGo point sets."""
+"""Large-scale crystal and symmetry observables for HeXO point sets."""
 from __future__ import annotations
 
 import math

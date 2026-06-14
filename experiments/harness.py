@@ -1,5 +1,5 @@
 """
-Parallel match harness for HexGo agents.
+Parallel match harness for HeXO agents.
 
 Runs matchups and round-robins in parallel using multiprocessing.Pool.
 Top-level factories + top-level worker so mp can dispatch them.

@@ -451,7 +451,7 @@ def q_spectrum(n_games: int):
 # ─── main ─────────────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(description="HexGo Theory — Headless Investigation")
+    parser = argparse.ArgumentParser(description="HeXO Theory — Headless Investigation")
     parser.add_argument("--games", type=int, default=200,
                         help="Games per question (default: 200)")
     parser.add_argument("--question", "-q", default="all",
@@ -462,7 +462,7 @@ def main():
     n = args.games
     q = args.question
 
-    print(f"\nHexGo Theory — Research Investigation")
+    print(f"\nHeXO Theory — Research Investigation")
     print(f"Games per question: {n}")
     print(f"Question: {q}")
 

@@ -1,4 +1,4 @@
-"""Verified recursive strategy patterns on the HexGo lattice."""
+"""Verified recursive strategy patterns on the HeXO lattice."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -31,7 +31,7 @@ class StrategyMotif:
 
 @dataclass(frozen=True)
 class StrategyFractal:
-    """A recursively generated collection of HexGo-winning motifs."""
+    """A recursively generated collection of HeXO-winning motifs."""
 
     depth: int
     inflation: int
@@ -129,7 +129,7 @@ def winning_lines_for_board(board: Board, player: int = 1) -> tuple[tuple[Cell, 
 
 
 def verify_fractal_wins(fractal: StrategyFractal) -> bool:
-    """Return True when every generated motif is an actual HexGo win."""
+    """Return True when every generated motif is an actual HeXO win."""
     winning_lines = set(winning_lines_for_board(fractal.board, fractal.player))
     return all(
         len(motif.cells) == WIN_LENGTH

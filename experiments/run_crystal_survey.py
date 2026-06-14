@@ -1,4 +1,4 @@
-"""Multi-modal survey of bounded crystal structure in HexGo."""
+"""Multi-modal survey of bounded crystal structure in HeXO."""
 from __future__ import annotations
 
 import argparse
@@ -57,7 +57,7 @@ def _hex_distance(cell: tuple[int, int]) -> int:
 
 def _owner_sequence(n_moves: int) -> list[int]:
     """
-    Player owning each move index under the HexGo 1-2-2 turn rule:
+    Player owning each move index under the HeXO 1-2-2 turn rule:
     P1 places stone 0, then turns alternate with 2 placements each.
     Sequence of owners: 1, 2,2, 1,1, 2,2, 1,1, ...
     """

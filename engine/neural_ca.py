@@ -1,5 +1,5 @@
 """
-Neural cellular-automaton policy agent for HexGo, on torch + CUDA.
+Neural cellular-automaton policy agent for HeXO, on torch + CUDA.
 
 Design.
   - Board state is a (3, H, W) tensor of one-hot channels [empty, P1, P2],

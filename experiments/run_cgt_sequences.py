@@ -1,4 +1,4 @@
-"""Sloane-style integer sequence mining for HexGo CGT observables."""
+"""Sloane-style integer sequence mining for HeXO CGT observables."""
 from __future__ import annotations
 
 import argparse
@@ -224,7 +224,7 @@ def plot_sequences(rows: list[dict], agents: list[str], path: Path) -> None:
         ax.set_xlabel("ply")
         ax.grid(alpha=0.35, linestyle=":")
     axes[0][0].legend(fontsize=8)
-    fig.suptitle("HexGo CGT sequence mining")
+    fig.suptitle("HeXO CGT sequence mining")
     plt.tight_layout()
     path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(path, dpi=150)

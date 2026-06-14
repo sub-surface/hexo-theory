@@ -1,5 +1,5 @@
 """
-HexGo Theory — Research Suite
+HeXO Theory — Research Suite
 PySide6 desktop app.
 
 Layout (Option B — split-panel):
@@ -811,7 +811,7 @@ class ExperimentController(QObject):
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("HexGo Theory — Research Suite")
+        self.setWindowTitle("HeXO Theory — Research Suite")
         self.resize(1400, 880)
         self.setStyleSheet(STYLE)
 
@@ -1013,7 +1013,7 @@ def run_headless(args):
 # ── Entry point ────────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(description="HexGo Theory Research Suite")
+    parser = argparse.ArgumentParser(description="HeXO Theory Research Suite")
     parser.add_argument("--run", metavar="EXP",
                         help="Run experiment headlessly (no GUI). "
                              "Values: eis_vs_eis, eis_vs_random, fork_hunt, "
@@ -1029,7 +1029,7 @@ def main():
         return
 
     app = QApplication(sys.argv)
-    app.setApplicationName("HexGo Theory")
+    app.setApplicationName("HeXO Theory")
 
     app_font = QFont()
     app_font.setFamilies(["Consolas", "Courier New", "monospace"])

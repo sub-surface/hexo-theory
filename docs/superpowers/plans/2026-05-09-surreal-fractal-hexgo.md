@@ -1,8 +1,8 @@
-# Surreal Fractal HexGo Implementation Plan
+# Surreal Fractal HeXO Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Add paper-facing surreal-value conjectures and a reproducible strategy-fractal generator whose patterns are verified against HexGo's length-6 win criterion.
+**Goal:** Add paper-facing surreal-value conjectures and a reproducible strategy-fractal generator whose patterns are verified against HeXO's length-6 win criterion.
 
 **Architecture:** Put reusable lattice/fractal helpers in `engine/fractal_strategy.py`, keep rendering and JSON emission in `experiments/run_surreal_fractal.py`, and keep conjectural synthesis in `docs/theory/2026-05-09-surreal-fractal-conjectures.md`.
 
@@ -90,7 +90,7 @@ Implement:
 The generator should:
 
 - start from center `(0, 0)`;
-- place one six-stone motif along each of the three HexGo axes at every center;
+- place one six-stone motif along each of the three HeXO axes at every center;
 - recursively create the next centers by translating each center in the six
   hex directions by `inflation ** (level + 1)`;
 - use only player `1` stones, so it is a verified strategy pattern rather than a
@@ -159,7 +159,7 @@ Include:
 - why whole positions are not usually surreal numbers;
 - local surrealization of forced components;
 - two-handed `+_2` sum conjecture;
-- candidate `lambda_HexGo` number;
+- candidate `lambda_HeXO` number;
 - surreal Hahn-series heuristic for far-away threats;
 - fractal strategy conjecture and falsifiable tests.
 

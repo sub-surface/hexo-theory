@@ -1,17 +1,17 @@
-# Surreal And Fractal Conjectures For HexGo
+# Surreal And Fractal Conjectures For HeXO
 
 *2026-05-09*
 
-This note states a deliberately speculative but testable bridge between HexGo,
+This note states a deliberately speculative but testable bridge between HeXO,
 surreal numbers, thermographs, and recursive strategy patterns. The aim is not
 to claim that the whole infinite game is "a surreal number". It almost certainly
 is not. The aim is to identify which quotient of the game admits surreal values,
-which invariant might deserve to be called *the* HexGo number, and what kind of
+which invariant might deserve to be called *the* HeXO number, and what kind of
 recursive strategy fractal could be checked against the actual length-6 win rule.
 
 ## 1. Natural Representation
 
-The most natural representation of a finite HexGo position is:
+The most natural representation of a finite HeXO position is:
 
 ```text
 P = (mu, tau, H_live, Gamma_D6)
@@ -63,7 +63,7 @@ Falsifier:
 If component values have no recurring shape distribution after D6
 canonicalization, then the surrealization is descriptive but not structural.
 
-## 3. Conjecture S2: HexGo Uses A Two-Handed Sum
+## 3. Conjecture S2: HeXO Uses A Two-Handed Sum
 
 Ordinary combinatorial game theory uses the disjunctive sum:
 
@@ -71,7 +71,7 @@ Ordinary combinatorial game theory uses the disjunctive sum:
 G + H
 ```
 
-where a move changes exactly one component. HexGo after the opening should
+where a move changes exactly one component. HeXO after the opening should
 instead be modeled by a two-handed operator:
 
 ```text
@@ -93,20 +93,20 @@ Falsifier:
 If `best_one_move_sum()` and `best_two_move_sum()` make indistinguishable
 predictions on held-out strong-agent self-play, the extra algebra is not needed.
 
-## 4. Conjecture S3: The HexGo Number Is Not The Game Value
+## 4. Conjecture S3: The HeXO Number Is Not The Game Value
 
 The global game value is probably too coarse: strategy stealing says the second
 player cannot have a strict win, but that does not name the structure of optimal
-play. The better candidate for "the HexGo number" is an inflation constant:
+play. The better candidate for "the HeXO number" is an inflation constant:
 
 ```text
-lambda_HexGo.
+lambda_HeXO.
 ```
 
 This number should be the common limit, if it exists, of four measurements:
 
 ```text
-lambda_HexGo =
+lambda_HeXO =
   lambda_epiplexity
   = lambda_diffraction
   = lambda_substitution
@@ -134,7 +134,7 @@ abs(lambda_epiplexity - lambda_diffraction) < 0.05.
 Falsifier:
 
 If motif counts grow linearly without a stable substitution spectrum, or if the
-four lambda estimates diverge systematically, then there is no single HexGo
+four lambda estimates diverge systematically, then there is no single HeXO
 number of this type.
 
 ## 5. Conjecture S4: Positions Have A Surreal Hahn Shadow
@@ -157,7 +157,7 @@ Here:
 Interpretation:
 
 Near threats dominate far threats, but far threats are not zero. They are
-infinitesimal strategic pressure. This matches HexGo tactically: a remote fork
+infinitesimal strategic pressure. This matches HeXO tactically: a remote fork
 can be irrelevant at one temperature and decisive after the local game cools.
 
 Prediction:
@@ -172,7 +172,7 @@ temperature, the Hahn-shadow model is overfitted language.
 
 ## 6. Conjecture S5: Strategy Fractals Are Motif Substitutions
 
-A HexGo strategy fractal should not be a decorative point cloud. It should be a
+A HeXO strategy fractal should not be a decorative point cloud. It should be a
 recursive substitution on *verified winning motifs*:
 
 ```text
@@ -182,7 +182,7 @@ winning motif -> six D6-related descendant motifs at the next shell.
 The first implementation is intentionally austere:
 
 - start at `(0, 0)`;
-- at each center, place one length-6 line along each of the three HexGo axes;
+- at each center, place one length-6 line along each of the three HeXO axes;
 - recurse by translating centers in the six hex directions by `inflation^level`;
 - verify every motif against `winning_lines_for_board()`.
 
@@ -212,7 +212,7 @@ winning_line_count / motif_count
 
 should stabilize across depth. Those values are candidates for strategic
 inflation constants. If a stabilizing value is Pisot-compatible, it joins the
-`lambda_HexGo` candidate list.
+`lambda_HeXO` candidate list.
 
 Falsifier:
 
@@ -234,7 +234,7 @@ strategy model.
 The research slogan:
 
 ```text
-HexGo is not a surreal number.
+HeXO is not a surreal number.
 Its hot components are surreal games.
 Its turn rule asks for a two-handed sum.
 Its global number, if it has one, is an inflation constant.

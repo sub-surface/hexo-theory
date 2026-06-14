@@ -1,4 +1,4 @@
-# Hamkins–Leonessi and HexGo — synthesis
+# Hamkins–Leonessi and HeXO — synthesis
 
 *2026-04-17*
 
@@ -8,9 +8,9 @@ Hamkins & Leonessi, *Infinite Hex is a draw* ([papers/2201.06475v3-Infinite-Hex-
 
 The complexity of the game as a set-theoretic object is striking. The payoff set "player I has an infinite path" is not open — you can't observe the win in finite time — so Gale–Stewart's basic determinacy theorem doesn't apply. Hamkins–Leonessi instead classify the payoff at **$\Sigma^0_7$** (a specific level of the Borel hierarchy) via a fairly intricate formula; Törnä's subsequent note tightens this.
 
-## 2. Where HexGo sits
+## 2. Where HeXO sits
 
-HexGo (Connect-6 on the infinite hex lattice with `WIN_LENGTH == 6`) is a fundamentally easier descriptive-set-theoretic object. The payoff "some player has 6 in a row" is a finite-conjunction statement: for each of three axes, and each of countably many starting cells, a single open condition on the stones. This makes the payoff set **$\Sigma^0_1$ (open)** — directly in the domain of Gale–Stewart determinacy. Under optimal play, every game ends in finite time.
+HeXO (Connect-6 on the infinite hex lattice with `WIN_LENGTH == 6`) is a fundamentally easier descriptive-set-theoretic object. The payoff "some player has 6 in a row" is a finite-conjunction statement: for each of three axes, and each of countably many starting cells, a single open condition on the stones. This makes the payoff set **$\Sigma^0_1$ (open)** — directly in the domain of Gale–Stewart determinacy. Under optimal play, every game ends in finite time.
 
 That is not a flaw in our setting — it is the *reason* our questions are different. Hamkins–Leonessi's machinery is aimed at an irreducibly infinitary target. Our target is the **structure inside finite, decidable play**: what is the character of optimal move sequences, how much description length does perfect play cost ($|P|$, $H_T$ on the ROADMAP's epiplexity plane), and does the positional pattern exhibit quasi-crystalline order.
 
@@ -18,7 +18,7 @@ In short: descriptive set theory tells us where we are *relative to* infinite He
 
 ## 3. What transfers directly
 
-The **pairing construction** is portable. In infinite Hex, the pairing is a trapezoid tiling of $\mathbb{Z}^2$ (Hamkins §3). In HexGo, a translated analogue — pair cells at $c$ and $c + 3\omega$ along each axis, say — is a candidate **MirrorAgent** strategy. This is the immediate next implementation target (see pending TODO / [engine/agents.py](../../engine/agents.py)).
+The **pairing construction** is portable. In infinite Hex, the pairing is a trapezoid tiling of $\mathbb{Z}^2$ (Hamkins §3). In HeXO, a translated analogue — pair cells at $c$ and $c + 3\omega$ along each axis, say — is a candidate **MirrorAgent** strategy. This is the immediate next implementation target (see pending TODO / [engine/agents.py](../../engine/agents.py)).
 
 Key questions:
 
@@ -27,7 +27,7 @@ Key questions:
 
 ## 4. The quasicrystal conjecture in this light
 
-Leon's conjecture: perfect play in HexGo produces a point set in $\mathbb{Z}[\omega]$ that is a Meyer set — pure-point diffraction spectrum ⇒ quasi-crystalline order. Hamkins–Leonessi is tangential to this but clarifies *where the conjecture must live*:
+Leon's conjecture: perfect play in HeXO produces a point set in $\mathbb{Z}[\omega]$ that is a Meyer set — pure-point diffraction spectrum ⇒ quasi-crystalline order. Hamkins–Leonessi is tangential to this but clarifies *where the conjecture must live*:
 
 - The conjecture is **not** about the infinitary strategy class. It is about the *geometry* of optimal finite stone configurations sampled at increasing horizon. That geometry is a property of finite-sized $\Sigma^0_1$ solutions, not of $\Sigma^0_7$ equilibrium strategies.
 - This aligns the conjecture with the epiplexity plane $(|P|, H_T)$ of the ROADMAP: a Meyer-set outcome predicts corpus description length $|P|$ saturates (Pisot substitution) rather than growing linearly. The test is empirical — diffraction of a long Combo-vs-Combo self-play — and falsifiable.
@@ -38,7 +38,7 @@ The key bridge here is that **"optimal play = Meyer set"** is a statement at the
 
 Each claim below is intended to be tested by one experiment in `experiments/`, with a specific go/no-go condition. Writing them as numbered propositions so they can be cited in the paper.
 
-> **P1 (Strategy-stealing for HexGo).** In self-play between equal-strength agents, Black win-rate ≥ White win-rate (within Wilson 95% CI) for every agent on our ladder.
+> **P1 (Strategy-stealing for HeXO).** In self-play between equal-strength agents, Black win-rate ≥ White win-rate (within Wilson 95% CI) for every agent on our ladder.
 >
 > *Falsified by:* any agent where White beats Black significantly (Black share of decisive games < lower Wilson bound of 0.5). **Currently violated by ComboAgent v1** — see [run_combo_defect.py](../../experiments/run_combo_defect.py). Fix status: opening-centre bias (v2) being evaluated 2026-04-17.
 

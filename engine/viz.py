@@ -1,5 +1,5 @@
 """
-Matplotlib / static-SVG HexGo visualisations.
+Matplotlib / static-SVG HeXO visualisations.
 
 Everything here is torch-free and depends only on numpy + matplotlib so it
 works inside a marimo notebook.

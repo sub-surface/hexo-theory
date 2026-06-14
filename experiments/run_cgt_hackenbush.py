@@ -1,5 +1,5 @@
 """
-Empirical CGT / Hackenbush probes for HexGo.
+Empirical CGT / Hackenbush probes for HeXO.
 
 The experiment instruments self-play positions with threat-Hackenbush
 observables from engine.cgt:

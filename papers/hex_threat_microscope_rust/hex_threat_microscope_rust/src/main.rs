@@ -1,7 +1,7 @@
 //! Hex Threat Manifold Microscope
 //!
 //! A zero-dependency Rust implementation of an ultraminimal experiment for
-//! infinite Hex Connect-6 / HexGo-style play:
+//! infinite Hex Connect-6 / HeXO-style play:
 //!
 //! - Axial Eisenstein-like coordinates on the hex grid.
 //! - 1-2-2 rule support in the board model.

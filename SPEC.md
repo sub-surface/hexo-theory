@@ -1,6 +1,6 @@
-# HexGO Theory — Core Findings Spec
+# HeXO Theory — Core Findings Spec
 
-> Single source of truth for the HexGO research programme. This file distils the
+> Single source of truth for the HeXO research programme. This file distils the
 > material that was previously scattered across `README.md`, `docs/ROADMAP.md`,
 > `docs/theory/`, `docs/ARTIFACTS.md`, and the experiment bundles in `papers/`.
 > It is written to be self-contained: someone who reads only this file should
@@ -16,7 +16,7 @@
 
 ## 1. The game
 
-HexGO is **infinite Connect-6 on the hex lattice**, identified with the
+HeXO is **infinite Connect-6 on the hex lattice**, identified with the
 Eisenstein integer ring **Z[ω]** where ω = e^(2πi/3).
 
 - **Board:** the infinite hex grid = Z[ω]. No edges.
@@ -44,7 +44,7 @@ Two sibling repos:
 
 ## 2. The central conjecture
 
-> **Perfect play in HexGO produces a quasi-crystalline pattern: aperiodic,
+> **Perfect play in HeXO produces a quasi-crystalline pattern: aperiodic,
 > D6-symmetric, with a substitution structure whose inflation constant is a
 > Pisot number.**
 
@@ -69,17 +69,17 @@ golden ratio ≈ 1.618.
 
 ---
 
-## 3. Where HexGO sits (descriptive complexity)
+## 3. Where HeXO sits (descriptive complexity)
 
 This is the cleanest *settled* theoretical result and it tells us which tools apply.
 
-- HexGO's payoff ("some player has 6 in a row") is **Σ⁰₁ (open)** — a win is
+- HeXO's payoff ("some player has 6 in a row") is **Σ⁰₁ (open)** — a win is
   observable in finite time — so it is **directly determined by Gale–Stewart**.
 - Infinite Hex (Hamkins–Leonessi 2022, *Infinite Hex is a draw*,
   `papers/2201.06475v3`) has payoff **Σ⁰₇** (Törnä tightens this): "player has an
   infinite path" is not observable in finite time, needing heavy infinitary
   machinery and yielding a *draw*.
-- **HexGO is two-plus levels lower in the Borel hierarchy.** That is *why*
+- **HeXO is two-plus levels lower in the Borel hierarchy.** That is *why*
   finite-horizon analysis and measurement (epiplexity, diffraction), not
   Hamkins-style infinitary determinacy, are the right lens here.
 
@@ -118,7 +118,7 @@ The unifying claim: the Pisot inflation constant λ **is** the rate at which
 `S_T(corpus_N)` saturates with corpus size N. A finite substitution system ⟺
 `S_T` grows like `O(log N)` not `Ω(N)`. So measuring `S_T(N)` is a *spectroscope*
 for the Pisot conjecture that sidesteps enumerating the forcing graph by hand.
-HexGO's rules are ~200 bytes, so its corpus has trivial Kolmogorov complexity yet
+HeXO's rules are ~200 bytes, so its corpus has trivial Kolmogorov complexity yet
 rich emergent structure — a clean, human-tractable instance of "computation
 creates information."
 
@@ -198,10 +198,10 @@ These live in `docs/theory/` and `papers/.../CONJECTURES.md`. Each has a falsifi
   giving a *first-principles* mechanism for the quasicrystal — pattern is
   *predicted*, not just observed. Activator = own Erdős–Selfridge potential,
   inhibitor = opponent potential. Backed by FFT/dispersion figures (`fig_bt_*`).
-- **Surreal / fractal conjectures** (`2026-05-09`): which quotient of HexGO admits
+- **Surreal / fractal conjectures** (`2026-05-09`): which quotient of HeXO admits
   surreal values; a verified recursive *strategy fractal* (depth-2, inflation-5:
   614 stones, 321 winning lines) checked against the length-6 rule. `engine/fractal_strategy.py`.
-- **Bounded crystal / Bellman sum** (`2026-05-09`): can HexGO be written as an
+- **Bounded crystal / Bellman sum** (`2026-05-09`): can HeXO be written as an
   infinite live-line sum whose optimal Bellman fixed point has quasicrystalline
   support? Three levels: exact recursion → live-line feature sum → observable
   crystal signatures. `engine/crystal.py`, `results/crystal_survey.json`.
@@ -229,7 +229,7 @@ These live in `docs/theory/` and `papers/.../CONJECTURES.md`. Each has a falsifi
 4. **Inflation constant value.** Which Pisot number — tribonacci, plastic, golden?
 5. **Critical density.** Occupied fraction within radius R as R→∞ — is it irrational?
 6. **NP-hardness (NOT yet in the repo).** A Discord contributor sketched a
-   reduction from **3-SAT** to show HexGO is NP-hard. **No formal proof exists in
+   reduction from **3-SAT** to show HeXO is NP-hard. **No formal proof exists in
    this repo** — the repo's complexity story is *descriptive-set-theoretic* (Σ⁰₁),
    a different axis from computational hardness (NP). Formalising the 3-SAT
    reduction (likely: variable gadgets as forced ladders, clause gadgets as

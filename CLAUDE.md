@@ -9,7 +9,7 @@ You are joining a solo research project by Leon. This file is your orientation. 
 The **final output** is a publishable paper / long-form blog post combining:
 - epiplexity (time-bounded MDL, per Finzi et al. 2026) as the measurement framework
 - combinatorial-game-theoretic results (strategy-stealing, pairing strategies, Hales-Jewett-style bounds)
-- topological / descriptive-set-theoretic positioning (where does HexGo sit in the Borel hierarchy)
+- topological / descriptive-set-theoretic positioning (where does HeXO sit in the Borel hierarchy)
 - empirical validation via self-play corpora + diffraction analysis
 
 Everything in this repo should be either feeding that write-up or falsifying part of its thesis.
@@ -54,7 +54,7 @@ Everything in this repo should be either feeding that write-up or falsifying par
 ### Active threads
 - **Epiplexity scan** (ROADMAP Programmes A, D, E): running, infrastructure in [run_epiplexity_scan.py](experiments/run_epiplexity_scan.py). Measures S_T, H_T for random vs structured agents; tests whether corpus description length saturates (Pisot conjecture prediction).
 - **Hamkins echo** ([run_hamkins_echo.py](experiments/run_hamkins_echo.py)): does draw fraction rise with horizon? Pilot says *no* — strong play is decisive, not draw-prone. Full 5×3×50 sweep currently running.
-- **Descriptive complexity positioning**: HexGo payoff = $\Sigma^0_1$ open, determined by Gale–Stewart directly. Infinite Hex (Hamkins) = $\Sigma^0_7$ per Törnä. We are *below* their game in complexity, which is why finite-horizon analysis is the right tool for us.
+- **Descriptive complexity positioning**: HeXO payoff = $\Sigma^0_1$ open, determined by Gale–Stewart directly. Infinite Hex (Hamkins) = $\Sigma^0_7$ per Törnä. We are *below* their game in complexity, which is why finite-horizon analysis is the right tool for us.
 - **P1–P5 falsifiable-propositions table** in [docs/theory/2026-04-17-hamkins-synthesis.md](docs/theory/2026-04-17-hamkins-synthesis.md) §5–6. P1, P2, P4, P5 currently supported; P3 (Pisot/sub-linear $|P|$) preliminary only.
 
 ### Recently landed (2026-04-17)

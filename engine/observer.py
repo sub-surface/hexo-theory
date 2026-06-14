@@ -1,5 +1,5 @@
 """
-Shared-trunk multi-head observer for HexGo strategy corpora.
+Shared-trunk multi-head observer for HeXO strategy corpora.
 
 This module implements the measurement architecture described in
 [docs/theory/2026-04-18-epiplexity-of-strategy.md].  It unifies two threads
