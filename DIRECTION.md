@@ -91,10 +91,64 @@ heuristic at 60 stones — well inside a 1 s budget). But they are **not yet str
 
 So the cheap signal is real and affordable, but the *weighting* matters: fork
 pressure must be paired with enough defence weight, and the squared term may be too
-aggressive. **Do not port fork_aware to the garden yet.** Next: sweep
-`(defence_weight, fork_bonus)` in the arena, and try a *linear* fork term
-(count, not count²) so a single near-fork doesn't dominate. The harness catching
-this before it shipped is the pipeline working as intended.
+aggressive.
+
+**Update (2026-06-15, fix landed).** Replaced the squared self-fork term with a
+*linear* term on `max(0, threat_count − 1)` — i.e. only the surplus beyond the
+first threat scores, so a single near-line (already valued by the ES base) is not
+double-rewarded. With that, `fork_aware(def=1.2, bonus=8)` vs plain `ES(d1.1)`:
+**12 games → 0–0, all draws.** Reading: the fix removes the old defect (it no
+longer *loses* to greedy/ES), but two strong symmetric deterministic players just
+draw — a head-to-head can't separate them. **To prove fork value, the test must be
+asymmetric**: give one side a constructed fork opportunity, or measure win-margin
+vs a *weaker* opponent, not strong-vs-strong self-play. That's the next experiment.
+**Still not ported to the garden** — no demonstrated edge yet.
+
+### Is Erdős–Selfridge the best bang-for-buck? (the heuristic landscape)
+
+| Heuristic | Cost/move | Sees forks (τ>2)? | Verdict |
+|---|---|---|---|
+| Random | ~0 | no | baseline only |
+| **ES potential `Σ2^(own−k)`** | low (~100 ops) | **no** (additive, myopic) | cheapest *sound* potential; what ships now |
+| ES + linear fork term | low (+1 scan) | **yes** | cheapest *strong* upgrade; drew strong-vs-strong (above) |
+| Atom/pattern lookup (rail/bridge) | low (table hit) | yes, structurally | needs the line-B atom table; promising, unbuilt |
+| Depth-2 minimax | medium | yes (1-ply lookahead) | `papers/hexconnect6_depth2_minimax`; next rung up |
+| MCTS / NN | high | yes | overkill for a browser bot |
+
+Conclusion: **ES is near-optimal on the *cost* axis but blind on the *strength*
+axis (no fork awareness) — which is exactly the gap a human exploits to beat it
+(set up a double threat).** The cheapest meaningful improvement is ES + an explicit
+fork/τ>2 term + a 1-ply opponent-fork block (implemented). Beyond that, the next
+real gain is not a cleverer static potential but **shallow (depth-2) search** —
+the `papers/` depth-2 atlas is the substrate. The harness catching the squared-term
+defect before it shipped is the pipeline working as intended.
+
+## Seed: overwrite mode as finite-space computation (2026-06-15)
+
+The garden's `Progressions` toy (the 2-D AP-building shadow of HeXO) has an
+**overwrite** mode where agents may reclaim occupied cells. Empirically this turns
+a monotone Maker-Maker *positional* game into a **non-monotone cellular automaton
+on a bounded substrate**: play never terminates, the board reaches a dynamic
+equilibrium (limit cycle / standing wave), and the dense region develops a
+"CRT-scanline" banding — the lattice resonating at the rule's preferred wavenumber
+(cf. the Bellman–Turing-instability note, `docs/theory/2026-05-20-*`).
+
+Why it's interesting, and testable:
+- **Descriptive-complexity jump.** Permanent-stone HeXO is Σ⁰₁ (open, finite play).
+  The overwrite variant is *non-terminating* — a loopy game (Conway) potentially
+  far higher in the hierarchy. The two modes literally sit at different levels.
+- **ALife resonance.** This is the spatial, 2-player cousin of Agüera y Arcas
+  et al. 2024 (*Computational Life: self-replicating programs from simple
+  interaction*) — self-replication as an **attractor of a finite-space rewrite
+  system**. Here it's local progression-structure copying itself across the lattice
+  via the overwrite (rewrite) op, with no fitness function.
+- **Concrete questions.** Does overwrite HeXO have a Garden-of-Eden set? A
+  Conway-style loopy-game value? Do self-replicating "progression gliders" emerge
+  under specific defence-weights? Measure period/entropy of the limit cycle vs the
+  block-weight parameter.
+
+Not on the critical path, but a clean, self-contained side-study with its own
+falsifiers.
 
 ## Explicitly out of scope (for now)
 

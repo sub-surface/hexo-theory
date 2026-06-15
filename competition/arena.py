@@ -222,14 +222,19 @@ def make_fork_aware(defence_weight: float = 1.1, fork_bonus: float = 60.0) -> Bo
             nxt = dict(state.stones); nxt[(q, r)] = opp
             if check_win(nxt, q, r, opp):
                 return (q, r)
-        # 3. blended potential + fork pressure (offence and defence)
+        # 3. blended potential + fork pressure (offence and defence).
+        # A fork only matters at >=2 simultaneous near-complete lines (that is the
+        # tau>2 double-threat). A SINGLE near-complete line is already valued by the
+        # ES base, so we must not re-reward it — only the surplus beyond the first
+        # threat counts. Linear in (count-1), not squared: a 1-threat move adds 0,
+        # a genuine 2-fork adds the bonus once. This is the fix for the d1.1 bug
+        # where squaring made the bot chase its own single threats and lose.
         best, best_s = cells[0], -1e18
         for (q, r) in cells:
             off = base(state.stones, q, r, me) + base(state.stones, q, r, opp) * defence_weight
-            my_fork = threat_count(state.stones, q, r, me, min_own=4)
-            opp_fork = threat_count(state.stones, q, r, opp, min_own=4)
-            # reward double-threats super-linearly; a 2-fork (tau>2) is decisive.
-            fork = (my_fork ** 2 + (opp_fork ** 2) * defence_weight) * fork_bonus
+            my_fork = max(0, threat_count(state.stones, q, r, me, min_own=4) - 1)
+            opp_fork = max(0, threat_count(state.stones, q, r, opp, min_own=4) - 1)
+            fork = (my_fork + opp_fork * defence_weight) * fork_bonus
             s = off + fork
             if s > best_s:
                 best_s, best = s, (q, r)
