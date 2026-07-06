@@ -150,9 +150,171 @@ Why it's interesting, and testable:
 Not on the critical path, but a clean, self-contained side-study with its own
 falsifiers.
 
+## Search-regime pivot (2026-07-05)
+
+The τ-fork heuristic below is being folded into a bigger redirect: two
+independent from-scratch neural-training attempts (this repo's NCA-zoo,
+`../hexo`'s AlphaZero) both plateaued below simple hand-crafted heuristics
+(see [SPEC.md](SPEC.md) §6 for the evidence). The new bet is theory-derived,
+cheap search over the now-fast Rust MCTS engine (`../hexo/hexgo-rs`),
+instead of more from-scratch learning. Full handoff spec — five candidate
+evaluators (transfer-matrix Pisot derivation, cube-coordinate 1-D
+decomposition, τ-tractability/LP relaxation, FFT threat maps, Eisenstein-
+residue covering strategies) plus the bake-off methodology — is in
+[docs/theory/2026-07-05-search-regime-handoff.md](docs/theory/2026-07-05-search-regime-handoff.md).
+That document supersedes the narrower "just push the fork-aware heuristic"
+framing below wherever the two disagree.
+
+**Executed (2026-07-06)** — verdicts for all five candidates, two new theorems
+(no pairing strategy exists for k=6, threshold sharp at k=7 with explicit
+construction; τ is LP-exact on real positions, LP>2 certifies forcing), the
+B+D unified fast evaluator with depth-2 lookahead (`fast_tactical`), residue
+bots, arena opening-randomization + budget-forfeit fix, and
+[modal_bakeoff.py](modal_bakeoff.py) ready to run. Full write-up:
+[docs/theory/2026-07-06-search-regime-verdicts.md](docs/theory/2026-07-06-search-regime-verdicts.md).
+
+**Bake-off Phase 1 ran (2026-07-06, 1,050 games, ~$0.15).** Champion in the
+Phase-1 roster: `heuristic_d1.1` — the plain ES bot; naive depth-2
+(`fast_tactical`) was *falsified* (passive play), residue ε-bias a perfect
+null.
+
+**Bake-off Phase 2 ran (2026-07-06, 1,120 games, ~$0.3): search wins.**
+New champion `fast_minimax_d1.1` — true 2-placement-turn minimax over the
+exact vectorized evaluator — beats the shipped heuristic head-to-head 4–1 and
+sweeps the whole defence-weight ladder (🟡 strong-but-small-n; the game is
+deeply drawish). This reverses Phase-1: search *does* help once the policy is
+correct minimax, not a static score difference. Defence-weight sweep found no
+better static weight than d1.1 (d1.0–1.6 indistinguishable, d2.0 slightly
+worse). **Garden-port candidate is now `fast_minimax_d1.1`** but it needs the
+vectorized evaluator ported too (~20× per-move cost, still fine at 1 s);
+confirm the edge at 🟢 sample size (~$1.5) first. Analytic figures +
+per-pairing GIF replays: `figures/fig_bakeoff_*.png`, `figures/replays/`.
+
+**Programme D RAN (2026-07-06) — P3 has a first answer.** 8,000-game
+`ca_combo_v2` corpus (Modal, ~$1); `experiments/run_mdl_scaling.py` (lzma,
+D6-canonical encoding): **`S_T(N) ~ N^0.929` (sub-linear), cleanly separated
+from a random-play null at `N^1.009` (linear)** — marginal bytes/game fall
+78→57 for the agent, flat ~118 for random. So P3's sub-linearity premise is
+**supported 🟡** (proxy first-read; not yet the Pisot constant — see
+[verdicts §Programme D](docs/theory/2026-07-06-search-regime-verdicts.md)).
+Same corpus overturned P1: `ca_combo_v2` shows a slight *second*-mover edge
+(Black 0.479 [0.467,0.492] of decisive), not first. Total Modal spend to date
+≈ $1.5 of $30.
+
+## Next experiments (2026-07-05 priority queue)
+
+An external assessment of this repo (2026-07-05) found the research threads had
+outpaced convergence on the one claim that would make Line A publishable, and
+that several "Supported" labels didn't survive checking the underlying JSON.
+Full detail in SPEC.md's corrected §5/§6. The concrete fix is this ranked queue
+— work top to bottom, don't open a new thread until item 1 has a real answer:
+
+1. **Programme D, cheaply.** ✅ **DONE 2026-07-06** — `run_mdl_scaling.py` on
+   an 8,000-game `ca_combo_v2` Modal corpus: `S_T(N) ~ N^0.929` sub-linear vs a
+   random null at `N^1.009`. P3 sub-linearity premise supported 🟡. *Next rung
+   (to reach 🟢):* repeat across agents + push N→10^5 (~$13) and check whether
+   β keeps falling or plateaus; then attempt the substitution-tile ⇒ Pisot-λ
+   identification (verdicts §A) that the compression exponent alone can't give.
+2. **Retest P1 and the Bellman-Turing wavelength at real sample size.**
+   P1 ✅ **DONE 2026-07-06** (same corpus): `ca_combo_v2` self-play shows a
+   slight *second*-mover edge (Black 0.479 [0.467,0.492] decisive), overturning
+   the thin-sample first-mover story. **Bellman-Turing wavelength still open** —
+   λ*≈11.8 predicted vs r≈3 measured on 12 games; needs the long-horizon
+   corpus (the rust backend or a dedicated `run_bellman_turing` Modal sweep).
+3. **Push the τ-fork heuristic to one clean win** — ✅ **superseded 2026-07-06.**
+   The bake-off answered the stronger question: `fast_minimax` (true turn-minimax
+   over the exact evaluator) beats every static heuristic 🟡; static τ-fork and
+   plain ES are indistinguishable. Remaining: confirm the minimax edge at 🟢
+   sample size, then garden-port.
+4. **Formalize the 3-SAT/NP-hardness reduction** (SPEC.md §7 item 6) — a
+   bounded, provable result independent of self-play statistics, and a good
+   hedge if the Pisot conjecture doesn't survive item 1. *Still open, and now
+   the natural next theory target* — the pairing-threshold and τ-LP theorems
+   (verdicts §C, §E) are the same kind of bounded provable result and show the
+   machinery is in reach.
+
+The 2026-07-06 pass cleared items 1–3; item 4 (plus the two β/λ follow-ups
+above) is the live frontier. Compute plan below still applies for the N→10^5
+and long-horizon runs.
+
+## Compute plan (2026-07-05) — Modal cloud budget
+
+$30 of Modal credit is available (Modal CLI already authenticated as
+`sub-surface`); local compute is thermally constrained. Before speccing this,
+profiled `ca_combo_v2` self-play locally: **~10 core-seconds/game** (20 games,
+4 workers, 52s wall). This is CPU-bound, dict-based Python game logic —
+embarrassingly parallel *across* games (each game itself is a sequential
+Markov chain, so no within-game parallelism) — the same shape of workload
+`experiments/harness.py` already parallelizes with `multiprocessing.Pool`.
+
+**Modal pricing** (checked 2026-07-05): CPU $0.0000131/core-second; GPUs from
+T4 ($0.000164/s) up to H100 ($0.001097/s); starter-tier concurrency cap is 100
+containers. At ~10 core-sec/game with 100 parallel cores (~10 games/sec
+aggregate): $N=10^4$ games ≈ 17 min / **≈$1.3**; $N=10^5$ games ≈ 2.8 hr /
+**≈$13**. Both fit the budget on plain CPU parallelism alone.
+
+**Is a custom GPU kernel (batched/vectorized self-play engine) worth building?**
+Real idea, not a distraction in principle — representing thousands of games as
+one board tensor and running the ES-potential heuristic as batched tensor ops
+could plausibly beat CPU parallelism by 3-4 orders of magnitude. But: (a) plain
+CPU parallelism already delivers the $N=10^5$ corpora items 1-3 need, within
+budget, in a few hours; (b) it requires reimplementing win-detection and
+live-line tracking as batched tensor ops on an unbounded lattice — multi-day
+effort with real correctness risk (a subtly wrong batched win-check silently
+corrupts every downstream result); (c) it only pays for itself at a scale
+(10^6-10^7 games, or real self-play RL) that only the parked AZ/NCA thread
+would need, and that thread is blocked on a data/objective bug, not a compute
+ceiling (SPEC.md §6). **Verdict: defer.** Revisit only if the cheap corpora
+show a log-trend worth confirming at 10^6+ games, or if the AZ/NCA diagnosis
+gets fixed and self-play RL becomes worth scaling.
+
+**Update (2026-07-05, same day): a better substrate was already sitting in
+`../hexo`.** `hexo/hexgo-rs` (Rust, PyO3+Rayon) exposes `parallel_self_play` —
+pure-rollout MCTS, no trained net needed, parallelizes across every core
+*inside a single call* (no manual seed-sharding within a shard). It was
+blocked by a stale build (`parallel.rs` was edited ~2.5h after the last
+`cargo build`), which resolves itself for free since Modal compiles it fresh
+for Linux anyway. hexo's trained checkpoint is **not** used — it's currently
+weaker than its own greedy baseline (Elo ~1200 vs ~1753 in `hexo/elo.json`;
+training regressed), so pure rollout is both the honest and the only-available
+choice, and it needs no checkpoint file. One real gap: `hexgo-rs` seeds via
+Rust's `thread_rng()` (OS entropy), so games are independent but not
+seed-reproducible — fine for bulk corpus statistics, not for "replay this
+exact game." This makes CPU-container throughput for the priority queue
+likely *cheaper* than the plain-Python estimate above, though the exact
+per-game rate on Modal hasn't been measured yet (that's what `smoke_test`
+is for).
+
+**Implementation:** [modal_app.py](modal_app.py) — two backends (`rust` =
+hexo's MCTS, `python` = this repo's existing agent registry via
+`experiments/harness.py`, needed whenever the exact agent behind an existing
+SPEC.md number matters, e.g. tightening P1 specifically means more
+`ca_combo_v2` self-play, which Rust has no equivalent of). Both return raw
+per-game outcomes; Wilson CIs and the gzip-MDL proxy are computed once,
+locally, over the pooled results.
+
+**Nothing has been run yet.** Next step is `modal run modal_app.py::smoke_test`
+(~$0.01) to verify both backends actually work before committing the budget,
+then a modest `corpus` call to get a real games/sec number and re-derive the
+allocation below from measured, not estimated, throughput.
+
+**Draft budget allocation** (unchanged in shape, likely conservative given
+the Rust path above — confirm via smoke_test before deploying):
+- **~$15-18, CPU containers:** corpora for queue items 1-3 above — `rust`
+  backend where the agent doesn't need to be a specific existing one
+  (Programme D proxy, Bellman-Turing long-horizon), `python` backend where it
+  does (P1 tightening on `ca_combo_v2` specifically).
+- **~$5-8, one small GPU (T4/L4 — no need for anything bigger at this scale):**
+  UDC-positions resolution fix (`--diffraction-grid` scaled to the note's own
+  recommended `4*D` per t) and a diffraction re-run on the larger corpora.
+  Not yet built into `modal_app.py` — CPU corpus generation is the priority.
+- **~$5-7 buffer.**
+
 ## Explicitly out of scope (for now)
 
-Kept in the repo, not on the critical path: neural-CA training, the full Pisot
-S_T(N) measurement, diffraction reruns, CGT/surreal threads. They are depth to
-return to once the τ pipeline is mature — or once the τ-fork bot plateaus and we
-need search/learning to go further.
+Kept in the repo, not on the critical path: neural-CA/AlphaZero training
+(actively blocked on a diagnosed data bug, not just deprioritized — see SPEC.md
+§6), the *full* observer-net Pisot S_T(N) measurement from ROADMAP Programme D
+(superseded for now by the cheap gzip-MDL proxy in the queue above), CGT/surreal
+threads. They are depth to return to once the τ pipeline is mature — or once the
+τ-fork bot plateaus and we need search/learning to go further.

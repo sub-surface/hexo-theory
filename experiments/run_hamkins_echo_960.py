@@ -24,9 +24,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-_REAL_HEXGO = Path(r"C:\Users\Leon\Desktop\Psychograph\hexgo")
-if _REAL_HEXGO.exists() and str(_REAL_HEXGO) not in sys.path:
-    sys.path.insert(0, str(_REAL_HEXGO))
 
 # Reuse the base module's helpers — avoids re-deriving the parallel harness.
 from run_hamkins_echo import run_matchup  # type: ignore

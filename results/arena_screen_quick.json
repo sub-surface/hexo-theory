@@ -1,0 +1,163 @@
+{
+  "games_per_pairing": 2,
+  "budget_s": 0.25,
+  "wins": {
+    "random": 0,
+    "greedy_offence": 4,
+    "heuristic_d1.1": 6,
+    "fork_aware_d1.2": 6,
+    "fast_tactical": 4,
+    "residue_bias": 6,
+    "residue_static": 0
+  },
+  "pairings": [
+    {
+      "a": "random",
+      "b": "greedy_offence",
+      "a_wins": 0,
+      "b_wins": 2,
+      "draws": 0
+    },
+    {
+      "a": "random",
+      "b": "heuristic_d1.1",
+      "a_wins": 0,
+      "b_wins": 2,
+      "draws": 0
+    },
+    {
+      "a": "random",
+      "b": "fork_aware_d1.2",
+      "a_wins": 0,
+      "b_wins": 2,
+      "draws": 0
+    },
+    {
+      "a": "random",
+      "b": "fast_tactical",
+      "a_wins": 0,
+      "b_wins": 2,
+      "draws": 0
+    },
+    {
+      "a": "random",
+      "b": "residue_bias",
+      "a_wins": 0,
+      "b_wins": 2,
+      "draws": 0
+    },
+    {
+      "a": "random",
+      "b": "residue_static",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 2
+    },
+    {
+      "a": "greedy_offence",
+      "b": "heuristic_d1.1",
+      "a_wins": 0,
+      "b_wins": 2,
+      "draws": 0
+    },
+    {
+      "a": "greedy_offence",
+      "b": "fork_aware_d1.2",
+      "a_wins": 0,
+      "b_wins": 2,
+      "draws": 0
+    },
+    {
+      "a": "greedy_offence",
+      "b": "fast_tactical",
+      "a_wins": 0,
+      "b_wins": 2,
+      "draws": 0
+    },
+    {
+      "a": "greedy_offence",
+      "b": "residue_bias",
+      "a_wins": 0,
+      "b_wins": 2,
+      "draws": 0
+    },
+    {
+      "a": "greedy_offence",
+      "b": "residue_static",
+      "a_wins": 2,
+      "b_wins": 0,
+      "draws": 0
+    },
+    {
+      "a": "heuristic_d1.1",
+      "b": "fork_aware_d1.2",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 2
+    },
+    {
+      "a": "heuristic_d1.1",
+      "b": "fast_tactical",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 2
+    },
+    {
+      "a": "heuristic_d1.1",
+      "b": "residue_bias",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 2
+    },
+    {
+      "a": "heuristic_d1.1",
+      "b": "residue_static",
+      "a_wins": 2,
+      "b_wins": 0,
+      "draws": 0
+    },
+    {
+      "a": "fork_aware_d1.2",
+      "b": "fast_tactical",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 2
+    },
+    {
+      "a": "fork_aware_d1.2",
+      "b": "residue_bias",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 2
+    },
+    {
+      "a": "fork_aware_d1.2",
+      "b": "residue_static",
+      "a_wins": 2,
+      "b_wins": 0,
+      "draws": 0
+    },
+    {
+      "a": "fast_tactical",
+      "b": "residue_bias",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 2
+    },
+    {
+      "a": "fast_tactical",
+      "b": "residue_static",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 2
+    },
+    {
+      "a": "residue_bias",
+      "b": "residue_static",
+      "a_wins": 2,
+      "b_wins": 0,
+      "draws": 0
+    }
+  ],
+  "champion": "heuristic_d1.1"
+}

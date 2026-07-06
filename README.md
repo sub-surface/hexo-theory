@@ -2,6 +2,8 @@
 
 Number-theoretic and combinatorial investigation of optimal play in HeXO — an infinite hexagonal Connect6 variant played on the Eisenstein integer ring **Z[ω]**.
 
+> **For current status, read [DIRECTION.md](DIRECTION.md) (what's active and why) and [SPEC.md](SPEC.md) (what's established, with honest confidence levels) before this file or docs/ROADMAP.md.** This README is the stable external framing; the conjecture below is still the right one to test, but see SPEC.md for which supporting claims are solid vs. directional-only.
+
 The goal is to characterise the structure of perfect play: its symmetries, its tiling properties, and whether it exhibits quasi-crystalline (Penrose-like) order.
 
 ---
@@ -18,7 +20,7 @@ u₃ = (1, -1)   diagonal axis
 
 A win is exactly a length-6 arithmetic progression in Z[ω] with unit step — a purely number-theoretic object.
 
-The strategy-stealing argument proves the game cannot be a second-player win. It is almost certainly a first-player win on an infinite board — empirically, strong-agent self-play gives Black share of decisive games $\ge 0.5$ within Wilson 95% CI (see `results/fma_curve.json`, `results/combo_defect.json`).
+The strategy-stealing argument proves the game cannot be a second-player win. Whether it's a strict first-player win is still open empirically: strong-agent self-play gives Black share of decisive games $\approx 0.53$ [0.42, 0.64] (Wilson 95% CI, n=73 decisive games) — directionally consistent with a first-player win, but the interval still includes 0.5, so this is suggestive rather than settled (see `results/fma_curve.json`, `results/combo_defect.json`, and SPEC.md §5 for the corrected framing).
 
 Descriptive-set-theoretically, HeXO's payoff ("some player has 6 in a row") is $\Sigma^0_1$ (open), directly determined by Gale–Stewart — two levels below infinite Hex at $\Sigma^0_7$ (Hamkins–Leonessi 2022, Törnä). This is why *finite-horizon* analysis — not Hamkins-style infinitary machinery — is the right tool here.
 
@@ -60,7 +62,7 @@ Use the `EisensteinGreedyAgent` from the main HeXO engine as a substrate:
 
 - **Hyperplane arrangement**: each potential 6-line defines a constraint hyperplane in the space of board states. The game navigates the **A₂ hyperplane arrangement** (root system of sl₃), which tiles the plane with 60°-symmetric chambers. Optimal play paths in this arrangement = Coxeter group words.
 
-- **Transfer matrix**: if the forcing graph is finite, construct the substitution matrix and compute its spectrum. Look for Pisot eigenvalues. Natural candidates in the Eisenstein setting: the tribonacci constant (~1.3247, root of x³-x-1=0) or algebraic integers related to the norm form a²-ab+b².
+- **Transfer matrix**: if the forcing graph is finite, construct the substitution matrix and compute its spectrum. Look for Pisot eigenvalues. Natural candidates in the Eisenstein setting: the plastic number (~1.3247, root of x³-x-1=0 — previously mislabelled "tribonacci" here; tribonacci is ~1.8393), the pentanacci constant (~1.9659, the exact entropy base of the no-6-run line shift, see [experiments/run_line_automaton.py](experiments/run_line_automaton.py)), or algebraic integers related to the norm form a²-ab+b².
 
 ### Phase 3 — Empirical Validation
 

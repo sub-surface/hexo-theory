@@ -2,6 +2,15 @@
 
 *2026-05-20*
 
+> **Status (2026-07-05): NEEDS RE-TEST — prediction did not match measurement.**
+> This note predicts a preferred spacing λ*≈11.8 (§"Predicted Wavelength") but
+> the "Experimental Results" section below reports a measured pair-correlation
+> peak at r≈3.0-3.2 — roughly 4× off — attributed to grid-resolution/burn-in
+> rather than treated as a live falsification. See [SPEC.md](../../SPEC.md) §6
+> for the corrected framing. A long-horizon, higher-resolution re-run is
+> queued in [DIRECTION.md](../../DIRECTION.md)'s compute plan; don't cite the
+> mechanism as confirmed until that re-run actually shows the r≈11-12 peak.
+
 ## The Hypothesis
 
 Optimal play in HeXO generates a spatially structured stone distribution

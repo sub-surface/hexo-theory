@@ -2,6 +2,13 @@
 
 *2026-04-17*
 
+> **Status (2026-07-05): ACTIVE SPINE.** The Σ⁰₁ vs Σ⁰₇ positioning (§1-2) is
+> solid and load-bearing — keep building on it. The P1-P5 falsifiability table
+> (§5-6) has been superseded by corrected confidence levels in
+> [SPEC.md](../../SPEC.md) §5 — P1 in particular is weaker than "Supported"
+> implies (CI straddles 0.5). Cross-check SPEC.md before citing any P-number
+> from here.
+
 ## 1. What their paper is
 
 Hamkins & Leonessi, *Infinite Hex is a draw* ([papers/2201.06475v3-Infinite-Hex-is-a-draw.pdf](../../papers/2201.06475v3-Infinite-Hex-is-a-draw.pdf)), prove that infinite-board Hex (each player wants to connect opposite sides of an unbounded board) is a draw under perfect play, rather than the finite-board first-player win. The mechanism is a **pairing / mirroring strategy**: player II divides the plane into dominoes and responds to each of player I's moves within the pairing partner, guaranteeing no infinite monochromatic path for player I.

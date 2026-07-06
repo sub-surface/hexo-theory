@@ -1,0 +1,57 @@
+{
+  "cost_ms": {
+    "random": 0.11740002082660794,
+    "greedy_offence": 5.571000016061589,
+    "heuristic_d1.1": 5.57819998357445,
+    "fork_aware_d1.2": 10.688699985621497,
+    "fast_tactical": 28.481299988925457,
+    "residue_bias": 11.994200001936406,
+    "residue_static": 0.690699991537258
+  },
+  "win_share": {
+    "random": 0.006666666666666667,
+    "greedy_offence": 0.4266666666666667,
+    "heuristic_d1.1": 0.5,
+    "fork_aware_d1.2": 0.4766666666666667,
+    "fast_tactical": 0.44,
+    "residue_bias": 0.4766666666666667,
+    "residue_static": 0.05333333333333334
+  },
+  "stats": {
+    "random": {
+      "wins": 2,
+      "losses": 263,
+      "draws": 35
+    },
+    "greedy_offence": {
+      "wins": 128,
+      "losses": 172,
+      "draws": 0
+    },
+    "heuristic_d1.1": {
+      "wins": 150,
+      "losses": 1,
+      "draws": 149
+    },
+    "fork_aware_d1.2": {
+      "wins": 143,
+      "losses": 7,
+      "draws": 150
+    },
+    "fast_tactical": {
+      "wins": 132,
+      "losses": 17,
+      "draws": 151
+    },
+    "residue_bias": {
+      "wins": 143,
+      "losses": 7,
+      "draws": 150
+    },
+    "residue_static": {
+      "wins": 16,
+      "losses": 247,
+      "draws": 37
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "bots": [
+    "fast_tactical",
+    "heuristic_d1.1"
+  ],
+  "openings": 2,
+  "budget_s": 1.0,
+  "max_moves": 400,
+  "seed_base": 0,
+  "opening_placements": 16,
+  "n_games": 4,
+  "wall_time_s": 30.8,
+  "wins_total": {
+    "fast_tactical": 0,
+    "heuristic_d1.1": 0
+  },
+  "pairings": [
+    {
+      "a": "fast_tactical",
+      "b": "heuristic_d1.1",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 4,
+      "a_share_decisive": null,
+      "wilson95": null,
+      "mean_game_s": 6.45
+    }
+  ],
+  "raw": {
+    "fast_tactical|heuristic_d1.1": [
+      {
+        "seed": 0,
+        "a_black": true,
+        "winner_raw": 0,
+        "result": "draw",
+        "n_stones": 400,
+        "game_s": 7.72
+      },
+      {
+        "seed": 0,
+        "a_black": false,
+        "winner_raw": 0,
+        "result": "draw",
+        "n_stones": 400,
+        "game_s": 5.49
+      },
+      {
+        "seed": 1,
+        "a_black": true,
+        "winner_raw": 0,
+        "result": "draw",
+        "n_stones": 400,
+        "game_s": 5.73
+      },
+      {
+        "seed": 1,
+        "a_black": false,
+        "winner_raw": 0,
+        "result": "draw",
+        "n_stones": 400,
+        "game_s": 6.87
+      }
+    ]
+  }
+}

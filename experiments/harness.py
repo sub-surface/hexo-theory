@@ -28,10 +28,6 @@ from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Callable
 
-# worktree shim — see CLAUDE.md > "Worktree gotcha"
-_REAL_HEXGO = Path(r"C:\Users\Leon\Desktop\Psychograph\hexgo")
-if _REAL_HEXGO.exists() and str(_REAL_HEXGO) not in sys.path:
-    sys.path.insert(0, str(_REAL_HEXGO))
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from engine import HexGame, EisensteinGreedyAgent, RandomAgent
@@ -281,6 +277,38 @@ def _play_one(args: tuple[str, str, int, int]) -> tuple[int, int]:
             g.make(*mv)
         mc += 1
     return (g.winner or 0, mc)
+
+
+def _play_one_moves(args: tuple[str, str, int, int]) -> dict:
+    """Like _play_one but also records the full move sequence.
+
+    Returns {"winner", "moves": [[q, r], ...]} -- the raw material for the
+    Programme D MDL scaling proxy (compress prefixes of a move-sequence
+    corpus at log-spaced N). Same seeded RNG contract as _play_one, so a game
+    with a given seed here is move-for-move identical to _play_one's."""
+    black_name, white_name, max_moves, seed = args
+    random.seed(seed)
+    reg = default_registry()
+    black = reg[black_name]()
+    white = reg[white_name]()
+
+    g = HexGame()
+    mc = 0
+    moves: list[tuple[int, int]] = []
+    while g.winner is None and mc < max_moves:
+        agent = black if g.current_player == 1 else white
+        legal = g.legal_moves()
+        if not legal:
+            break
+        mv = agent.choose_move(g)
+        if mv in g.board:
+            mv = random.choice(legal)
+        if not g.make(*mv):
+            mv = random.choice(legal)
+            g.make(*mv)
+        moves.append((mv[0], mv[1]))
+        mc += 1
+    return {"winner": g.winner or 0, "moves": moves}
 
 
 # ── Wilson 95% confidence interval ──────────────────────────────────────────

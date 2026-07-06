@@ -42,10 +42,6 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-# worktree shim — see CLAUDE.md > "Worktree gotcha"
-_REAL_HEXGO = Path(r"C:\Users\Leon\Desktop\Psychograph\hexgo")
-if _REAL_HEXGO.exists() and str(_REAL_HEXGO) not in sys.path:
-    sys.path.insert(0, str(_REAL_HEXGO))
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from experiments.harness import run_matchup, _wilson

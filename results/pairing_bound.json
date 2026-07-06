@@ -1,0 +1,107 @@
+{
+  "residue_covering": {
+    "axis_steps_mod_7": {
+      "(1, 0)": 1,
+      "(0, 1)": 2,
+      "(1, -1)": 6
+    },
+    "excluded_class_is_start_minus_step": true,
+    "any_two_distinct_classes_cover_all_windows": true
+  },
+  "k6_counting": {
+    "windows_containing_pair_at_offset_j": {
+      "1": 5,
+      "2": 4,
+      "3": 3,
+      "4": 2,
+      "5": 1,
+      "6": 0
+    },
+    "supply_per_cell": 2.5,
+    "demand_per_cell": 3.0,
+    "pairing_possible_by_counting": false
+  },
+  "k6_pairing_exists": false,
+  "k6_reason": "supply 2.5 window-covers/cell < demand 3 windows/cell; holds for arbitrary (even aperiodic) pairings by averaging",
+  "k7_counting": {
+    "supply_per_cell": 3.0,
+    "demand_per_cell": 3.0,
+    "pairing_possible_by_counting": true
+  },
+  "k7_pairing_exists": true,
+  "k7_solution_line_phases": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      10,
+      0
+    ],
+    [
+      11,
+      4
+    ],
+    [
+      12,
+      4
+    ],
+    [
+      13,
+      4
+    ],
+    [
+      14,
+      4
+    ],
+    [
+      15,
+      3
+    ],
+    [
+      16,
+      2
+    ],
+    [
+      17,
+      5
+    ]
+  ],
+  "conclusion": "hex-lattice pairing threshold is exactly k=7; HeXO (k=6) cannot be drawn by any pairing strategy"
+}

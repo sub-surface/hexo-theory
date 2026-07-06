@@ -1,0 +1,55 @@
+{
+  "games_per_pairing": 8,
+  "budget_s": 0.5,
+  "wins": {
+    "heuristic_d1.1": 0,
+    "fork_aware_d1.2": 0,
+    "fast_tactical": 0,
+    "residue_bias": 0
+  },
+  "pairings": [
+    {
+      "a": "heuristic_d1.1",
+      "b": "fork_aware_d1.2",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 8
+    },
+    {
+      "a": "heuristic_d1.1",
+      "b": "fast_tactical",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 8
+    },
+    {
+      "a": "heuristic_d1.1",
+      "b": "residue_bias",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 8
+    },
+    {
+      "a": "fork_aware_d1.2",
+      "b": "fast_tactical",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 8
+    },
+    {
+      "a": "fork_aware_d1.2",
+      "b": "residue_bias",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 8
+    },
+    {
+      "a": "fast_tactical",
+      "b": "residue_bias",
+      "a_wins": 0,
+      "b_wins": 0,
+      "draws": 8
+    }
+  ],
+  "champion": "heuristic_d1.1"
+}

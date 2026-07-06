@@ -1,0 +1,191 @@
+{
+  "random|greedy_offence": {
+    "seed": 1,
+    "a_black": true,
+    "winner": 2,
+    "placements": 19,
+    "decisive": true,
+    "gif": "random__vs__greedy_offence.gif",
+    "replay_matches_modal": true
+  },
+  "random|heuristic_d1.1": {
+    "seed": 1,
+    "a_black": true,
+    "winner": 2,
+    "placements": 19,
+    "decisive": true,
+    "gif": "random__vs__heuristic_d1.1.gif",
+    "replay_matches_modal": true
+  },
+  "random|fork_aware_d1.2": {
+    "seed": 1,
+    "a_black": true,
+    "winner": 2,
+    "placements": 19,
+    "decisive": true,
+    "gif": "random__vs__fork_aware_d1.2.gif",
+    "replay_matches_modal": true
+  },
+  "random|fast_tactical": {
+    "seed": 4,
+    "a_black": true,
+    "winner": 2,
+    "placements": 19,
+    "decisive": true,
+    "gif": "random__vs__fast_tactical.gif",
+    "replay_matches_modal": true
+  },
+  "random|residue_bias": {
+    "seed": 1,
+    "a_black": true,
+    "winner": 2,
+    "placements": 19,
+    "decisive": true,
+    "gif": "random__vs__residue_bias.gif",
+    "replay_matches_modal": true
+  },
+  "random|residue_static": {
+    "seed": 17,
+    "a_black": false,
+    "winner": 1,
+    "placements": 20,
+    "decisive": true,
+    "gif": "random__vs__residue_static.gif",
+    "replay_matches_modal": true
+  },
+  "greedy_offence|heuristic_d1.1": {
+    "seed": 1,
+    "a_black": true,
+    "winner": 2,
+    "placements": 19,
+    "decisive": true,
+    "gif": "greedy_offence__vs__heuristic_d1.1.gif",
+    "replay_matches_modal": true
+  },
+  "greedy_offence|fork_aware_d1.2": {
+    "seed": 1,
+    "a_black": true,
+    "winner": 2,
+    "placements": 19,
+    "decisive": true,
+    "gif": "greedy_offence__vs__fork_aware_d1.2.gif",
+    "replay_matches_modal": true
+  },
+  "greedy_offence|fast_tactical": {
+    "seed": 17,
+    "a_black": false,
+    "winner": 2,
+    "placements": 19,
+    "decisive": true,
+    "gif": "greedy_offence__vs__fast_tactical.gif",
+    "replay_matches_modal": true
+  },
+  "greedy_offence|residue_bias": {
+    "seed": 1,
+    "a_black": true,
+    "winner": 2,
+    "placements": 19,
+    "decisive": true,
+    "gif": "greedy_offence__vs__residue_bias.gif",
+    "replay_matches_modal": true
+  },
+  "greedy_offence|residue_static": {
+    "seed": 1,
+    "a_black": false,
+    "winner": 2,
+    "placements": 19,
+    "decisive": true,
+    "gif": "greedy_offence__vs__residue_static.gif",
+    "replay_matches_modal": true
+  },
+  "heuristic_d1.1|fork_aware_d1.2": {
+    "seed": 0,
+    "a_black": true,
+    "winner": 0,
+    "placements": 400,
+    "decisive": false,
+    "gif": "heuristic_d1.1__vs__fork_aware_d1.2.gif",
+    "replay_matches_modal": true
+  },
+  "heuristic_d1.1|fast_tactical": {
+    "seed": 19,
+    "a_black": false,
+    "winner": 2,
+    "placements": 47,
+    "decisive": true,
+    "gif": "heuristic_d1.1__vs__fast_tactical.gif",
+    "replay_matches_modal": true
+  },
+  "heuristic_d1.1|residue_bias": {
+    "seed": 0,
+    "a_black": true,
+    "winner": 0,
+    "placements": 400,
+    "decisive": false,
+    "gif": "heuristic_d1.1__vs__residue_bias.gif",
+    "replay_matches_modal": true
+  },
+  "heuristic_d1.1|residue_static": {
+    "seed": 1,
+    "a_black": false,
+    "winner": 2,
+    "placements": 19,
+    "decisive": true,
+    "gif": "heuristic_d1.1__vs__residue_static.gif",
+    "replay_matches_modal": true
+  },
+  "fork_aware_d1.2|fast_tactical": {
+    "seed": 0,
+    "a_black": true,
+    "winner": 0,
+    "placements": 400,
+    "decisive": false,
+    "gif": "fork_aware_d1.2__vs__fast_tactical.gif",
+    "replay_matches_modal": true
+  },
+  "fork_aware_d1.2|residue_bias": {
+    "seed": 0,
+    "a_black": true,
+    "winner": 0,
+    "placements": 400,
+    "decisive": false,
+    "gif": "fork_aware_d1.2__vs__residue_bias.gif",
+    "replay_matches_modal": true
+  },
+  "fork_aware_d1.2|residue_static": {
+    "seed": 1,
+    "a_black": false,
+    "winner": 2,
+    "placements": 19,
+    "decisive": true,
+    "gif": "fork_aware_d1.2__vs__residue_static.gif",
+    "replay_matches_modal": true
+  },
+  "fast_tactical|residue_bias": {
+    "seed": 0,
+    "a_black": true,
+    "winner": 0,
+    "placements": 400,
+    "decisive": false,
+    "gif": "fast_tactical__vs__residue_bias.gif",
+    "replay_matches_modal": true
+  },
+  "fast_tactical|residue_static": {
+    "seed": 1,
+    "a_black": false,
+    "winner": 2,
+    "placements": 19,
+    "decisive": true,
+    "gif": "fast_tactical__vs__residue_static.gif",
+    "replay_matches_modal": true
+  },
+  "residue_bias|residue_static": {
+    "seed": 1,
+    "a_black": false,
+    "winner": 2,
+    "placements": 19,
+    "decisive": true,
+    "gif": "residue_bias__vs__residue_static.gif",
+    "replay_matches_modal": true
+  }
+}

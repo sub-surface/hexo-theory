@@ -1,5 +1,14 @@
 # HeXO Theory — Roadmap v2 (Epiplexity Overhaul)
 
+> **Status (2026-07-05): not deprecated, but [DIRECTION.md](../DIRECTION.md) is
+> now the current priority layer** — same relationship this file once had to
+> retired v1 (see §11). Programme D (§5), called "the most ambitious — and
+> most original" direction and the paper's headline result, has **not actually
+> been run**: no observer-net S_T(N) scan exists in `results/`. DIRECTION.md's
+> priority queue substitutes a cheap gzip-MDL proxy for it as the immediate
+> next step. Programme E.3's NCA-zoo path is blocked on a diagnosed data bug,
+> not merely deprioritized — see [SPEC.md](../SPEC.md) §6 before resuming it.
+
 > **Version:** 2.0 · canonical roadmap (v1 retired 2026-04-17)
 > **Framing paper:** Finzi, Qiu, Jiang, Izmailov, Kolter, Wilson — *From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence*, arXiv:2601.03220v2 (March 2026). Local copy: `papers/finzi-2026-epiplexity.pdf`.
 > **Horizon:** 12 months, organised into four quarterly programmes with clear verification gates.

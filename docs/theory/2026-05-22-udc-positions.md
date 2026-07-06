@@ -2,6 +2,13 @@
 
 *2026-05-22, after reading the OpenAI unit-distance disproof (arXiv 2025) and implementing [experiments/run_udc_positions.py](../../experiments/run_udc_positions.py).*
 
+> **Status (2026-07-05): ACTIVE-ADJACENT.** P6a/b/d are genuinely supported
+> (§4) and the Bragg99=0.84 ceiling this note establishes is a useful
+> benchmark for Programme D — see [SPEC.md](../../SPEC.md) §5. The t≥3
+> resolution-wall fix this note recommends (§5.1, adaptive
+> `--diffraction-grid`) is queued in [DIRECTION.md](../../DIRECTION.md)'s
+> compute plan alongside the GPU slice of the Modal budget.
+
 ## 1. What was built
 
 The experiment constructs point sets in the Eisenstein integers Z[omega] (the hex lattice) using the CM class-field-tower machinery from the OpenAI disproof of the Erdos unit-distance conjecture.

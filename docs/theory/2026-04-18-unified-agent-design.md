@@ -2,6 +2,16 @@
 
 *2026-04-18, after reading [../../results/charlies-artifacts/](../../results/charlies-artifacts/)*
 
+> **Status (2026-07-05): PARKED — blocked on a diagnosed bug, not deprioritized
+> by choice.** §10-13 below record a real, honest series of negative results:
+> the NCA zoo collapses to a draw equilibrium, the supervised policy loops
+> against Random, and the value head (§13.2-13.3) fails to discriminate above
+> chance and *worsens* the agent when used as a tie-break. The likely causes
+> are diagnosed (§13.4: class imbalance on `v=0` targets, <1.1% positive rate
+> on threat/win labels) but unfixed. Do not spend more compute on this thread
+> until those fixes land — see [SPEC.md](../../SPEC.md) §6 and
+> [DIRECTION.md](../../DIRECTION.md)'s compute plan for the reasoning.
+
 ## 0. Context
 
 Charlie (a friend, working on a similar 32×32 HeXO substrate on a 5070 Ti)

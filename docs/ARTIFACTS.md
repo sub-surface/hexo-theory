@@ -1,6 +1,6 @@
 # HeXO Theory Artifact Ledger
 
-*Last updated: 2026-05-09*
+*Last updated: 2026-05-09. **Superseded as the primary map by [SPEC.md](../SPEC.md) §8 "Toolbox" (2026-06-14)** — SPEC.md is now the canonical index of what's established and where the artifacts live; this ledger predates it and duplicates part of its job. Kept for the CGT/Hackenbush-thread detail in the table below, which SPEC.md summarizes but doesn't reproduce in full. If the two ever disagree, trust SPEC.md.*
 
 This ledger records the research artifacts that should be preserved, regenerated,
 or cited. It is intentionally descriptive rather than destructive: do not delete

@@ -39,7 +39,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 
 HERE = Path(__file__).resolve().parents[1]
-MAIN = Path("C:/Users/Leon/Desktop/Psychograph/hexgo-theory")
+MAIN = Path("C:/Users/Leon/Desktop/Psychograph/hexo-theory")
 CHARLIE_PT = MAIN / "results" / "charlies-artifacts" / "checkpoints" / "tournament_results.pt"
 OUT_JSON = HERE / "results" / "cross_program_table.json"
 OUT_FIG = HERE / "figures" / "fig_cross_program_table.png"

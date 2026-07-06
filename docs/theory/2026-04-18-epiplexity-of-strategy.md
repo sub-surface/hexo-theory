@@ -2,6 +2,14 @@
 
 *2026-04-18*
 
+> **Status (2026-07-05): PARKED, superseded by a cheaper path.** This is the
+> full observer-net / `StrategyObserver` design for Programme D's S_T(N) scan.
+> It was never built past `engine/observer.py` scaffolding. [DIRECTION.md](../../DIRECTION.md)'s
+> priority queue now runs a cheap gzip-MDL proxy first to get a first
+> log-vs-linear read on the Pisot question without this infrastructure. Revisit
+> this design only if the proxy result is promising enough to justify the
+> full multi-head training pipeline.
+
 ## 1. What's being asked
 
 Two threads converging on the same construction:

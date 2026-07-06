@@ -2,6 +2,12 @@
 
 *2026-05-09*
 
+> **Status (2026-07-05): PARKED — speculative, not yet established.** None of
+> the S1-S5 falsifiers have been run against real self-play data yet (the
+> `surreal_fractal_strategy.json` result is a generated/verified pattern, not
+> a played game). See [SPEC.md](../../SPEC.md) §6. Not on the critical path
+> until the τ/Pisot spine converges or is falsified.
+
 This note states a deliberately speculative but testable bridge between HeXO,
 surreal numbers, thermographs, and recursive strategy patterns. The aim is not
 to claim that the whole infinite game is "a surreal number". It almost certainly

@@ -1,10 +1,12 @@
-# CLAUDE.md — onboarding for Claude agents working on hexgo-theory
+# CLAUDE.md — onboarding for Claude agents working on hexo-theory
 
 You are joining a solo research project by Leon. This file is your orientation. Read it once, act on it always.
 
 ## What this project is
 
-**hexgo-theory** is the theoretical sibling of the `hexgo` game engine (sits at `../hexgo` relative to this directory on disk — see note under "Worktree gotcha" below). The engine plays Connect-6 on the infinite hex lattice ($\mathbb{Z}[\omega]$, win = 6 stones in a row along any of 3 axes). The theoretical goal is to **characterise the structure of optimal play** — its symmetries, tiling properties, descriptive-set-theoretic complexity, and whether perfect play exhibits quasi-crystalline order.
+**hexo-theory** is the theoretical sibling of the `hexo` game engine (sits at `../hexo` relative to this directory on disk — the sibling repo was renamed from `hexgo` to `hexo` on disk; see note under "Import path" below). The engine plays Connect-6 on the infinite hex lattice ($\mathbb{Z}[\omega]$, win = 6 stones in a row along any of 3 axes). The theoretical goal is to **characterise the structure of optimal play** — its symmetries, tiling properties, descriptive-set-theoretic complexity, and whether perfect play exhibits quasi-crystalline order.
+
+**Priority layer:** [DIRECTION.md](DIRECTION.md) is the current single source of truth for *what to work on next* — read it before ROADMAP.md. [SPEC.md](SPEC.md) is the current source of truth for *what has been established*, with honest confidence levels. ROADMAP.md below is the long-range plan that both are built on; it is not deprecated, but DIRECTION.md's priority queue supersedes its ordering.
 
 The **final output** is a publishable paper / long-form blog post combining:
 - epiplexity (time-bounded MDL, per Finzi et al. 2026) as the measurement framework
@@ -31,7 +33,7 @@ Everything in this repo should be either feeding that write-up or falsifying par
 - Write at post-graduate level. Leon reads these synthesis notes carefully; they should be tight.
 
 ### What to build and not build
-- `engine/` — game mechanics, agents, analysis helpers. Keep small and focused. Upstream game code lives in `../hexgo/`; we re-export via [engine/__init__.py](engine/__init__.py).
+- `engine/` — game mechanics, agents, analysis helpers. Keep small and focused. Upstream game code lives in `../hexo/`; we re-export via [engine/__init__.py](engine/__init__.py).
 - `experiments/run_*.py` — one file per self-contained experiment. Must produce `results/<name>.json` and `figures/fig_<name>_*.png`. Existing examples: [run_epiplexity_scan.py](experiments/run_epiplexity_scan.py), [run_hamkins_echo.py](experiments/run_hamkins_echo.py).
 - Don't create a new module just to hold one function. Prefer existing files.
 - Don't add backward-compat shims, feature flags, or speculative abstractions.
@@ -44,40 +46,31 @@ Everything in this repo should be either feeding that write-up or falsifying par
 - Seed everything. Reproducibility is a prerequisite for every claim.
 - **Use GPU / parallelism where it helps.** Leon has a 5GB RTX 2060. For any compute that scales with corpus size — self-play batching, diffraction FFTs, tensor ops, MCTS rollouts — default to torch+CUDA. For embarrassingly parallel game-playing, use `multiprocessing.Pool` or `joblib`. Fall back to sequential CPU only when CUDA is unavailable or the problem is trivially small. Budget VRAM carefully (5GB is tight — prefer float32, small batches). Report wall time so speedups are visible.
 
-### Worktree gotcha
-`engine/__init__.py` computes the hexgo import path as `Path(__file__).parent.parent.parent / "hexgo"`. When working in a `.claude/worktrees/*` checkout, that path is wrong — the real hexgo repo is at `C:\Users\Leon\Desktop\Psychograph\hexgo`. Either run from the main checkout, or (if you must run in a worktree) prepend the real path to `sys.path` explicitly before `from engine import ...` — see the pattern in [experiments/run_hamkins_echo.py](experiments/run_hamkins_echo.py).
+### Import path
+Resolved once, centrally, in [engine/__init__.py](engine/__init__.py)'s `_resolve_hexo_root()` — checks the `HEXO_ROOT` env var first, then the sibling directory relative to this file, then a hardcoded dev-machine fallback (for the worktree case, where the relative computation resolves wrong). **Do not duplicate the old per-file "worktree shim"** (`_REAL_HEXGO = Path(r"C:\...\hexo")` + sys.path.insert) — every `experiments/run_*.py` used to carry its own copy of that shim, which is exactly what let the `hexgo`→`hexo` directory rename silently break ~24 files at once (fixed 2026-07-05). If you're on a machine or container where neither the env var nor the relative path apply, set `HEXO_ROOT` rather than re-adding a hardcoded path. `experiments/run_crystal_survey.py` is the one intentional exception — it still needs its own `_REAL_HEXGO` for the Rust-module sys.path swap in `_try_rust_parallel_self_play`.
 
 ## Current research state (keep this updated)
 
-**Last updated: 2026-04-17.**
+**Last updated: 2026-07-05.** For the full picture read [SPEC.md](SPEC.md) (established results, honest confidence) and [DIRECTION.md](DIRECTION.md) (what's active now and why). This section is a pointer, not a duplicate — don't let it drift out of sync with those two again like it did between 2026-04-17 and 2026-07-05.
 
-### Active threads
-- **Epiplexity scan** (ROADMAP Programmes A, D, E): running, infrastructure in [run_epiplexity_scan.py](experiments/run_epiplexity_scan.py). Measures S_T, H_T for random vs structured agents; tests whether corpus description length saturates (Pisot conjecture prediction).
-- **Hamkins echo** ([run_hamkins_echo.py](experiments/run_hamkins_echo.py)): does draw fraction rise with horizon? Pilot says *no* — strong play is decisive, not draw-prone. Full 5×3×50 sweep currently running.
-- **Descriptive complexity positioning**: HeXO payoff = $\Sigma^0_1$ open, determined by Gale–Stewart directly. Infinite Hex (Hamkins) = $\Sigma^0_7$ per Törnä. We are *below* their game in complexity, which is why finite-horizon analysis is the right tool for us.
-- **P1–P5 falsifiable-propositions table** in [docs/theory/2026-04-17-hamkins-synthesis.md](docs/theory/2026-04-17-hamkins-synthesis.md) §5–6. P1, P2, P4, P5 currently supported; P3 (Pisot/sub-linear $|P|$) preliminary only.
+### The one-paragraph state of play
+Two research lines run in parallel: **Line A** (quasicrystal/Pisot/epiplexity — the global-pattern story) and **Line B** (transversal-atom/τ forcing — the local-mechanism story, now the active focus per DIRECTION.md). The headline claim that would make Line A publishable — is $S_T(N)$ sub-linear in corpus size (P3)? — has **not actually been measured yet** despite being named "the headline result" in April; the observer-net infrastructure for it exists (`engine/epiplexity.py`) but has never been pointed at a real corpus-size sweep. Several established-sounding claims (P1 first-mover advantage, the Bellman-Turing predicted wavelength) have real numbers behind them but weaker statistical support than earlier docs implied — see SPEC.md's corrected framing. The AlphaZero/NCA-zoo learned-agent thread is a **documented series of negative results** (draw-collapse, value-head underfitting, distillation erasing the Black edge) — see [docs/theory/2026-04-18-unified-agent-design.md](docs/theory/2026-04-18-unified-agent-design.md) §10-13. Don't resume pouring compute into it without first fixing the diagnosed causes (class imbalance on `v=0` targets, sparse threat labels).
 
-### Recently landed (2026-04-17)
-- Parallel match harness [experiments/harness.py](experiments/harness.py) with Wilson CIs, mp.Pool, 12-agent registry.
-- Combo-v2 opening-centre-bias fix — Black share restored to 0.53 [0.42, 0.64] from v1's 0.37 — [engine/ca_policy.py](engine/ca_policy.py) `make_combo_v2_ca` + [experiments/run_combo_defect.py](experiments/run_combo_defect.py). **P1 supported.**
-- **MirrorAgent** ([engine/agents.py](engine/agents.py)) — point-reflection pairing $c \mapsto -c$. Non-loss vs Random = 1.00, P2 wins vs Combo-v2 = 0.14. **P2 supported on both clauses.** [experiments/run_mirror_agent.py](experiments/run_mirror_agent.py).
-- **Diffraction analyser** [engine/diffraction.py](engine/diffraction.py) (torch+CUDA). Long self-play Bragg99 = 0.51 ± 0.13 (n=9) vs random control 0.055; Delone bounds stable (corr(N, $d_\max$) = +0.07). **P4, P5 supported.** [experiments/run_diffraction.py](experiments/run_diffraction.py).
-- **Untrained NeuralCAAgent** [engine/neural_ca.py](engine/neural_ca.py) (12.2k params on RTX 2060, 53 ms/move). Baseline vs Random/Combo-v2 in [experiments/run_neural_ca.py](experiments/run_neural_ca.py). CA-prior warm-start discussion in synthesis §7.
-
-### Pending experiments (in priority order)
-1. **First-mover-advantage curve** across the ladder (random → greedy → fork_aware → combo → combo_v2 → neural_ca) — trace Black-share vs agent strength. Falsifies/strengthens "perfect play is P1-win" and tells us whether the Black advantage grows, saturates, or inverts with strength. Prerequisite for any strong claim in the paper's introduction.
-2. **Train NeuralCAAgent** via self-play policy gradient; ablate CA-prior initialisers (random / $D_6$-tied / line-detector / Erdős–Selfridge / combo) per synthesis §7. Metric = games-to-match-Combo-v2.
-3. **Pisot confirmation for P3** — extend [experiments/run_epiplexity_scan.py](experiments/run_epiplexity_scan.py) to horizons $T \in \{120, 240, 480, 960\}$ for Combo-v2 self-play; fit $|P|(T) \sim a \log T + b$ vs linear.
-4. **Hamkins echo at horizon 960** — double the current 480 sweep to check if the decisive-play signal holds at longer horizons.
+### Active now (per DIRECTION.md)
+0. Search-regime pivot executed 2026-07-06 — see [docs/theory/2026-07-06-search-regime-verdicts.md](docs/theory/2026-07-06-search-regime-verdicts.md) for candidate verdicts (2 new theorems, `fast_tactical` evaluator, [modal_bakeoff.py](modal_bakeoff.py) staged). Bake-off Phase 1 on Modal is the pending next step.
+1. τ-fork heuristic in [competition/arena.py](competition/arena.py) — real but currently only proven to *not lose* (draws vs plain ES potential after the squared-term fix), not yet proven to *win*. The arena now supports seeded random openings (the fix for the deterministic-draw wall), so the asymmetric test runs inside the bake-off.
+2. Programme D proxy — a cheap gzip-based MDL measurement across corpus sizes $N \in \{10^2, ..., 10^5\}$, to get a first log-vs-linear read on $S_T(N)$ without building the full observer-net pipeline. See DIRECTION.md's experiment queue.
+3. Statistics tightening on P1 (first-mover advantage) and the Bellman-Turing wavelength prediction — both currently rest on thin samples (see SPEC.md).
 
 ### Known-resolved
 - `ROADMAPv2.md` → `docs/ROADMAP.md`. The old v1 file is gone. If a comment or note still says "ROADMAPv2", that's a text reference, not a dead link — leave it or fix opportunistically.
 - Diffraction spectrum — **done** (commit 1d876d3 on master).
 - MirrorAgent — **done** (commit e143bcc on master).
+- **Sibling-repo rename breakage** — `hexgo` → `hexo` directory rename left ~24 files pointing at a nonexistent path, silently breaking every experiment script. Fixed 2026-07-05.
 
 ## Invariants — do not violate
 
-- `WIN_LENGTH` is asserted `== 6` deep inside the upstream engine ([../hexgo/game.py:147](../hexgo/game.py:147)). Sweeping it requires patching the assertion; don't do this without flagging it explicitly.
+- `WIN_LENGTH` is asserted `== 6` deep inside the upstream engine ([../hexo/game.py:147](../hexo/game.py:147)). Sweeping it requires patching the assertion; don't do this without flagging it explicitly.
 - The hex turn rule is **1-2-2** (P1 places 1 stone on opening; thereafter each turn = 2 placements). Agents written assuming standard 1-1 alternation will mis-play.
 - Agents only need `name: str` and `choose_move(game) -> (q, r)`. Don't subclass or require a protocol — keep it flat.
 

@@ -40,13 +40,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-# Worktree fix: engine/__init__.py expects hexgo as sibling of the theory repo,
-# but inside a .claude/worktrees/* checkout that resolution is wrong. Point it
-# at the real hexgo repo explicitly before touching `engine`.
-_REAL_HEXGO = Path(r"C:\Users\Leon\Desktop\Psychograph\hexgo")
-if _REAL_HEXGO.exists() and str(_REAL_HEXGO) not in sys.path:
-    sys.path.insert(0, str(_REAL_HEXGO))
-
 import matplotlib.pyplot as plt
 import numpy as np
 

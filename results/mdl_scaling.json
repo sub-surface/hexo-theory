@@ -1,0 +1,260 @@
+{
+  "n_games": 8000,
+  "source": "results/modal_moves_python_8000.json",
+  "control_source": "results/mdl_random_control_3000.json (regenerate: run_mdl_scaling.py --gen-control 3000 --control ...)",
+  "rows": [
+    {
+      "N": 80,
+      "raw_bytes": 17113,
+      "gzip_bytes": 6599,
+      "lzma_bytes": 6272
+    },
+    {
+      "N": 114,
+      "raw_bytes": 25432,
+      "gzip_bytes": 9594,
+      "lzma_bytes": 9056
+    },
+    {
+      "N": 162,
+      "raw_bytes": 33820,
+      "gzip_bytes": 12351,
+      "lzma_bytes": 11612
+    },
+    {
+      "N": 232,
+      "raw_bytes": 48697,
+      "gzip_bytes": 17339,
+      "lzma_bytes": 16272
+    },
+    {
+      "N": 330,
+      "raw_bytes": 69552,
+      "gzip_bytes": 24635,
+      "lzma_bytes": 22876
+    },
+    {
+      "N": 470,
+      "raw_bytes": 96102,
+      "gzip_bytes": 33239,
+      "lzma_bytes": 30516
+    },
+    {
+      "N": 670,
+      "raw_bytes": 138296,
+      "gzip_bytes": 47134,
+      "lzma_bytes": 42668
+    },
+    {
+      "N": 955,
+      "raw_bytes": 196655,
+      "gzip_bytes": 67051,
+      "lzma_bytes": 59572
+    },
+    {
+      "N": 1361,
+      "raw_bytes": 286906,
+      "gzip_bytes": 97379,
+      "lzma_bytes": 84780
+    },
+    {
+      "N": 1940,
+      "raw_bytes": 406857,
+      "gzip_bytes": 137441,
+      "lzma_bytes": 117016
+    },
+    {
+      "N": 2764,
+      "raw_bytes": 582427,
+      "gzip_bytes": 196602,
+      "lzma_bytes": 163616
+    },
+    {
+      "N": 3939,
+      "raw_bytes": 839189,
+      "gzip_bytes": 283430,
+      "lzma_bytes": 230408
+    },
+    {
+      "N": 5614,
+      "raw_bytes": 1211244,
+      "gzip_bytes": 410377,
+      "lzma_bytes": 326184
+    },
+    {
+      "N": 8000,
+      "raw_bytes": 1731050,
+      "gzip_bytes": 586455,
+      "lzma_bytes": 456020
+    }
+  ],
+  "fits": {
+    "gzip": {
+      "linear": {
+        "a_bytes_per_game": 73.06953181045105,
+        "b": -1163.4786888659098,
+        "r2": 0.9998250806415537
+      },
+      "power": {
+        "beta": 0.974074042721843,
+        "c": 87.81904975841232,
+        "r2_loglog": 0.9991464856351477,
+        "interpretation": "linear (no super-symmetry structure)"
+      },
+      "log": {
+        "alpha": 101845.96615789078,
+        "b": -542959.8297078253,
+        "r2": 0.7353944908192962
+      }
+    },
+    "lzma": {
+      "linear": {
+        "a_bytes_per_game": 56.96828467396304,
+        "b": 4267.543631977861,
+        "r2": 0.9997695610270773
+      },
+      "power": {
+        "beta": 0.9290227103006333,
+        "c": 104.49128621958457,
+        "r2_loglog": 0.999585137786483,
+        "interpretation": "sub-linear (shared structure)"
+      },
+      "log": {
+        "alpha": 80558.60012619421,
+        "b": -425861.2438783723,
+        "r2": 0.7569004708575748
+      }
+    }
+  },
+  "control_rows": [
+    {
+      "N": 30,
+      "raw_bytes": 5526,
+      "gzip_bytes": 3378,
+      "lzma_bytes": 3236
+    },
+    {
+      "N": 43,
+      "raw_bytes": 8842,
+      "gzip_bytes": 5522,
+      "lzma_bytes": 5224
+    },
+    {
+      "N": 61,
+      "raw_bytes": 12401,
+      "gzip_bytes": 7726,
+      "lzma_bytes": 7248
+    },
+    {
+      "N": 87,
+      "raw_bytes": 17395,
+      "gzip_bytes": 10860,
+      "lzma_bytes": 10116
+    },
+    {
+      "N": 124,
+      "raw_bytes": 24788,
+      "gzip_bytes": 15467,
+      "lzma_bytes": 14352
+    },
+    {
+      "N": 176,
+      "raw_bytes": 37484,
+      "gzip_bytes": 23573,
+      "lzma_bytes": 21848
+    },
+    {
+      "N": 251,
+      "raw_bytes": 52787,
+      "gzip_bytes": 33038,
+      "lzma_bytes": 30712
+    },
+    {
+      "N": 358,
+      "raw_bytes": 73194,
+      "gzip_bytes": 45587,
+      "lzma_bytes": 42400
+    },
+    {
+      "N": 510,
+      "raw_bytes": 103933,
+      "gzip_bytes": 64502,
+      "lzma_bytes": 60024
+    },
+    {
+      "N": 727,
+      "raw_bytes": 147360,
+      "gzip_bytes": 91325,
+      "lzma_bytes": 85056
+    },
+    {
+      "N": 1037,
+      "raw_bytes": 214840,
+      "gzip_bytes": 133281,
+      "lzma_bytes": 124220
+    },
+    {
+      "N": 1477,
+      "raw_bytes": 305689,
+      "gzip_bytes": 189549,
+      "lzma_bytes": 176576
+    },
+    {
+      "N": 2105,
+      "raw_bytes": 438883,
+      "gzip_bytes": 272060,
+      "lzma_bytes": 253460
+    },
+    {
+      "N": 3000,
+      "raw_bytes": 624912,
+      "gzip_bytes": 387040,
+      "lzma_bytes": 360652
+    }
+  ],
+  "control_fits": {
+    "gzip": {
+      "linear": {
+        "a_bytes_per_game": 129.0519265428139,
+        "b": -414.60988975284664,
+        "r2": 0.9999469429955972
+      },
+      "power": {
+        "beta": 1.0123718347369977,
+        "c": 118.21926067079157,
+        "r2_loglog": 0.9994557887476834,
+        "interpretation": "linear (no super-symmetry structure)"
+      },
+      "log": {
+        "alpha": 67852.42551345484,
+        "b": -295411.2128848131,
+        "r2": 0.7432485424250932
+      }
+    },
+    "lzma": {
+      "linear": {
+        "a_bytes_per_game": 120.24700864093315,
+        "b": -404.4734491684815,
+        "r2": 0.9999468562103067
+      },
+      "power": {
+        "beta": 1.0089175505225245,
+        "c": 112.61851188747171,
+        "r2_loglog": 0.999581040706366,
+        "interpretation": "linear (no super-symmetry structure)"
+      },
+      "log": {
+        "alpha": 63207.356057012476,
+        "b": -275184.8405897461,
+        "r2": 0.7428804768351174
+      }
+    }
+  },
+  "headline": {
+    "lzma_beta": 0.9290227103006333,
+    "gzip_beta": 0.974074042721843,
+    "verdict": "sub-linear (shared structure)",
+    "control_lzma_beta": 1.0089175505225245,
+    "beta_below_control": true
+  }
+}

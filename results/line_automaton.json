@@ -1,0 +1,20 @@
+{
+  "binary_perron": 1.9659482366454835,
+  "pentanacci": 1.965948236645486,
+  "binary_equals_pentanacci": true,
+  "pentanacci_conjugate_moduli": [
+    0.8187888157674698,
+    0.8187888157674698,
+    0.871047941737176,
+    0.871047941737176
+  ],
+  "pentanacci_is_pisot": true,
+  "ternary_perron": 2.9944595205972755,
+  "readme_pisot_candidates": {
+    "plastic": 1.324718,
+    "golden": 1.618034,
+    "tribonacci": 1.839287
+  },
+  "note_on_readme": "README labels ~1.3247 'tribonacci'; that value is the plastic number -- tribonacci is ~1.8393",
+  "scope": "Perron eigenvalue = entropy base of the line shift, NOT a substitution inflation constant; see module docstring"
+}

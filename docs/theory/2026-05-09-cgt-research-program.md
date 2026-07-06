@@ -2,6 +2,15 @@
 
 *2026-05-09*
 
+> **Status (2026-07-05): PARKED (research programme), but its repo-hygiene
+> principles are still the standard.** The CGT/Hackenbush/`+₂`-algebra
+> conjectures below are speculative and untested (see [SPEC.md](../../SPEC.md)
+> §6) — not on the critical path until the τ/Pisot spine converges or is
+> falsified. The "preservation first, never delete, index before moving"
+> philosophy in the Repository Cleanup Plan below is exactly what the
+> 2026-07-05 docs pass followed (status headers added, nothing moved or
+> deleted) — that part of this note remains load-bearing.
+
 This note turns the Conway/Sloane/Hackenbush discussion into an execution plan for
 the two sibling repositories:
 

@@ -41,7 +41,7 @@ import torch
 
 HERE = Path(__file__).resolve().parents[1]
 # Charlie's artifacts live in the main checkout (not worktree-local).
-MAIN_CHECKOUT = Path("C:/Users/Leon/Desktop/Psychograph/hexgo-theory")
+MAIN_CHECKOUT = Path("C:/Users/Leon/Desktop/Psychograph/hexo-theory")
 OURS_JSON = HERE / "results" / "fma_curve.json"
 CHARLIE_PT = (
     MAIN_CHECKOUT

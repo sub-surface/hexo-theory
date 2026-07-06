@@ -2,6 +2,12 @@
 
 *2026-05-09*
 
+> **Status (2026-07-05): PARKED — speculative, not yet established.** Interesting
+> formal framing (exact Bellman recursion, live-line feature sum, Boltzmannized
+> operator) but none of §8's falsifiers have actually been run. See
+> [SPEC.md](../../SPEC.md) §6. Not on the critical path until the τ/Pisot spine
+> converges or is falsified.
+
 This note turns the "less biased crystal experiment" into a mathematical target.
 The guiding question is:
 
