@@ -41,14 +41,32 @@ from pathlib import Path
 import modal
 
 THEORY_ROOT = Path(__file__).resolve().parent
+RAMORA_ROOT = THEORY_ROOT / "papers" / "misc" / "hexbot-building-framework" / "opponents"
 
 app = modal.App("hexo-bakeoff")
 
+# Always includes competition/external_bots.py + the vendored SealBot port
+# (opponents.ramora, pure stdlib, no build step -- cheap to always mount)
+# so "sealbot" and "hexo_bot_standalone" (the actual file handed to the
+# opponent's team) are ordinary names in the SAME roster as every Python
+# bot, no separate bespoke script needed. deep_minimax_rust is deliberately
+# NOT in this image (it needs the compiled hexgo wheel, a real build step)
+# -- see modal_rust_bot.py / modal_images.py for that one.
 image = (
     modal.Image.debian_slim(python_version="3.12")
     .pip_install("numpy")
     .add_local_file(str(THEORY_ROOT / "competition" / "arena.py"),
                     "/root/competition/arena.py", copy=True)
+    .add_local_file(str(THEORY_ROOT / "competition" / "external_bots.py"),
+                    "/root/competition/external_bots.py", copy=True)
+    .add_local_file(str(THEORY_ROOT / "competition" / "hexo_bot.py"),
+                    "/root/competition/hexo_bot.py", copy=True)
+    .add_local_file(str(THEORY_ROOT / "competition" / "hexo_bot2.py"),
+                    "/root/competition/hexo_bot2.py", copy=True)
+    .add_local_file(str(THEORY_ROOT / "experiments" / "run_residue_defense.py"),
+                    "/root/experiments/run_residue_defense.py", copy=True)
+    .add_local_dir(str(RAMORA_ROOT), "/root/opponents", copy=True,
+                    ignore=["__pycache__", ".git"])
 )
 
 
@@ -59,13 +77,29 @@ def _play_pairing_shard(name_a: str, name_b: str, opening_seeds: list[int],
     """Each opening seed -> two games (colours swapped). Returns raw outcomes."""
     import sys
     sys.path.insert(0, "/root/competition")
+    sys.path.insert(0, "/root")
     import arena
+    import external_bots
 
     roster = arena.bot_registry()
+    roster.update(external_bots.external_bot_registry(include_rust=False))
     bot_a, bot_b = roster[name_a], roster[name_b]
     out = []
+    # Wall-clock safety net, well under this function's 3600s timeout:
+    # arena.play_game's budget_s only forfeits a slow MOVE after the fact
+    # (measured, not preemptive) -- it can't stop a single bot() call from
+    # itself taking a long time before that check even fires. External
+    # engines with their own (possibly coarse) internal time-checking, e.g.
+    # SealBot's MinimaxBot, are exactly the risk here: one such call already
+    # ran a game to 1800s and hit a Modal function timeout, which (with the
+    # default return_exceptions=False on .starmap()) cancelled every OTHER
+    # in-flight shard too. Bailing out of remaining games in THIS shard and
+    # returning partial results is strictly better than risking that again.
+    shard_deadline = time.time() + 3000.0
     for seed in opening_seeds:
         for a_is_black in (True, False):
+            if time.time() > shard_deadline:
+                return out
             b1, b2 = (bot_a, bot_b) if a_is_black else (bot_b, bot_a)
             t0 = time.time()
             w, n_stones = arena.play_game(
@@ -102,8 +136,23 @@ def _run(bot_names: list[str], openings: int, budget_s: float,
                           opening_placements))
             keys.append((a, b))
     t0 = time.time()
-    shards = list(_play_pairing_shard.starmap(calls))
+    # return_exceptions=True: one hung/errored shard (an external engine
+    # like SealBot with its own, possibly coarse, internal time-checking
+    # is the realistic risk) must not cancel every other in-flight shard --
+    # the default return_exceptions=False did exactly that on 2026-07-08.
+    raw_shards = list(_play_pairing_shard.starmap(calls, return_exceptions=True))
     wall = time.time() - t0
+
+    shards, shard_errors = [], 0
+    for key, shard in zip(keys, raw_shards):
+        if isinstance(shard, BaseException):
+            shard_errors += 1
+            print(f"[error] shard for {key} raised: {shard!r}")
+            shards.append([])
+        else:
+            shards.append(shard)
+    if shard_errors:
+        print(f"[warn] {shard_errors}/{len(raw_shards)} shards errored -- results below are partial")
 
     # pool once, per pairing, then compute CIs over the pooled outcomes
     pooled: dict[tuple, list[dict]] = {}

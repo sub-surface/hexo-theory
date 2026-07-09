@@ -1,0 +1,52 @@
+{
+  "bots": [
+    "hexo_bot_standalone",
+    "sealbot"
+  ],
+  "openings": 1,
+  "budget_s": 1.0,
+  "max_moves": 400,
+  "seed_base": 0,
+  "opening_placements": 16,
+  "n_games": 2,
+  "wall_time_s": 14.6,
+  "wins_total": {
+    "hexo_bot_standalone": 2,
+    "sealbot": 0
+  },
+  "pairings": [
+    {
+      "a": "hexo_bot_standalone",
+      "b": "sealbot",
+      "a_wins": 2,
+      "b_wins": 0,
+      "draws": 0,
+      "a_share_decisive": 1.0,
+      "wilson95": [
+        0.342,
+        1.0
+      ],
+      "mean_game_s": 5.38
+    }
+  ],
+  "raw": {
+    "hexo_bot_standalone|sealbot": [
+      {
+        "seed": 0,
+        "a_black": true,
+        "winner_raw": 1,
+        "result": "a",
+        "n_stones": 29,
+        "game_s": 7.85
+      },
+      {
+        "seed": 0,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 22,
+        "game_s": 2.9
+      }
+    ]
+  }
+}

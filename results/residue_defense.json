@@ -1,0 +1,44 @@
+{
+  "grid": [
+    {
+      "k": 6,
+      "n_fronts": 15,
+      "n_seeds": 5,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 40,
+      "n_seeds": 5,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 15,
+      "n_seeds": 5,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 40,
+      "n_seeds": 5,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    }
+  ],
+  "baseline_domino_k7_R12": {
+    "10": 0.025,
+    "20": 0.075,
+    "30": 0.125,
+    "40": 0.3,
+    "60": 0.475,
+    "80": 0.675
+  },
+  "radius": 12,
+  "turns": 80,
+  "quick": true,
+  "wall_time_s": 13.1
+}

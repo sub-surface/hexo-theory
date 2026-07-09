@@ -1,0 +1,175 @@
+{
+  "source": "results/modal_moves_python_8000.json",
+  "control": "results/mdl_random_control_3000.json",
+  "max_order": 3,
+  "agent_rows": [
+    {
+      "N": 133,
+      "n_tokens": 14485,
+      "markov_H_T": 9.3045,
+      "markov_S_T_bits": 1366256,
+      "gzip_bits_per_token": 9.6519,
+      "two_part_markov_bits": 1501031.3
+    },
+    {
+      "N": 210,
+      "n_tokens": 21518,
+      "markov_H_T": 8.9938,
+      "markov_S_T_bits": 1932088,
+      "gzip_bits_per_token": 9.3239,
+      "two_part_markov_bits": 2125615.8
+    },
+    {
+      "N": 331,
+      "n_tokens": 34647,
+      "markov_H_T": 8.9012,
+      "markov_S_T_bits": 2964960,
+      "gzip_bits_per_token": 9.1901,
+      "two_part_markov_bits": 3273359.1
+    },
+    {
+      "N": 521,
+      "n_tokens": 52692,
+      "markov_H_T": 8.3982,
+      "markov_S_T_bits": 4272536,
+      "gzip_bits_per_token": 8.9746,
+      "two_part_markov_bits": 4715056.0
+    },
+    {
+      "N": 822,
+      "n_tokens": 84668,
+      "markov_H_T": 8.2607,
+      "markov_S_T_bits": 6398304,
+      "gzip_bits_per_token": 8.8711,
+      "two_part_markov_bits": 7097721.4
+    },
+    {
+      "N": 1295,
+      "n_tokens": 135088,
+      "markov_H_T": 7.8863,
+      "markov_S_T_bits": 9643560,
+      "gzip_bits_per_token": 8.8527,
+      "two_part_markov_bits": 10708901.6
+    },
+    {
+      "N": 2042,
+      "n_tokens": 211643,
+      "markov_H_T": 7.5323,
+      "markov_S_T_bits": 14244920,
+      "gzip_bits_per_token": 8.8499,
+      "two_part_markov_bits": 15839082.1
+    },
+    {
+      "N": 3219,
+      "n_tokens": 337947,
+      "markov_H_T": 7.2044,
+      "markov_S_T_bits": 21184152,
+      "gzip_bits_per_token": 8.8424,
+      "two_part_markov_bits": 23618850.3
+    },
+    {
+      "N": 5075,
+      "n_tokens": 542147,
+      "markov_H_T": 7.0392,
+      "markov_S_T_bits": 31456448,
+      "gzip_bits_per_token": 8.8529,
+      "two_part_markov_bits": 35272740.8
+    },
+    {
+      "N": 8000,
+      "n_tokens": 859468,
+      "markov_H_T": 6.6783,
+      "markov_S_T_bits": 46487568,
+      "gzip_bits_per_token": 8.8532,
+      "two_part_markov_bits": 52227388.8
+    }
+  ],
+  "control_rows": [
+    {
+      "N": 50,
+      "n_tokens": 5005,
+      "markov_H_T": 7.9068,
+      "markov_S_T_bits": 503440,
+      "gzip_bits_per_token": 9.3315,
+      "two_part_markov_bits": 543013.3
+    },
+    {
+      "N": 79,
+      "n_tokens": 7972,
+      "markov_H_T": 7.985,
+      "markov_S_T_bits": 782848,
+      "gzip_bits_per_token": 9.3377,
+      "two_part_markov_bits": 846504.8
+    },
+    {
+      "N": 124,
+      "n_tokens": 12285,
+      "markov_H_T": 7.8877,
+      "markov_S_T_bits": 1166696,
+      "gzip_bits_per_token": 9.3311,
+      "two_part_markov_bits": 1263596.1
+    },
+    {
+      "N": 196,
+      "n_tokens": 20849,
+      "markov_H_T": 8.0596,
+      "markov_S_T_bits": 1886400,
+      "gzip_bits_per_token": 9.4163,
+      "two_part_markov_bits": 2054435.1
+    },
+    {
+      "N": 309,
+      "n_tokens": 31500,
+      "markov_H_T": 8.023,
+      "markov_S_T_bits": 2753936,
+      "gzip_bits_per_token": 9.3201,
+      "two_part_markov_bits": 3006659.6
+    },
+    {
+      "N": 486,
+      "n_tokens": 48922,
+      "markov_H_T": 7.9789,
+      "markov_S_T_bits": 4129768,
+      "gzip_bits_per_token": 9.2392,
+      "two_part_markov_bits": 4520111.2
+    },
+    {
+      "N": 766,
+      "n_tokens": 77111,
+      "markov_H_T": 8.0196,
+      "markov_S_T_bits": 6319424,
+      "gzip_bits_per_token": 9.2156,
+      "two_part_markov_bits": 6937823.6
+    },
+    {
+      "N": 1208,
+      "n_tokens": 123529,
+      "markov_H_T": 7.962,
+      "markov_S_T_bits": 9821912,
+      "gzip_bits_per_token": 9.213,
+      "two_part_markov_bits": 10805448.0
+    },
+    {
+      "N": 1903,
+      "n_tokens": 196073,
+      "markov_H_T": 7.955,
+      "markov_S_T_bits": 15038776,
+      "gzip_bits_per_token": 9.2027,
+      "two_part_markov_bits": 16598530.9
+    },
+    {
+      "N": 3000,
+      "n_tokens": 309842,
+      "markov_H_T": 7.907,
+      "markov_S_T_bits": 22864872,
+      "gzip_bits_per_token": 9.198,
+      "two_part_markov_bits": 25314788.5
+    }
+  ],
+  "headline": {
+    "agent_H_T_final": 6.6783,
+    "control_H_T_final": 7.907,
+    "H_T_gap_bits_per_token": 1.229,
+    "agent_H_T_falls_with_N": true
+  }
+}

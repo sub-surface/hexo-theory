@@ -1,0 +1,250 @@
+{
+  "budgets": [
+    0.3,
+    0.7,
+    1.5,
+    3.0
+  ],
+  "results": [
+    {
+      "n_stones": 10,
+      "time_budget_s": 0.3,
+      "actual_time_s": 0.301,
+      "move": [
+        3,
+        -2
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 18,
+      "time_budget_s": 0.3,
+      "actual_time_s": 0.301,
+      "move": [
+        -2,
+        2
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 26,
+      "time_budget_s": 0.3,
+      "actual_time_s": 0.302,
+      "move": [
+        -1,
+        1
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 34,
+      "time_budget_s": 0.3,
+      "actual_time_s": 0.301,
+      "move": [
+        2,
+        -2
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 42,
+      "time_budget_s": 0.3,
+      "actual_time_s": 0.301,
+      "move": [
+        6,
+        -5
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 50,
+      "time_budget_s": 0.3,
+      "actual_time_s": 0.0,
+      "move": [
+        -2,
+        7
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 10,
+      "time_budget_s": 0.7,
+      "actual_time_s": 0.702,
+      "move": [
+        3,
+        -2
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 18,
+      "time_budget_s": 0.7,
+      "actual_time_s": 0.7,
+      "move": [
+        -2,
+        2
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 26,
+      "time_budget_s": 0.7,
+      "actual_time_s": 0.701,
+      "move": [
+        -1,
+        1
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 34,
+      "time_budget_s": 0.7,
+      "actual_time_s": 0.701,
+      "move": [
+        2,
+        -2
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 42,
+      "time_budget_s": 0.7,
+      "actual_time_s": 0.702,
+      "move": [
+        6,
+        -5
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 50,
+      "time_budget_s": 0.7,
+      "actual_time_s": 0.0,
+      "move": [
+        -2,
+        7
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 10,
+      "time_budget_s": 1.5,
+      "actual_time_s": 1.5,
+      "move": [
+        3,
+        -2
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 18,
+      "time_budget_s": 1.5,
+      "actual_time_s": 1.501,
+      "move": [
+        -2,
+        2
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 26,
+      "time_budget_s": 1.5,
+      "actual_time_s": 1.501,
+      "move": [
+        -1,
+        1
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 34,
+      "time_budget_s": 1.5,
+      "actual_time_s": 1.502,
+      "move": [
+        2,
+        -2
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 42,
+      "time_budget_s": 1.5,
+      "actual_time_s": 1.501,
+      "move": [
+        6,
+        -5
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 50,
+      "time_budget_s": 1.5,
+      "actual_time_s": 0.0,
+      "move": [
+        -2,
+        7
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 10,
+      "time_budget_s": 3.0,
+      "actual_time_s": 3.0,
+      "move": [
+        3,
+        -2
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 18,
+      "time_budget_s": 3.0,
+      "actual_time_s": 3.001,
+      "move": [
+        -2,
+        2
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 26,
+      "time_budget_s": 3.0,
+      "actual_time_s": 3.0,
+      "move": [
+        -1,
+        1
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 34,
+      "time_budget_s": 3.0,
+      "actual_time_s": 3.0,
+      "move": [
+        2,
+        -2
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 42,
+      "time_budget_s": 3.0,
+      "actual_time_s": 3.001,
+      "move": [
+        6,
+        -5
+      ],
+      "legal": true
+    },
+    {
+      "n_stones": 50,
+      "time_budget_s": 3.0,
+      "actual_time_s": 0.0,
+      "move": [
+        -2,
+        7
+      ],
+      "legal": true
+    }
+  ]
+}

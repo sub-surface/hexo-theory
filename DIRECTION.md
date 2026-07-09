@@ -4,6 +4,12 @@
 > from theory to the bot that ships in the garden. For the full distilled findings
 > see [SPEC.md](SPEC.md); for the bot competition see [competition/](competition/).
 
+> **2026-07-09 session supersedes parts of this page** — see
+> [docs/2026-07-09-status-and-direction.md](docs/2026-07-09-status-and-direction.md)
+> for current state (hexo_bot2 beats SealBot 23-1; additive temperature law
+> verified exact on 40k pairs; F₇ extinction measured; cheap-reactive
+> defenses refuted by adaptive attack) and tomorrow's queue.
+
 ## The focus
 
 Of the many threads explored (quasicrystal/Pisot, epiplexity/MDL, CGT, surreal

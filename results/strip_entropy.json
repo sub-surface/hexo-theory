@@ -1,0 +1,40 @@
+{
+  "max_run": 5,
+  "widths": {
+    "1": {
+      "method": "dense_exact",
+      "n_states": 50,
+      "perron_eigenvalue": 1.9659482366454863,
+      "entropy_per_site_bits": 0.9752253360640519
+    },
+    "2": {
+      "method": "dense_exact",
+      "n_states": 2500,
+      "perron_eigenvalue": 3.8649524691694994,
+      "entropy_per_site_bits": 1.9504506721281045
+    },
+    "3": {
+      "method": "power_iteration",
+      "n_working_states": 1100,
+      "perron_eigenvalue": 7.598296450590832,
+      "entropy_per_site_bits": 2.9256760004280404,
+      "ratio_trace_tail": [
+        7.597229685859838,
+        7.5980559025606915,
+        7.598336748215179,
+        7.598365211688533,
+        7.598313992143787,
+        7.598276035126322,
+        7.5982941605828485,
+        7.59829828746754,
+        7.598297621302287,
+        7.598296450590832
+      ]
+    }
+  },
+  "w1_reproduces_pentanacci": {
+    "w1_eigenvalue": 1.9659482366454863,
+    "pentanacci": 1.965948236645486,
+    "match": true
+  }
+}

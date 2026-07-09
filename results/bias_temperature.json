@@ -1,0 +1,50 @@
+{
+  "p1_q1": {
+    "n_configs": 75,
+    "n_drawn_singles": 75,
+    "drawn_single_with_h_gt_q": [
+      [
+        8,
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      [
+        8,
+        [
+          2,
+          3,
+          5
+        ]
+      ]
+    ],
+    "n_pairs": 2074,
+    "n_nonadditive": 0,
+    "law": "nonadditive <=> h_A + h_B >= 2",
+    "false_negatives": 0,
+    "false_positives": 712
+  },
+  "p2_q1": {
+    "n_configs": 75,
+    "n_drawn_singles": 51,
+    "drawn_single_with_h_gt_q": [],
+    "n_pairs": 936,
+    "n_nonadditive": 486,
+    "law": "nonadditive <=> h_A + h_B >= 2",
+    "false_negatives": 350,
+    "false_positives": 0
+  },
+  "p2_q2": {
+    "n_configs": 75,
+    "n_drawn_singles": 75,
+    "drawn_single_with_h_gt_q": [],
+    "n_pairs": 2074,
+    "n_nonadditive": 71,
+    "law": "nonadditive <=> h_A + h_B >= 3",
+    "false_negatives": 0,
+    "false_positives": 0
+  },
+  "wall_time_s": 531.0
+}

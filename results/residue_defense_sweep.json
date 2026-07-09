@@ -1,0 +1,367 @@
+{
+  "turns": 400,
+  "n_seeds": 30,
+  "wall_time_s": 21.5,
+  "grid": [
+    {
+      "k": 6,
+      "n_fronts": 20,
+      "cluster_radius": 8,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 20,
+      "cluster_radius": 8,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 20,
+      "cluster_radius": 12,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 20,
+      "cluster_radius": 12,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 40,
+      "cluster_radius": 8,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 40,
+      "cluster_radius": 8,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 40,
+      "cluster_radius": 12,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 40,
+      "cluster_radius": 12,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 60,
+      "cluster_radius": 8,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 60,
+      "cluster_radius": 8,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 60,
+      "cluster_radius": 12,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 60,
+      "cluster_radius": 12,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 80,
+      "cluster_radius": 8,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 80,
+      "cluster_radius": 8,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.03333333333333333,
+      "tier1_overrun_rate": 0.03333333333333333
+    },
+    {
+      "k": 6,
+      "n_fronts": 80,
+      "cluster_radius": 12,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 80,
+      "cluster_radius": 12,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 120,
+      "cluster_radius": 8,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 120,
+      "cluster_radius": 8,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.03333333333333333,
+      "tier1_overrun_rate": 0.03333333333333333
+    },
+    {
+      "k": 6,
+      "n_fronts": 120,
+      "cluster_radius": 12,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 6,
+      "n_fronts": 120,
+      "cluster_radius": 12,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 20,
+      "cluster_radius": 8,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 20,
+      "cluster_radius": 8,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 20,
+      "cluster_radius": 12,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 20,
+      "cluster_radius": 12,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 40,
+      "cluster_radius": 8,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 40,
+      "cluster_radius": 8,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 40,
+      "cluster_radius": 12,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 40,
+      "cluster_radius": 12,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 60,
+      "cluster_radius": 8,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 60,
+      "cluster_radius": 8,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 60,
+      "cluster_radius": 12,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 60,
+      "cluster_radius": 12,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 80,
+      "cluster_radius": 8,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 80,
+      "cluster_radius": 8,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 80,
+      "cluster_radius": 12,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 80,
+      "cluster_radius": 12,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 120,
+      "cluster_radius": 8,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 120,
+      "cluster_radius": 8,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 120,
+      "cluster_radius": 12,
+      "ablate": false,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    },
+    {
+      "k": 7,
+      "n_fronts": 120,
+      "cluster_radius": 12,
+      "ablate": true,
+      "n_trials": 30,
+      "attacker_win_rate": 0.0,
+      "tier1_overrun_rate": 0.0
+    }
+  ]
+}

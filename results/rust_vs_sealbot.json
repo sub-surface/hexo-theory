@@ -1,0 +1,333 @@
+{
+  "games": 40,
+  "sealbot_time_limit": 0.7,
+  "rust_time_budget": 0.7,
+  "rust_wins": 1,
+  "sealbot_wins": 6,
+  "draws": 0,
+  "timeouts": 33,
+  "errored": 0,
+  "wall_s": 1985.7,
+  "raw": [
+    {
+      "seed": 0,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 57,
+      "n_stones": 57,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 0,
+      "rust_is_p1": false,
+      "winner": "sealbot",
+      "n_moves": 21,
+      "n_stones": 21,
+      "wall_s": 0.7
+    },
+    {
+      "seed": 1,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 25,
+      "n_stones": 25,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 1,
+      "rust_is_p1": false,
+      "winner": "sealbot",
+      "n_moves": 25,
+      "n_stones": 25,
+      "wall_s": 2.2
+    },
+    {
+      "seed": 2,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 21,
+      "n_stones": 21,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 2,
+      "rust_is_p1": false,
+      "winner": "timeout",
+      "n_moves": 35,
+      "n_stones": 35,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 3,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 17,
+      "n_stones": 17,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 3,
+      "rust_is_p1": false,
+      "winner": "timeout",
+      "n_moves": 55,
+      "n_stones": 55,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 4,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 89,
+      "n_stones": 89,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 4,
+      "rust_is_p1": false,
+      "winner": "timeout",
+      "n_moves": 131,
+      "n_stones": 131,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 5,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 21,
+      "n_stones": 21,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 5,
+      "rust_is_p1": false,
+      "winner": "timeout",
+      "n_moves": 75,
+      "n_stones": 75,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 6,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 37,
+      "n_stones": 37,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 6,
+      "rust_is_p1": false,
+      "winner": "timeout",
+      "n_moves": 59,
+      "n_stones": 59,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 7,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 45,
+      "n_stones": 45,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 7,
+      "rust_is_p1": false,
+      "winner": "timeout",
+      "n_moves": 63,
+      "n_stones": 63,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 8,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 17,
+      "n_stones": 17,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 8,
+      "rust_is_p1": false,
+      "winner": "timeout",
+      "n_moves": 39,
+      "n_stones": 39,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 9,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 21,
+      "n_stones": 21,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 9,
+      "rust_is_p1": false,
+      "winner": "sealbot",
+      "n_moves": 25,
+      "n_stones": 25,
+      "wall_s": 2.2
+    },
+    {
+      "seed": 10,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 41,
+      "n_stones": 41,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 10,
+      "rust_is_p1": false,
+      "winner": "timeout",
+      "n_moves": 55,
+      "n_stones": 55,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 11,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 21,
+      "n_stones": 21,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 11,
+      "rust_is_p1": false,
+      "winner": "sealbot",
+      "n_moves": 21,
+      "n_stones": 21,
+      "wall_s": 0.7
+    },
+    {
+      "seed": 12,
+      "rust_is_p1": true,
+      "winner": "sealbot",
+      "n_moves": 19,
+      "n_stones": 19,
+      "wall_s": 0.7
+    },
+    {
+      "seed": 12,
+      "rust_is_p1": false,
+      "winner": "rust",
+      "n_moves": 19,
+      "n_stones": 19,
+      "wall_s": 0.0
+    },
+    {
+      "seed": 13,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 93,
+      "n_stones": 93,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 13,
+      "rust_is_p1": false,
+      "winner": "timeout",
+      "n_moves": 55,
+      "n_stones": 55,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 14,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 21,
+      "n_stones": 21,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 14,
+      "rust_is_p1": false,
+      "winner": "timeout",
+      "n_moves": 47,
+      "n_stones": 47,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 15,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 29,
+      "n_stones": 29,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 15,
+      "rust_is_p1": false,
+      "winner": "sealbot",
+      "n_moves": 21,
+      "n_stones": 21,
+      "wall_s": 0.7
+    },
+    {
+      "seed": 16,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 69,
+      "n_stones": 69,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 16,
+      "rust_is_p1": false,
+      "winner": "timeout",
+      "n_moves": 103,
+      "n_stones": 103,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 17,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 29,
+      "n_stones": 29,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 17,
+      "rust_is_p1": false,
+      "winner": "timeout",
+      "n_moves": 47,
+      "n_stones": 47,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 18,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 33,
+      "n_stones": 33,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 18,
+      "rust_is_p1": false,
+      "winner": "timeout",
+      "n_moves": 79,
+      "n_stones": 79,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 19,
+      "rust_is_p1": true,
+      "winner": "timeout",
+      "n_moves": 61,
+      "n_stones": 61,
+      "wall_s": 900.0
+    },
+    {
+      "seed": 19,
+      "rust_is_p1": false,
+      "winner": "timeout",
+      "n_moves": 35,
+      "n_stones": 35,
+      "wall_s": 900.0
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "n_star": 27,
+  "usable_games": {
+    "strong": 305,
+    "weak": 400,
+    "random": 400
+  },
+  "patch_complexity": {
+    "strong": [
+      {
+        "radius": 1,
+        "n_samples": 8235,
+        "distinct": 719,
+        "entropy_bits": 8.756916682816554,
+        "max_entropy_bits": 9.509775004326936
+      },
+      {
+        "radius": 2,
+        "n_samples": 8235,
+        "distinct": 7748,
+        "entropy_bits": 12.824456275828538,
+        "max_entropy_bits": 13.007552934613717
+      },
+      {
+        "radius": 3,
+        "n_samples": 8235,
+        "distinct": 8185,
+        "entropy_bits": 12.992374583859657,
+        "max_entropy_bits": 13.007552934613717
+      }
+    ],
+    "weak": [
+      {
+        "radius": 1,
+        "n_samples": 8235,
+        "distinct": 524,
+        "entropy_bits": 7.868816381586746,
+        "max_entropy_bits": 9.509775004326936
+      },
+      {
+        "radius": 2,
+        "n_samples": 8235,
+        "distinct": 6281,
+        "entropy_bits": 12.407939536819772,
+        "max_entropy_bits": 13.007552934613717
+      },
+      {
+        "radius": 3,
+        "n_samples": 8235,
+        "distinct": 7597,
+        "entropy_bits": 12.844373399079354,
+        "max_entropy_bits": 13.007552934613717
+      }
+    ],
+    "random": [
+      {
+        "radius": 1,
+        "n_samples": 8235,
+        "distinct": 725,
+        "entropy_bits": 9.039874393699108,
+        "max_entropy_bits": 9.509775004326936
+      },
+      {
+        "radius": 2,
+        "n_samples": 8235,
+        "distinct": 7976,
+        "entropy_bits": 12.936105527269723,
+        "max_entropy_bits": 13.007552934613717
+      },
+      {
+        "radius": 3,
+        "n_samples": 8235,
+        "distinct": 8232,
+        "entropy_bits": 13.00682433716381,
+        "max_entropy_bits": 13.007552934613717
+      }
+    ]
+  },
+  "extinction": {
+    "I3": {
+      "mean": {
+        "strong": 0.3122040072859745,
+        "weak": 0.12277777777777779,
+        "random": 0.3005555555555555
+      },
+      "median": {
+        "strong": 0.11111111111111152,
+        "weak": 0.11111111111111106,
+        "random": 0.11111111111111151
+      },
+      "p_strong_lt_random": 0.720376761048867,
+      "p_strong_lt_weak": 1.0,
+      "p_weak_lt_random": 1.3219144625909437e-23
+    },
+    "I7": {
+      "mean": {
+        "strong": 0.41779256514563534,
+        "weak": 0.6015091239628849,
+        "random": 0.5801531551944391
+      },
+      "median": {
+        "strong": 0.2907724101973016,
+        "weak": 0.49425238084304,
+        "random": 0.3818765531102494
+      },
+      "p_strong_lt_random": 0.00024409261272396578,
+      "p_strong_lt_weak": 1.2119603831137493e-06,
+      "p_weak_lt_random": 0.8655083744853704
+    }
+  },
+  "seed": 0
+}

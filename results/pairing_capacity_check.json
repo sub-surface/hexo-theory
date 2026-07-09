@@ -1,0 +1,1602 @@
+{
+  "single_window_grab": {
+    "n_fronts": 1,
+    "turns_used": 4,
+    "overrun_ever": false,
+    "tier1_overrun_ever": false,
+    "attacker_won": false,
+    "win_detail": null,
+    "n_fronts_poisoned": 1,
+    "n_fronts_domino_grabbed_alive": 0,
+    "overrun_turns": [],
+    "log_tail": [
+      {
+        "turn": 0,
+        "attacker_move": [
+          [
+            10,
+            10
+          ],
+          [
+            11,
+            10
+          ]
+        ],
+        "defender_claims": [],
+        "n_tier1": 0,
+        "n_tier2": 0,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 1
+      },
+      {
+        "turn": 1,
+        "attacker_move": [
+          [
+            12,
+            10
+          ],
+          [
+            13,
+            10
+          ]
+        ],
+        "defender_claims": [],
+        "n_tier1": 0,
+        "n_tier2": 0,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 1
+      },
+      {
+        "turn": 2,
+        "attacker_move": [
+          [
+            16,
+            10
+          ]
+        ],
+        "defender_claims": [
+          [
+            14,
+            10
+          ]
+        ],
+        "n_tier1": 0,
+        "n_tier2": 1,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 1
+      }
+    ]
+  },
+  "dual_front_disjoint": {
+    "n_fronts": 2,
+    "turns_used": 6,
+    "overrun_ever": false,
+    "tier1_overrun_ever": false,
+    "attacker_won": false,
+    "win_detail": null,
+    "n_fronts_poisoned": 2,
+    "n_fronts_domino_grabbed_alive": 0,
+    "overrun_turns": [],
+    "log_tail": [
+      {
+        "turn": 0,
+        "attacker_move": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "defender_claims": [],
+        "n_tier1": 0,
+        "n_tier2": 0,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 2
+      },
+      {
+        "turn": 1,
+        "attacker_move": [
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ]
+        ],
+        "defender_claims": [],
+        "n_tier1": 0,
+        "n_tier2": 0,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 2
+      },
+      {
+        "turn": 2,
+        "attacker_move": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            50
+          ]
+        ],
+        "defender_claims": [
+          [
+            0,
+            0
+          ]
+        ],
+        "n_tier1": 0,
+        "n_tier2": 1,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 2
+      },
+      {
+        "turn": 3,
+        "attacker_move": [
+          [
+            0,
+            53
+          ],
+          [
+            0,
+            54
+          ]
+        ],
+        "defender_claims": [],
+        "n_tier1": 0,
+        "n_tier2": 0,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 1
+      },
+      {
+        "turn": 4,
+        "attacker_move": [
+          [
+            0,
+            55
+          ],
+          [
+            0,
+            56
+          ]
+        ],
+        "defender_claims": [
+          [
+            0,
+            51
+          ]
+        ],
+        "n_tier1": 0,
+        "n_tier2": 1,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 1
+      }
+    ]
+  },
+  "dual_front_adjacent_same_axis": {
+    "n_fronts": 2,
+    "turns_used": 6,
+    "overrun_ever": false,
+    "tier1_overrun_ever": false,
+    "attacker_won": false,
+    "win_detail": null,
+    "n_fronts_poisoned": 2,
+    "n_fronts_domino_grabbed_alive": 0,
+    "overrun_turns": [],
+    "log_tail": [
+      {
+        "turn": 0,
+        "attacker_move": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "defender_claims": [],
+        "n_tier1": 0,
+        "n_tier2": 0,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 2
+      },
+      {
+        "turn": 1,
+        "attacker_move": [
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ]
+        ],
+        "defender_claims": [],
+        "n_tier1": 0,
+        "n_tier2": 0,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 2
+      },
+      {
+        "turn": 2,
+        "attacker_move": [
+          [
+            6,
+            0
+          ]
+        ],
+        "defender_claims": [
+          [
+            0,
+            0
+          ]
+        ],
+        "n_tier1": 0,
+        "n_tier2": 1,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 2
+      },
+      {
+        "turn": 4,
+        "attacker_move": [
+          [
+            8,
+            0
+          ]
+        ],
+        "defender_claims": [
+          [
+            7,
+            0
+          ]
+        ],
+        "n_tier1": 1,
+        "n_tier2": 0,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 1
+      }
+    ]
+  },
+  "dual_front_offset1_same_axis": {
+    "n_fronts": 2,
+    "turns_used": 4,
+    "overrun_ever": false,
+    "tier1_overrun_ever": false,
+    "attacker_won": false,
+    "win_detail": null,
+    "n_fronts_poisoned": 2,
+    "n_fronts_domino_grabbed_alive": 0,
+    "overrun_turns": [],
+    "log_tail": [
+      {
+        "turn": 0,
+        "attacker_move": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "defender_claims": [],
+        "n_tier1": 0,
+        "n_tier2": 0,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 2
+      },
+      {
+        "turn": 1,
+        "attacker_move": [
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ]
+        ],
+        "defender_claims": [],
+        "n_tier1": 0,
+        "n_tier2": 0,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 2
+      },
+      {
+        "turn": 2,
+        "attacker_move": [
+          [
+            6,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "defender_claims": [
+          [
+            7,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "n_tier1": 2,
+        "n_tier2": 0,
+        "overrun": false,
+        "tier1_overrun": false,
+        "n_live_fronts": 2
+      }
+    ]
+  },
+  "multifront_greedy": {
+    "n_trials": 5,
+    "n_fronts": 8,
+    "turns": 60,
+    "any_attacker_win": false,
+    "any_capacity_overrun": false,
+    "any_tier1_overrun": false,
+    "trials": [
+      {
+        "n_fronts": 8,
+        "turns_used": 21,
+        "overrun_ever": false,
+        "tier1_overrun_ever": false,
+        "attacker_won": false,
+        "win_detail": null,
+        "n_fronts_poisoned": 8,
+        "n_fronts_domino_grabbed_alive": 0,
+        "overrun_turns": [],
+        "log_tail": [
+          {
+            "turn": 15,
+            "attacker_move": [
+              [
+                116,
+                -72
+              ],
+              [
+                117,
+                -73
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 16,
+            "attacker_move": [
+              [
+                120,
+                -76
+              ],
+              [
+                121,
+                -77
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 17,
+            "attacker_move": [
+              [
+                122,
+                -78
+              ],
+              [
+                161,
+                108
+              ]
+            ],
+            "defender_claims": [
+              [
+                118,
+                -74
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 18,
+            "attacker_move": [
+              [
+                164,
+                108
+              ],
+              [
+                165,
+                108
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          },
+          {
+            "turn": 19,
+            "attacker_move": [
+              [
+                166,
+                108
+              ],
+              [
+                167,
+                108
+              ]
+            ],
+            "defender_claims": [
+              [
+                162,
+                108
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          }
+        ]
+      },
+      {
+        "n_fronts": 8,
+        "turns_used": 21,
+        "overrun_ever": false,
+        "tier1_overrun_ever": false,
+        "attacker_won": false,
+        "win_detail": null,
+        "n_fronts_poisoned": 8,
+        "n_fronts_domino_grabbed_alive": 0,
+        "overrun_turns": [],
+        "log_tail": [
+          {
+            "turn": 15,
+            "attacker_move": [
+              [
+                190,
+                192
+              ],
+              [
+                191,
+                192
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 16,
+            "attacker_move": [
+              [
+                194,
+                192
+              ],
+              [
+                195,
+                192
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 17,
+            "attacker_move": [
+              [
+                196,
+                192
+              ],
+              [
+                156,
+                28
+              ]
+            ],
+            "defender_claims": [
+              [
+                192,
+                192
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 18,
+            "attacker_move": [
+              [
+                156,
+                29
+              ],
+              [
+                156,
+                30
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          },
+          {
+            "turn": 19,
+            "attacker_move": [
+              [
+                156,
+                31
+              ],
+              [
+                156,
+                32
+              ]
+            ],
+            "defender_claims": [
+              [
+                156,
+                33
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          }
+        ]
+      },
+      {
+        "n_fronts": 8,
+        "turns_used": 21,
+        "overrun_ever": false,
+        "tier1_overrun_ever": false,
+        "attacker_won": false,
+        "win_detail": null,
+        "n_fronts_poisoned": 8,
+        "n_fronts_domino_grabbed_alive": 0,
+        "overrun_turns": [],
+        "log_tail": [
+          {
+            "turn": 15,
+            "attacker_move": [
+              [
+                1,
+                170
+              ],
+              [
+                2,
+                169
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 16,
+            "attacker_move": [
+              [
+                5,
+                166
+              ],
+              [
+                6,
+                165
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 17,
+            "attacker_move": [
+              [
+                7,
+                164
+              ],
+              [
+                -10,
+                80
+              ]
+            ],
+            "defender_claims": [
+              [
+                3,
+                168
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 18,
+            "attacker_move": [
+              [
+                -10,
+                81
+              ],
+              [
+                -10,
+                82
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          },
+          {
+            "turn": 19,
+            "attacker_move": [
+              [
+                -10,
+                83
+              ],
+              [
+                -10,
+                84
+              ]
+            ],
+            "defender_claims": [
+              [
+                -10,
+                78
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          }
+        ]
+      },
+      {
+        "n_fronts": 8,
+        "turns_used": 21,
+        "overrun_ever": false,
+        "tier1_overrun_ever": false,
+        "attacker_won": false,
+        "win_detail": null,
+        "n_fronts_poisoned": 8,
+        "n_fronts_domino_grabbed_alive": 0,
+        "overrun_turns": [],
+        "log_tail": [
+          {
+            "turn": 15,
+            "attacker_move": [
+              [
+                42,
+                74
+              ],
+              [
+                43,
+                73
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 16,
+            "attacker_move": [
+              [
+                44,
+                72
+              ],
+              [
+                45,
+                71
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 17,
+            "attacker_move": [
+              [
+                46,
+                70
+              ],
+              [
+                43,
+                3
+              ]
+            ],
+            "defender_claims": [
+              [
+                40,
+                76
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 18,
+            "attacker_move": [
+              [
+                46,
+                0
+              ],
+              [
+                47,
+                -1
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          },
+          {
+            "turn": 19,
+            "attacker_move": [
+              [
+                48,
+                -2
+              ],
+              [
+                49,
+                -3
+              ]
+            ],
+            "defender_claims": [
+              [
+                44,
+                2
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          }
+        ]
+      },
+      {
+        "n_fronts": 8,
+        "turns_used": 21,
+        "overrun_ever": false,
+        "tier1_overrun_ever": false,
+        "attacker_won": false,
+        "win_detail": null,
+        "n_fronts_poisoned": 8,
+        "n_fronts_domino_grabbed_alive": 0,
+        "overrun_turns": [],
+        "log_tail": [
+          {
+            "turn": 15,
+            "attacker_move": [
+              [
+                -16,
+                -59
+              ],
+              [
+                -15,
+                -59
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 16,
+            "attacker_move": [
+              [
+                -14,
+                -59
+              ],
+              [
+                -13,
+                -59
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 17,
+            "attacker_move": [
+              [
+                -10,
+                -59
+              ],
+              [
+                -146,
+                -66
+              ]
+            ],
+            "defender_claims": [
+              [
+                -12,
+                -59
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 18,
+            "attacker_move": [
+              [
+                -145,
+                -66
+              ],
+              [
+                -142,
+                -66
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          },
+          {
+            "turn": 19,
+            "attacker_move": [
+              [
+                -141,
+                -66
+              ],
+              [
+                -140,
+                -66
+              ]
+            ],
+            "defender_claims": [
+              [
+                -144,
+                -66
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          }
+        ]
+      }
+    ]
+  },
+  "dense_cluster": {
+    "n_trials": 5,
+    "n_fronts": 15,
+    "turns": 80,
+    "any_attacker_win": false,
+    "any_capacity_overrun": true,
+    "any_tier1_overrun": false,
+    "trials": [
+      {
+        "n_fronts": 15,
+        "turns_used": 38,
+        "overrun_ever": true,
+        "tier1_overrun_ever": false,
+        "attacker_won": false,
+        "win_detail": null,
+        "n_fronts_poisoned": 15,
+        "n_fronts_domino_grabbed_alive": 0,
+        "overrun_turns": [
+          {
+            "turn": 34,
+            "attacker_move": [
+              [
+                5,
+                8
+              ],
+              [
+                5,
+                9
+              ]
+            ],
+            "defender_claims": [
+              [
+                5,
+                4
+              ],
+              [
+                6,
+                8
+              ]
+            ],
+            "n_tier1": 2,
+            "n_tier2": 1,
+            "overrun": true,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          }
+        ],
+        "log_tail": [
+          {
+            "turn": 32,
+            "attacker_move": [
+              [
+                11,
+                8
+              ],
+              [
+                5,
+                3
+              ]
+            ],
+            "defender_claims": [
+              [
+                12,
+                8
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 3
+          },
+          {
+            "turn": 33,
+            "attacker_move": [
+              [
+                5,
+                6
+              ],
+              [
+                5,
+                7
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 34,
+            "attacker_move": [
+              [
+                5,
+                8
+              ],
+              [
+                5,
+                9
+              ]
+            ],
+            "defender_claims": [
+              [
+                5,
+                4
+              ],
+              [
+                6,
+                8
+              ]
+            ],
+            "n_tier1": 2,
+            "n_tier2": 1,
+            "overrun": true,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 35,
+            "attacker_move": [
+              [
+                4,
+                -4
+              ],
+              [
+                5,
+                -4
+              ]
+            ],
+            "defender_claims": [
+              [
+                5,
+                10
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          },
+          {
+            "turn": 36,
+            "attacker_move": [
+              [
+                8,
+                -4
+              ],
+              [
+                9,
+                -4
+              ]
+            ],
+            "defender_claims": [
+              [
+                3,
+                -4
+              ],
+              [
+                10,
+                -4
+              ]
+            ],
+            "n_tier1": 2,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          }
+        ]
+      },
+      {
+        "n_fronts": 15,
+        "turns_used": 38,
+        "overrun_ever": false,
+        "tier1_overrun_ever": false,
+        "attacker_won": false,
+        "win_detail": null,
+        "n_fronts_poisoned": 15,
+        "n_fronts_domino_grabbed_alive": 0,
+        "overrun_turns": [],
+        "log_tail": [
+          {
+            "turn": 32,
+            "attacker_move": [
+              [
+                13,
+                -14
+              ],
+              [
+                14,
+                -15
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 33,
+            "attacker_move": [
+              [
+                15,
+                -16
+              ],
+              [
+                16,
+                -17
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 34,
+            "attacker_move": [
+              [
+                17,
+                -18
+              ],
+              [
+                -5,
+                12
+              ]
+            ],
+            "defender_claims": [
+              [
+                11,
+                -12
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 35,
+            "attacker_move": [
+              [
+                -5,
+                13
+              ],
+              [
+                -5,
+                14
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          },
+          {
+            "turn": 36,
+            "attacker_move": [
+              [
+                -5,
+                15
+              ],
+              [
+                -5,
+                18
+              ]
+            ],
+            "defender_claims": [
+              [
+                -5,
+                16
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          }
+        ]
+      },
+      {
+        "n_fronts": 15,
+        "turns_used": 39,
+        "overrun_ever": false,
+        "tier1_overrun_ever": false,
+        "attacker_won": false,
+        "win_detail": null,
+        "n_fronts_poisoned": 15,
+        "n_fronts_domino_grabbed_alive": 0,
+        "overrun_turns": [],
+        "log_tail": [
+          {
+            "turn": 33,
+            "attacker_move": [
+              [
+                -12,
+                -6
+              ],
+              [
+                -12,
+                -5
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 34,
+            "attacker_move": [
+              [
+                -12,
+                -4
+              ]
+            ],
+            "defender_claims": [
+              [
+                -12,
+                -3
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 35,
+            "attacker_move": [
+              [
+                -7,
+                -8
+              ],
+              [
+                -6,
+                -9
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          },
+          {
+            "turn": 36,
+            "attacker_move": [
+              [
+                -5,
+                -10
+              ],
+              [
+                -4,
+                -11
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          },
+          {
+            "turn": 37,
+            "attacker_move": [
+              [
+                -1,
+                -14
+              ]
+            ],
+            "defender_claims": [
+              [
+                -3,
+                -12
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          }
+        ]
+      },
+      {
+        "n_fronts": 15,
+        "turns_used": 39,
+        "overrun_ever": false,
+        "tier1_overrun_ever": false,
+        "attacker_won": false,
+        "win_detail": null,
+        "n_fronts_poisoned": 15,
+        "n_fronts_domino_grabbed_alive": 0,
+        "overrun_turns": [],
+        "log_tail": [
+          {
+            "turn": 33,
+            "attacker_move": [
+              [
+                -2,
+                12
+              ],
+              [
+                -1,
+                12
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 34,
+            "attacker_move": [
+              [
+                2,
+                12
+              ],
+              [
+                3,
+                12
+              ]
+            ],
+            "defender_claims": [
+              [
+                0,
+                12
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 35,
+            "attacker_move": [
+              [
+                -4,
+                3
+              ],
+              [
+                -3,
+                2
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          },
+          {
+            "turn": 36,
+            "attacker_move": [
+              [
+                -2,
+                1
+              ],
+              [
+                1,
+                -2
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          },
+          {
+            "turn": 37,
+            "attacker_move": [
+              [
+                2,
+                -3
+              ]
+            ],
+            "defender_claims": [
+              [
+                -1,
+                0
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          }
+        ]
+      },
+      {
+        "n_fronts": 15,
+        "turns_used": 34,
+        "overrun_ever": false,
+        "tier1_overrun_ever": false,
+        "attacker_won": false,
+        "win_detail": null,
+        "n_fronts_poisoned": 15,
+        "n_fronts_domino_grabbed_alive": 0,
+        "overrun_turns": [],
+        "log_tail": [
+          {
+            "turn": 28,
+            "attacker_move": [
+              [
+                0,
+                4
+              ],
+              [
+                1,
+                4
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 29,
+            "attacker_move": [
+              [
+                4,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 30,
+            "attacker_move": [
+              [
+                6,
+                4
+              ],
+              [
+                -7,
+                -5
+              ]
+            ],
+            "defender_claims": [
+              [
+                2,
+                4
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 2
+          },
+          {
+            "turn": 31,
+            "attacker_move": [
+              [
+                -7,
+                -4
+              ],
+              [
+                -7,
+                -3
+              ]
+            ],
+            "defender_claims": [],
+            "n_tier1": 0,
+            "n_tier2": 0,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          },
+          {
+            "turn": 32,
+            "attacker_move": [
+              [
+                -7,
+                0
+              ],
+              [
+                -7,
+                1
+              ]
+            ],
+            "defender_claims": [
+              [
+                -7,
+                -2
+              ]
+            ],
+            "n_tier1": 0,
+            "n_tier2": 1,
+            "overrun": false,
+            "tier1_overrun": false,
+            "n_live_fronts": 1
+          }
+        ]
+      }
+    ]
+  },
+  "conclusion": {
+    "attacker_never_wins": true,
+    "no_fatal_tier1_overrun": true,
+    "benign_tier2_overrun_occurred": true,
+    "note": "Tier 1 (block any immediate 6/7 threat) is the load-bearing claim: if it never overruns budget, the defender never actually loses, regardless of how much tier-2 (proactive pre-emption) gets delayed -- a deferred tier-2 claim just means that window will re-trigger tier 1 later, which the defender can still catch in time. A benign tier-2-only overrun under dense clustering (see dense_cluster) is evidence the *proactive* half of the strategy alone is insufficient in crowded regions, but NOT evidence the combined (tier1+tier2) strategy is unsound -- that would require a tier1 overrun or an actual win, neither observed here up to the tested scale. See docs/theory/2026-07-08-pairing-thresholds-and-game-values.md 2 for the theory this stress-tests."
+  }
+}

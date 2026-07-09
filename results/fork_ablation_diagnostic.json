@@ -1,0 +1,33 @@
+{
+  "games_per_pairing": 24,
+  "budget_s": 0.3,
+  "wins": {
+    "fast_minimax_d1.1": 48,
+    "deep_minimax_fork": 12,
+    "deep_minimax_nofork": 12
+  },
+  "pairings": [
+    {
+      "a": "fast_minimax_d1.1",
+      "b": "deep_minimax_fork",
+      "a_wins": 24,
+      "b_wins": 0,
+      "draws": 0
+    },
+    {
+      "a": "fast_minimax_d1.1",
+      "b": "deep_minimax_nofork",
+      "a_wins": 24,
+      "b_wins": 0,
+      "draws": 0
+    },
+    {
+      "a": "deep_minimax_fork",
+      "b": "deep_minimax_nofork",
+      "a_wins": 12,
+      "b_wins": 12,
+      "draws": 0
+    }
+  ],
+  "champion": "fast_minimax_d1.1"
+}

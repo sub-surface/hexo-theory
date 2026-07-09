@@ -1,0 +1,276 @@
+{
+  "bots": [
+    "hexo_bot_standalone",
+    "sealbot"
+  ],
+  "openings": 15,
+  "budget_s": 1.0,
+  "max_moves": 300,
+  "seed_base": 0,
+  "opening_placements": 16,
+  "n_games": 30,
+  "wall_time_s": 65.0,
+  "wins_total": {
+    "hexo_bot_standalone": 28,
+    "sealbot": 2
+  },
+  "pairings": [
+    {
+      "a": "hexo_bot_standalone",
+      "b": "sealbot",
+      "a_wins": 28,
+      "b_wins": 2,
+      "draws": 0,
+      "a_share_decisive": 0.9333333333333333,
+      "wilson95": [
+        0.787,
+        0.982
+      ],
+      "mean_game_s": 4.63
+    }
+  ],
+  "raw": {
+    "hexo_bot_standalone|sealbot": [
+      {
+        "seed": 0,
+        "a_black": true,
+        "winner_raw": 1,
+        "result": "a",
+        "n_stones": 29,
+        "game_s": 7.87
+      },
+      {
+        "seed": 0,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 22,
+        "game_s": 2.9
+      },
+      {
+        "seed": 1,
+        "a_black": true,
+        "winner_raw": 2,
+        "result": "b",
+        "n_stones": 27,
+        "game_s": 5.01
+      },
+      {
+        "seed": 1,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 19,
+        "game_s": 1.43
+      },
+      {
+        "seed": 2,
+        "a_black": true,
+        "winner_raw": 1,
+        "result": "a",
+        "n_stones": 21,
+        "game_s": 2.17
+      },
+      {
+        "seed": 2,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 23,
+        "game_s": 2.88
+      },
+      {
+        "seed": 3,
+        "a_black": true,
+        "winner_raw": 1,
+        "result": "a",
+        "n_stones": 33,
+        "game_s": 10.8
+      },
+      {
+        "seed": 3,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 27,
+        "game_s": 5.7
+      },
+      {
+        "seed": 4,
+        "a_black": true,
+        "winner_raw": 1,
+        "result": "a",
+        "n_stones": 25,
+        "game_s": 2.48
+      },
+      {
+        "seed": 4,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 19,
+        "game_s": 0.0
+      },
+      {
+        "seed": 5,
+        "a_black": true,
+        "winner_raw": 1,
+        "result": "a",
+        "n_stones": 25,
+        "game_s": 3.7
+      },
+      {
+        "seed": 5,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 23,
+        "game_s": 2.86
+      },
+      {
+        "seed": 6,
+        "a_black": true,
+        "winner_raw": 1,
+        "result": "a",
+        "n_stones": 21,
+        "game_s": 0.72
+      },
+      {
+        "seed": 6,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 23,
+        "game_s": 2.87
+      },
+      {
+        "seed": 7,
+        "a_black": true,
+        "winner_raw": 1,
+        "result": "a",
+        "n_stones": 25,
+        "game_s": 4.97
+      },
+      {
+        "seed": 7,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 31,
+        "game_s": 7.24
+      },
+      {
+        "seed": 8,
+        "a_black": true,
+        "winner_raw": 1,
+        "result": "a",
+        "n_stones": 21,
+        "game_s": 2.13
+      },
+      {
+        "seed": 8,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 31,
+        "game_s": 7.28
+      },
+      {
+        "seed": 9,
+        "a_black": true,
+        "winner_raw": 1,
+        "result": "a",
+        "n_stones": 21,
+        "game_s": 2.17
+      },
+      {
+        "seed": 9,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 27,
+        "game_s": 4.32
+      },
+      {
+        "seed": 10,
+        "a_black": true,
+        "winner_raw": 1,
+        "result": "a",
+        "n_stones": 25,
+        "game_s": 5.24
+      },
+      {
+        "seed": 10,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 27,
+        "game_s": 4.5
+      },
+      {
+        "seed": 11,
+        "a_black": true,
+        "winner_raw": 1,
+        "result": "a",
+        "n_stones": 29,
+        "game_s": 7.94
+      },
+      {
+        "seed": 11,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 39,
+        "game_s": 14.19
+      },
+      {
+        "seed": 12,
+        "a_black": true,
+        "winner_raw": 1,
+        "result": "a",
+        "n_stones": 33,
+        "game_s": 6.06
+      },
+      {
+        "seed": 12,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 23,
+        "game_s": 1.78
+      },
+      {
+        "seed": 13,
+        "a_black": true,
+        "winner_raw": 1,
+        "result": "a",
+        "n_stones": 33,
+        "game_s": 7.59
+      },
+      {
+        "seed": 13,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 27,
+        "game_s": 4.26
+      },
+      {
+        "seed": 14,
+        "a_black": true,
+        "winner_raw": 2,
+        "result": "b",
+        "n_stones": 27,
+        "game_s": 4.32
+      },
+      {
+        "seed": 14,
+        "a_black": false,
+        "winner_raw": 2,
+        "result": "a",
+        "n_stones": 27,
+        "game_s": 3.42
+      }
+    ]
+  }
+}
