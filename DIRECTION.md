@@ -118,7 +118,7 @@ vs a *weaker* opponent, not strong-vs-strong self-play. That's the next experime
 | **ES potential `Σ2^(own−k)`** | low (~100 ops) | **no** (additive, myopic) | cheapest *sound* potential; what ships now |
 | ES + linear fork term | low (+1 scan) | **yes** | cheapest *strong* upgrade; drew strong-vs-strong (above) |
 | Atom/pattern lookup (rail/bridge) | low (table hit) | yes, structurally | needs the line-B atom table; promising, unbuilt |
-| Depth-2 minimax | medium | yes (1-ply lookahead) | `papers/hexconnect6_depth2_minimax`; next rung up |
+| Depth-2 minimax | medium | yes (1-ply lookahead) | `sources/external-runs/hexconnect6_depth2_minimax`; next rung up |
 | MCTS / NN | high | yes | overkill for a browser bot |
 
 Conclusion: **ES is near-optimal on the *cost* axis but blind on the *strength*
@@ -126,7 +126,7 @@ axis (no fork awareness) — which is exactly the gap a human exploits to beat i
 (set up a double threat).** The cheapest meaningful improvement is ES + an explicit
 fork/τ>2 term + a 1-ply opponent-fork block (implemented). Beyond that, the next
 real gain is not a cleverer static potential but **shallow (depth-2) search** —
-the `papers/` depth-2 atlas is the substrate. The harness catching the squared-term
+the `sources/` depth-2 atlas is the substrate. The harness catching the squared-term
 defect before it shipped is the pipeline working as intended.
 
 ## Seed: overwrite mode as finite-space computation (2026-06-15)
@@ -176,7 +176,7 @@ framing below wherever the two disagree.
 construction; τ is LP-exact on real positions, LP>2 certifies forcing), the
 B+D unified fast evaluator with depth-2 lookahead (`fast_tactical`), residue
 bots, arena opening-randomization + budget-forfeit fix, and
-[modal_bakeoff.py](modal_bakeoff.py) ready to run. Full write-up:
+[modal_bakeoff.py](cloud/modal/modal_bakeoff.py) ready to run. Full write-up:
 [docs/theory/2026-07-06-search-regime-verdicts.md](docs/theory/2026-07-06-search-regime-verdicts.md).
 
 **Bake-off Phase 1 ran (2026-07-06, 1,050 games, ~$0.15).** Champion in the
@@ -194,7 +194,7 @@ better static weight than d1.1 (d1.0–1.6 indistinguishable, d2.0 slightly
 worse). **Garden-port candidate is now `fast_minimax_d1.1`** but it needs the
 vectorized evaluator ported too (~20× per-move cost, still fine at 1 s);
 confirm the edge at 🟢 sample size (~$1.5) first. Analytic figures +
-per-pairing GIF replays: `figures/fig_bakeoff_*.png`, `figures/replays/`.
+per-pairing GIF replays: `evidence/figures/fig_bakeoff_*.png`, `evidence/figures/replays/`.
 
 **Programme D RAN (2026-07-06) — P3 has a first answer.** 8,000-game
 `ca_combo_v2` corpus (Modal, ~$1); `experiments/run_mdl_scaling.py` (lzma,
@@ -291,7 +291,7 @@ likely *cheaper* than the plain-Python estimate above, though the exact
 per-game rate on Modal hasn't been measured yet (that's what `smoke_test`
 is for).
 
-**Implementation:** [modal_app.py](modal_app.py) — two backends (`rust` =
+**Implementation:** [modal_app.py](cloud/modal/modal_app.py) — two backends (`rust` =
 hexo's MCTS, `python` = this repo's existing agent registry via
 `experiments/harness.py`, needed whenever the exact agent behind an existing
 SPEC.md number matters, e.g. tightening P1 specifically means more
@@ -299,7 +299,7 @@ SPEC.md number matters, e.g. tightening P1 specifically means more
 per-game outcomes; Wilson CIs and the gzip-MDL proxy are computed once,
 locally, over the pooled results.
 
-**Nothing has been run yet.** Next step is `modal run modal_app.py::smoke_test`
+**Nothing has been run yet.** Next step is `modal run cloud/modal/modal_app.py::smoke_test`
 (~$0.01) to verify both backends actually work before committing the budget,
 then a modest `corpus` call to get a real games/sec number and re-derive the
 allocation below from measured, not estimated, throughput.
@@ -313,7 +313,7 @@ the Rust path above — confirm via smoke_test before deploying):
 - **~$5-8, one small GPU (T4/L4 — no need for anything bigger at this scale):**
   UDC-positions resolution fix (`--diffraction-grid` scaled to the note's own
   recommended `4*D` per t) and a diffraction re-run on the larger corpora.
-  Not yet built into `modal_app.py` — CPU corpus generation is the priority.
+  Not yet built into `cloud/modal/modal_app.py` — CPU corpus generation is the priority.
 - **~$5-7 buffer.**
 
 ## Explicitly out of scope (for now)

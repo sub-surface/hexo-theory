@@ -28,8 +28,8 @@ Design: four comparisons, self-play and vs fixed opponents.
      rule)?
 
 Outputs:
-    results/az_value_probe.json
-    figures/fig_az_value_probe.png
+    evidence/results/az_value_probe.json
+    evidence/figures/fig_az_value_probe.png
 
 Usage:
     python experiments/run_az_value_probe.py           # n=40/20
@@ -266,13 +266,13 @@ def main() -> None:
     results = _run(args.n_self, args.n_vs, args.n_h2h,
                    args.max_moves, args.seed)
 
-    rpath = Path("results") / "az_value_probe.json"
+    rpath = Path("evidence/results") / "az_value_probe.json"
     rpath.parent.mkdir(parents=True, exist_ok=True)
     with open(rpath, "w") as f:
         json.dump(results, f, indent=2)
     print(f"\n[saved] {rpath}")
 
-    fig = Path("figures") / "fig_az_value_probe.png"
+    fig = Path("evidence/figures") / "fig_az_value_probe.png"
     _plot(results, str(fig))
     print(f"[saved] {fig}")
 

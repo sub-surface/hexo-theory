@@ -27,9 +27,9 @@ from experiments.harness import default_registry
 
 
 DEFAULT_AGENTS = ["random", "greedy", "potential", "ca_combo_v2", "mirror"]
-JSON_PATH = Path("results/cgt_sequences.json")
-CSV_PATH = Path("results/cgt_sequences.csv")
-FIGURE_PATH = Path("figures/fig_cgt_sequences.png")
+JSON_PATH = Path("evidence/results/cgt_sequences.json")
+CSV_PATH = Path("evidence/results/cgt_sequences.csv")
+FIGURE_PATH = Path("evidence/figures/fig_cgt_sequences.png")
 
 
 def _finite_or_none(value: float) -> float | None:

@@ -36,9 +36,9 @@ automaton + an exact Pisot entropy constant + a negative verdict on the
 Falsifiable link kept alive: IF optimal-play corpora inherit per-line
 substitution structure, the pentanacci constant (or a power/conjugate) should
 appear in diffraction peak-position ratios. Checkable against
-results/diffraction_p4.json peak tables without new theory.
+evidence/results/diffraction_p4.json peak tables without new theory.
 
-Output: results/line_automaton.json, figures/fig_line_automaton_spectrum.png
+Output: evidence/results/line_automaton.json, evidence/figures/fig_line_automaton_spectrum.png
 """
 from __future__ import annotations
 
@@ -108,7 +108,7 @@ def main() -> None:
                  "substitution inflation constant; see module docstring",
     }
     print(json.dumps(results, indent=2))
-    out = ROOT / "results" / "line_automaton.json"
+    out = ROOT / "evidence" / "results" / "line_automaton.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"[saved] {out}")
 
@@ -127,7 +127,7 @@ def main() -> None:
     ax.legend(loc="upper left", fontsize=8)
     ax.set_title("Line-automaton spectra: Perron root %.4f is Pisot\n"
                  "(all conjugates strictly inside the unit circle)" % pent)
-    figp = ROOT / "figures" / "fig_line_automaton_spectrum.png"
+    figp = ROOT / "evidence" / "figures" / "fig_line_automaton_spectrum.png"
     fig.savefig(figp, dpi=150, bbox_inches="tight")
     print(f"[saved] {figp}")
 

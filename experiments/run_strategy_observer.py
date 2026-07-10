@@ -15,8 +15,8 @@ unifies the friend's "shared representation + MLM + linear probes" recipe
 with Leon's "apply epiplexity to our strategies" request.
 
 Outputs:
-  results/strategy_observer.json   — all metrics, per corpus
-  figures/fig_strategy_observer.png
+  evidence/results/strategy_observer.json   — all metrics, per corpus
+  evidence/figures/fig_strategy_observer.png
     top-left:    H_T per agent (policy cross-entropy) + MLM CE
     top-right:   probe accuracies heatmap (agent × predicate)
     bottom-left: S_T vs hidden ladder per agent
@@ -266,13 +266,13 @@ def main() -> None:
         seed=args.seed,
     )
 
-    rpath = Path("results") / "strategy_observer.json"
+    rpath = Path("evidence/results") / "strategy_observer.json"
     rpath.parent.mkdir(parents=True, exist_ok=True)
     with open(rpath, "w") as f:
         json.dump(out, f, indent=2)
     print(f"\n[saved] {rpath}")
 
-    fpath = Path("figures") / "fig_strategy_observer.png"
+    fpath = Path("evidence/figures") / "fig_strategy_observer.png"
     _plot(out, str(fpath))
     print(f"[saved] {fpath}")
 

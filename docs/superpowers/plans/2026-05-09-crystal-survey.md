@@ -15,16 +15,16 @@
 - Create: `engine/crystal.py`
 - Create: `tests/test_crystal.py`
 - Create: `experiments/run_crystal_survey.py`
-- Create: `results/crystal_survey.json`
-- Create: `figures/fig_crystal_survey_gallery.png`
-- Create: `figures/fig_crystal_survey_metrics.png`
-- Create: `figures/fig_crystal_survey_harmonics.png`
-- Create: `figures/fig_crystal_survey_diffraction.png`
-- Create: `figures/fig_crystal_survey_fractal_highres.png`
+- Create: `evidence/results/crystal_survey.json`
+- Create: `evidence/figures/fig_crystal_survey_gallery.png`
+- Create: `evidence/figures/fig_crystal_survey_metrics.png`
+- Create: `evidence/figures/fig_crystal_survey_harmonics.png`
+- Create: `evidence/figures/fig_crystal_survey_diffraction.png`
+- Create: `evidence/figures/fig_crystal_survey_fractal_highres.png`
 - Create: `docs/theory/2026-05-09-bounded-crystal-sum.md`
 - Modify: `docs/ARTIFACTS.md`
-- Modify: `results/README.md`
-- Modify: `figures/README.md`
+- Modify: `evidence/results/README.md`
+- Modify: `evidence/figures/README.md`
 
 ## Task 1: Crystal Observables
 
@@ -63,7 +63,7 @@ The script should collect:
 
 The script should emit:
 
-- `results/crystal_survey.json`;
+- `evidence/results/crystal_survey.json`;
 - gallery plot;
 - metrics heatmap;
 - harmonic moment plot;
@@ -92,8 +92,8 @@ Include:
 
 - [x] **Step 1: Update artifact docs**
 
-Add the new script/result/figures/note to `docs/ARTIFACTS.md`, `results/README.md`,
-and `figures/README.md`.
+Add the new script/result/evidence/figures/note to `docs/ARTIFACTS.md`, `evidence/results/README.md`,
+and `evidence/figures/README.md`.
 
 - [ ] **Step 2: Verify**
 

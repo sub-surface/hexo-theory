@@ -27,7 +27,7 @@ Defender tiers (2 stones/turn):
     (class-1 if the window misses class 0), most-advanced windows first,
     shared target cells preferred.
 
-Output: results/residue_defense.json, figures/fig_residue_defense.png
+Output: evidence/results/residue_defense.json, evidence/figures/fig_residue_defense.png
     python experiments/run_residue_defense.py --quick
 """
 from __future__ import annotations
@@ -254,7 +254,7 @@ def main() -> None:
 
     # comparison baseline: the domino triaged defense at k=7, radius 12
     # (from the existing Modal phase diagram)
-    base_path = ROOT / "results" / "pairing_capacity_phase_diagram.json"
+    base_path = ROOT / "evidence" / "results" / "pairing_capacity_phase_diagram.json"
     baseline = {}
     if base_path.exists():
         for c in json.loads(base_path.read_text())["phase_diagram"]:
@@ -287,16 +287,16 @@ def main() -> None:
         s.set_color(GRID)
     ax.legend(frameon=False, fontsize=9, labelcolor=INK)
     fig.tight_layout()
-    fpath = ROOT / "figures" / "fig_residue_defense.png"
+    fpath = ROOT / "evidence" / "figures" / "fig_residue_defense.png"
     fig.savefig(fpath, dpi=150)
     plt.close(fig)
 
     out = {"grid": grid, "baseline_domino_k7_R12": baseline,
            "radius": radius, "turns": turns, "quick": args.quick,
            "wall_time_s": round(time.time() - t0, 1)}
-    (ROOT / "results" / "residue_defense.json").write_text(
+    (ROOT / "evidence" / "results" / "residue_defense.json").write_text(
         json.dumps(out, indent=2))
-    print(f"[saved] results/residue_defense.json, {fpath.name} "
+    print(f"[saved] evidence/results/residue_defense.json, {fpath.name} "
           f"({time.time()-t0:.0f}s)")
 
 

@@ -1,5 +1,5 @@
 """
-Analytic figures for the Modal bake-off (results/modal_bakeoff_screen.json).
+Analytic figures for the Modal bake-off (evidence/results/modal_bakeoff_screen.json).
 
 Four views:
   1. Pareto plane: measured evaluator cost (ms/move, benchmarked locally at a
@@ -12,7 +12,7 @@ Four views:
      separated the top bots when strong-vs-strong drew 549/550.
   4. Draw structure: game-length histogram split decisive vs cutoff.
 
-Output: figures/fig_bakeoff_pareto.png, fig_bakeoff_matrix.png,
+Output: evidence/figures/fig_bakeoff_pareto.png, fig_bakeoff_matrix.png,
         fig_bakeoff_conversion.png, fig_bakeoff_lengths.png
 """
 from __future__ import annotations
@@ -63,7 +63,7 @@ def bench_cost_ms(names: list[str], n_stones: int = 80, reps: int = 3) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--quick", action="store_true")  # cheap anyway
-    ap.add_argument("--source", default=str(ROOT / "results" / "modal_bakeoff_screen.json"))
+    ap.add_argument("--source", default=str(ROOT / "evidence" / "results" / "modal_bakeoff_screen.json"))
     args = ap.parse_args()
     data = json.loads(Path(args.source).read_text())
     names = data["bots"]
@@ -98,7 +98,7 @@ def main() -> None:
                  "(top-left = cheap and strong; the 1 s budget binds nobody)")
     ax.grid(alpha=0.25)
     fig.tight_layout()
-    fig.savefig(ROOT / "figures" / "fig_bakeoff_pareto.png", dpi=150)
+    fig.savefig(ROOT / "evidence" / "figures" / "fig_bakeoff_pareto.png", dpi=150)
     plt.close(fig)
 
     # 2. head-to-head decisive-share matrix -----------------------------------
@@ -123,7 +123,7 @@ def main() -> None:
     ax.set_title("Row's share of decisive games vs column")
     fig.colorbar(im, shrink=0.8)
     fig.tight_layout()
-    fig.savefig(ROOT / "figures" / "fig_bakeoff_matrix.png", dpi=150)
+    fig.savefig(ROOT / "evidence" / "figures" / "fig_bakeoff_matrix.png", dpi=150)
     plt.close(fig)
 
     # 3. conversion speed vs weak opponents -----------------------------------
@@ -145,7 +145,7 @@ def main() -> None:
     ax.grid(alpha=0.25, axis="y")
     plt.setp(ax.get_xticklabels(), fontsize=7)
     fig.tight_layout()
-    fig.savefig(ROOT / "figures" / "fig_bakeoff_conversion.png", dpi=150)
+    fig.savefig(ROOT / "evidence" / "figures" / "fig_bakeoff_conversion.png", dpi=150)
     plt.close(fig)
 
     # 4. game-length structure -------------------------------------------------
@@ -161,15 +161,15 @@ def main() -> None:
     ax.legend()
     ax.set_title("Game-length structure: decisive games end early or not at all")
     fig.tight_layout()
-    fig.savefig(ROOT / "figures" / "fig_bakeoff_lengths.png", dpi=150)
+    fig.savefig(ROOT / "evidence" / "figures" / "fig_bakeoff_lengths.png", dpi=150)
     plt.close(fig)
 
     summary = {"cost_ms": cost,
                "win_share": {n: stats[n]["wins"] / 300 for n in names},
                "stats": stats}
-    (ROOT / "results" / "bakeoff_analysis.json").write_text(json.dumps(summary, indent=2))
+    (ROOT / "evidence" / "results" / "bakeoff_analysis.json").write_text(json.dumps(summary, indent=2))
     print(json.dumps(summary["cost_ms"], indent=2))
-    print("[saved] 4 figures -> figures/fig_bakeoff_*.png, results/bakeoff_analysis.json")
+    print("[saved] 4 figures -> evidence/figures/fig_bakeoff_*.png, evidence/results/bakeoff_analysis.json")
 
 
 if __name__ == "__main__":

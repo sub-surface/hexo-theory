@@ -9,7 +9,7 @@ decisive share keep growing, plateau, or start dropping?
 
 Runs the same three matchups {random_vs_combo, greedy_vs_combo,
 combo_vs_combo} at horizon=960, n=50 each. Writes the result to
-`results/hamkins_echo_h960.json` (separate file — does not overwrite
+`evidence/results/hamkins_echo_h960.json` (separate file — does not overwrite
 the base sweep).
 
 Combined figure produced by `run_hamkins_echo_merge.py`.
@@ -28,7 +28,7 @@ sys.path.insert(0, str(ROOT))
 # Reuse the base module's helpers — avoids re-deriving the parallel harness.
 from run_hamkins_echo import run_matchup  # type: ignore
 
-RESULTS_PATH = ROOT / "results" / "hamkins_echo_h960.json"
+RESULTS_PATH = ROOT / "evidence" / "results" / "hamkins_echo_h960.json"
 
 
 def main() -> None:

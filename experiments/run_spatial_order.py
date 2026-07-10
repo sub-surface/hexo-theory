@@ -6,9 +6,9 @@ conjecture (Meyer-ness is near-automatic for lattice subsets; the contentful
 dichotomy is patch-counting): pooled distinct-patch counts and patch Shannon
 entropy over hex balls of radius r in {1,2,3}, color-normalized to the center
 stone, at a MATCHED stone count N* across three corpora:
-    strong  = results/hexo_bot2_selfplay.json      (2026-07-09, all decisive)
-    weak    = results/modal_moves_python_8000.json (ca_combo_v2 self-play)
-    random  = results/mdl_random_control_3000.json (random legal play)
+    strong  = evidence/results/hexo_bot2_selfplay.json      (2026-07-09, all decisive)
+    weak    = evidence/results/modal_moves_python_8000.json (ca_combo_v2 self-play)
+    random  = evidence/results/mdl_random_control_3000.json (random legal play)
 Quasicrystalline order predicts strong-play patch entropy well below the
 random baseline and (the sharper claim) below weak play at equal N.
 
@@ -25,10 +25,10 @@ at the residue-dual point; E[I_m] = 1 for uniformly random classes, so
 I_m << 1 in strong play = extinction, tested vs the random control
 (Mann-Whitney, normal approximation).
 
-Output: results/spatial_order.json,
-        figures/fig_spatial_order_patches.png
-        figures/fig_spatial_order_extinction.png
-        figures/fig_spatial_order_diffraction.png
+Output: evidence/results/spatial_order.json,
+        evidence/figures/fig_spatial_order_patches.png
+        evidence/figures/fig_spatial_order_extinction.png
+        evidence/figures/fig_spatial_order_diffraction.png
 """
 from __future__ import annotations
 
@@ -45,11 +45,11 @@ import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[1]
 CORPORA = {
-    "strong": ROOT / "results" / "hexo_bot2_selfplay.json",
-    "weak": ROOT / "results" / "modal_moves_python_8000.json",
-    "random": ROOT / "results" / "mdl_random_control_3000.json",
+    "strong": ROOT / "evidence" / "results" / "hexo_bot2_selfplay.json",
+    "weak": ROOT / "evidence" / "results" / "modal_moves_python_8000.json",
+    "random": ROOT / "evidence" / "results" / "mdl_random_control_3000.json",
 }
-OUT = ROOT / "results" / "spatial_order.json"
+OUT = ROOT / "evidence" / "results" / "spatial_order.json"
 C = {"strong": "#2a78d6", "weak": "#eda100", "random": "#e34948"}
 INK, MUTED, GRID = "#0b0b0b", "#898781", "#e1e0d9"
 MAX_GAMES = 400
@@ -218,7 +218,7 @@ def main() -> None:
         s.set_color(GRID)
     ax.legend(frameon=False, labelcolor=INK)
     fig.tight_layout()
-    f1 = ROOT / "figures" / "fig_spatial_order_patches.png"
+    f1 = ROOT / "evidence" / "figures" / "fig_spatial_order_patches.png"
     fig.savefig(f1, dpi=150)
     plt.close(fig)
 
@@ -245,7 +245,7 @@ def main() -> None:
             s.set_color(GRID)
     fig.suptitle("Residue-class extinction test", color=INK)
     fig.tight_layout()
-    f2 = ROOT / "figures" / "fig_spatial_order_extinction.png"
+    f2 = ROOT / "evidence" / "figures" / "fig_spatial_order_extinction.png"
     fig.savefig(f2, dpi=150)
     plt.close(fig)
 
@@ -265,7 +265,7 @@ def main() -> None:
     fig.suptitle("Mean diffraction power (log), mod-3 dual points circled",
                  color=INK)
     fig.tight_layout()
-    f3 = ROOT / "figures" / "fig_spatial_order_diffraction.png"
+    f3 = ROOT / "evidence" / "figures" / "fig_spatial_order_diffraction.png"
     fig.savefig(f3, dpi=150)
     plt.close(fig)
 

@@ -14,7 +14,7 @@ per-cell move deltas (exact make/unmake), exact hitting-set tactics at every
 node (`covering_placements`), joint-pair depth-2+ alpha-beta with
 brink-resolution quiescence, STRICTLY SOUND threat-space search (defender
 must spend both stones; any 1-cell cover refutes a line). Validated on
-Modal (`results/bakeoff_hexo_bot2_v{1,2,3}.json`):
+Modal (`evidence/results/bakeoff_hexo_bot2_v{1,2,3}.json`):
 
 - vs vendored SealBot **23-1** (Wilson CI [0.80, 0.99])
 - vs incumbent hexo_bot.py **20-4** ([0.64, 0.93])
@@ -23,7 +23,7 @@ Modal (`results/bakeoff_hexo_bot2_v{1,2,3}.json`):
 Full design/ablation history (incl. the v2 lesson: bounded-optimism TSS was
 2-22 AGAINST its own ablation — unsound search is worse than none):
 [competition/2026-07-09-hexo-bot2-results.md](../competition/2026-07-09-hexo-bot2-results.md).
-Eval-weight mining = honest negative (`results/eval_mining.json`): mined
+Eval-weight mining = honest negative (`evidence/results/eval_mining.json`): mined
 linear window weights UNDERPERFORM the hand prior; signal lives at brink
 level. Remaining bot options (not started): 50-opening confirmation run,
 transposition table, partial depth-3.
@@ -35,35 +35,35 @@ Headlines:
 
 1. **Additive temperature law (exact)** — for disjoint collinear fragments
    under (2:2), draw-draw unions win iff h(A)+h(B) ≥ 3; verified with ZERO
-   exceptions on 40,785 exact solves (`results/two_move_sum_full.json`).
+   exceptions on 40,785 exact solves (`evidence/results/two_move_sum_full.json`).
    Solver: [experiments/run_two_move_sum.py](../experiments/run_two_move_sum.py).
 2. **Split-prime extinction** — strong play suppresses the structure factor
    at the F₇-dual (p=2.4e-4 vs random), with NO mod-3 suppression
-   (modulus-specificity = internal control). `results/spatial_order.json`.
+   (modulus-specificity = internal control). `evidence/results/spatial_order.json`.
 3. **Defense dichotomy** — exact-hitting-set reactive defense shuts out the
    entire scripted multi-front attacker suite at k=6 (0% losses to 120
    dense fronts, ablation shows tier-1 exactness is the load-bearing part,
    NOT the F₇ structure) — then hexo_bot2 beats the same defense **24-0,
    zero draws**. Cheap-reactive defenses are dead against adaptive attack;
    the 2026-07-08 "capacity failure" falsified a weak tier-1, not
-   turn-aware defense per se. `results/residue_defense_sweep.json`,
-   `results/bakeoff_residue_blocker.json`.
+   turn-aware defense per se. `evidence/results/residue_defense_sweep.json`,
+   `evidence/results/bakeoff_residue_blocker.json`.
 4. **n_crit(R) ~ R^0.6–0.9** — sub-linear defender-collapse scaling,
    excluding constant-density and pure-count mechanisms.
-   `results/pairing_scaling.json`.
+   `evidence/results/pairing_scaling.json`.
 5. **Patch entropy non-monotone in strength** — weak 7.87 < strong 8.76 <
    random 9.04 bits (r=1, matched N=27). "Stronger ⇒ more ordered" is
    false at patch level; wrinkle for the epiplexity narrative.
 
-Supporting: `results/hexo_bot2_selfplay.json` (400-game strong corpus, all
+Supporting: `evidence/results/hexo_bot2_selfplay.json` (400-game strong corpus, all
 decisive, colour parity 204-196 — no P1 edge visible at 12-stone random
 openings). Figures: `fig_two_move_sum_matrix`, `fig_spatial_order_*` (3),
-`fig_pairing_scaling_*` (2), `fig_residue_defense` — all in figures/.
+`fig_pairing_scaling_*` (2), `fig_residue_defense` — all in evidence/figures/.
 
 ### Fresh tonight (run, needs interpretation folded in tomorrow)
 
 **(p:q) bias sweep** ([experiments/run_bias_temperature.py](../experiments/run_bias_temperature.py),
-`results/bias_temperature.json`): the naive "ambient temperature = q"
+`evidence/results/bias_temperature.json`): the naive "ambient temperature = q"
 generalization is PARTIALLY refuted, informatively:
 - (2:2): law replicates exactly (0 errors).
 - (1:1): 0 non-additive pairs, 712 law-false-positives — but h was defined
@@ -119,7 +119,7 @@ of BALANCED (p:p) games, with heat defined p-relatively.**
   modal_theory_sweep.py, modal_selfplay.py NEW, experiments/run_{eval_mining,
   pairing_scaling,two_move_sum,spatial_order,residue_defense,bias_temperature}.py
   NEW, docs/theory/2026-07-09-empirical-theory-sweep.md NEW, this file, plus
-  results/ and figures/ outputs.
+  evidence/results/ and evidence/figures/ outputs.
 - **SPEC.md updates recommended but NOT made** (deliberately, pending
   Leon's read): (a) "no cheap draw" entry should cite the dichotomy
   (result 3 above) — it is now stronger AND more precisely scoped;

@@ -14,10 +14,10 @@ versus a flat, high H_T for random play.
 
 Usage:
   python experiments/run_epiplexity_corpus.py \
-      --source results/modal_moves_python_8000.json \
-      --control results/mdl_random_control_3000.json
+      --source evidence/results/modal_moves_python_8000.json \
+      --control evidence/results/mdl_random_control_3000.json
 
-Output: results/epiplexity_corpus.json, figures/fig_epiplexity_corpus.png
+Output: evidence/results/epiplexity_corpus.json, evidence/figures/fig_epiplexity_corpus.png
 """
 from __future__ import annotations
 
@@ -61,8 +61,8 @@ def sweep(corpus: Corpus, points: int, max_order: int) -> list[dict]:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--source", default="results/modal_moves_python_8000.json")
-    ap.add_argument("--control", default="results/mdl_random_control_3000.json")
+    ap.add_argument("--source", default="evidence/results/modal_moves_python_8000.json")
+    ap.add_argument("--control", default="evidence/results/mdl_random_control_3000.json")
     ap.add_argument("--points", type=int, default=10)
     ap.add_argument("--max-order", type=int, default=3)
     args = ap.parse_args()
@@ -83,7 +83,7 @@ def main() -> None:
                   "agent_H_T_final": a_ht, "control_H_T_final": c_ht,
                   "H_T_gap_bits_per_token": round(c_ht - a_ht, 3) if c_ht else None,
                   "agent_H_T_falls_with_N": agent_rows[-1]["markov_H_T"] < agent_rows[0]["markov_H_T"]}}
-    Path(ROOT / "results" / "epiplexity_corpus.json").write_text(json.dumps(result, indent=2))
+    Path(ROOT / "evidence" / "results" / "epiplexity_corpus.json").write_text(json.dumps(result, indent=2))
     print("\nHEADLINE (Markov-3 observer, held-out cross-entropy):")
     print(f"  agent H_T   = {a_ht:.3f} bits/token")
     if c_ht:
@@ -119,8 +119,8 @@ def main() -> None:
     ax2.set_title("Two-part MDL (program + entropy)")
     ax2.legend(fontsize=8); ax2.grid(alpha=0.25, which="both")
     fig.tight_layout()
-    fig.savefig(ROOT / "figures" / "fig_epiplexity_corpus.png", dpi=150)
-    print("[saved] results/epiplexity_corpus.json, figures/fig_epiplexity_corpus.png")
+    fig.savefig(ROOT / "evidence" / "figures" / "fig_epiplexity_corpus.png", dpi=150)
+    print("[saved] evidence/results/epiplexity_corpus.json, evidence/figures/fig_epiplexity_corpus.png")
 
 
 if __name__ == "__main__":

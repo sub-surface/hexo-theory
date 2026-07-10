@@ -1,7 +1,7 @@
 """
 n_crit(R) scaling analysis of the pairing-capacity phase diagram.
 
-Re-analysis of results/pairing_capacity_phase_diagram.json (the Modal grid:
+Re-analysis of evidence/results/pairing_capacity_phase_diagram.json (the Modal grid:
 k x n_fronts x cluster_radius, 40 seeds/cell, produced by
 modal_theory_sweep.py::pairing_sweep). Question, per
 docs/theory/2026-07-08-pairing-thresholds-and-game-values.md 3.2b: how does
@@ -15,9 +15,9 @@ k-window pairing defense) scale with cluster radius R?
     overlap/packing phenomenon (windows sharing cells), consistent with the
     super-additive-temperature reading of the dense-cluster counterexample.
 
-Output: results/pairing_scaling.json,
-        figures/fig_pairing_scaling_curves.png (k=7 win-rate curves per R),
-        figures/fig_pairing_scaling_ncrit.png (log-log n_crit vs R per k).
+Output: evidence/results/pairing_scaling.json,
+        evidence/figures/fig_pairing_scaling_curves.png (k=7 win-rate curves per R),
+        evidence/figures/fig_pairing_scaling_ncrit.png (log-log n_crit vs R per k).
 """
 from __future__ import annotations
 
@@ -31,14 +31,14 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "results" / "pairing_capacity_phase_diagram.json"
+SRC = ROOT / "evidence" / "results" / "pairing_capacity_phase_diagram.json"
 # supplementary sweep (2026-07-09): n_fronts 60-200 at R=24,32, turns=450 --
 # un-censors the k=7/k=13 R=24 cells and extends the radius range. Where a
 # cell exists in both, the ext (longer-horizon) value wins; the turns
 # mismatch (300 vs 450) slightly favours the attacker in ext cells, so the
 # merged curves are conservative UPPER envelopes on n_crit only.
-SRC_EXT = ROOT / "results" / "pairing_capacity_phase_diagram_ext.json"
-OUT = ROOT / "results" / "pairing_scaling.json"
+SRC_EXT = ROOT / "evidence" / "results" / "pairing_capacity_phase_diagram_ext.json"
+OUT = ROOT / "evidence" / "results" / "pairing_scaling.json"
 
 # dataviz reference palette (categorical order, light mode)
 C = ["#2a78d6", "#1baf7a", "#eda100", "#008300", "#4a3aa7", "#e34948"]
@@ -112,7 +112,7 @@ def main() -> None:
     fig.suptitle("Triaged pairing defense vs dense multi-front attack "
                  "(40 seeds/cell)", color=INK, fontsize=12)
     fig.tight_layout()
-    f1 = ROOT / "figures" / "fig_pairing_scaling_curves.png"
+    f1 = ROOT / "evidence" / "figures" / "fig_pairing_scaling_curves.png"
     fig.savefig(f1, dpi=150)
     plt.close(fig)
 
@@ -149,7 +149,7 @@ def main() -> None:
         s.set_color(GRID)
     ax.legend(frameon=False, fontsize=9, labelcolor=INK)
     fig.tight_layout()
-    f2 = ROOT / "figures" / "fig_pairing_scaling_ncrit.png"
+    f2 = ROOT / "evidence" / "figures" / "fig_pairing_scaling_ncrit.png"
     fig.savefig(f2, dpi=150)
     plt.close(fig)
 

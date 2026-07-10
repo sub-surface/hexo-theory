@@ -4,7 +4,7 @@
 > now the current priority layer** — same relationship this file once had to
 > retired v1 (see §11). Programme D (§5), called "the most ambitious — and
 > most original" direction and the paper's headline result, has **not actually
-> been run**: no observer-net S_T(N) scan exists in `results/`. DIRECTION.md's
+> been run**: no observer-net S_T(N) scan exists in `evidence/results/`. DIRECTION.md's
 > priority queue substitutes a cheap gzip-MDL proxy for it as the immediate
 > next step. Programme E.3's NCA-zoo path is blocked on a diagnosed data bug,
 > not merely deprioritized — see [SPEC.md](../SPEC.md) §6 before resuming it.
@@ -43,7 +43,7 @@ Three paradoxes of classical information theory dissolve:
 
 1. **Every experiment produces a point in MDL space.** Instrumentation emits `(|P|, H_T)` alongside whatever domain metric (ELO, win-rate, fork-count) it was already emitting.
 2. **Paradoxes, not phases.** The organising structure is the paper's three paradoxes, with a fourth "synthesis" programme tying them to the Pisot conjecture. This is more falsifiable than phase-gated milestones.
-3. **Real-time lab notebook.** A marimo notebook (`notebooks/epiplexity_lab.py`) is the shared scratchpad for all measurements; every figure in any eventual write-up should reproducibly come from a cell there.
+3. **Real-time lab notebook.** A marimo notebook (`apps/marimo/epiplexity_lab.py`) is the shared scratchpad for all measurements; every figure in any eventual write-up should reproducibly come from a cell there.
 4. **Bounded-observer agents are first-class objects, not baselines.** `ForkAwareAgent`, `PotentialGradientAgent`, `ComboAgent`, and the eventual `CoxeterAgent` are *explicit time-bounded models* `P ∈ P_T` in the paper's formalism. Their source code length is their `|P|`; their move-prediction cross-entropy is their `H_T`.
 5. **Falsifiability before generalisation.** Each programme has a concrete prediction that could kill it. Listed in §8.
 
@@ -193,7 +193,7 @@ Tournament (run via [experiments/harness.py](../experiments/harness.py)'s `run_r
 
 ### E.4 Why replace hand-crafted agents with a neural zoo
 
-The hand-crafted ladder (`random → greedy → fork_aware → combo → ca_combo_v2`) empirically plateaus: the 2026-04-17 FMA curve ([results/fma_curve.json](../results/fma_curve.json)) shows ca_combo_v2 at $p_B = 0.44$ [0.31, 0.58] — not meaningfully stronger than combo. Adding more hand-engineered features is a diminishing-returns direction. Training under self-play with architectural priors is the natural way to extend the frontier *rightward* (toward higher $|P|$, lower $H_T$) without hand-crafting every feature. Crucially, the zoo is also an **ablation experiment** — it falsifies or confirms the §7 prediction that $D_6$-equivariance is the load-bearing prior and tactical priors are not.
+The hand-crafted ladder (`random → greedy → fork_aware → combo → ca_combo_v2`) empirically plateaus: the 2026-04-17 FMA curve ([evidence/results/fma_curve.json](../evidence/results/fma_curve.json)) shows ca_combo_v2 at $p_B = 0.44$ [0.31, 0.58] — not meaningfully stronger than combo. Adding more hand-engineered features is a diminishing-returns direction. Training under self-play with architectural priors is the natural way to extend the frontier *rightward* (toward higher $|P|$, lower $H_T$) without hand-crafting every feature. Crucially, the zoo is also an **ablation experiment** — it falsifies or confirms the §7 prediction that $D_6$-equivariance is the load-bearing prior and tactical priors are not.
 
 ### E.4 ELO ↔ MDL correlation
 - Compute Pearson `r` between ELO rating and negative `MDL_T`.
@@ -203,7 +203,7 @@ The hand-crafted ladder (`random → greedy → fork_aware → combo → ca_comb
 
 ## 7. Programme F — Infrastructure (throughout)
 
-### F.1 Marimo notebook (`notebooks/epiplexity_lab.py`)
+### F.1 Marimo notebook (`apps/marimo/epiplexity_lab.py`)
 - Real-time visualisation of corpus generation, observer training, and `(|P|, H_T)` scatter.
 - Cells organised to mirror programmes A–D, so any measurement can be re-run interactively.
 - Initial scaffold written in this overhaul (see §10).
@@ -219,8 +219,8 @@ The hand-crafted ladder (`random → greedy → fork_aware → combo → ca_comb
 - `engine/probes.py` — structural predicates from §4.
 
 ### F.3 Data management
-- `corpora/` directory, gitignored, holds pickled corpora with manifests.
-- `results/` directory, committed, holds JSON/CSV summaries of every run.
+- `evidence/corpora/` directory, gitignored, holds pickled corpora with manifests.
+- `evidence/results/` directory, committed, holds JSON/CSV summaries of every run.
 - `checkpoints/` directory, gitignored, holds observer-net checkpoints keyed by corpus hash.
 
 ### F.4 Testing
@@ -274,7 +274,7 @@ Quarters are calibrated to "one FTE-equivalent of focused hobby time." Adjust ru
 
 ---
 
-## 10. Marimo notebook (`notebooks/epiplexity_lab.py`)
+## 10. Marimo notebook (`apps/marimo/epiplexity_lab.py`)
 
 Created as part of this overhaul. Sections mirror programmes A–E. It imports the `engine/epiplexity.py` module when implemented; initial cells work on placeholder synthetic data so the notebook runs immediately.
 
@@ -297,7 +297,7 @@ Created as part of this overhaul. Sections mirror programmes A–E. It imports t
 
 ---
 
-## 12. Key references (to add to `papers/`)
+## 12. Key references (to add to `sources/`)
 
 - Finzi et al. 2026 — *Epiplexity* (added)
 - Baake & Grimm 2013 — *Aperiodic Order, Vol. 1* (Pisot substitution theory; look up PDF)

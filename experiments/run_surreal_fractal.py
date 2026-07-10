@@ -25,9 +25,9 @@ from engine.fractal_strategy import (
 )
 
 
-JSON_PATH = Path("results/surreal_fractal_strategy.json")
-STRATEGY_FIGURE_PATH = Path("figures/fig_surreal_fractal_strategy.png")
-SHELL_FIGURE_PATH = Path("figures/fig_surreal_fractal_shells.png")
+JSON_PATH = Path("evidence/results/surreal_fractal_strategy.json")
+STRATEGY_FIGURE_PATH = Path("evidence/figures/fig_surreal_fractal_strategy.png")
+SHELL_FIGURE_PATH = Path("evidence/figures/fig_surreal_fractal_shells.png")
 
 
 def axial_to_xy(cell: tuple[int, int]) -> tuple[float, float]:

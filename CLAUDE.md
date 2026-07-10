@@ -21,7 +21,7 @@ Everything in this repo should be either feeding that write-up or falsifying par
 1. **[README.md](README.md)** — the external framing and central "Pisot quasicrystal" conjecture
 2. **[docs/ROADMAP.md](docs/ROADMAP.md)** — canonical 12-month plan, organised around the Finzi epiplexity paradoxes
 3. **[docs/theory/](docs/theory/)** — living synthesis of individual theoretical threads (Hamkins paper synthesis, complexity positioning, etc.). Append here when you develop an idea; don't scatter theory across random files.
-4. **[papers/](papers/)** — PDFs we build on. Currently: Finzi et al. (epiplexity, 2026), Hamkins–Leonessi (Infinite Hex is a draw, 2022).
+4. **[sources/literature/](sources/literature/)** — PDFs we build on. Currently: Finzi et al. (epiplexity, 2026), Hamkins–Leonessi (Infinite Hex is a draw, 2022).
 
 ## Agent expectations
 
@@ -34,7 +34,7 @@ Everything in this repo should be either feeding that write-up or falsifying par
 
 ### What to build and not build
 - `engine/` — game mechanics, agents, analysis helpers. Keep small and focused. Upstream game code lives in `../hexo/`; we re-export via [engine/__init__.py](engine/__init__.py).
-- `experiments/run_*.py` — one file per self-contained experiment. Must produce `results/<name>.json` and `figures/fig_<name>_*.png`. Existing examples: [run_epiplexity_scan.py](experiments/run_epiplexity_scan.py), [run_hamkins_echo.py](experiments/run_hamkins_echo.py).
+- `experiments/run_*.py` — one file per self-contained experiment. Must produce `evidence/results/<name>.json` and `evidence/figures/fig_<name>_*.png`. Existing examples: [run_epiplexity_scan.py](experiments/run_epiplexity_scan.py), [run_hamkins_echo.py](experiments/run_hamkins_echo.py).
 - Don't create a new module just to hold one function. Prefer existing files.
 - Don't add backward-compat shims, feature flags, or speculative abstractions.
 - Don't write comments that restate what the code does. Comments only for *why* non-obvious decisions are the way they are.
@@ -42,7 +42,7 @@ Everything in this repo should be either feeding that write-up or falsifying par
 ### Experiments convention
 - One entry point per experiment: `experiments/run_<topic>.py`.
 - `--quick` flag for dev iteration (~1 min), full sweep as default.
-- Output JSON to `results/`, PNG to `figures/` — both are tracked in git (reproducibility > repo size for this project).
+- Output JSON to `evidence/results/`, PNG to `evidence/figures/` — both are tracked in git (reproducibility > repo size for this project).
 - Seed everything. Reproducibility is a prerequisite for every claim.
 - **Use GPU / parallelism where it helps.** Leon has a 5GB RTX 2060. For any compute that scales with corpus size — self-play batching, diffraction FFTs, tensor ops, MCTS rollouts — default to torch+CUDA. For embarrassingly parallel game-playing, use `multiprocessing.Pool` or `joblib`. Fall back to sequential CPU only when CUDA is unavailable or the problem is trivially small. Budget VRAM carefully (5GB is tight — prefer float32, small batches). Report wall time so speedups are visible.
 
@@ -57,7 +57,7 @@ Resolved once, centrally, in [engine/__init__.py](engine/__init__.py)'s `_resolv
 Two research lines run in parallel: **Line A** (quasicrystal/Pisot/epiplexity — the global-pattern story) and **Line B** (transversal-atom/τ forcing — the local-mechanism story, now the active focus per DIRECTION.md). The headline claim that would make Line A publishable — is $S_T(N)$ sub-linear in corpus size (P3)? — has **not actually been measured yet** despite being named "the headline result" in April; the observer-net infrastructure for it exists (`engine/epiplexity.py`) but has never been pointed at a real corpus-size sweep. Several established-sounding claims (P1 first-mover advantage, the Bellman-Turing predicted wavelength) have real numbers behind them but weaker statistical support than earlier docs implied — see SPEC.md's corrected framing. The AlphaZero/NCA-zoo learned-agent thread is a **documented series of negative results** (draw-collapse, value-head underfitting, distillation erasing the Black edge) — see [docs/theory/2026-04-18-unified-agent-design.md](docs/theory/2026-04-18-unified-agent-design.md) §10-13. Don't resume pouring compute into it without first fixing the diagnosed causes (class imbalance on `v=0` targets, sparse threat labels).
 
 ### Active now (per DIRECTION.md)
-0. Search-regime pivot executed 2026-07-06 — see [docs/theory/2026-07-06-search-regime-verdicts.md](docs/theory/2026-07-06-search-regime-verdicts.md) for candidate verdicts (2 new theorems, `fast_tactical` evaluator, [modal_bakeoff.py](modal_bakeoff.py) staged). Bake-off Phase 1 on Modal is the pending next step.
+0. Search-regime pivot executed 2026-07-06 — see [docs/theory/2026-07-06-search-regime-verdicts.md](docs/theory/2026-07-06-search-regime-verdicts.md) for candidate verdicts (2 new theorems, `fast_tactical` evaluator, [modal_bakeoff.py](cloud/modal/modal_bakeoff.py) staged). Bake-off Phase 1 on Modal is the pending next step.
 1. τ-fork heuristic in [competition/arena.py](competition/arena.py) — real but currently only proven to *not lose* (draws vs plain ES potential after the squared-term fix), not yet proven to *win*. The arena now supports seeded random openings (the fix for the deterministic-draw wall), so the asymmetric test runs inside the bake-off.
 2. Programme D proxy — a cheap gzip-based MDL measurement across corpus sizes $N \in \{10^2, ..., 10^5\}$, to get a first log-vs-linear read on $S_T(N)$ without building the full observer-net pipeline. See DIRECTION.md's experiment queue.
 3. Statistics tightening on P1 (first-mover advantage) and the Bellman-Turing wavelength prediction — both currently rest on thin samples (see SPEC.md).

@@ -205,12 +205,12 @@ The first quick run compared:
 
 It emitted:
 
-- `results/crystal_survey.json`;
-- `figures/fig_crystal_survey_gallery.png`;
-- `figures/fig_crystal_survey_metrics.png`;
-- `figures/fig_crystal_survey_harmonics.png`;
-- `figures/fig_crystal_survey_diffraction.png`;
-- `figures/fig_crystal_survey_fractal_highres.png`.
+- `evidence/results/crystal_survey.json`;
+- `evidence/figures/fig_crystal_survey_gallery.png`;
+- `evidence/figures/fig_crystal_survey_metrics.png`;
+- `evidence/figures/fig_crystal_survey_harmonics.png`;
+- `evidence/figures/fig_crystal_survey_diffraction.png`;
+- `evidence/figures/fig_crystal_survey_fractal_highres.png`.
 
 Early signal, not a conclusion:
 

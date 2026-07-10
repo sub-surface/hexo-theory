@@ -22,8 +22,8 @@ Test design:
      at worst a tie.
 
 Outputs:
-  - results/combo_defect.json
-  - figures/fig_combo_defect.png
+  - evidence/results/combo_defect.json
+  - evidence/figures/fig_combo_defect.png
 """
 from __future__ import annotations
 
@@ -155,13 +155,13 @@ def main() -> None:
 
     results = _run(args.n, args.parallelism, args.max_moves, args.seed)
 
-    results_path = Path("results") / "combo_defect.json"
+    results_path = Path("evidence/results") / "combo_defect.json"
     results_path.parent.mkdir(parents=True, exist_ok=True)
     with open(results_path, "w") as f:
         json.dump(results, f, indent=2)
     print(f"\n[saved] {results_path}")
 
-    fig_path = Path("figures") / "fig_combo_defect.png"
+    fig_path = Path("evidence/figures") / "fig_combo_defect.png"
     _plot(results, str(fig_path))
     print(f"[saved] {fig_path}")
 

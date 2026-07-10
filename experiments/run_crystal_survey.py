@@ -30,12 +30,12 @@ from engine.fractal_strategy import generate_strategy_fractal
 from experiments.harness import default_registry
 
 
-JSON_PATH = Path("results/crystal_survey.json")
-FIG_GALLERY = Path("figures/fig_crystal_survey_gallery.png")
-FIG_METRICS = Path("figures/fig_crystal_survey_metrics.png")
-FIG_HARMONICS = Path("figures/fig_crystal_survey_harmonics.png")
-FIG_DIFFRACTION = Path("figures/fig_crystal_survey_diffraction.png")
-FIG_FRACTAL = Path("figures/fig_crystal_survey_fractal_highres.png")
+JSON_PATH = Path("evidence/results/crystal_survey.json")
+FIG_GALLERY = Path("evidence/figures/fig_crystal_survey_gallery.png")
+FIG_METRICS = Path("evidence/figures/fig_crystal_survey_metrics.png")
+FIG_HARMONICS = Path("evidence/figures/fig_crystal_survey_harmonics.png")
+FIG_DIFFRACTION = Path("evidence/figures/fig_crystal_survey_diffraction.png")
+FIG_FRACTAL = Path("evidence/figures/fig_crystal_survey_fractal_highres.png")
 DEFAULT_AGENTS = ["random", "greedy", "potential", "ca_combo_v2", "mirror"]
 METRIC_COLUMNS = [
     "bragg99",

@@ -6,10 +6,10 @@ For each prior in {random, d6_tied, line_detector, erdos_selfridge, combo}:
   - train via self-play against a frozen copy of itself
     (engine.neural_ca.train_self_play)
   - save checkpoint to checkpoints/nca_<prior>.pt
-  - save training curve to results/nca_train_<prior>.json
+  - save training curve to evidence/results/nca_train_<prior>.json
 
-Runtime budget: --quick does 60 games/variant (~3 min each on 2060),
-full default is 400 games/variant (~20 min each, ~1.7h total).
+Runtime budget: --quick does 60 evidence/games/variant (~3 min each on 2060),
+full default is 400 evidence/games/variant (~20 min each, ~1.7h total).
 
 This intentionally trains each variant in isolation (no cross-prior
 play) — we want to measure what each prior enables, not whether one
@@ -18,8 +18,8 @@ evaluation is the tournament in run_nca_zoo.py.
 
 Outputs:
   checkpoints/nca_<prior>.pt           — trained model state_dicts
-  results/nca_train_<prior>.json       — per-game reward / loss trajectory
-  figures/fig_nca_train_curves.png     — overlay of learning curves
+  evidence/results/nca_train_<prior>.json       — per-game reward / loss trajectory
+  evidence/figures/fig_nca_train_curves.png     — overlay of learning curves
 """
 from __future__ import annotations
 
@@ -89,7 +89,7 @@ def _run(total_games: int, max_moves: int, step_every: int,
         history["_prior"] = prior
         out[prior] = history
 
-        rpath = Path("results") / f"nca_train_{prior}.json"
+        rpath = Path("evidence/results") / f"nca_train_{prior}.json"
         rpath.parent.mkdir(parents=True, exist_ok=True)
         with open(rpath, "w") as f:
             # History["reward"] and ["decisive"] can be long; dump directly.
@@ -146,7 +146,7 @@ def main() -> None:
                     help="first N games play vs ca_combo_v2 for dense signal")
     ap.add_argument("--seed", type=int, default=20260418)
     ap.add_argument("--quick", action="store_true",
-                    help="60 games/variant for dev iteration")
+                    help="60 evidence/games/variant for dev iteration")
     args = ap.parse_args()
 
     if args.quick:
@@ -165,7 +165,7 @@ def main() -> None:
         seed=args.seed,
     )
 
-    fig = Path("figures") / "fig_nca_train_curves.png"
+    fig = Path("evidence/figures") / "fig_nca_train_curves.png"
     _plot(out, str(fig))
     print(f"\n[saved] {fig}")
 

@@ -1,6 +1,6 @@
 """Diffraction Bragg99 histogram — existing data, new cut.
 
-results/diffraction_p4.json has n=18 self-play games + n=18 matched
+evidence/results/diffraction_p4.json has n=18 self-play games + n=18 matched
 random controls at horizon=200. The original figure for P4 was a mean
 +- CI bar chart. This script instead plots the full per-game
 distributions, which is the presentation format that actually makes
@@ -15,7 +15,7 @@ controls. We already have the effect in the JSON; this figure makes the
 separation visible.
 
 Output:
-    figures/fig_diffraction_bragg_histogram.png
+    evidence/figures/fig_diffraction_bragg_histogram.png
 """
 from __future__ import annotations
 
@@ -29,8 +29,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 HERE = Path(__file__).resolve().parents[1]
-IN_JSON = HERE / "results" / "diffraction_p4.json"
-OUT_FIG = HERE / "figures" / "fig_diffraction_bragg_histogram.png"
+IN_JSON = HERE / "evidence" / "results" / "diffraction_p4.json"
+OUT_FIG = HERE / "evidence" / "figures" / "fig_diffraction_bragg_histogram.png"
 
 
 def wilson_from_means(x: list[float], z: float = 1.96) -> tuple[float, float, float]:

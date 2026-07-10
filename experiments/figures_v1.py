@@ -1,7 +1,7 @@
 """
 Generate figures from rigor_v1 results (and the earlier epiplexity_scan).
 
-Outputs PNGs into results/figures/.
+Outputs PNGs into evidence/figures/.
 """
 from __future__ import annotations
 import json, math
@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 ROOT = Path(__file__).resolve().parent.parent
-RES = ROOT / "results"
+RES = ROOT / "evidence" / "results"
 FIG = RES / "figures"
 FIG.mkdir(exist_ok=True)
 

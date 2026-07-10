@@ -33,7 +33,7 @@ support from MDL scaling. beta < 1 with lzma but ~1 with gzip => structure
 exists but is longer-range than the gzip window -- expected, and the reason
 lzma is the honest proxy.
 
-Output: results/mdl_scaling.json, figures/fig_mdl_scaling.png
+Output: evidence/results/mdl_scaling.json, evidence/figures/fig_mdl_scaling.png
 """
 from __future__ import annotations
 
@@ -203,7 +203,7 @@ def main() -> None:
                                   if ctrl_fits else None,
         },
     }
-    (ROOT / "results" / "mdl_scaling.json").write_text(json.dumps(result, indent=2))
+    (ROOT / "evidence" / "results" / "mdl_scaling.json").write_text(json.dumps(result, indent=2))
     print("\nHEADLINE (lzma, whole-corpus dictionary):")
     print(f"  S_T(N) ~ N^{beta:.3f}  -> {fits['lzma']['power']['interpretation']}")
     print(f"  (gzip proxy, 32KB window: beta={fits['gzip']['power']['beta']:.3f})")
@@ -235,8 +235,8 @@ def main() -> None:
                   "falling (agent) vs flat (random null) is the P3 signal")
     ax2.legend(fontsize=8); ax2.grid(alpha=0.25, which="both")
     fig.tight_layout()
-    fig.savefig(ROOT / "figures" / "fig_mdl_scaling.png", dpi=150)
-    print(f"[saved] results/mdl_scaling.json, figures/fig_mdl_scaling.png")
+    fig.savefig(ROOT / "evidence" / "figures" / "fig_mdl_scaling.png", dpi=150)
+    print(f"[saved] evidence/results/mdl_scaling.json, evidence/figures/fig_mdl_scaling.png")
 
 
 if __name__ == "__main__":

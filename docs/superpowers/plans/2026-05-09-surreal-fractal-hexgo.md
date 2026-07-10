@@ -15,13 +15,13 @@
 - Create: `engine/fractal_strategy.py`
 - Create: `tests/test_fractal_strategy.py`
 - Create: `experiments/run_surreal_fractal.py`
-- Create: `results/surreal_fractal_strategy.json`
-- Create: `figures/fig_surreal_fractal_strategy.png`
-- Create: `figures/fig_surreal_fractal_shells.png`
+- Create: `evidence/results/surreal_fractal_strategy.json`
+- Create: `evidence/figures/fig_surreal_fractal_strategy.png`
+- Create: `evidence/figures/fig_surreal_fractal_shells.png`
 - Create: `docs/theory/2026-05-09-surreal-fractal-conjectures.md`
 - Modify: `docs/ARTIFACTS.md`
-- Modify: `results/README.md`
-- Modify: `figures/README.md`
+- Modify: `evidence/results/README.md`
+- Modify: `evidence/figures/README.md`
 
 ## Task 1: Verified Fractal Strategy Generator
 
@@ -110,9 +110,9 @@ Expected: 3 passed.
 
 **Files:**
 - Create: `experiments/run_surreal_fractal.py`
-- Create: `results/surreal_fractal_strategy.json`
-- Create: `figures/fig_surreal_fractal_strategy.png`
-- Create: `figures/fig_surreal_fractal_shells.png`
+- Create: `evidence/results/surreal_fractal_strategy.json`
+- Create: `evidence/figures/fig_surreal_fractal_strategy.png`
+- Create: `evidence/figures/fig_surreal_fractal_shells.png`
 
 - [x] **Step 1: Add experiment script**
 
@@ -167,8 +167,8 @@ Include:
 
 **Files:**
 - Modify: `docs/ARTIFACTS.md`
-- Modify: `results/README.md`
-- Modify: `figures/README.md`
+- Modify: `evidence/results/README.md`
+- Modify: `evidence/figures/README.md`
 
 - [x] **Step 1: Update ledgers**
 

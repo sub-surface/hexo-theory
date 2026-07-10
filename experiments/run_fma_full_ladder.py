@@ -31,12 +31,12 @@ Design choices:
   argmax) which retains most of the top-move preference but breaks
   determinism. t=0.5 is shown for temperature-sensitivity context;
   at t=0 self-play is documented in
-  [results/az_policy_eval.json](../results/az_policy_eval.json) as
+  [evidence/results/az_policy_eval.json](../evidence/results/az_policy_eval.json) as
   a Phase 1 failure mode.
 
 Outputs:
-    results/fma_full_ladder.json
-    figures/fig_fma_full_ladder.png
+    evidence/results/fma_full_ladder.json
+    evidence/figures/fig_fma_full_ladder.png
 
 Usage:
     python experiments/run_fma_full_ladder.py           # n=40 / agent
@@ -220,13 +220,13 @@ def main() -> None:
 
     results = _run(args.n, args.parallelism, args.max_moves, args.seed)
 
-    rpath = Path("results") / "fma_full_ladder.json"
+    rpath = Path("evidence/results") / "fma_full_ladder.json"
     rpath.parent.mkdir(parents=True, exist_ok=True)
     with open(rpath, "w") as f:
         json.dump(results, f, indent=2)
     print(f"\n[saved] {rpath}")
 
-    fig = Path("figures") / "fig_fma_full_ladder.png"
+    fig = Path("evidence/figures") / "fig_fma_full_ladder.png"
     _plot(results, str(fig))
     print(f"[saved] {fig}")
 

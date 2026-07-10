@@ -23,7 +23,7 @@ hot (stones {2,3,4}, +5 -> brinks {0,1},{1,6},{6,7}, min cover {1,6});
 end-anchored open-3 is tepid (cover cost 1). Hot x hot should be the
 minimal non-additive pair.
 
-Output: results/two_move_sum.json, figures/fig_two_move_sum_*.png
+Output: evidence/results/two_move_sum.json, evidence/figures/fig_two_move_sum_*.png
     python experiments/run_two_move_sum.py --quick   # analytic cases only
 """
 from __future__ import annotations
@@ -40,7 +40,7 @@ sys.path.insert(0, str(ROOT / "competition"))
 from hexo_bot2 import covering_placements  # noqa: E402  (exact hitting sets)
 
 WIN = 6
-OUT = ROOT / "results" / "two_move_sum.json"
+OUT = ROOT / "evidence" / "results" / "two_move_sum.json"
 
 
 # ── exact solver over a fixed cell set ────────────────────────────────────
@@ -255,7 +255,7 @@ def main() -> None:
     ax.tick_params(colors="#898781")
     fig.colorbar(im, ax=ax, label="non-additive fraction")
     fig.tight_layout()
-    fpath = ROOT / "figures" / "fig_two_move_sum_matrix.png"
+    fpath = ROOT / "evidence" / "figures" / "fig_two_move_sum_matrix.png"
     fig.savefig(fpath, dpi=150)
     plt.close(fig)
 

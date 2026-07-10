@@ -14,16 +14,16 @@ things legible:
    the gap the unified agent is meant to fill.
 
 Inputs:
-    results/fma_curve.json                                 -- our diagonals
-    results/mirror_agent.json                              -- mirror cross
-    results/combo_defect.json                              -- combo cross
-    results/neural_ca_benchmark.json                       -- neural_ca cross
-    results/nca_zoo_tournament.json                        -- nca zoo cross
-    ../../results/charlies-artifacts/.../tournament_results.pt
+    evidence/results/fma_curve.json                                 -- our diagonals
+    evidence/results/mirror_agent.json                              -- mirror cross
+    evidence/results/combo_defect.json                              -- combo cross
+    evidence/results/neural_ca_benchmark.json                       -- neural_ca cross
+    evidence/results/nca_zoo_tournament.json                        -- nca zoo cross
+    ../../evidence/results/charlies-artifacts/.../tournament_results.pt
 
 Output:
-    results/cross_program_table.json
-    figures/fig_cross_program_table.png
+    evidence/results/cross_program_table.json
+    evidence/figures/fig_cross_program_table.png
 """
 from __future__ import annotations
 
@@ -41,8 +41,8 @@ from matplotlib.colors import LinearSegmentedColormap
 HERE = Path(__file__).resolve().parents[1]
 MAIN = Path("C:/Users/Leon/Desktop/Psychograph/hexo-theory")
 CHARLIE_PT = MAIN / "results" / "charlies-artifacts" / "checkpoints" / "tournament_results.pt"
-OUT_JSON = HERE / "results" / "cross_program_table.json"
-OUT_FIG = HERE / "figures" / "fig_cross_program_table.png"
+OUT_JSON = HERE / "evidence" / "results" / "cross_program_table.json"
+OUT_FIG = HERE / "evidence" / "figures" / "fig_cross_program_table.png"
 
 
 def _load_ours() -> dict[tuple[str, str], dict]:
@@ -58,12 +58,12 @@ def _load_ours() -> dict[tuple[str, str], dict]:
         }
 
     # fma_curve: diagonals
-    fma = json.loads((HERE / "results" / "fma_curve.json").read_text())
+    fma = json.loads((HERE / "evidence" / "results" / "fma_curve.json").read_text())
     for agent in ["random", "greedy", "fork_aware", "combo", "ca_combo_v2"]:
         add(agent, agent, fma[agent])
 
     # mirror_agent: random/mirror, combo_v2/mirror cross
-    mirror = json.loads((HERE / "results" / "mirror_agent.json").read_text())
+    mirror = json.loads((HERE / "evidence" / "results" / "mirror_agent.json").read_text())
     for key, val in mirror.items():
         if "__" not in key:
             continue
@@ -71,7 +71,7 @@ def _load_ours() -> dict[tuple[str, str], dict]:
         add(b, w, val)
 
     # combo_defect: combo, combo_v2 cross
-    defect = json.loads((HERE / "results" / "combo_defect.json").read_text())
+    defect = json.loads((HERE / "evidence" / "results" / "combo_defect.json").read_text())
     for key, val in defect.items():
         if "__" not in key:
             continue
@@ -79,7 +79,7 @@ def _load_ours() -> dict[tuple[str, str], dict]:
         add(b, w, val)
 
     # neural_ca_benchmark: neural_ca + random/combo_v2 cross
-    neural = json.loads((HERE / "results" / "neural_ca_benchmark.json").read_text())
+    neural = json.loads((HERE / "evidence" / "results" / "neural_ca_benchmark.json").read_text())
     for key, val in neural.items():
         if "__" not in key:
             continue
@@ -235,7 +235,7 @@ def main() -> None:
         },
         "note": (
             "Ours: infinite hex lattice, 1-2-2, win=6, matchups harvested"
-            " from results/{fma_curve,mirror_agent,combo_defect,neural_ca_benchmark}.json."
+            " from evidence/results/{fma_curve,mirror_agent,combo_defect,neural_ca_benchmark}.json."
             " Charlie: 32x32 board, parsed from tournament_results.pt."
             " p_black computed over decisive games only. NaN cells have"
             " n_decisive=0 (all games unfinished)."

@@ -17,9 +17,9 @@ Procedure:
        (b) pure hex lattice patch of the same N
 
 Outputs:
-  - results/diffraction_p4.json         (per-game metrics + controls)
-  - figures/fig_diffraction_p4.png      (mean I(k) heatmap)
-  - figures/fig_diffraction_radial.png  (azimuthally averaged profile)
+  - evidence/results/diffraction_p4.json         (per-game metrics + controls)
+  - evidence/figures/fig_diffraction_p4.png      (mean I(k) heatmap)
+  - evidence/figures/fig_diffraction_radial.png  (azimuthally averaged profile)
 """
 from __future__ import annotations
 
@@ -310,7 +310,7 @@ def main() -> None:
     results = _run(args.n_games, args.horizon, args.burn_in,
                    args.grid, args.k_extent, args.seed)
 
-    rpath = Path("results") / "diffraction_p4.json"
+    rpath = Path("evidence/results") / "diffraction_p4.json"
     rpath.parent.mkdir(parents=True, exist_ok=True)
     # Don't save the heatmap in the JSON by default — figures hold that.
     save = {k: v for k, v in results.items() if k != "mean_I"}
@@ -319,10 +319,10 @@ def main() -> None:
     print(f"\n[saved] {rpath}")
 
     # Keep mean_I only for figures, then drop.
-    _plot_heatmap(results, "figures/fig_diffraction_p4.png")
-    print("[saved] figures/fig_diffraction_p4.png")
-    _plot_radial(results, "figures/fig_diffraction_radial.png")
-    print("[saved] figures/fig_diffraction_radial.png")
+    _plot_heatmap(results, "evidence/figures/fig_diffraction_p4.png")
+    print("[saved] evidence/figures/fig_diffraction_p4.png")
+    _plot_radial(results, "evidence/figures/fig_diffraction_radial.png")
+    print("[saved] evidence/figures/fig_diffraction_radial.png")
 
     print("\n── Verdict ──\n" + _verdict(results))
 

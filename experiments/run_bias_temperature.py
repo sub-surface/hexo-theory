@@ -14,7 +14,7 @@ to the folklore double-threat principle -- and (2:1), against the same
 collinear fragment family. ((2:3)+ needs hitting sets of size 3, beyond
 covering_placements' <=2 enumeration -- noted, not run.)
 
-Output: results/bias_temperature.json
+Output: evidence/results/bias_temperature.json
 """
 from __future__ import annotations
 
@@ -29,7 +29,7 @@ sys.path.insert(0, str(ROOT / "experiments"))
 sys.path.insert(0, str(ROOT / "competition"))
 from run_two_move_sum import (solve, segment_windows, canon, hotness)  # noqa: E402
 
-OUT = ROOT / "results" / "bias_temperature.json"
+OUT = ROOT / "evidence" / "results" / "bias_temperature.json"
 ORDER = {-1: 0, 0: 1, 1: 2}
 
 

@@ -52,7 +52,7 @@ torch when available), and power-iterate to the top eigenvalue (Rayleigh
 quotient convergence). This is the natural GPU fit: the per-state enumerate-
 transitions-and-accumulate step is embarrassingly parallel across states.
 
-Output: results/strip_entropy.json, figures/fig_strip_entropy.png
+Output: evidence/results/strip_entropy.json, evidence/figures/fig_strip_entropy.png
 """
 from __future__ import annotations
 
@@ -281,7 +281,7 @@ def perron_eigenvalue_gpu(W: int, iters: int = 300, seed_states: int = 20000,
 
     Validated by construction to reduce to the exact same recurrences as
     _transition()/the CPU path -- see run_strip_entropy.py's own W<=4
-    cross-checks against results/strip_entropy.json before trusting this
+    cross-checks against evidence/results/strip_entropy.json before trusting this
     at W>=5.
     """
     import random
@@ -463,7 +463,7 @@ def main() -> None:
         print(f"W={W}: power iteration, working set={n_working}, "
               f"lambda(per layer)~={lam:.6f}, bits/site~={np.log2(max(lam,1e-12))/W:.6f}")
 
-    out = ROOT / "results" / "strip_entropy.json"
+    out = ROOT / "evidence" / "results" / "strip_entropy.json"
     out.write_text(json.dumps(results, indent=2, default=str))
     print(f"[saved] {out}")
 
@@ -481,7 +481,7 @@ def main() -> None:
         ax.set_title("Strip-transfer-matrix entropy vs width\n"
                      "(converges upward to the true 2-D 3-axis entropy as W -> inf)")
         ax.legend(fontsize=8)
-        figp = ROOT / "figures" / "fig_strip_entropy.png"
+        figp = ROOT / "evidence" / "figures" / "fig_strip_entropy.png"
         fig.savefig(figp, dpi=150, bbox_inches="tight")
         print(f"[saved] {figp}")
     except ImportError:

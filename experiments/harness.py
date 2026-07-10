@@ -6,14 +6,14 @@ Top-level factories + top-level worker so mp can dispatch them.
 
 Outputs:
   - MatchResults dataclass (wins / draws / unfinished / mean length / Wilson CI)
-  - JSON save to results/
+  - JSON save to evidence/results/
   - PNG figures: win-rate heatmap, length distribution
 
 Usage:
   from experiments.harness import run_matchup, run_round_robin, default_registry
   r = run_matchup("random", "ca_combo", n_games=100, parallelism=8, seed=0)
-  r.save("results/random_vs_combo.json")
-  r.plot_winrate_heatmap("figures/rr_winrate.png")
+  r.save("evidence/results/random_vs_combo.json")
+  r.plot_winrate_heatmap("evidence/figures/rr_winrate.png")
 """
 from __future__ import annotations
 

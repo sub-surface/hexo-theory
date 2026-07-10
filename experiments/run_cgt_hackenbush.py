@@ -10,9 +10,9 @@ observables from engine.cgt:
   - potential_temperature_corr: does Erdos-Selfridge mass track urgency?
 
 Outputs:
-  results/cgt_hackenbush.json
-  figures/fig_cgt_hackenbush_summary.png
-  figures/fig_cgt_hackenbush_scatter.png
+  evidence/results/cgt_hackenbush.json
+  evidence/figures/fig_cgt_hackenbush_summary.png
+  evidence/figures/fig_cgt_hackenbush_scatter.png
 """
 from __future__ import annotations
 
@@ -346,14 +346,14 @@ def main() -> None:
 
     results = run(args)
 
-    rpath = Path("results") / "cgt_hackenbush.json"
+    rpath = Path("evidence/results") / "cgt_hackenbush.json"
     rpath.parent.mkdir(parents=True, exist_ok=True)
     with open(rpath, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
     print(f"\n[saved] {rpath}")
 
-    fig1 = Path("figures") / "fig_cgt_hackenbush_summary.png"
-    fig2 = Path("figures") / "fig_cgt_hackenbush_scatter.png"
+    fig1 = Path("evidence/figures") / "fig_cgt_hackenbush_summary.png"
+    fig2 = Path("evidence/figures") / "fig_cgt_hackenbush_scatter.png"
     _plot_summary(results, str(fig1))
     _plot_scatter(results, str(fig2))
     print(f"[saved] {fig1}")

@@ -27,8 +27,8 @@ This answers two sub-questions:
        → falsified by non-monotone pattern (interesting either way).
 
 Outputs:
-  results/fma_curve.json
-  figures/fig_fma_curve.png
+  evidence/results/fma_curve.json
+  evidence/figures/fig_fma_curve.png
 """
 from __future__ import annotations
 
@@ -202,13 +202,13 @@ def main() -> None:
 
     results = _run(args.n, args.parallelism, args.max_moves, args.seed)
 
-    rpath = Path("results") / "fma_curve.json"
+    rpath = Path("evidence/results") / "fma_curve.json"
     rpath.parent.mkdir(parents=True, exist_ok=True)
     with open(rpath, "w") as f:
         json.dump(results, f, indent=2)
     print(f"\n[saved] {rpath}")
 
-    fig = Path("figures") / "fig_fma_curve.png"
+    fig = Path("evidence/figures") / "fig_fma_curve.png"
     _plot(results, str(fig))
     print(f"[saved] {fig}")
 

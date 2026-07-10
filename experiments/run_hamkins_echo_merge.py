@@ -9,8 +9,8 @@ decisive share grows monotonically as the horizon grows. The h=960 cell
 (40/50 decisive) confirms the trend doesn't flip at longer horizons.
 
 Output:
-    results/hamkins_echo_combined.json
-    figures/fig_hamkins_echo_merged.png
+    evidence/results/hamkins_echo_combined.json
+    evidence/figures/fig_hamkins_echo_merged.png
 """
 from __future__ import annotations
 
@@ -24,10 +24,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 HERE = Path(__file__).resolve().parents[1]
-BASE_JSON = HERE / "results" / "hamkins_echo.json"
-EXT_JSON = HERE / "results" / "hamkins_echo_h960.json"
-OUT_JSON = HERE / "results" / "hamkins_echo_combined.json"
-OUT_FIG = HERE / "figures" / "fig_hamkins_echo_merged.png"
+BASE_JSON = HERE / "evidence" / "results" / "hamkins_echo.json"
+EXT_JSON = HERE / "evidence" / "results" / "hamkins_echo_h960.json"
+OUT_JSON = HERE / "evidence" / "results" / "hamkins_echo_combined.json"
+OUT_FIG = HERE / "evidence" / "figures" / "fig_hamkins_echo_merged.png"
 
 MATCHUPS = ["random_vs_combo", "greedy_vs_combo", "combo_vs_combo"]
 COLOURS = {

@@ -4,7 +4,7 @@
 
 **Goal:** Turn the Conway/Sloane/Hackenbush thread into reproducible HeXO theory experiments without losing existing data.
 
-**Architecture:** Keep `hexgo-theory` as the research lab and `hexgo` as the production engine. New theory primitives land under `hexgo-theory/engine/`, reproducible scripts under `hexgo-theory/experiments/`, JSON/CSV summaries under `hexgo-theory/results/`, and PNGs under `hexgo-theory/figures/`.
+**Architecture:** Keep `hexgo-theory` as the research lab and `hexgo` as the production engine. New theory primitives land under `hexgo-theory/engine/`, reproducible scripts under `hexgo-theory/experiments/`, JSON/CSV summaries under `hexgo-theory/evidence/results/`, and PNGs under `hexgo-theory/evidence/figures/`.
 
 **Tech Stack:** Python 3.12, pytest, numpy, matplotlib, existing HeXO engine re-exported through `engine/__init__.py`.
 
@@ -14,8 +14,8 @@
 
 - Modify: `hexgo-theory/.gitignore`
 - Create: `hexgo-theory/docs/ARTIFACTS.md`
-- Create: `hexgo-theory/results/README.md`
-- Create: `hexgo-theory/figures/README.md`
+- Create: `hexgo-theory/evidence/results/README.md`
+- Create: `hexgo-theory/evidence/figures/README.md`
 - Create: `hexgo-theory/docs/theory/2026-05-09-cgt-research-program.md`
 - Create: `hexgo/docs/research/07_hexgo_theory_bridge.md`
 - Create: `hexgo-theory/engine/isomorphisms.py`
@@ -23,17 +23,17 @@
 - Create: `hexgo-theory/engine/two_move_sum.py`
 - Create: `hexgo-theory/tests/test_two_move_sum.py`
 - Create: `hexgo-theory/experiments/run_cgt_sequences.py`
-- Create: `hexgo-theory/results/cgt_sequences.json`
-- Create: `hexgo-theory/results/cgt_sequences.csv`
-- Create: `hexgo-theory/figures/fig_cgt_sequences.png`
+- Create: `hexgo-theory/evidence/results/cgt_sequences.json`
+- Create: `hexgo-theory/evidence/results/cgt_sequences.csv`
+- Create: `hexgo-theory/evidence/figures/fig_cgt_sequences.png`
 
 ## Task 1: Preservation-First Cleanup
 
 **Files:**
 - Modify: `hexgo-theory/.gitignore`
 - Create: `hexgo-theory/docs/ARTIFACTS.md`
-- Create: `hexgo-theory/results/README.md`
-- Create: `hexgo-theory/figures/README.md`
+- Create: `hexgo-theory/evidence/results/README.md`
+- Create: `hexgo-theory/evidence/figures/README.md`
 - Create: `hexgo-theory/docs/theory/2026-05-09-cgt-research-program.md`
 - Create: `hexgo/docs/research/07_hexgo_theory_bridge.md`
 
@@ -65,9 +65,9 @@ Add these ignore rules:
 pytest-cache-files-*/
 .claude/worktrees/
 __marimo__/
-corpora/
+evidence/corpora/
 games/
-results/charlies-artifacts/
+evidence/results/charlies-artifacts/
 ```
 
 - [x] **Step 5: Add main-engine bridge note**
@@ -365,9 +365,9 @@ Expected: 2 passed.
 
 **Files:**
 - Create: `experiments/run_cgt_sequences.py`
-- Create: `results/cgt_sequences.json`
-- Create: `results/cgt_sequences.csv`
-- Create: `figures/fig_cgt_sequences.png`
+- Create: `evidence/results/cgt_sequences.json`
+- Create: `evidence/results/cgt_sequences.csv`
+- Create: `evidence/figures/fig_cgt_sequences.png`
 
 - [x] **Step 1: Create experiment script**
 
@@ -410,14 +410,14 @@ Run:
 & "C:\Program Files\Python312\python.exe" experiments\run_cgt_sequences.py --agents random greedy --n-games 1 --max-moves 36 --sample-stride 6
 ```
 
-Expected: `results/cgt_sequences.json`, `results/cgt_sequences.csv`, and
-`figures/fig_cgt_sequences.png` exist and contain both agents.
+Expected: `evidence/results/cgt_sequences.json`, `evidence/results/cgt_sequences.csv`, and
+`evidence/figures/fig_cgt_sequences.png` exist and contain both agents.
 
 ## Task 5: Verification And Research Decision
 
 **Files:**
-- Read: `results/cgt_sequences.json`
-- Read: `results/cgt_hackenbush.json`
+- Read: `evidence/results/cgt_sequences.json`
+- Read: `evidence/results/cgt_hackenbush.json`
 - Modify: `docs/ARTIFACTS.md`
 
 - [x] **Step 1: Run tests**

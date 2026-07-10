@@ -10,7 +10,7 @@ for the hand-set V table and DEF_W in hexo_bot2 -- the brief's open question
 #3 (mined lookup evaluation), done over interpretable window features rather
 than the failed NN value head's dense board encoding.
 
-Output: results/eval_mining.json with fitted weights, the implied V-table /
+Output: evidence/results/eval_mining.json with fitted weights, the implied V-table /
 defence-weight ratios, and held-out accuracy vs the hand-set baseline.
 
     python experiments/run_eval_mining.py --quick   # 1000 games, ~15 s
@@ -31,8 +31,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "competition"))
 import hexo_bot2  # noqa: E402
 
-CORPUS = ROOT / "results" / "modal_moves_python_8000.json"
-OUT = ROOT / "results" / "eval_mining.json"
+CORPUS = ROOT / "evidence" / "results" / "modal_moves_python_8000.json"
+OUT = ROOT / "evidence" / "results" / "eval_mining.json"
 
 N_FEATURES = 10  # my windows k=1..5, opp windows k=1..5
 

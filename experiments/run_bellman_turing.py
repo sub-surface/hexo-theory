@@ -55,12 +55,12 @@ This experiment has four sections:
 
 Outputs
 -------
-  results/bellman_turing.json          — all numeric results
-  figures/fig_bt_dispersion.png        — dispersion relation curve
-  figures/fig_bt_activation_fft.png    — activation field DFT comparison
-  figures/fig_bt_agent_comparison.png  — per-agent crystal + Bragg metrics
-  figures/fig_bt_pair_correlation.png  — g(r) curves with lambda* overlay
-  figures/fig_bt_bellman_residual.png  — residual distribution per agent
+  evidence/results/bellman_turing.json          — all numeric results
+  evidence/figures/fig_bt_dispersion.png        — dispersion relation curve
+  evidence/figures/fig_bt_activation_fft.png    — activation field DFT comparison
+  evidence/figures/fig_bt_agent_comparison.png  — per-agent crystal + Bragg metrics
+  evidence/figures/fig_bt_pair_correlation.png  — g(r) curves with lambda* overlay
+  evidence/figures/fig_bt_bellman_residual.png  — residual distribution per agent
 """
 from __future__ import annotations
 
@@ -972,7 +972,7 @@ def main() -> None:
         quick=args.quick,
     )
 
-    out_dir = Path("results")
+    out_dir = Path("evidence/results")
     out_dir.mkdir(parents=True, exist_ok=True)
     json_path = out_dir / "bellman_turing.json"
     # strip large arrays from JSON to keep it readable
@@ -988,11 +988,11 @@ def main() -> None:
         json.dump(save, f, indent=2)
     print(f"\n[saved] {json_path}")
 
-    _fig_dispersion(results,       "figures/fig_bt_dispersion.png")
-    _fig_activation_fft(results,   "figures/fig_bt_activation_fft.png")
-    _fig_agent_comparison(results, "figures/fig_bt_agent_comparison.png")
-    _fig_pair_correlation(results, "figures/fig_bt_pair_correlation.png")
-    _fig_bellman_residual(results, "figures/fig_bt_bellman_residual.png")
+    _fig_dispersion(results,       "evidence/figures/fig_bt_dispersion.png")
+    _fig_activation_fft(results,   "evidence/figures/fig_bt_activation_fft.png")
+    _fig_agent_comparison(results, "evidence/figures/fig_bt_agent_comparison.png")
+    _fig_pair_correlation(results, "evidence/figures/fig_bt_pair_correlation.png")
+    _fig_bellman_residual(results, "evidence/figures/fig_bt_bellman_residual.png")
 
     # ── Summary verdict ────────────────────────────────────────────────────
     d = results["dispersion"]

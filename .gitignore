@@ -5,13 +5,13 @@ __pycache__/
 pytest-cache-files-*/
 .claude/worktrees/
 __marimo__/
-corpora/
-games/
+evidence/corpora/
+evidence/games/
 
 # Large generated outputs -- scripts to regenerate are in experiments/.
 data/
 artifacts/
 checkpoints/
-results/charlies-artifacts/
+evidence/results/charlies-artifacts/
 training_log.txt
 .claude/scheduled_tasks.lock

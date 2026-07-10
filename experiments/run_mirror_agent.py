@@ -12,7 +12,7 @@ Matchups:
   - Mirror-W vs ca_combo_v2-B  (Mirror as second player, strong opponent)
   - Mirror-B vs ca_combo_v2-W
 
-Outputs results/mirror_agent.json + figures/fig_mirror_agent.png.
+Outputs evidence/results/mirror_agent.json + evidence/figures/fig_mirror_agent.png.
 """
 from __future__ import annotations
 
@@ -130,13 +130,13 @@ def main() -> None:
 
     results = _run(args.n, args.parallelism, args.max_moves, args.seed)
 
-    results_path = Path("results") / "mirror_agent.json"
+    results_path = Path("evidence/results") / "mirror_agent.json"
     results_path.parent.mkdir(parents=True, exist_ok=True)
     with open(results_path, "w") as f:
         json.dump(results, f, indent=2)
     print(f"\n[saved] {results_path}")
 
-    fig_path = Path("figures") / "fig_mirror_agent.png"
+    fig_path = Path("evidence/figures") / "fig_mirror_agent.png"
     _plot(results, str(fig_path))
     print(f"[saved] {fig_path}")
 

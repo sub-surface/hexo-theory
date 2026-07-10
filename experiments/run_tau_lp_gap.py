@@ -21,7 +21,7 @@ Mines positions from arena self-play (randomized openings, seeded), builds the
 obligation graph for both players, solves IP (scipy.optimize.milp) and LP
 relaxation, and reports the gap distribution plus the per-axis zero-gap check.
 
-Output: results/tau_lp_gap.json, figures/fig_tau_lp_gap_dist.png
+Output: evidence/results/tau_lp_gap.json, evidence/figures/fig_tau_lp_gap_dist.png
 """
 from __future__ import annotations
 
@@ -200,7 +200,7 @@ def main() -> None:
     print(json.dumps(summary, indent=2))
     gaps = [i["gap"] for i in instances]
 
-    out = ROOT / "results" / "tau_lp_gap.json"
+    out = ROOT / "evidence" / "results" / "tau_lp_gap.json"
     out.write_text(json.dumps({"summary": summary, "instances": instances}, indent=2))
     print(f"[saved] {out}")
 
@@ -222,7 +222,7 @@ def main() -> None:
     axes[1].set_ylabel("tau_IP")
     axes[1].set_title("LP vs exact tau (lines at defender budget 2)")
     fig.tight_layout()
-    figp = ROOT / "figures" / "fig_tau_lp_gap_dist.png"
+    figp = ROOT / "evidence" / "figures" / "fig_tau_lp_gap_dist.png"
     fig.savefig(figp, dpi=150)
     print(f"[saved] {figp}")
 

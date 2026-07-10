@@ -2,11 +2,11 @@
 Run the headline epiplexity scans for ROADMAPv2 Programmes A and E.
 
 Outputs:
-  corpora/<name>_N<size>.pkl.gz   — pickled corpora
-  results/epiplexity_scan.json    — MDL measurements
-  figures/fig_A_paradox1.png      — Paradox 1 (info from computation)
-  figures/fig_D_scaling.png       — S_T scaling with N (Pisot spectroscope)
-  figures/fig_E_pareto.png        — agent Pareto frontier
+  evidence/corpora/<name>_N<size>.pkl.gz   — pickled corpora
+  evidence/results/epiplexity_scan.json    — MDL measurements
+  evidence/figures/fig_A_paradox1.png      — Paradox 1 (info from computation)
+  evidence/figures/fig_D_scaling.png       — S_T scaling with N (Pisot spectroscope)
+  evidence/figures/fig_E_pareto.png        — agent Pareto frontier
 
 Run:
     python -X utf8 experiments/run_epiplexity_scan.py
@@ -36,9 +36,9 @@ from engine.epiplexity import (
 )
 
 
-CORPORA_DIR = ROOT / "corpora"
-RESULTS_DIR = ROOT / "results"
-FIGURES_DIR = ROOT / "figures"
+CORPORA_DIR = ROOT / "evidence" / "corpora"
+RESULTS_DIR = ROOT / "evidence" / "results"
+FIGURES_DIR = ROOT / "evidence" / "figures"
 for d in (CORPORA_DIR, RESULTS_DIR, FIGURES_DIR):
     d.mkdir(exist_ok=True, parents=True)
 

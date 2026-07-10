@@ -5,9 +5,9 @@ multi-task supervision (policy + threat + win + fork + potential).
 Value head is skipped in Phase 0 (see engine/alphazero.py docstring).
 
 Output:
-    results/az_pretrain.json          -- per-epoch history
+    evidence/results/az_pretrain.json          -- per-epoch history
     artifacts/checkpoints/az_pretrain.pt  -- trained model state
-    figures/fig_az_pretrain.png       -- train/val curves
+    evidence/figures/fig_az_pretrain.png       -- train/val curves
 
 Usage:
     python experiments/run_az_pretrain.py           # full 40 epochs
@@ -36,10 +36,10 @@ from engine.alphazero import pretrain_trunk
 
 
 DATA_DIR = ROOT / "data" / "static_positions"
-RESULTS_JSON = ROOT / "results" / "az_pretrain.json"
+RESULTS_JSON = ROOT / "evidence" / "results" / "az_pretrain.json"
 CKPT_DIR = ROOT / "artifacts" / "checkpoints"
 CKPT_PATH = CKPT_DIR / "az_pretrain.pt"
-FIG_PATH = ROOT / "figures" / "fig_az_pretrain.png"
+FIG_PATH = ROOT / "evidence" / "figures" / "fig_az_pretrain.png"
 
 
 def plot_history(hist: dict, out: Path) -> None:

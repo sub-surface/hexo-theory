@@ -1,174 +1,244 @@
 # HeXO Theory
 
-Number-theoretic and combinatorial investigation of optimal play in HeXO — an infinite hexagonal Connect6 variant played on the Eisenstein integer ring **Z[ω]**.
+Research lab for **HeXO**: infinite hexagonal Connect-6 on the Eisenstein
+lattice `Z[omega]`. The sibling repo `../hexo` contains the production engine;
+this repo contains the theory, experiments, arena bots, Modal runs, and
+paper-facing evidence.
 
-> **For current status, read [DIRECTION.md](DIRECTION.md) (what's active and why) and [SPEC.md](SPEC.md) (what's established, with honest confidence levels) before this file or docs/ROADMAP.md.** This README is the stable external framing; the conjecture below is still the right one to test, but see SPEC.md for which supporting claims are solid vs. directional-only.
-
-The goal is to characterise the structure of perfect play: its symmetries, its tiling properties, and whether it exhibits quasi-crystalline (Penrose-like) order.
-
----
+For the freshest handoff, read
+[docs/2026-07-09-status-and-direction.md](docs/2026-07-09-status-and-direction.md).
+For the durable synthesis, read [SPEC.md](SPEC.md). For current priorities, read
+[DIRECTION.md](DIRECTION.md). This README is the external map and was updated
+after the latest local commit trail ending at `efa8012`.
 
 ## The Game
 
-HeXO is played on the infinite hex grid, identified with **Z[ω]** where ω = e^(2πi/3). Two players alternate placing stones; the turn rule is **1-2-2** (P1 places 1 stone on turn 1, both players place 2 per turn thereafter). The win condition is **6 consecutive stones along any of the three Z[ω] unit axes**:
+HeXO is played on the infinite hex grid, identified with `Z[omega]`, where
+`omega = exp(2*pi*i/3)`. The turn rule is **1-2-2**: Black places one opening
+stone, then both players place two stones per turn. A player wins by occupying
+six consecutive cells along any of the three Eisenstein unit axes:
 
-```
-u₁ = (1, 0)    q-axis
-u₂ = (0, 1)    r-axis  
-u₃ = (1, -1)   diagonal axis
-```
-
-A win is exactly a length-6 arithmetic progression in Z[ω] with unit step — a purely number-theoretic object.
-
-The strategy-stealing argument proves the game cannot be a second-player win. Whether it's a strict first-player win is still open empirically: strong-agent self-play gives Black share of decisive games $\approx 0.53$ [0.42, 0.64] (Wilson 95% CI, n=73 decisive games) — directionally consistent with a first-player win, but the interval still includes 0.5, so this is suggestive rather than settled (see `results/fma_curve.json`, `results/combo_defect.json`, and SPEC.md §5 for the corrected framing).
-
-Descriptive-set-theoretically, HeXO's payoff ("some player has 6 in a row") is $\Sigma^0_1$ (open), directly determined by Gale–Stewart — two levels below infinite Hex at $\Sigma^0_7$ (Hamkins–Leonessi 2022, Törnä). This is why *finite-horizon* analysis — not Hamkins-style infinitary machinery — is the right tool here.
-
----
-
-## Central Conjecture
-
-> **Perfect play in HeXO produces a quasi-crystalline pattern: aperiodic, D6-symmetric, with a substitution structure whose inflation constant is a Pisot number.**
-
-The reasoning:
-
-1. **No translational symmetry**: P1's opening stone at the origin breaks translation invariance. Any forced response propagates this asymmetry outward. A periodic pattern would let the opponent exploit a period vector — contradicting optimality.
-
-2. **D6 symmetry is preserved**: The full dihedral group D6 (rotations by 60°, reflections) is a symmetry of Z[ω] and of the game rules. If the optimal strategy is unique, the occupied set after T moves has D6 symmetry radiating from the origin.
-
-3. **Self-similarity from constraint propagation**: Each local threat at radius r generates forced responses at radius r+5 (the win-length minus 1), which generate further constraints at r+10, etc. If the number of local pattern types (up to D6) is finite, this is a substitution tiling system.
-
-4. **Pisot property**: By the Pisot substitution theorem (Thurston-Kenyon), if the substitution matrix has a Perron-Frobenius eigenvalue that is a Pisot number, the tiling is aperiodic with pure-point diffraction spectrum — a mathematical quasi-crystal.
-
----
-
-## Research Plan
-
-### Phase 1 — Hand-Crafted Analysis
-
-Use the `EisensteinGreedyAgent` from the main HeXO engine as a substrate:
-
-- **Self-play of Eisenstein vs. Eisenstein**: collect game trajectories and inspect the spatial structure of occupied cells. The greedy agent is fast (no MCTS), so we can generate thousands of games quickly.
-
-- **Van der Waerden analysis**: count, for each game state, how many potential 6-APs in Z[ω] are still "live" (not blocked). Track how this number evolves under optimal play vs. greedy play.
-
-- **Forced-move enumeration**: enumerate all board states within radius R where only one move (up to D6) avoids immediate loss. Build the **forcing graph** — if it is finite (finitely many types up to symmetry), a substitution tiling exists.
-
-- **Erdős-Selfridge potential landscape**: extend the existing potential function `Σ (1/2)^|line|` to a spatial map. Visualise the gradient field — this is the discrete analogue of a harmonic measure on Z[ω].
-
-### Phase 2 — Algebraic Structure
-
-- **Sublattice decomposition**: Z[ω] has sublattices of every index. The win condition (6-AP with unit step) partitions Z[ω] into cosets of ⟨6u₁⟩, ⟨6u₂⟩, ⟨6u₃⟩. Analyse which cosets are "strategically equivalent" under optimal play.
-
-- **Hyperplane arrangement**: each potential 6-line defines a constraint hyperplane in the space of board states. The game navigates the **A₂ hyperplane arrangement** (root system of sl₃), which tiles the plane with 60°-symmetric chambers. Optimal play paths in this arrangement = Coxeter group words.
-
-- **Transfer matrix**: if the forcing graph is finite, construct the substitution matrix and compute its spectrum. Look for Pisot eigenvalues. Natural candidates in the Eisenstein setting: the plastic number (~1.3247, root of x³-x-1=0 — previously mislabelled "tribonacci" here; tribonacci is ~1.8393), the pentanacci constant (~1.9659, the exact entropy base of the no-6-run line shift, see [experiments/run_line_automaton.py](experiments/run_line_automaton.py)), or algebraic integers related to the norm form a²-ab+b².
-
-### Phase 3 — Empirical Validation
-
-Use self-play data from the strongest available agent to test the conjectures:
-
-- **Diffraction spectrum**: compute the Fourier transform of the point measure on occupied cells. Pure point spectrum → quasi-crystal. Absolutely continuous → random noise. Mixed → intermediate regime. *(Supported as of 2026-04-17 — Bragg99 = 0.51 ± 0.13 in long Combo-v2 self-play vs 0.055 for random placement. See `results/diffraction_p4.json`.)*
-
-- **Pair correlation function** $g(r)$: two-point correlation of occupied cells. Quasi-periodic oscillations (peaks at irrational multiples of lattice spacing) are quasi-crystalline evidence. *(Delone property already validated: `d_min` bounded, `d_max` uncorrelated with stone count.)*
-
-- **Pattern frequency analysis**: extract all local patterns of radius 2 and 3 from self-play games. If the number of distinct types (up to $D_6$) is bounded and their frequencies converge, this is strong evidence for a substitution tiling.
-
-### Phase 4 — Neural CA Zoo (2026-04-17 pivot)
-
-The hand-crafted agent ladder has plateaued (see `results/fma_curve.json`). To extend the frontier and sharpen the Phase 3 quasicrystal measurement, train a zoo of `NeuralCAAgent` variants ([engine/neural_ca.py](engine/neural_ca.py)) with different cellular-automaton inductive priors, then round-robin-tournament them to select a champion:
-
-- **random init** — control baseline.
-- **$D_6$-equivariant** — weight-tie conv filters over the 12-element hex-lattice symmetry group.
-- **line-detector prior** — depth-1 kernels initialised to respond to adjacent own-stone pairs along each Eisenstein axis.
-- **Erdős–Selfridge prior** — initialiser encoding the discretised $\phi(c) = \sum_L \alpha^{n_L^\text{own}} \mathbb{1}[n_L^\text{opp}=0]$ potential.
-- **combo** — all three priors stacked.
-
-Training: self-play policy gradient on RTX 2060 (torch + CUDA). Tournament: [experiments/harness.py](experiments/harness.py)'s `run_round_robin`. The round-robin matrix is *itself* an ablation study of which inductive biases matter for this game — and it selects the strongest agent we have for the Phase 3 diffraction measurement and the Pisot $S_T$ scan (Programme D in the roadmap).
-
-See [docs/theory/2026-04-17-hamkins-synthesis.md](docs/theory/2026-04-17-hamkins-synthesis.md) §7 for the CA-prior discussion.
-
----
-
-## Tools and Frameworks
-
-| Framework | Application |
-|-----------|-------------|
-| Hand-crafted agents (`EisensteinGreedyAgent`, `ComboAgent`) | Populate left side of the $(\|P\|, H_T)$ Pareto frontier with small-$\|P\|$ reference points |
-| `NeuralCAAgent` zoo (torch + CUDA) | Populate right side of the Pareto frontier; produce the strongest available agent for Phase 3 |
-| Erdős-Selfridge potential | Threat quantification; spatial potential landscape; doubles as CA-prior initialiser |
-| Epiplexity (Finzi et al. 2026) | MDL measurement framework; $S_T$ scaling as a Pisot spectroscope |
-| Combinatorial Game Theory (Berlekamp-Conway-Guy) | Nim-value decomposition for late-game disconnected threat regions |
-| Descriptive set theory (Hamkins-Leonessi) | Position HeXO at $\Sigma^0_1$ vs infinite Hex at $\Sigma^0_7$; MirrorAgent pairing strategy |
-| Substitution tiling theory (Thurston-Kenyon) | Pisot substitution → aperiodicity proof strategy |
-| A₂ hyperplane arrangement / Coxeter theory | Algebraic structure of the forcing graph |
-| Diffraction theory (Baake-Grimm) | Spectral characterisation of quasi-crystalline order |
-
----
-
-## Key Questions
-
-1. **Is the forcing graph finite?** (Finitely many local pattern types up to D6 under optimal play.)
-2. **What is the inflation constant?** (Perron-Frobenius eigenvalue of the substitution matrix — is it Pisot?)
-3. **What is the critical density?** (Fraction of cells occupied within radius R under optimal play as R→∞ — is it irrational?)
-4. **Does the diffraction spectrum have pure point component?** (Empirical test via self-play FFT.)
-5. **Is the game a first-player win?** (Strategy-stealing gives lower bound; empirical self-play gives upper bound direction.)
-
----
-
-## Relation to the Main HeXO Engine
-
-The theoretical work here is designed to feed back into the engine:
-
-- **Better ZOI heuristics**: if the forcing graph is finite and the substitution structure is known, the Zone of Interest can be shaped by the substitution rule rather than a fixed radius.
-- **Architecture priors**: if optimal play has D6 symmetry and a Pisot self-similar structure, the network architecture should reflect this (equivariant convolutions, multiscale features at Pisot-ratio scales).
-- **Opening book structure**: the substitution tiling approach predicts a finite set of "canonical opening types" — the tiles of the substitution system. These become the opening book.
-- **Evaluation function**: the Erdős-Selfridge potential, refined by harmonic analysis on Z[ω], gives a mathematically grounded evaluation function independent of learned weights.
-
----
-
-## Repository Structure
-
-```
-hexgo-theory/
-├── README.md                      — this file
-├── CLAUDE.md                      — agent onboarding / current research state
-├── docs/
-│   ├── ROADMAP.md                 — canonical 12-month plan (epiplexity framing)
-│   └── theory/                    — living synthesis notes
-│       └── 2026-04-17-hamkins-synthesis.md
-├── engine/
-│   ├── __init__.py                — re-exports from ../hexgo
-│   ├── agents.py                  — ForkAware, PotentialGradient, Combo, Mirror
-│   ├── ca_policy.py               — CAAgent framework; make_combo_v2_ca etc.
-│   ├── neural_ca.py               — NeuralCAAgent (torch + CUDA hex-conv stack)
-│   ├── diffraction.py             — GPU diffraction / Bragg-peak analyser
-│   └── analysis.py                — live_lines, potential, fork helpers
-├── experiments/
-│   ├── harness.py                 — parallel match harness (mp.Pool, Wilson CIs)
-│   ├── run_epiplexity_scan.py     — (|P|, H_T) measurements across agents
-│   ├── run_hamkins_echo.py        — does draw fraction rise with horizon?
-│   ├── run_combo_defect.py        — Combo-going-Black fix validation (P1)
-│   ├── run_mirror_agent.py        — MirrorAgent pairing-strategy validation (P2)
-│   ├── run_diffraction.py         — long-self-play Bragg peaks (P4, P5)
-│   ├── run_fma_curve.py           — first-mover-advantage vs strength
-│   └── run_neural_ca.py           — untrained NCA baseline
-├── results/                       — JSON outputs per experiment (tracked in git)
-├── figures/                       — PNG outputs per experiment (tracked in git)
-└── papers/                        — supporting PDFs
-    ├── 2201.06475v3-Infinite-Hex-is-a-draw.pdf
-    └── finzi-2026-epiplexity.pdf
+```text
+u1 = (1, 0)     q-axis
+u2 = (0, 1)     r-axis
+u3 = (1, -1)    diagonal axis
 ```
 
----
+A win is a unit-step length-6 arithmetic progression in `Z[omega]`.
+
+Strategy stealing still rules out a second-player win, but the empirical
+first-player story has been corrected. The old thin Combo-v2 sample suggested a
+Black edge, but later corpora do not support citing that as established:
+`ca_combo_v2` over 8,000 Modal games shows Black at `0.479 [0.467, 0.492]` of
+decisive games, and the 400-game `hexo_bot2` self-play corpus is near parity
+(`204-196`) under 12-stone random openings. Strict first-player advantage remains
+open.
+
+## Current Findings
+
+### 1. `hexo_bot2` is the current deliverable bot
+
+[competition/hexo_bot2.py](competition/hexo_bot2.py) is a pure-Python,
+stdlib-only fresh-start bot with the same `choose_move` interface as the
+incumbent. It uses an incremental window-count board, exact hitting-set tactics
+over brink windows, joint-pair depth-2+ alpha-beta, brink-resolution quiescence,
+and strictly sound threat-space search.
+
+Latest committed bake-off results:
+
+| Pairing | Result | Evidence |
+|---|---:|---|
+| `hexo_bot2` vs vendored SealBot | **23-1** | `evidence/results/bakeoff_hexo_bot2_v3.json` |
+| `hexo_bot2` vs incumbent `hexo_bot.py` | **20-4** | `evidence/results/bakeoff_hexo_bot2_v3.json` |
+| `hexo_bot2` vs `fast_tactical` | **10-0** with 14 draws | `evidence/results/bakeoff_hexo_bot2_v1.json` |
+
+Design and ablations:
+[competition/2026-07-09-hexo-bot2-results.md](competition/2026-07-09-hexo-bot2-results.md).
+The core lesson is that strength lives in exact tactics and fast search, not in
+soft fork bonuses or weak-corpus evaluation mining.
+
+### 2. Temperature is additive in the two-move sum algebra
+
+For disjoint collinear fragments under the balanced `(2:2)` turn rule, the exact
+solver found:
+
+```text
+draw-draw union wins iff h(A) + h(B) >= 3
+```
+
+This held with **zero exceptions across 40,785 exact solves**. It is the cleanest
+local algebra result in the repo so far and gives a paper-ready bridge between
+combinatorial game theory and HeXO's two-stone turn rule.
+
+Evidence:
+[experiments/run_two_move_sum.py](experiments/run_two_move_sum.py),
+`evidence/results/two_move_sum_full.json`, and
+[docs/theory/2026-07-09-empirical-theory-sweep.md](docs/theory/2026-07-09-empirical-theory-sweep.md).
+
+### 3. Strong play carries an arithmetic fingerprint
+
+Strong `hexo_bot2` self-play suppresses the `F7` split-prime residue structure
+factor at matched stone count, while not suppressing the mod-3 control. This
+matters because length-6 windows in `Z[omega]` interact cleanly with the split
+prime over 7: every 6-window carries six distinct `F7` residues and misses one.
+
+Headline: strong play suppresses `I7` versus random (`p = 2.4e-4`) and versus
+weak `ca_combo_v2` (`p = 1.2e-6`), but shows no mod-3 suppression (`p = 0.72`).
+
+Evidence:
+[experiments/run_spatial_order.py](experiments/run_spatial_order.py),
+`evidence/results/spatial_order.json`, and
+`evidence/figures/fig_spatial_order_*.png`.
+
+### 4. Cheap reactive defenses are not enough
+
+The exact hitting-set reactive defense shuts out the scripted multi-front
+attacker suite at `k=6`, up to 120 dense fronts. But the same defense loses
+**24-0, zero draws** to `hexo_bot2`.
+
+The interpretation is now sharper than the earlier pairing/capacity notes:
+pre-committed disjoint fronts only add heat at a coverable rate, while adaptive
+search stacks windows through shared cells and creates hitting-set demand faster
+than a bounded reactive rule can discharge.
+
+Evidence:
+[experiments/run_residue_defense.py](experiments/run_residue_defense.py),
+`evidence/results/residue_defense_sweep.json`,
+`evidence/results/bakeoff_residue_blocker.json`.
+
+### 5. Collapse scaling and local entropy are more subtle than the old story
+
+Dense-front defender collapse scales as approximately:
+
+```text
+n_crit(R) ~ R^alpha, alpha ~= 0.6-0.9
+```
+
+This excludes both constant-density and pure-count mechanisms. It points to a
+mixed phenomenon: local window-overlap packing plus stochastic synchronization
+against the defender's global two-stone budget.
+
+Patch entropy is also non-monotone in strength at radius 1:
+
+```text
+weak 7.87 bits < strong 8.76 bits < random 9.04 bits
+```
+
+So "stronger play is always more locally ordered" is false. Strong play is more
+locally diverse than weak play while still below random.
+
+Evidence:
+[experiments/run_pairing_scaling.py](experiments/run_pairing_scaling.py),
+`evidence/results/pairing_scaling.json`,
+[experiments/run_spatial_order.py](experiments/run_spatial_order.py).
+
+### 6. Epiplexity/Pisot remains promising but not settled
+
+The long-range conjecture remains:
+
+> Perfect play in HeXO may produce a D6-symmetric, aperiodic, quasi-crystalline
+> pattern with finite substitution structure and a Pisot-like inflation law.
+
+The best current evidence is methodological rather than conclusive:
+
+- Gzip/MDL proxy on the 8,000-game `ca_combo_v2` corpus gives
+  `S_T(N) ~ N^0.929`, separated from random at `N^1.009`.
+- A Markov observer measurement gives agent `H_T` falling from **9.30 to 6.68
+  bits/token**, while the random null stays flat around **7.91 bits/token**.
+
+This supports learnable strategic structure, but it does not identify a
+substitution system or prove a Pisot inflation constant. The single-axis
+no-6-run transfer matrix gives the pentanacci constant, which is an entropy base
+for a 1-D proxy, not yet the 3-axis HeXO inflation constant.
+
+Evidence:
+[experiments/run_mdl_scaling.py](experiments/run_mdl_scaling.py),
+[experiments/run_epiplexity_corpus.py](experiments/run_epiplexity_corpus.py),
+[docs/theory/2026-07-08-hexanacci-and-mdl-policy-prior.md](docs/theory/2026-07-08-hexanacci-and-mdl-policy-prior.md).
+
+## Recent Commit Trail
+
+- `efa8012` - 2026-07-08/09 sessions: `hexo_bot2`, SealBot bake-offs, additive
+  temperature law, spatial-order theory sweep.
+- `3a40dde` - search-regime pivot: candidate verdicts, Modal bake-off,
+  Programme D MDL proxy.
+- `75f7b4e` - arena fork-term fix and DIRECTION findings.
+- `9a677e0` - DIRECTION.md, competition arena, and final `hexo` rename cleanup.
+- `05c3583` - consolidated SPEC.md.
+
+## What To Work On Next
+
+The active research program is no longer "train a stronger neural CA and hope
+the global pattern clarifies." The center is:
+
+1. Exact local algebra: temperature, hitting sets, tau-pressure, and
+   two-placement sums.
+2. Adaptive search: why `hexo_bot2` beats defenses that scripted attackers
+   cannot.
+3. Arithmetic signatures: which residue/quotient structures survive strong play.
+4. Epiplexity as measurement: use it to detect learnable structure, not as a
+   substitute for the local forcing mechanism.
+
+Immediate queue from the latest handoff:
+
+- Fix `(p:q)` heat to use p-relative brink definitions and rerun `(1:1)`.
+- Generate bent/interleaved two-axis fragments to find the super-additivity
+  boundary beyond the collinear additive law.
+- Build a Beck-null model for the observed `n_crit(R)` scaling.
+- Extract win-depth families toward Hamkins-style transfinite values.
+- Cross-check split-prime extinction on other lattices.
+
+## Repository Map
+
+```text
+hexo-theory/
+  README.md                         this map
+  SPEC.md                           durable findings and confidence levels
+  DIRECTION.md                      current priorities
+  docs/
+    2026-07-09-status-and-direction.md
+    ROADMAP.md
+    theory/                         working theory notes
+  engine/                           reusable theory layer
+  experiments/                      reproducible experiment entrypoints
+  competition/                      arena, deliverable bots, opponent adapters
+  apps/
+    desktop/                        PySide dashboard and widgets
+    marimo/                         interactive notebooks
+  cloud/modal/                      Modal entrypoints and image factories
+  evidence/
+    results/                        JSON/CSV outputs
+    figures/                        PNG/GIF figures
+    corpora/                        raw/self-play corpora
+    games/                          raw trajectories
+  sources/
+    literature/                     PDFs and source notes
+    bundles/                        original external zip bundles
+    external-runs/                  extracted/generated provenance bundles
+```
+
+Prefer `paths.py` for new path constants. New experiments should write summaries
+to `evidence/results/` and figures to `evidence/figures/`.
+
+## Useful Commands
+
+```powershell
+python competition/hexo_bot2.py
+python -m pytest tests -q
+python -m compileall engine experiments competition apps tools cloud paths.py
+```
+
+For Modal runs, use the entrypoints under `cloud/modal/`, for example:
+
+```powershell
+modal run cloud/modal/modal_bakeoff.py::screen
+```
 
 ## References
 
-- Baake, M., & Grimm, U. (2013). *Aperiodic Order, Vol. 1*. Cambridge University Press.
-- Berlekamp, E., Conway, J., & Guy, R. (1982). *Winning Ways for your Mathematical Plays*. Academic Press.
-- Berger, R. (1966). The undecidability of the domino problem. *Memoirs of the AMS*, 66.
-- Erdős, P., & Selfridge, J. (1973). On a combinatorial game. *Journal of Combinatorial Theory*, 14, 298-301.
-- Kenyon, R. (1996). The construction of self-similar tilings. *Geometric and Functional Analysis*, 6, 471-488.
-- Robinson, R. (1971). Undecidability and nonperiodicity for tilings of the plane. *Inventiones Mathematicae*, 12, 177-209.
-- Thurston, W. (1989). Groups, tilings, and finite state automata. *AMS Lectures*.
-- Wu, I.-C., & Huang, D.-Y. (2006). A new family of k-in-a-row games. *ICGA Journal*, 29(1), 26-34.
+- Finzi et al. (2026). *From Entropy to Epiplexity*.
+- Hamkins and Leonessi (2022). *Infinite Hex is a draw*.
+- Berlekamp, Conway, Guy (1982). *Winning Ways*.
+- Beck and Erdos-Selfridge biased positional-game theory.
+- Baake and Grimm (2013). *Aperiodic Order*.
+- Bode-Harborth achievement games and k-in-a-row threshold literature.

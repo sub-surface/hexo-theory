@@ -48,8 +48,8 @@ from engine import (
     ComboAgent,
 )
 
-RESULTS_DIR = ROOT / "results"
-FIGURES_DIR = ROOT / "figures"
+RESULTS_DIR = ROOT / "evidence" / "results"
+FIGURES_DIR = ROOT / "evidence" / "figures"
 for d in (RESULTS_DIR, FIGURES_DIR):
     d.mkdir(exist_ok=True, parents=True)
 
@@ -203,8 +203,8 @@ def main():
 
     plot_outcomes(all_results, FIGURES_DIR / "fig_hamkins_echo_outcomes.png")
     plot_lengths(all_results,  FIGURES_DIR / "fig_hamkins_echo_lengths.png")
-    print(f"[saved] figures/fig_hamkins_echo_outcomes.png")
-    print(f"[saved] figures/fig_hamkins_echo_lengths.png")
+    print(f"[saved] evidence/figures/fig_hamkins_echo_outcomes.png")
+    print(f"[saved] evidence/figures/fig_hamkins_echo_lengths.png")
 
 
 if __name__ == "__main__":

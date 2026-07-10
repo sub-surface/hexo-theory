@@ -11,7 +11,7 @@
 
 ## 1. What their paper is
 
-Hamkins & Leonessi, *Infinite Hex is a draw* ([papers/2201.06475v3-Infinite-Hex-is-a-draw.pdf](../../papers/2201.06475v3-Infinite-Hex-is-a-draw.pdf)), prove that infinite-board Hex (each player wants to connect opposite sides of an unbounded board) is a draw under perfect play, rather than the finite-board first-player win. The mechanism is a **pairing / mirroring strategy**: player II divides the plane into dominoes and responds to each of player I's moves within the pairing partner, guaranteeing no infinite monochromatic path for player I.
+Hamkins & Leonessi, *Infinite Hex is a draw* ([papers/2201.06475v3-Infinite-Hex-is-a-draw.pdf](../../sources/literature/2201.06475v3-Infinite-Hex-is-a-draw.pdf)), prove that infinite-board Hex (each player wants to connect opposite sides of an unbounded board) is a draw under perfect play, rather than the finite-board first-player win. The mechanism is a **pairing / mirroring strategy**: player II divides the plane into dominoes and responds to each of player I's moves within the pairing partner, guaranteeing no infinite monochromatic path for player I.
 
 The complexity of the game as a set-theoretic object is striking. The payoff set "player I has an infinite path" is not open — you can't observe the win in finite time — so Gale–Stewart's basic determinacy theorem doesn't apply. Hamkins–Leonessi instead classify the payoff at **$\Sigma^0_7$** (a specific level of the Borel hierarchy) via a fairly intricate formula; Törnä's subsequent note tightens this.
 
@@ -69,11 +69,11 @@ Each claim below is intended to be tested by one experiment in `experiments/`, w
 
 | Proposition | Status | Evidence |
 |-------------|--------|----------|
-| P1 | **supported (after v2 fix)** | `results/combo_defect.json` — v2 Black share = 0.53 [0.42, 0.64] |
-| P2 | **supported on both clauses** | `results/mirror_agent.json` — Mirror non-loss vs Random = 1.00; Mirror-P2 wins vs Combo = 0.14 |
-| P3 | preliminary support | `results/epiplexity_scan.json` — Combo's $|P|/T$ slope below Random's, but no Pisot confirmation yet |
-| P4 | **supported in long self-play** | `results/diffraction_p4.json` — long-game Bragg99 = 0.51 ± 0.13 (n=9) vs short-game 0.24 ± 0.09 vs random 0.055; `figures/fig_diffraction_p4.png` shows unambiguous hex-lattice Bragg peaks. Length-dependence is itself a non-trivial finding: quasi-crystalline order emerges as the agents draw out play, not in short decisive games. |
-| P5 | **supported** | `results/diffraction_p4.json` — d_min ∈ [1.0, 2.0], d_max ∈ [1.0, 4.58], corr(N, d_max) = +0.07. Delone property holds with no holes growing with game length. |
+| P1 | **supported (after v2 fix)** | `evidence/results/combo_defect.json` — v2 Black share = 0.53 [0.42, 0.64] |
+| P2 | **supported on both clauses** | `evidence/results/mirror_agent.json` — Mirror non-loss vs Random = 1.00; Mirror-P2 wins vs Combo = 0.14 |
+| P3 | preliminary support | `evidence/results/epiplexity_scan.json` — Combo's $|P|/T$ slope below Random's, but no Pisot confirmation yet |
+| P4 | **supported in long self-play** | `evidence/results/diffraction_p4.json` — long-game Bragg99 = 0.51 ± 0.13 (n=9) vs short-game 0.24 ± 0.09 vs random 0.055; `evidence/figures/fig_diffraction_p4.png` shows unambiguous hex-lattice Bragg peaks. Length-dependence is itself a non-trivial finding: quasi-crystalline order emerges as the agents draw out play, not in short decisive games. |
+| P5 | **supported** | `evidence/results/diffraction_p4.json` — d_min ∈ [1.0, 2.0], d_max ∈ [1.0, 4.58], corr(N, d_max) = +0.07. Delone property holds with no holes growing with game length. |
 
 The work order now is P1-fix → MirrorAgent → diffraction, which also aligns with the pending-experiment priorities listed in [CLAUDE.md](../../CLAUDE.md) §"Current research state".
 

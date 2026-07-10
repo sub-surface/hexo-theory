@@ -30,8 +30,8 @@ horizon=120, with ~40s/game is on the order of 12 hours. Use --quick for
 dev iteration.
 
 Outputs:
-  results/nca_zoo_tournament.json
-  figures/fig_nca_zoo_winrates.png
+  evidence/results/nca_zoo_tournament.json
+  evidence/figures/fig_nca_zoo_winrates.png
 """
 from __future__ import annotations
 
@@ -217,14 +217,14 @@ def main() -> None:
 
     results = _run(args.n, args.max_moves, args.seed, include_reference)
 
-    rpath = Path("results") / "nca_zoo_tournament.json"
+    rpath = Path("evidence/results") / "nca_zoo_tournament.json"
     rpath.parent.mkdir(parents=True, exist_ok=True)
     with open(rpath, "w") as f:
         json.dump(results, f, indent=2)
     print(f"\n[saved] {rpath}")
 
     agents = ALL_AGENTS if include_reference else NCA_VARIANTS
-    fig = Path("figures") / "fig_nca_zoo_winrates.png"
+    fig = Path("evidence/figures") / "fig_nca_zoo_winrates.png"
     _plot_matrix(results, agents, str(fig))
     print(f"[saved] {fig}")
 

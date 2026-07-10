@@ -2,12 +2,12 @@
 
 > Single source of truth for the HeXO research programme. This file distils the
 > material that was previously scattered across `README.md`, `docs/ROADMAP.md`,
-> `docs/theory/`, `docs/ARTIFACTS.md`, and the experiment bundles in `papers/`.
+> `docs/theory/`, `docs/ARTIFACTS.md`, and the experiment bundles in `sources/`.
 > It is written to be self-contained: someone who reads only this file should
 > understand the game, the central conjecture, what has been empirically
 > established (with numbers and provenance), and what remains open.
 >
-> Provenance pointers in the form `results/x.json` / `papers/.../README.md` point
+> Provenance pointers in the form `evidence/results/x.json` / `sources/.../README.md` point
 > at the artifacts that back each claim. Those artifacts are preserved in the
 > repo (code, results, figures, markdown, papers are all kept); this spec is the
 > index and the argument, not a replacement for them.
@@ -34,7 +34,7 @@ Eisenstein integer ring **Z[ω]** where ω = e^(2πi/3).
   So "6 in a row" is a purely number-theoretic object: a unit-step 6-AP in Z[ω].
 
 - **Engine invariant:** `WIN_LENGTH == 6` is asserted deep in the upstream engine
-  (`../hexgo/game.py`). Sweeping it requires patching that assertion deliberately.
+  (`../hexo/game.py`). Sweeping it requires patching that assertion deliberately.
 
 Two sibling repos:
 - `../hexo` — production engine (rules, AlphaZero, Rust MCTS, GPU inference, dashboard). Renamed from `hexgo` on disk; as of 2026-07-05 all path references in this repo are fixed to match (see CLAUDE.md "Import path" — the stale `hexgo` path silently broke every experiment script for some period; check this first if you hit `ModuleNotFoundError: No module named 'game'`).
@@ -76,7 +76,7 @@ This is the cleanest *settled* theoretical result and it tells us which tools ap
 - HeXO's payoff ("some player has 6 in a row") is **Σ⁰₁ (open)** — a win is
   observable in finite time — so it is **directly determined by Gale–Stewart**.
 - Infinite Hex (Hamkins–Leonessi 2022, *Infinite Hex is a draw*,
-  `papers/2201.06475v3`) has payoff **Σ⁰₇** (Törnä tightens this): "player has an
+  `sources/literature/2201.06475v3-Infinite-Hex-is-a-draw.pdf`) has payoff **Σ⁰₇** (Törnä tightens this): "player has an
   infinite path" is not observable in finite time, needing heavy infinitary
   machinery and yielding a *draw*.
 - **HeXO is two-plus levels lower in the Borel hierarchy.** That is *why*
@@ -97,8 +97,8 @@ optimal play" from opposite ends:
 
 | Line | Question | Home | Lens |
 |---|---|---|---|
-| **A. Epiplexity / quasicrystal** | Does perfect play's *global* point pattern have Pisot quasicrystalline order? | `docs/`, `engine/`, `results/`, `figures/` | MDL / diffraction / self-play corpora |
-| **B. Transversal-atom / forcing** | What is the *local* algebra of forcing — which obligations exceed the defender's budget? | `papers/connectn_lab_package/`, other `papers/*` bundles | Hypergraph transversal number τ, atoms |
+| **A. Epiplexity / quasicrystal** | Does perfect play's *global* point pattern have Pisot quasicrystalline order? | `docs/`, `engine/`, `evidence/results/`, `evidence/figures/` | MDL / diffraction / self-play corpora |
+| **B. Transversal-atom / forcing** | What is the *local* algebra of forcing — which obligations exceed the defender's budget? | `sources/external-runs/connectn_lab_package/`, other `sources/external-runs/*` bundles | Hypergraph transversal number τ, atoms |
 
 The bridge: line B's **forcing atoms** are the local substitution tiles whose
 finiteness (line A, point 3) would imply the Pisot structure. Line A measures the
@@ -137,7 +137,7 @@ creates information."
 
 ## 5. Empirical results (established, with numbers)
 
-All from `results/` + `figures/` + `papers/.../README.md`. CIs are Wilson 95%
+All from `evidence/results/` + `evidence/figures/` + `sources/.../README.md`. CIs are Wilson 95%
 unless noted. **Confidence key** (added 2026-07-05 after an honesty pass — see
 DIRECTION.md): 🟢 *solid* (large effect vs. control, CI excludes null) · 🟡
 *directional* (right sign, CI includes or nearly includes the null — treat as
@@ -149,25 +149,25 @@ it as a live falsifier — needs a real re-test before citing further).
 
 | Finding | Number | Provenance |
 |---|---|---|
-| 🟡 **First-player advantage, directional not significant** (Combo-v2 as Black) | Black share = **0.53 [0.42, 0.64]** on 39/73 *decisive* games (27 of 100 games hit the move cap and were dropped); fixed from v1's 0.366 centre-bias defect (26/71 decisive) | `results/combo_defect.json`, `run_combo_defect.py`. **Correction (2026-07-05):** the 95% Wilson interval on 39/73 straddles 0.5 — this is a real, well-diagnosed bug fix (a genuine centre-bias defect was found and corrected, moving the point estimate from 0.366 toward 0.5-and-above) but it is *not* yet statistically significant evidence of first-mover advantage beyond what strategy-stealing already guarantees as a lower bound. Needs a much larger decisive-game sample (see DIRECTION.md queue) before "Supported" is the right word. |
-| **Pairing strategy works** (MirrorAgent, c ↦ −c) | non-loss vs Random = **1.00**; P2-wins vs Combo-v2 = 0.14 | `results/mirror_agent.json`, `run_mirror_agent.py` |
-| **Quasi-crystalline order in self-play** | Bragg99 = **0.51 ± 0.13** (n=9) vs random control **0.055** | `results/diffraction_p4.json`, `engine/diffraction.py` |
-| **Delone (Meyer-set) property** | d_min bounded; corr(N, d_max) = **+0.07** (uncorrelated) | `results/diffraction_p4.json` |
-| **Strong play is decisive, not drawish** | draw fraction does *not* rise with horizon (Hamkins-echo) — consistent with Σ⁰₁ | `results/hamkins_echo*.json`, `run_hamkins_echo*.py` |
-| **Hand-crafted ladder plateaus** | ca_combo_v2 ≈ combo (p_B = 0.44 [0.31, 0.58]); motivates NCA zoo | `results/fma_curve.json` |
-| **Untrained NeuralCA baseline** | 12.2k params, 53 ms/move on RTX 2060 | `results/neural_ca_benchmark.json`, `engine/neural_ca.py` |
+| 🟡 **First-player advantage, directional not significant** (Combo-v2 as Black) | Black share = **0.53 [0.42, 0.64]** on 39/73 *decisive* games (27 of 100 games hit the move cap and were dropped); fixed from v1's 0.366 centre-bias defect (26/71 decisive) | `evidence/results/combo_defect.json`, `run_combo_defect.py`. **Correction (2026-07-05):** the 95% Wilson interval on 39/73 straddles 0.5 — this is a real, well-diagnosed bug fix (a genuine centre-bias defect was found and corrected, moving the point estimate from 0.366 toward 0.5-and-above) but it is *not* yet statistically significant evidence of first-mover advantage beyond what strategy-stealing already guarantees as a lower bound. Needs a much larger decisive-game sample (see DIRECTION.md queue) before "Supported" is the right word. |
+| **Pairing strategy works** (MirrorAgent, c ↦ −c) | non-loss vs Random = **1.00**; P2-wins vs Combo-v2 = 0.14 | `evidence/results/mirror_agent.json`, `run_mirror_agent.py` |
+| **Quasi-crystalline order in self-play** | Bragg99 = **0.51 ± 0.13** (n=9) vs random control **0.055** | `evidence/results/diffraction_p4.json`, `engine/diffraction.py` |
+| **Delone (Meyer-set) property** | d_min bounded; corr(N, d_max) = **+0.07** (uncorrelated) | `evidence/results/diffraction_p4.json` |
+| **Strong play is decisive, not drawish** | draw fraction does *not* rise with horizon (Hamkins-echo) — consistent with Σ⁰₁ | `evidence/results/hamkins_echo*.json`, `run_hamkins_echo*.py` |
+| **Hand-crafted ladder plateaus** | ca_combo_v2 ≈ combo (p_B = 0.44 [0.31, 0.58]); motivates NCA zoo | `evidence/results/fma_curve.json` |
+| **Untrained NeuralCA baseline** | 12.2k params, 53 ms/move on RTX 2060 | `evidence/results/neural_ca_benchmark.json`, `engine/neural_ca.py` |
 
 **P1–P5 falsifiable propositions** (`docs/theory/2026-04-17-hamkins-synthesis.md`):
 
 | Prop | Claim | Status |
 |---|---|---|
-| P1 | First-mover (Black) advantage | 🟡 **Contested — large sample points the OTHER way (2026-07-06).** Original thin sample (combo_defect, 0.53 [0.42,0.64], n=73) suggested a Black edge but its CI straddled 0.5. A large `ca_combo_v2` self-play sample (8,000 games, Modal corpus) gives Black share = **0.479 [0.467, 0.492]** on 5,973 decisive games — CI *excludes* 0.5 toward a slight **second**-player edge; raw win rate agrees (Black 35.8% vs White 38.9%, 25% unfinished). Different agent from the original, and conditioning on decisiveness has a mild selection caveat, but the raw rate (no conditioning) points the same way. Net: no first-mover advantage for ca_combo_v2; if anything a small second-mover one. `results/modal_moves_python_8000.json`. |
+| P1 | First-mover (Black) advantage | 🟡 **Contested — large sample points the OTHER way (2026-07-06).** Original thin sample (combo_defect, 0.53 [0.42,0.64], n=73) suggested a Black edge but its CI straddled 0.5. A large `ca_combo_v2` self-play sample (8,000 games, Modal corpus) gives Black share = **0.479 [0.467, 0.492]** on 5,973 decisive games — CI *excludes* 0.5 toward a slight **second**-player edge; raw win rate agrees (Black 35.8% vs White 38.9%, 25% unfinished). Different agent from the original, and conditioning on decisiveness has a mild selection caveat, but the raw rate (no conditioning) points the same way. Net: no first-mover advantage for ca_combo_v2; if anything a small second-mover one. `evidence/results/modal_moves_python_8000.json`. |
 | P2 | A Connect-6 pairing strategy exists | 🟢 **Supported** (MirrorAgent both clauses, n=50, clean effect size) |
-| P3 | Pisot / sub-linear S_T(N) | 🟡 **Sub-linearity measured & separated from null (2026-07-06)** — first actual run of Programme D via the cheap MDL proxy (`experiments/run_mdl_scaling.py`, D6-canonical move encoding, lzma over log-spaced prefixes of an 8,000-game `ca_combo_v2` corpus from Modal). Result: `S_T(N) ~ N^0.929` (sub-linear), **cleanly separated from a random-play null at `N^1.009` (linear)** — marginal bytes/game *fall* 78→57 for the agent but stay flat ~118 for random. So the sub-linearity is real strategic structure, not an lzma artifact. Caveats keeping this 🟡 not 🟢: it's a proxy (not the roadmap's observer-net epiplexity S_T), one agent, β is only mildly below 1, and sub-linearity is *necessary-not-sufficient* for Pisot (it supports finite shared structure; it does not by itself fix an inflation constant — cf. verdicts §A). `results/mdl_scaling.json`, `figures/fig_mdl_scaling.png`. |
+| P3 | Pisot / sub-linear S_T(N) | 🟡 **Sub-linearity measured & separated from null (2026-07-06)** — first actual run of Programme D via the cheap MDL proxy (`experiments/run_mdl_scaling.py`, D6-canonical move encoding, lzma over log-spaced prefixes of an 8,000-game `ca_combo_v2` corpus from Modal). Result: `S_T(N) ~ N^0.929` (sub-linear), **cleanly separated from a random-play null at `N^1.009` (linear)** — marginal bytes/game *fall* 78→57 for the agent but stay flat ~118 for random. So the sub-linearity is real strategic structure, not an lzma artifact. Caveats keeping this 🟡 not 🟢: it's a proxy (not the roadmap's observer-net epiplexity S_T), one agent, β is only mildly below 1, and sub-linearity is *necessary-not-sufficient* for Pisot (it supports finite shared structure; it does not by itself fix an inflation constant — cf. verdicts §A). `evidence/results/mdl_scaling.json`, `evidence/figures/fig_mdl_scaling.png`. |
 | P4 | Pure-point diffraction component | 🟢 **Supported** (Bragg99 0.51 vs 0.055 control — large effect size, n=9 is thin but the gap is wide enough to survive it) |
 | P5 | Delone / Meyer-set bounds | 🟢 **Supported** (d_max stable) |
 
-### Line B — transversal-atom framework (`papers/`)
+### Line B — transversal-atom framework (`sources/external-runs/`)
 
 Defender budget `p = 2` (the 1-2-2 rule). **Pressure = max(0, τ(O) − p)** where
 τ is the transversal number (min hitting set) of the obligation hypergraph O. A
@@ -175,17 +175,17 @@ position forces iff some obligation family has **τ(O) > p**.
 
 | Finding | Detail | Provenance |
 |---|---|---|
-| **Parity is the dominant opening law** | Odd k puts the urgent layer on Black's rooted stone (tempo=Black); even k on White's rhythm (tempo=White). For Connect-k sweep k=3..10. | `papers/connectn_lab_package/.../connect_k_parity_results/.../README.md` |
+| **Parity is the dominant opening law** | Odd k puts the urgent layer on Black's rooted stone (tempo=Black); even k on White's rhythm (tempo=White). For Connect-k sweep k=3..10. | `sources/external-runs/connectn_lab_package/.../connect_k_parity_results/.../README.md` |
 | **Primality is a second-order effect** | prime-k Black first-reply τ>2 openings = 48 vs composite = 47 (near-tie); Connect-5/7 are the clean prime laboratories (k=3 collapses at seed) | same |
 | **Seeded asymmetry** | the q=1,p=2 opening creates a rooted symmetry-breaking *charge*, not just material balance (CONJECTURES §2) | `CONJECTURES.md` |
-| **Opening tablebase (alpha-beta, A2 radius 3)** | first finite A2 ball containing length-6 wins; depth-10 beam search, 2.46M nodes, classes {black_bulk_edge, screened_or_balanced}; no decisive opening (all "U") | `papers/connectn_lab_package/.../opening_tablebase_results/*/README.md` |
-| **Opening optimality atlas (GPU rollouts)** | 371 static openings, 29 rolled out; outcomes overwhelmingly drawn under bounded local strategies (e.g. 442 none / 20 white / 2 black) | `papers/connectn_lab_package/.../opening_optimality_results/rich_run/README.md` |
-| **D6 seeded-hypergraph spiral** | OEIS A392177-style D6 spiral on the Connect-6 winning-set hypergraph; produces shell/sector imbalance sequences | `papers/connectn_lab_package/.../d6_seeded_hypergraph_results/*/README.md` |
-| **Primitive forcing atom miner** | mines minimal τ>2 obligation hypergraphs ("atoms"); rail/bridge motifs; bulk-vs-boundary τ prediction | `papers/hexconnect6_atom_miner_results/.../README.md` |
-| **Atom-composition opening eval** | scores openings by *compositions* of primitive atoms looked up in a periodic-table fingerprint index; minimax over continuation depth | `papers/hexconnect6_atom_compositions_results/.../README.md` |
-| **Depth-2 minimax proto-pressure atlas** | White open → max Black reply → min White defence → max Black continuation; rail→bridge shape transitions, continuation shape attractors | `papers/hexconnect6_depth2_minimax_results/.../README.md` |
-| **τ is LP-exact on real positions** 🟢 | zero integrality gap on 1,657 mined obligation instances incl. 914 genuine τ>2 forks; LP>2 soundly certifies forcing (LP≤IP); single-axis families are interval hypergraphs (TU ⇒ provably gap-free), so any gap would need a multi-axis odd motif — none observed. NP-hardness (§7 item 6) is confined to adversarial constructions. | `experiments/run_tau_lp_gap.py`, `results/tau_lp_gap.json`, verdicts doc §C |
-| **Pairing threshold theorem** 🟢 | *No pairing strategy (periodic or not) exists for k=6 on the hex lattice*: pairs cover ≤5 windows each, demand is 3 windows/cell vs supply 2.5 — and k=7 is sharp: an explicit period-6 domino matching (machine-verified vs every 7-window) makes 7-in-a-row a pairing draw. If HeXO is a draw, the proof must be non-pairing (Zetters/Hamkins-style). | `experiments/run_pairing_bound.py`, `results/pairing_bound.json`, [verdicts doc](docs/theory/2026-07-06-search-regime-verdicts.md) §E |
+| **Opening tablebase (alpha-beta, A2 radius 3)** | first finite A2 ball containing length-6 wins; depth-10 beam search, 2.46M nodes, classes {black_bulk_edge, screened_or_balanced}; no decisive opening (all "U") | `sources/external-runs/connectn_lab_package/.../opening_tablebase_results/*/README.md` |
+| **Opening optimality atlas (GPU rollouts)** | 371 static openings, 29 rolled out; outcomes overwhelmingly drawn under bounded local strategies (e.g. 442 none / 20 white / 2 black) | `sources/external-runs/connectn_lab_package/.../opening_optimality_results/rich_run/README.md` |
+| **D6 seeded-hypergraph spiral** | OEIS A392177-style D6 spiral on the Connect-6 winning-set hypergraph; produces shell/sector imbalance sequences | `sources/external-runs/connectn_lab_package/.../d6_seeded_hypergraph_results/*/README.md` |
+| **Primitive forcing atom miner** | mines minimal τ>2 obligation hypergraphs ("atoms"); rail/bridge motifs; bulk-vs-boundary τ prediction | `sources/external-runs/hexconnect6_atom_miner_results/.../README.md` |
+| **Atom-composition opening eval** | scores openings by *compositions* of primitive atoms looked up in a periodic-table fingerprint index; minimax over continuation depth | `sources/external-runs/hexconnect6_atom_compositions_results/.../README.md` |
+| **Depth-2 minimax proto-pressure atlas** | White open → max Black reply → min White defence → max Black continuation; rail→bridge shape transitions, continuation shape attractors | `sources/external-runs/hexconnect6_depth2_minimax_results/.../README.md` |
+| **τ is LP-exact on real positions** 🟢 | zero integrality gap on 1,657 mined obligation instances incl. 914 genuine τ>2 forks; LP>2 soundly certifies forcing (LP≤IP); single-axis families are interval hypergraphs (TU ⇒ provably gap-free), so any gap would need a multi-axis odd motif — none observed. NP-hardness (§7 item 6) is confined to adversarial constructions. | `experiments/run_tau_lp_gap.py`, `evidence/results/tau_lp_gap.json`, verdicts doc §C |
+| **Pairing threshold theorem** 🟢 | *No pairing strategy (periodic or not) exists for k=6 on the hex lattice*: pairs cover ≤5 windows each, demand is 3 windows/cell vs supply 2.5 — and k=7 is sharp: an explicit period-6 domino matching (machine-verified vs every 7-window) makes 7-in-a-row a pairing draw. If HeXO is a draw, the proof must be non-pairing (Zetters/Hamkins-style). | `experiments/run_pairing_bound.py`, `evidence/results/pairing_bound.json`, [verdicts doc](docs/theory/2026-07-06-search-regime-verdicts.md) §E |
 
 ### Line B' — UDC positions (algebraic point sets on Z[ω])
 
@@ -203,13 +203,13 @@ primes q ≡ 1 mod 3 give Eisenstein integers of equal modulus.
 
 Small towers (t=1,2) produce **strongly Bragg-ordered** point sets (0.84) — an
 *algebraically-generated* quasicrystal on the same lattice; large towers wash out
-to noise. Source: `docs/theory/2026-05-22-udc-positions.md`, `results/udc_positions.json`.
+to noise. Source: `docs/theory/2026-05-22-udc-positions.md`, `evidence/results/udc_positions.json`.
 
 ---
 
 ## 6. Speculative threads (testable, not yet established)
 
-These live in `docs/theory/` and `papers/.../CONJECTURES.md`. Each has a falsifier.
+These live in `docs/theory/` and `sources/external-runs/.../CONJECTURES.md`. Each has a falsifier.
 
 - 🔴 **Bellman–Turing instability** (`2026-05-20`): the Boltzmannised Bellman operator
   on Z[ω] has a Turing (reaction-diffusion) instability at non-zero wavenumber k*,
@@ -242,7 +242,7 @@ These live in `docs/theory/` and `papers/.../CONJECTURES.md`. Each has a falsifi
 - **Bounded crystal / Bellman sum** (`2026-05-09`): can HeXO be written as an
   infinite live-line sum whose optimal Bellman fixed point has quasicrystalline
   support? Three levels: exact recursion → live-line feature sum → observable
-  crystal signatures. `engine/crystal.py`, `results/crystal_survey.json`.
+  crystal signatures. `engine/crystal.py`, `evidence/results/crystal_survey.json`.
 - **CGT / Hackenbush** (`2026-05-09`): empirical temperature/thermography layer
   over live 6-line components; the two-move sum `+₂` is *not* ordinary disjunctive
   CGT. `engine/cgt.py`, `engine/two_move_sum.py`.
@@ -266,7 +266,7 @@ These live in `docs/theory/` and `papers/.../CONJECTURES.md`. Each has a falsifi
    optimal play. This is line B's atom-finiteness = line A's substitution-finiteness.
 4. **Inflation constant value.** Which Pisot number — tribonacci, plastic, golden?
    New exact candidate from the ruleset: the pentanacci constant ≈1.9659 (entropy
-   base of the no-6-run line shift, itself Pisot — `results/line_automaton.json`).
+   base of the no-6-run line shift, itself Pisot — `evidence/results/line_automaton.json`).
    Caveat from the verdicts doc §A: a transfer-matrix entropy is *not* an
    inflation constant; the identification needs Line B's substitution tiles.
 5. **Critical density.** Occupied fraction within radius R as R→∞ — is it irrational?
@@ -295,9 +295,9 @@ These live in `docs/theory/` and `papers/.../CONJECTURES.md`. Each has a falsifi
   +₂ algebra, exact A2/D6 quotients.
 - `engine/crystal.py`, `engine/fractal_strategy.py` — crystal observables, strategy fractal.
 - `experiments/run_*.py` — one self-contained experiment each; output to
-  `results/<name>.json` + `figures/fig_<name>_*.png`. `--quick` flag for dev.
+  `evidence/results/<name>.json` + `evidence/figures/fig_<name>_*.png`. `--quick` flag for dev.
 - `experiments/harness.py` — parallel match harness (mp.Pool, Wilson CIs, agent registry).
-- `papers/connectn_lab_package/.../connectn_lab/` — the τ-atom framework (atoms,
+- `sources/external-runs/connectn_lab_package/.../connectn_lab/` — the τ-atom framework (atoms,
   obligations, transversals, opening_tablebase, self_play, theory_book).
 
 Reproducibility convention: seed everything; results + figures are tracked in git
@@ -307,8 +307,8 @@ Reproducibility convention: seed everything; results + figures are tracked in gi
 
 ## 9. References
 
-- Finzi et al. (2026). *From Entropy to Epiplexity*. arXiv:2601.03220 — `papers/`.
-- Hamkins, J. D., & Leonessi (2022). *Infinite Hex is a draw*. arXiv:2201.06475 — `papers/`.
+- Finzi et al. (2026). *From Entropy to Epiplexity*. arXiv:2601.03220 — `sources/literature/`.
+- Hamkins, J. D., & Leonessi (2022). *Infinite Hex is a draw*. arXiv:2201.06475 — `sources/literature/`.
 - Baake, M., & Grimm, U. (2013). *Aperiodic Order, Vol. 1*. CUP. (Pisot/diffraction.)
 - Berlekamp, Conway, Guy (1982). *Winning Ways*. (CGT.)
 - Erdős, P., & Selfridge, J. (1973). On a combinatorial game. *JCTA* 14, 298–301.

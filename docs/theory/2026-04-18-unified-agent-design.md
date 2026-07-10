@@ -1,6 +1,6 @@
 # A unified agent for HeXO — design note
 
-*2026-04-18, after reading [../../results/charlies-artifacts/](../../results/charlies-artifacts/)*
+*2026-04-18, after reading [../../evidence/results/charlies-artifacts/](../../evidence/results/charlies-artifacts/)*
 
 > **Status (2026-07-05): PARKED — blocked on a diagnosed bug, not deprioritized
 > by choice.** §10-13 below record a real, honest series of negative results:
@@ -20,7 +20,7 @@ four tactical predicates (`five`, `threat`, `double`, `winning_cells`),
 multi-task and "universal" NCA trunks, SSL reconstruction, a ~20-matchup
 tournament, and MCTS with an NCA value net.
 
-His probe cross-transfer matrix ([../../results/charlies-artifacts/checkpoints/linear_probe_results.pt](../../results/charlies-artifacts/checkpoints/linear_probe_results.pt))
+His probe cross-transfer matrix ([../../evidence/results/charlies-artifacts/checkpoints/linear_probe_results.pt](../../evidence/results/charlies-artifacts/checkpoints/linear_probe_results.pt))
 reduces to one actionable finding: **a `threat`-supervised 9.4k-param NCA
 trunk transfers to all four predicates (0.985 / 0.993 / 0.920 / 0.485) and
 beats SSL-pretrained or random-initialised trunks by a wide margin.**
@@ -84,7 +84,7 @@ Charlie's matrix.
 ### 2.3 MCTS
 
 Light UCB1-style tree search with the policy head as prior and the value
-head at the leaf. Charlie's [mcts_run.log](../../results/charlies-artifacts/checkpoints/mcts_run.log)
+head at the leaf. Charlie's [mcts_run.log](../../evidence/results/charlies-artifacts/checkpoints/mcts_run.log)
 tuning gives us a sensible starting point: `N_sims ∈ {100, 400}`, rollouts
 per leaf = 8, rollout depth cap = 60. Charlie's MCTS has **no learnt
 policy prior**; ours does — this is the main algorithmic improvement.
@@ -201,8 +201,8 @@ pushing the Pareto frontier down-right as iteration proceeds.
 |---|---|
 | `experiments/gen_static_positions.py` | Generate color-balanced 8k/2k datasets with labels from `engine.analysis`. Reuses `generate_corpus` from [engine/observer.py](../../engine/observer.py) to sample positions; then adds colour-swap augmentation to hit 50% positive-class rate. |
 | `engine/alphazero.py` (or extend `engine/neural_ca.py`) | `UnifiedTrunk`, per-head modules, `AlphaZeroAgent(choose_move)` with MCTS, `pretrain_trunk()`, `self_play_iterate()`. |
-| `experiments/run_az_pretrain.py` | Phase 0 runner; outputs `checkpoints/trunk_pretrained.pt` + `results/az_pretrain.json`. |
-| `experiments/run_az_selfplay.py` | Phase 1+2 runner; outputs `checkpoints/az_iter{0..4}.pt` + `results/az_selfplay.json`. |
+| `experiments/run_az_pretrain.py` | Phase 0 runner; outputs `checkpoints/trunk_pretrained.pt` + `evidence/results/az_pretrain.json`. |
+| `experiments/run_az_selfplay.py` | Phase 1+2 runner; outputs `checkpoints/az_iter{0..4}.pt` + `evidence/results/az_selfplay.json`. |
 
 Resisting the urge to write `engine/mcts.py` as a separate file — MCTS is
 small and only used from `alphazero.py`; keeping it colocated saves one
@@ -235,7 +235,7 @@ file.
 - [ ] Full run: 8k train / 2k val, 40 epochs, save `trunk_pretrained.pt`.
 - [ ] Record val accuracies per task; confirm they're within 10% of
       Charlie's (five=0.998, threat=0.993, double=0.989, win=0.996).
-- [ ] Commit checkpoint to `checkpoints/` and result to `results/`.
+- [ ] Commit checkpoint to `checkpoints/` and result to `evidence/results/`.
 
 ### Phase 1 — teacher-bootstrap
 
@@ -259,8 +259,8 @@ file.
 ### Phase 3 — Pareto + paper plot
 
 - [ ] Run `experiments/run_strategy_observer.py` over all 6 saved
-      checkpoints; produce `results/az_pareto.json`.
-- [ ] Generate `figures/fig_az_pareto.png` — the $(|P|, H_T)$ trajectory
+      checkpoints; produce `evidence/results/az_pareto.json`.
+- [ ] Generate `evidence/figures/fig_az_pareto.png` — the $(|P|, H_T)$ trajectory
       with annotated Elo at each point.
 - [ ] Update [docs/ROADMAP.md](../ROADMAP.md) §13 — "what done looks
       like" — to promote this figure to panel (1) of the paper triptych.
@@ -347,7 +347,7 @@ of the unified agent.
 ### 10.1 NCA zoo training sweep — completed
 All 5 priors ({`random`, `d6_tied`, `line_detector`, `erdos_selfridge`,
 `combo`}) trained to 300 steps with the per-game-backward OOM fix; no
-crashes. `results/nca_train_<prior>.json` shows the same pattern across
+crashes. `evidence/results/nca_train_<prior>.json` shows the same pattern across
 every prior:
 - **Early (teacher phase, step ≤ 5):** decisive fraction ≈ 0.4, mean
   reward ≈ –0.4 → trainee loses most of the decisive games seeded by
@@ -364,8 +364,8 @@ nothing for a discriminator to latch onto. P9 should be re-run on
 checkpoints taken *during* the teacher phase (step 0–5), not at the end.
 
 ### 10.2 FMA inversion panel — produced
-[../../figures/fig_fma_inversion_panel.png](../../figures/fig_fma_inversion_panel.png),
-data in [../../results/fma_inversion_combined.json](../../results/fma_inversion_combined.json).
+[../../evidence/figures/fig_fma_inversion_panel.png](../../evidence/figures/fig_fma_inversion_panel.png),
+data in [../../evidence/results/fma_inversion_combined.json](../../evidence/results/fma_inversion_combined.json).
 
 Combined our `fma_curve.json` (n=200, infinite lattice) with the
 diagonals of Charlie's `tournament_results.pt` (n=30, 32×32 board). The
@@ -418,12 +418,12 @@ the imitation-only hypothesis.
 ### 11.1 Cheap sweep (A1, A3, B1)
 
 - **A1 cross-program tournament table** ([run_cross_program_table.py](../../experiments/run_cross_program_table.py),
-  [results/cross_program_table.json](../../results/cross_program_table.json),
-  [figures/fig_cross_program_table.png](../../figures/fig_cross_program_table.png)) — 2-panel
+  [evidence/results/cross_program_table.json](../../evidence/results/cross_program_table.json),
+  [evidence/figures/fig_cross_program_table.png](../../evidence/figures/fig_cross_program_table.png)) — 2-panel
   p_B matrix for our 7 agents × Charlie's 6 agents. Makes the FMA-inversion
   signature visible on both substrates side-by-side.
 - **A3 diffraction Bragg histogram** ([run_diffraction_histogram.py](../../experiments/run_diffraction_histogram.py),
-  [figures/fig_diffraction_bragg_histogram.png](../../figures/fig_diffraction_bragg_histogram.png)) —
+  [evidence/figures/fig_diffraction_bragg_histogram.png](../../evidence/figures/fig_diffraction_bragg_histogram.png)) —
   reanalysed `diffraction_p4.json` (n=18 self-play, n=18 random). Median
   self-play / random Bragg99 ratio = **6.3×**. Random control tightly clamped
   at ~0.055; self-play spread 0.3–0.8 with **corr(N, Bragg99_sp) = +0.84** —
@@ -431,7 +431,7 @@ the imitation-only hypothesis.
   mean-comparison statement.
 - **B1 Hamkins echo h=960** ([run_hamkins_echo_960.py](../../experiments/run_hamkins_echo_960.py)
   + [run_hamkins_echo_merge.py](../../experiments/run_hamkins_echo_merge.py),
-  [figures/fig_hamkins_echo_merged.png](../../figures/fig_hamkins_echo_merged.png)) —
+  [evidence/figures/fig_hamkins_echo_merged.png](../../evidence/figures/fig_hamkins_echo_merged.png)) —
   wall 65 min on CPU. Decisive share for `combo_vs_combo` rises monotonically
   30 → 960, reaching **0.80 at h=960** (was 0.74 at h=480). P5 (no draw
   regime) holds at doubled horizon.
@@ -469,7 +469,7 @@ the imitation-only hypothesis.
 ### 11.3 Phase 1: standalone policy head eval (n=50)
 
 [run_az_policy_eval.py](../../experiments/run_az_policy_eval.py),
-[results/az_policy_eval.json](../../results/az_policy_eval.json),
+[evidence/results/az_policy_eval.json](../../evidence/results/az_policy_eval.json),
 temperature=0 (deterministic):
 
 | matchup             | B wins | W wins | unfinished |
@@ -531,8 +531,8 @@ Three failure modes, one signal each:
 
 Ran the long-pending FMA curve across 8 agents spanning all families
 ([run_fma_full_ladder.py](../../experiments/run_fma_full_ladder.py),
-[results/fma_full_ladder.json](../../results/fma_full_ladder.json),
-[figures/fig_fma_full_ladder.png](../../figures/fig_fma_full_ladder.png)).
+[evidence/results/fma_full_ladder.json](../../evidence/results/fma_full_ladder.json),
+[evidence/figures/fig_fma_full_ladder.png](../../evidence/figures/fig_fma_full_ladder.png)).
 n=40 self-play games per agent, horizon 240, 9.6 min total wall.
 
 ### 12.1 Measurement artefact: deterministic self-play is n=1
@@ -640,7 +640,7 @@ No new data. Re-ran 40 epochs with `--lambda-value 1.0`:
     value_sgn    tr=0.549 va=0.537    (chance = 0.50; 42% of samples have |v|=1)
 
 Checkpoint: `artifacts/checkpoints/az_pretrain_phase2a.pt`.
-Full history in [results/az_pretrain_phase2a.json](../../results/az_pretrain_phase2a.json).
+Full history in [evidence/results/az_pretrain_phase2a.json](../../evidence/results/az_pretrain_phase2a.json).
 
 ### 13.2 The value head did not learn to discriminate
 
@@ -686,8 +686,8 @@ runs three paired comparisons against the baseline `az_policy_t03`
 | vs `fork_aware` | 0/20 | 0/20 |
 | head-to-head (same trunk, n=40) | 21/40 | 19/40, Wilson [0.33, 0.63] |
 
-Full numbers: [results/az_value_probe.json](../../results/az_value_probe.json);
-figure: [figures/fig_az_value_probe.png](../../figures/fig_az_value_probe.png).
+Full numbers: [evidence/results/az_value_probe.json](../../evidence/results/az_value_probe.json);
+figure: [evidence/figures/fig_az_value_probe.png](../../evidence/figures/fig_az_value_probe.png).
 
 Three conclusions.
 

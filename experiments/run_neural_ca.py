@@ -6,8 +6,8 @@ hex-conv NCA against Random (floor) and Combo-v2 (ceiling). Training
 comes in a follow-up experiment.
 
 Output:
-  results/neural_ca_benchmark.json
-  figures/fig_neural_ca_benchmark.png
+  evidence/results/neural_ca_benchmark.json
+  evidence/figures/fig_neural_ca_benchmark.png
 """
 from __future__ import annotations
 
@@ -102,13 +102,13 @@ def main() -> None:
 
     results = _run(args.n, args.max_moves, args.seed)
 
-    rpath = Path("results") / "neural_ca_benchmark.json"
+    rpath = Path("evidence/results") / "neural_ca_benchmark.json"
     rpath.parent.mkdir(parents=True, exist_ok=True)
     with open(rpath, "w") as f:
         json.dump(results, f, indent=2)
     print(f"\n[saved] {rpath}")
 
-    fig = Path("figures") / "fig_neural_ca_benchmark.png"
+    fig = Path("evidence/figures") / "fig_neural_ca_benchmark.png"
     _plot(results, str(fig))
     print(f"[saved] {fig}")
 

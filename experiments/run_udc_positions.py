@@ -41,10 +41,10 @@ P6d: n grows with t (larger t -> more points at fixed R).
 
 Output
 ------
-results/udc_positions.json
-figures/fig_udc_positions_bragg.png
-figures/fig_udc_positions_gallery.png
-figures/fig_udc_positions_harmonics.png
+evidence/results/udc_positions.json
+evidence/figures/fig_udc_positions_bragg.png
+evidence/figures/fig_udc_positions_gallery.png
+evidence/figures/fig_udc_positions_harmonics.png
 """
 from __future__ import annotations
 
@@ -73,11 +73,11 @@ from engine.crystal import (
     harmonic_moments,
 )
 
-JSON_PATH = Path("results/udc_positions.json")
-FIG_BRAGG = Path("figures/fig_udc_positions_bragg.png")
-FIG_GALLERY = Path("figures/fig_udc_positions_gallery.png")
-FIG_HARMONICS = Path("figures/fig_udc_positions_harmonics.png")
-FIG_GEOMETRY = Path("figures/fig_udc_positions_geometry.png")
+JSON_PATH = Path("evidence/results/udc_positions.json")
+FIG_BRAGG = Path("evidence/figures/fig_udc_positions_bragg.png")
+FIG_GALLERY = Path("evidence/figures/fig_udc_positions_gallery.png")
+FIG_HARMONICS = Path("evidence/figures/fig_udc_positions_harmonics.png")
+FIG_GEOMETRY = Path("evidence/figures/fig_udc_positions_geometry.png")
 
 
 # ---------------------------------------------------------------------------

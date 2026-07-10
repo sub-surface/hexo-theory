@@ -8,13 +8,13 @@ or move data just because it is not yet listed here.
 
 ## Preservation Rules
 
-- `results/` JSON and CSV files are paper-facing summaries and should be tracked.
-- `figures/` PNG files are paper-facing visual summaries and should be tracked.
-- `experiments/run_*.py` scripts are the regeneration path for results/figures.
-- `corpora/`, `data/`, `artifacts/`, `checkpoints/`, and `games/` may contain
+- `evidence/results/` JSON and CSV files are paper-facing summaries and should be tracked.
+- `evidence/figures/` PNG files are paper-facing visual summaries and should be tracked.
+- `experiments/run_*.py` scripts are the regeneration path for evidence/results/figures.
+- `evidence/corpora/`, `data/`, `artifacts/`, `checkpoints/`, and `games/` may contain
   large generated or raw data. Preserve them unless an explicit archival decision
   is made.
-- `papers/` contains source literature and should not be ignored.
+- `sources/` contains source literature and should not be ignored.
 - Runtime caches, worktrees, `__pycache__`, and pytest cache directories are not
   research artifacts.
 
@@ -29,29 +29,29 @@ or move data just because it is not yet listed here.
 | `engine/two_move_sum.py` | Toy algebra for ordinary one-move sums versus HeXO two-placement sums | n/a | First explicit `+_2` model for local games |
 | `tests/test_two_move_sum.py` | Regression tests for split moves and spending both moves in one component | `python -m pytest tests/test_two_move_sum.py -q` | Documents why HeXO is not ordinary disjunctive CGT |
 | `experiments/run_cgt_hackenbush.py` | Agent self-play probe for hot-game behavior | direct script | Has `--quick` and configurable sample stride |
-| `results/cgt_hackenbush.json` | Summary and sampled records for CGT probe | `experiments/run_cgt_hackenbush.py` | Current medium run compares random, greedy, potential, ca_combo_v2, mirror |
-| `figures/fig_cgt_hackenbush_summary.png` | Four-panel summary of hot-move play and decomposition | `experiments/run_cgt_hackenbush.py` | Paper-facing diagnostic |
-| `figures/fig_cgt_hackenbush_scatter.png` | Potential mass vs CGT urgency scatter | `experiments/run_cgt_hackenbush.py` | Shows mass and urgency are related but not identical |
+| `evidence/results/cgt_hackenbush.json` | Summary and sampled records for CGT probe | `experiments/run_cgt_hackenbush.py` | Current medium run compares random, greedy, potential, ca_combo_v2, mirror |
+| `evidence/figures/fig_cgt_hackenbush_summary.png` | Four-panel summary of hot-move play and decomposition | `experiments/run_cgt_hackenbush.py` | Paper-facing diagnostic |
+| `evidence/figures/fig_cgt_hackenbush_scatter.png` | Potential mass vs CGT urgency scatter | `experiments/run_cgt_hackenbush.py` | Shows mass and urgency are related but not identical |
 | `experiments/run_cgt_sequences.py` | Sloane-style sequence miner for live lines, D6 candidate orbits, hot components, entropy | direct script | New quick smoke path for integer invariants |
-| `results/cgt_sequences.json` | JSON records and summary for sequence mining | `experiments/run_cgt_sequences.py` | Current smoke run compares random and greedy |
-| `results/cgt_sequences.csv` | Flat table for sequence mining | `experiments/run_cgt_sequences.py` | Useful for spreadsheet/OEIS-style inspection |
-| `figures/fig_cgt_sequences.png` | Four-panel trajectory plot for sequence invariants | `experiments/run_cgt_sequences.py` | Random opens more live-line/orbit entropy than greedy in smoke run |
+| `evidence/results/cgt_sequences.json` | JSON records and summary for sequence mining | `experiments/run_cgt_sequences.py` | Current smoke run compares random and greedy |
+| `evidence/results/cgt_sequences.csv` | Flat table for sequence mining | `experiments/run_cgt_sequences.py` | Useful for spreadsheet/OEIS-style inspection |
+| `evidence/figures/fig_cgt_sequences.png` | Four-panel trajectory plot for sequence invariants | `experiments/run_cgt_sequences.py` | Random opens more live-line/orbit entropy than greedy in smoke run |
 | `engine/fractal_strategy.py` | Verified recursive strategy-fractal generator and win-line detector | n/a | Produces motif substitutions checked against the length-6 rule |
 | `tests/test_fractal_strategy.py` | Regression tests for generated motifs, branching counts, and win-line detection | `python -m pytest tests/test_fractal_strategy.py -q` | Guards the fractal construction |
 | `experiments/run_surreal_fractal.py` | Generates surreal/fractal strategy JSON and figures | direct script | Has `--quick`; output is a strategy pattern, not a legal transcript |
-| `results/surreal_fractal_strategy.json` | Summary of verified fractal pattern | `experiments/run_surreal_fractal.py` | Current quick run: depth 2, inflation 5, 614 stones, 321 winning lines |
-| `figures/fig_surreal_fractal_strategy.png` | Lattice plot of verified recursive strategy pattern | `experiments/run_surreal_fractal.py` | Colored by recursion level |
-| `figures/fig_surreal_fractal_shells.png` | Log-scale branching profile | `experiments/run_surreal_fractal.py` | Shows centers, motifs, and unique motif stones by level |
+| `evidence/results/surreal_fractal_strategy.json` | Summary of verified fractal pattern | `experiments/run_surreal_fractal.py` | Current quick run: depth 2, inflation 5, 614 stones, 321 winning lines |
+| `evidence/figures/fig_surreal_fractal_strategy.png` | Lattice plot of verified recursive strategy pattern | `experiments/run_surreal_fractal.py` | Colored by recursion level |
+| `evidence/figures/fig_surreal_fractal_shells.png` | Log-scale branching profile | `experiments/run_surreal_fractal.py` | Shows centers, motifs, and unique motif stones by level |
 | `docs/theory/2026-05-09-surreal-fractal-conjectures.md` | Surreal-number, `+_2`, lambda, Hahn-shadow, and fractal strategy conjectures | manual note | Paper-facing conjecture set with falsifiers |
 | `engine/crystal.py` | Large-scale crystal observables: D6 Jaccard, harmonics, sector entropy, box dimension, Delone bounds, Bragg99 | n/a | Representation-agnostic metrics for agents and controls |
 | `tests/test_crystal.py` | Regression tests for D6 symmetry, sixfold harmonics, sector entropy, and box dimension | `python -m pytest tests/test_crystal.py -q` | Guards the crystal observable layer |
 | `experiments/run_crystal_survey.py` | Multi-modal crystal survey across agents, controls, Rust pure-MCTS, and fractal generators | direct script | Has `--quick`; full run can scale with games/grid/Rust sims |
-| `results/crystal_survey.json` | Metrics and sample records from the crystal survey | `experiments/run_crystal_survey.py` | Current quick run includes Rust pure-MCTS and six other sources |
-| `figures/fig_crystal_survey_gallery.png` | Real-space point-set gallery | `experiments/run_crystal_survey.py` | First visual modality |
-| `figures/fig_crystal_survey_metrics.png` | Normalized metric heatmap with raw values | `experiments/run_crystal_survey.py` | Cross-source observable comparison |
-| `figures/fig_crystal_survey_harmonics.png` | Angular harmonic symmetry-breaking plot | `experiments/run_crystal_survey.py` | Shows where D6-compatible and lower-order biases appear |
-| `figures/fig_crystal_survey_diffraction.png` | Bragg99 bar plot by source | `experiments/run_crystal_survey.py` | Reciprocal-space modality |
-| `figures/fig_crystal_survey_fractal_highres.png` | Higher-resolution verified strategy fractal | `experiments/run_crystal_survey.py` | Generated from the same motif system as the survey control |
+| `evidence/results/crystal_survey.json` | Metrics and sample records from the crystal survey | `experiments/run_crystal_survey.py` | Current quick run includes Rust pure-MCTS and six other sources |
+| `evidence/figures/fig_crystal_survey_gallery.png` | Real-space point-set gallery | `experiments/run_crystal_survey.py` | First visual modality |
+| `evidence/figures/fig_crystal_survey_metrics.png` | Normalized metric heatmap with raw values | `experiments/run_crystal_survey.py` | Cross-source observable comparison |
+| `evidence/figures/fig_crystal_survey_harmonics.png` | Angular harmonic symmetry-breaking plot | `experiments/run_crystal_survey.py` | Shows where D6-compatible and lower-order biases appear |
+| `evidence/figures/fig_crystal_survey_diffraction.png` | Bragg99 bar plot by source | `experiments/run_crystal_survey.py` | Reciprocal-space modality |
+| `evidence/figures/fig_crystal_survey_fractal_highres.png` | Higher-resolution verified strategy fractal | `experiments/run_crystal_survey.py` | Generated from the same motif system as the survey control |
 | `docs/theory/2026-05-09-bounded-crystal-sum.md` | Bellman/live-line infinite-sum, symmetry-breaking, and busy-beaver-style complexity note | manual note | Centers the next stage on Bellman fixed points |
 | `docs/theory/2026-05-09-cgt-research-program.md` | Conway/Sloane/2-move-sum execution plan | manual note | New top-level plan for this thread |
 
@@ -59,12 +59,12 @@ or move data just because it is not yet listed here.
 
 | Thread | Key results | Key figures | Key scripts | Status |
 |---|---|---|---|---|
-| First-mover advantage | `results/fma_curve.json`, `results/fma_full_ladder.json` | `figures/fig_fma_curve.png`, `figures/fig_fma_full_ladder.png` | `experiments/run_fma_curve.py`, `experiments/run_fma_full_ladder.py` | Active evidence for P1/FMA shape |
-| Hamkins echo / MirrorAgent | `results/hamkins_echo*.json`, `results/mirror_agent.json` | `figures/fig_hamkins_echo_*.png`, `figures/fig_mirror_agent.png` | `experiments/run_hamkins_echo*.py`, `experiments/run_mirror_agent.py` | Supports P2 positioning |
-| Diffraction / Delone | `results/diffraction_p4.json` | `figures/fig_diffraction_*.png` | `experiments/run_diffraction.py`, `experiments/run_diffraction_histogram.py` | Supports P4/P5 in current synthesis |
-| Epiplexity / MDL | `results/epiplexity_scan.json`, `results/cross_program_table.json` | `results/figures/*.png`, `figures/fig_cross_program_table.png` | `experiments/run_epiplexity_scan.py`, `experiments/run_cross_program_table.py` | Preliminary support for P3 |
-| Neural CA / AZ probes | `results/nca_*.json`, `results/az_*.json` | `figures/fig_nca_*.png`, `figures/fig_az_*.png` | `experiments/run_nca_*.py`, `experiments/run_az_*.py` | Active agent-ladder infrastructure |
-| Combo defect and rigor pass | `results/combo_defect.json`, `results/rigor_v1.json` | `figures/fig_combo_defect.png`, `figures/fig_A_paradox1.png` | `experiments/run_combo_defect.py`, `experiments/rigor_v1.py` | Supports corrected Combo-v2 story |
+| First-mover advantage | `evidence/results/fma_curve.json`, `evidence/results/fma_full_ladder.json` | `evidence/figures/fig_fma_curve.png`, `evidence/figures/fig_fma_full_ladder.png` | `experiments/run_fma_curve.py`, `experiments/run_fma_full_ladder.py` | Active evidence for P1/FMA shape |
+| Hamkins echo / MirrorAgent | `evidence/results/hamkins_echo*.json`, `evidence/results/mirror_agent.json` | `evidence/figures/fig_hamkins_echo_*.png`, `evidence/figures/fig_mirror_agent.png` | `experiments/run_hamkins_echo*.py`, `experiments/run_mirror_agent.py` | Supports P2 positioning |
+| Diffraction / Delone | `evidence/results/diffraction_p4.json` | `evidence/figures/fig_diffraction_*.png` | `experiments/run_diffraction.py`, `experiments/run_diffraction_histogram.py` | Supports P4/P5 in current synthesis |
+| Epiplexity / MDL | `evidence/results/epiplexity_scan.json`, `evidence/results/cross_program_table.json` | `evidence/results/figures/*.png`, `evidence/figures/fig_cross_program_table.png` | `experiments/run_epiplexity_scan.py`, `experiments/run_cross_program_table.py` | Preliminary support for P3 |
+| Neural CA / AZ probes | `evidence/results/nca_*.json`, `evidence/results/az_*.json` | `evidence/figures/fig_nca_*.png`, `evidence/figures/fig_az_*.png` | `experiments/run_nca_*.py`, `experiments/run_az_*.py` | Active agent-ladder infrastructure |
+| Combo defect and rigor pass | `evidence/results/combo_defect.json`, `evidence/results/rigor_v1.json` | `evidence/figures/fig_combo_defect.png`, `evidence/figures/fig_A_paradox1.png` | `experiments/run_combo_defect.py`, `experiments/rigor_v1.py` | Supports corrected Combo-v2 story |
 
 ## Untracked Or Heavy Data
 
@@ -72,12 +72,12 @@ These directories are intentionally preserved even when ignored by git:
 
 | Path | Likely contents | Policy |
 |---|---|---|
-| `corpora/` | Pickled self-play corpora | Keep; add manifests before pruning |
+| `evidence/corpora/` | Pickled self-play corpora | Keep; add manifests before pruning |
 | `data/static_positions/` | Large static position bank | Keep; generated data substrate |
 | `artifacts/` | Experiment artifacts | Keep; inspect before tracking summaries |
 | `checkpoints/` | Model checkpoints | Keep; too large/noisy for normal commits |
 | `games/` | Raw game JSON trajectories | Keep; candidates for corpus manifests |
-| `results/charlies-artifacts/` | External/legacy result bundle | Keep; cite only after provenance check |
+| `evidence/results/charlies-artifacts/` | External/legacy result bundle | Keep; cite only after provenance check |
 
 ## Cleanup Queue
 

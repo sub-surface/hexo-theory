@@ -27,7 +27,7 @@ Candidate E of the 2026-07-05 search-regime handoff, resolved in both directions
    threshold -- the analogue of k = 8 on Z^2 (drawn, but only by non-pairing
    methods, cf. Zetters 1980). If HeXO is a draw, the proof cannot be a pairing.
 
-Output: results/pairing_bound.json, figures/fig_pairing_bound_k7_tiling.png
+Output: evidence/results/pairing_bound.json, evidence/figures/fig_pairing_bound_k7_tiling.png
 """
 from __future__ import annotations
 
@@ -188,7 +188,7 @@ def main() -> None:
     }
     print(json.dumps({k: v for k, v in results.items() if k != "k7_solution_line_phases"},
                      indent=2, default=str))
-    out = ROOT / "results" / "pairing_bound.json"
+    out = ROOT / "evidence" / "results" / "pairing_bound.json"
     out.write_text(json.dumps(results, indent=2, default=str))
     print(f"[saved] {out}")
 
@@ -213,7 +213,7 @@ def main() -> None:
                      "(every 7-window on every axis contains a full domino; "
                      "k=6 is provably impossible)")
         ax.axis("off")
-        figp = ROOT / "figures" / "fig_pairing_bound_k7_tiling.png"
+        figp = ROOT / "evidence" / "figures" / "fig_pairing_bound_k7_tiling.png"
         fig.savefig(figp, dpi=150, bbox_inches="tight")
         print(f"[saved] {figp}")
 

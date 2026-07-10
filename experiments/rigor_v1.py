@@ -1,7 +1,7 @@
 """
 Rigorous epiplexity experiment suite (ROADMAPv2 programmes A, B, D, E).
 
-Outputs results/rigor_v1.json.
+Outputs evidence/results/rigor_v1.json.
 Run:  python -m experiments.rigor_v1  [--quick]
 
 Four blocks:
@@ -10,7 +10,7 @@ Four blocks:
   E1   pareto    — (|P|, H_T) scatter from 3 reference corpora
   E2   matchups  — round-robin win rates + cross-agent H_T matrix
 
-Corpora are persisted under corpora/ so re-analysis is cheap.
+Corpora are persisted under evidence/corpora/ so re-analysis is cheap.
 """
 from __future__ import annotations
 import argparse, hashlib, json, math, random, time
@@ -27,8 +27,8 @@ from hexgo.epiplexity import (
 from hexgo.game import HexGame
 
 ROOT = Path(__file__).resolve().parent.parent
-RESULTS = ROOT / "results"
-CORPORA = ROOT / "corpora"
+RESULTS = ROOT / "evidence" / "results"
+CORPORA = ROOT / "evidence" / "corpora"
 RESULTS.mkdir(exist_ok=True)
 CORPORA.mkdir(exist_ok=True)
 
@@ -351,7 +351,7 @@ def block_matchups(quick: bool) -> dict:
             g.make(*mv); m += 1
         return g.winner  # 1, 2, or None
 
-    print(f"  matchups: {len(names)}x{len(names)} roster, {games_per*len(seeds)} games/pair")
+    print(f"  matchups: {len(names)}x{len(names)} roster, {games_per*len(seeds)} evidence/games/pair")
     for ai, a in enumerate(names):
         for bi, b in enumerate(names):
             if ai == bi: continue

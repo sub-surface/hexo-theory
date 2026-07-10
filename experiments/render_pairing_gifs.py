@@ -1,6 +1,6 @@
 """
 GIF replay: one representative game per distinct bot pairing of the Modal
-bake-off (results/modal_bakeoff_screen.json).
+bake-off (evidence/results/modal_bakeoff_screen.json).
 
 Game choice per pairing: the shortest decisive game if any exists (those are
 the interesting ones -- forks and conversions), else the first drawn opening.
@@ -8,7 +8,7 @@ Games are replayed locally: every bot is deterministic and openings are seeded
 LCG, so the local replay is move-for-move the Modal game; the recorded winner
 is asserted to match as a cross-platform determinism check.
 
-Output: figures/replays/<a>__vs__<b>.gif (+ a summary JSON of which seed/game
+Output: evidence/figures/replays/<a>__vs__<b>.gif (+ a summary JSON of which seed/game
 each GIF shows).
 """
 from __future__ import annotations
@@ -98,11 +98,11 @@ def render_gif(name_a: str, name_b: str, seed: int, a_black: bool,
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--quick", action="store_true", help="first 3 pairings only")
-    ap.add_argument("--source", default=str(ROOT / "results" / "modal_bakeoff_screen.json"))
+    ap.add_argument("--source", default=str(ROOT / "evidence" / "results" / "modal_bakeoff_screen.json"))
     args = ap.parse_args()
 
     data = json.loads(Path(args.source).read_text())
-    out_dir = ROOT / "figures" / "replays"
+    out_dir = ROOT / "evidence" / "figures" / "replays"
     out_dir.mkdir(parents=True, exist_ok=True)
     chosen = {}
 
@@ -126,7 +126,7 @@ def main() -> None:
         print(f"[gif] {out.name}  ({len(log)} placements, "
               + ("decisive" if decisive else "draw") + ")")
 
-    (ROOT / "results" / "pairing_gifs.json").write_text(json.dumps(chosen, indent=2))
+    (ROOT / "evidence" / "results" / "pairing_gifs.json").write_text(json.dumps(chosen, indent=2))
     print(f"[saved] {ROOT / 'results' / 'pairing_gifs.json'}")
 
 

@@ -35,7 +35,7 @@ CGT program:
 - `experiments/run_cgt_hackenbush.py` measures whether agents play in hot local
   games, whether heat decomposes into components, and whether Erdos-Selfridge
   potential tracks urgency.
-- `results/cgt_hackenbush.json` and `figures/fig_cgt_hackenbush_*.png` show the
+- `evidence/results/cgt_hackenbush.json` and `evidence/figures/fig_cgt_hackenbush_*.png` show the
   first empirical split: stronger agents play high-temperature moves, while
   potential and temperature are correlated but not identical.
 - `docs/ROADMAP.md` already frames the wider work through epiplexity, MDL, and
@@ -80,7 +80,7 @@ First experiment:
 
 - Build a toy evaluator for small finite live-line components.
 - Compare ordinary one-move sum choices with `+_2` choices.
-- Feed sampled HeXO positions from `results/cgt_hackenbush.json` through both
+- Feed sampled HeXO positions from `evidence/results/cgt_hackenbush.json` through both
   scoring rules and measure which model better predicts strong-agent moves.
 
 Expected falsifier: if ordinary one-component temperature predicts moves as well
@@ -135,8 +135,8 @@ Candidate sequences:
 First experiment:
 
 - Add `experiments/run_cgt_sequences.py`.
-- Output `results/cgt_sequences.json` and `results/cgt_sequences.csv`.
-- Plot `figures/fig_cgt_sequences.png` with per-agent trajectories.
+- Output `evidence/results/cgt_sequences.json` and `evidence/results/cgt_sequences.csv`.
+- Plot `evidence/figures/fig_cgt_sequences.png` with per-agent trajectories.
 
 Expected falsifier: if canonical motif counts grow linearly without stabilization
 or recurrence across all strong agents, the finite-substitution/Pisot story is
@@ -221,17 +221,17 @@ Keep the existing layout:
 
 - `engine/` for reusable theory primitives;
 - `experiments/run_*.py` for one reproducible experiment each;
-- `results/` for tracked JSON/CSV summaries;
-- `figures/` for tracked PNG outputs;
+- `evidence/results/` for tracked JSON/CSV summaries;
+- `evidence/figures/` for tracked PNG outputs;
 - `docs/theory/` for synthesis notes;
-- `papers/` for source PDFs;
-- `corpora/`, `data/`, `artifacts/`, `checkpoints/` for generated heavy data.
+- `sources/` for source PDFs;
+- `evidence/corpora/`, `data/`, `artifacts/`, `checkpoints/` for generated heavy data.
 
 Add only indexes and manifests at first:
 
 - `docs/ARTIFACTS.md`: human-readable provenance index.
-- `results/README.md`: result naming and regeneration policy.
-- `figures/README.md`: figure naming and source-result mapping.
+- `evidence/results/README.md`: result naming and regeneration policy.
+- `evidence/figures/README.md`: figure naming and source-result mapping.
 
 No moving until those docs make it obvious what is duplicate, stale, or orphaned.
 
@@ -251,8 +251,8 @@ Recommended additions:
 For every experiment we keep:
 
 - it has a `--quick` mode;
-- it writes one JSON/CSV result under `results/`;
-- it writes one or more PNGs under `figures/`;
+- it writes one JSON/CSV result under `evidence/results/`;
+- it writes one or more PNGs under `evidence/figures/`;
 - the JSON contains config, seed, git commit if available, wall time, and summary;
 - the script can regenerate the named outputs without hidden notebook state.
 

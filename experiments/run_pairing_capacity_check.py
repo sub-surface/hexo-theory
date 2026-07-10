@@ -35,7 +35,7 @@ greedy, and randomized multi-front) over many trials and many turns, and
 report whether the defender is ever defeated (any window reaches 7/7
 attacker-controlled).
 
-Output: results/pairing_capacity_check.json
+Output: evidence/results/pairing_capacity_check.json
 """
 from __future__ import annotations
 
@@ -465,7 +465,7 @@ def main():
                  "2 for the theory this stress-tests."),
     }
 
-    out = ROOT / "results" / "pairing_capacity_check.json"
+    out = ROOT / "evidence" / "results" / "pairing_capacity_check.json"
     out.write_text(json.dumps(results, indent=2, default=str))
     print(json.dumps({k: (v if k == "conclusion" else
                            {kk: vv for kk, vv in v.items() if kk not in ("log", "trials")})

@@ -11,7 +11,7 @@ Runs three matchups with the `harness.play_one` helper:
     az_policy  vs  ca_combo_v2
     ca_combo_v2 vs az_policy
 
-Saves n_games, wins_black, wins_white, unfinished to results/az_policy_eval.json
+Saves n_games, wins_black, wins_white, unfinished to evidence/results/az_policy_eval.json
 and produces a small bar chart.
 
 Usage:
@@ -103,8 +103,8 @@ def main() -> None:
         print(f"B={r['wins_black']:3d} W={r['wins_white']:3d} unf={r['unfinished']:3d}  "
               f"pB={pB:.2f}  ({r['wall_time']:.1f}s)")
 
-    RESULTS_JSON = ROOT / "results" / "az_policy_eval.json"
-    FIG = ROOT / "figures" / "fig_az_policy_eval.png"
+    RESULTS_JSON = ROOT / "evidence" / "results" / "az_policy_eval.json"
+    FIG = ROOT / "evidence" / "figures" / "fig_az_policy_eval.png"
 
     out["_args"] = vars(args)
     out["_wall_time"] = sum(v.get("wall_time", 0) for k, v in out.items() if isinstance(v, dict) and "wall_time" in v)

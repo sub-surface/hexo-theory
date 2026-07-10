@@ -3,7 +3,7 @@
 Combines two independent self-play datasets on a single (strength, p_B)
 axis:
 
-    * our side — results/fma_curve.json, 5 rungs of the ladder {random,
+    * our side — evidence/results/fma_curve.json, 5 rungs of the ladder {random,
       greedy, fork_aware, combo, ca_combo_v2}, n=200 games each on the
       infinite hex board with WIN_LENGTH=6 and the 1-2-2 rule.
     * charlie's side — tournament_results.pt diagonals {local_random,
@@ -24,8 +24,8 @@ opponent's greedy reply latches onto. The gap closes once the policy
 can see one ply ahead.
 
 Output:
-    results/fma_inversion_combined.json
-    figures/fig_fma_inversion_panel.png
+    evidence/results/fma_inversion_combined.json
+    evidence/figures/fig_fma_inversion_panel.png
 """
 from __future__ import annotations
 
@@ -42,7 +42,7 @@ import torch
 HERE = Path(__file__).resolve().parents[1]
 # Charlie's artifacts live in the main checkout (not worktree-local).
 MAIN_CHECKOUT = Path("C:/Users/Leon/Desktop/Psychograph/hexo-theory")
-OURS_JSON = HERE / "results" / "fma_curve.json"
+OURS_JSON = HERE / "evidence" / "results" / "fma_curve.json"
 CHARLIE_PT = (
     MAIN_CHECKOUT
     / "results"
@@ -50,8 +50,8 @@ CHARLIE_PT = (
     / "checkpoints"
     / "tournament_results.pt"
 )
-OUT_JSON = HERE / "results" / "fma_inversion_combined.json"
-OUT_FIG = HERE / "figures" / "fig_fma_inversion_panel.png"
+OUT_JSON = HERE / "evidence" / "results" / "fma_inversion_combined.json"
+OUT_FIG = HERE / "evidence" / "figures" / "fig_fma_inversion_panel.png"
 
 
 def wilson(successes: int, n: int, z: float = 1.96) -> tuple[float, float, float]:
