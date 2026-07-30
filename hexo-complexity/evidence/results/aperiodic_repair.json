@@ -1,0 +1,581 @@
+{
+  "experiment": "aperiodic_repair",
+  "parameters": {
+    "alpha": 0.47140452079103173,
+    "beta": 0.21650635094610965,
+    "phase": 0.14285714285714285,
+    "directional_steps": {
+      "q": 0.47140452079103173,
+      "r": 0.21650635094610965,
+      "q-r diagonal": 0.2548981698449221
+    },
+    "quick": false
+  },
+  "analytic_claims": {
+    "stable_chamber": "max(|alpha|, |beta|, |alpha-beta|) < 1/2",
+    "six_run_free_chamber": "min(|alpha|, |beta|, |alpha-beta|) > 1/5",
+    "aperiodicity_condition": "1, alpha, beta rationally independent",
+    "pure_point_frequencies": "odd m multiples of (alpha/2, beta/2) modulo Z^2",
+    "directional_factor_complexity_bound": "p(n) <= 2n from the 2n phase-partition boundaries",
+    "almost_periods": "translations are ranked by |alpha*dq + beta*dr - 2k|; this is also their mismatch density",
+    "erasure_repair": "every deleted subset can be restored in arbitrary order without death or a six-run",
+    "strategic_status": "exact geometry and cooperative repair witness; not an adversarial winning strategy"
+  },
+  "finite_checks": {
+    "radius_12_cells": 469,
+    "radius_12_stable": true,
+    "radius_12_black_win": false,
+    "radius_12_white_win": false,
+    "period_candidates_radius_24_shifts_10": [
+      [
+        7,
+        -6
+      ]
+    ],
+    "best_approximate_periods_shifts_40": [
+      {
+        "shift": [
+          -11,
+          -13
+        ],
+        "hex_distance": 24,
+        "phase_shift": -8.000032291000775,
+        "nearest_even_integer": -8,
+        "residual": 3.2291000774620215e-05,
+        "predicted_mismatch_density": 3.2291000774620215e-05
+      },
+      {
+        "shift": [
+          -22,
+          -26
+        ],
+        "hex_distance": 48,
+        "phase_shift": -16.00006458200155,
+        "nearest_even_integer": -16,
+        "residual": 6.458200154924043e-05,
+        "predicted_mismatch_density": 6.458200154924043e-05
+      },
+      {
+        "shift": [
+          -33,
+          -39
+        ],
+        "hex_distance": 72,
+        "phase_shift": -24.000096873002324,
+        "nearest_even_integer": -24,
+        "residual": 9.687300232386065e-05,
+        "predicted_mismatch_density": 9.687300232386065e-05
+      },
+      {
+        "shift": [
+          -15,
+          -32
+        ],
+        "hex_distance": 47,
+        "phase_shift": -13.999271042140986,
+        "nearest_even_integer": -14,
+        "residual": 0.0007289578590139456,
+        "predicted_mismatch_density": 0.0007289578590139456
+      },
+      {
+        "shift": [
+          -4,
+          -19
+        ],
+        "hex_distance": 23,
+        "phase_shift": -5.9992387511402105,
+        "nearest_even_integer": -6,
+        "residual": 0.000761248859789454,
+        "predicted_mismatch_density": 0.000761248859789454
+      },
+      {
+        "shift": [
+          -7,
+          6
+        ],
+        "hex_distance": 7,
+        "phase_shift": -2.000793539860564,
+        "nearest_even_integer": -2,
+        "residual": 0.0007935398605640742,
+        "predicted_mismatch_density": 0.0007935398605640742
+      },
+      {
+        "shift": [
+          -18,
+          -7
+        ],
+        "hex_distance": 25,
+        "phase_shift": -10.00082583086134,
+        "nearest_even_integer": -10,
+        "residual": 0.0008258308613395826,
+        "predicted_mismatch_density": 0.0008258308613395826
+      },
+      {
+        "shift": [
+          -29,
+          -20
+        ],
+        "hex_distance": 49,
+        "phase_shift": -18.000858121862112,
+        "nearest_even_integer": -18,
+        "residual": 0.0008581218621124265,
+        "predicted_mismatch_density": 0.0008581218621124265
+      },
+      {
+        "shift": [
+          -40,
+          -33
+        ],
+        "hex_distance": 73,
+        "phase_shift": -26.000890412862887,
+        "nearest_even_integer": -26,
+        "residual": 0.0008904128628870467,
+        "predicted_mismatch_density": 0.0008904128628870467
+      },
+      {
+        "shift": [
+          -8,
+          -38
+        ],
+        "hex_distance": 46,
+        "phase_shift": -11.998477502280421,
+        "nearest_even_integer": -12,
+        "residual": 0.001522497719578908,
+        "predicted_mismatch_density": 0.001522497719578908
+      },
+      {
+        "shift": [
+          -3,
+          25
+        ],
+        "hex_distance": 25,
+        "phase_shift": 3.9984452112796465,
+        "nearest_even_integer": 4,
+        "residual": 0.0015547887203535282,
+        "predicted_mismatch_density": 0.0015547887203535282
+      },
+      {
+        "shift": [
+          -14,
+          12
+        ],
+        "hex_distance": 14,
+        "phase_shift": -4.001587079721128,
+        "nearest_even_integer": -4,
+        "residual": 0.0015870797211281484,
+        "predicted_mismatch_density": 0.0015870797211281484
+      }
+    ],
+    "factor_complexity": {
+      "q": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        40,
+        42,
+        44,
+        46,
+        48,
+        50,
+        52,
+        54,
+        56,
+        58,
+        60,
+        62,
+        64
+      ],
+      "r": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        40,
+        42,
+        44,
+        46,
+        48,
+        50,
+        52,
+        54,
+        56,
+        58,
+        60,
+        62,
+        64
+      ],
+      "q-r diagonal": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        40,
+        42,
+        44,
+        46,
+        48,
+        50,
+        52,
+        54,
+        56,
+        58,
+        60,
+        62,
+        64
+      ]
+    },
+    "factor_complexity_equals_2n": true
+  },
+  "erasure_repair_audit": [
+    {
+      "deleted": 1,
+      "trials": 24,
+      "failed_repairs": 0,
+      "deaths_during_repair": 0,
+      "wins_during_repair": 0
+    },
+    {
+      "deleted": 2,
+      "trials": 24,
+      "failed_repairs": 0,
+      "deaths_during_repair": 0,
+      "wins_during_repair": 0
+    },
+    {
+      "deleted": 4,
+      "trials": 24,
+      "failed_repairs": 0,
+      "deaths_during_repair": 0,
+      "wins_during_repair": 0
+    },
+    {
+      "deleted": 8,
+      "trials": 24,
+      "failed_repairs": 0,
+      "deaths_during_repair": 0,
+      "wins_during_repair": 0
+    },
+    {
+      "deleted": 16,
+      "trials": 24,
+      "failed_repairs": 0,
+      "deaths_during_repair": 0,
+      "wins_during_repair": 0
+    },
+    {
+      "deleted": 32,
+      "trials": 24,
+      "failed_repairs": 0,
+      "deaths_during_repair": 0,
+      "wins_during_repair": 0
+    },
+    {
+      "deleted": 64,
+      "trials": 24,
+      "failed_repairs": 0,
+      "deaths_during_repair": 0,
+      "wins_during_repair": 0
+    },
+    {
+      "deleted": 128,
+      "trials": 24,
+      "failed_repairs": 0,
+      "deaths_during_repair": 0,
+      "wins_during_repair": 0
+    }
+  ],
+  "hostile_single_site_invasion": {
+    "phase_contexts": 38,
+    "classes": [
+      {
+        "invader_died": true,
+        "collateral_target_deaths": 2,
+        "target_color_repair_actions": 3,
+        "phase_contexts": 8,
+        "phase_measure": 0.1535672755952499
+      },
+      {
+        "invader_died": true,
+        "collateral_target_deaths": 3,
+        "target_color_repair_actions": 4,
+        "phase_contexts": 16,
+        "phase_measure": 0.3938273431328425
+      },
+      {
+        "invader_died": true,
+        "collateral_target_deaths": 4,
+        "target_color_repair_actions": 5,
+        "phase_contexts": 2,
+        "phase_measure": 0.019592679379688338
+      },
+      {
+        "invader_died": false,
+        "collateral_target_deaths": 0,
+        "target_color_repair_actions": null,
+        "phase_contexts": 8,
+        "phase_measure": 0.11438191683587295
+      },
+      {
+        "invader_died": false,
+        "collateral_target_deaths": 1,
+        "target_color_repair_actions": null,
+        "phase_contexts": 4,
+        "phase_measure": 0.31863078505634623
+      }
+    ],
+    "invader_rejection_measure": 0.5669872981077808,
+    "closed_form_rejection_measure": "1 - 2 beta = 1 - sqrt(3)/4",
+    "closed_form_rejection_value": 0.5669872981077807,
+    "repairable_measure": 0.5669872981077808,
+    "all_rejected_invasions_target_repairable": true,
+    "all_surviving_invasions_frozen_under_target_only_refill": true
+  },
+  "sample_replay_diagnostics": {
+    "games": 6,
+    "placements": 355,
+    "radius_2_motifs": 189,
+    "motif_reuse_fraction": 0.46760563380281694,
+    "most_common_motif_multiplicities": [
+      30,
+      29,
+      29,
+      29,
+      10,
+      6,
+      6,
+      6,
+      5,
+      5,
+      4,
+      4
+    ],
+    "death_tokens": 195,
+    "death_events": 126,
+    "same_owner_repaired": 9,
+    "opponent_converted": 85,
+    "never_reoccupied": 101,
+    "same_owner_repair_fraction": 0.046153846153846156,
+    "conversion_fraction": 0.4358974358974359,
+    "median_reoccupation_lag": 1.0,
+    "death_events_with_symmetry_normalized_local_return_within_horizon": 63,
+    "symmetry_normalized_local_return_fraction": 0.5,
+    "immediate_symmetry_normalized_geometry_returns": 6,
+    "median_symmetry_normalized_local_return_lag": 3.0,
+    "local_horizon": 12,
+    "same_turn_suicide_retries": 0
+  },
+  "sanctuary_fit_against_color_shuffle": {
+    "method": "best of 12 D6 orientations, 128 phases, and global color swap on final live stones",
+    "status": "exploratory stored-game check, not an optimal-play sample",
+    "rows": [
+      {
+        "black_agent": "random",
+        "white_agent": "random",
+        "live_stones": 94,
+        "actual_fit": 0.6276595744680851,
+        "shuffle_mean": 0.6343085106382979,
+        "shuffle_sd": 0.02433910268314246,
+        "excess_fit": -0.0066489361702127825,
+        "z_score": -0.2731791823540771
+      },
+      {
+        "black_agent": "line",
+        "white_agent": "line",
+        "live_stones": 11,
+        "actual_fit": 0.8181818181818182,
+        "shuffle_mean": 0.8267045454545455,
+        "shuffle_sd": 0.047452537183210394,
+        "excess_fit": -0.008522727272727293,
+        "z_score": -0.1796053020267754
+      },
+      {
+        "black_agent": "hunter",
+        "white_agent": "hunter",
+        "live_stones": 15,
+        "actual_fit": 0.7333333333333334,
+        "shuffle_mean": 0.79375,
+        "shuffle_sd": 0.05098849271050172,
+        "excess_fit": -0.06041666666666656,
+        "z_score": -1.1849078773458819
+      },
+      {
+        "black_agent": "hybrid",
+        "white_agent": "hybrid",
+        "live_stones": 12,
+        "actual_fit": 0.9166666666666666,
+        "shuffle_mean": 0.8177083333333334,
+        "shuffle_sd": 0.05681620893039434,
+        "excess_fit": 0.09895833333333326,
+        "z_score": 1.7417271443536004
+      },
+      {
+        "black_agent": "hybrid",
+        "white_agent": "line",
+        "live_stones": 11,
+        "actual_fit": 0.8181818181818182,
+        "shuffle_mean": 0.8465909090909092,
+        "shuffle_sd": 0.06198131883315744,
+        "excess_fit": -0.02840909090909094,
+        "z_score": -0.45834924851410636
+      },
+      {
+        "black_agent": "line",
+        "white_agent": "hybrid",
+        "live_stones": 17,
+        "actual_fit": 0.7647058823529411,
+        "shuffle_mean": 0.8051470588235294,
+        "shuffle_sd": 0.04973437227378191,
+        "excess_fit": -0.040441176470588314,
+        "z_score": -0.8131433980500319
+      }
+    ]
+  },
+  "aperiodic_growth_game": {
+    "placements": 120,
+    "final_stones": 120,
+    "deaths": 0,
+    "winner": null
+  },
+  "diffraction_peaks": [
+    {
+      "frequency_q": 0.234375,
+      "frequency_r": 0.109375,
+      "intensity": 0.34387554915700175
+    },
+    {
+      "frequency_q": -0.234375,
+      "frequency_r": -0.109375,
+      "intensity": 0.34387554915700175
+    },
+    {
+      "frequency_q": 0.2421875,
+      "frequency_r": 0.109375,
+      "intensity": 0.014446411865610785
+    },
+    {
+      "frequency_q": -0.2421875,
+      "frequency_r": -0.109375,
+      "intensity": 0.014446411865610782
+    },
+    {
+      "frequency_q": 0.1796875,
+      "frequency_r": -0.4609375,
+      "intensity": 0.011495640528024587
+    },
+    {
+      "frequency_q": -0.1796875,
+      "frequency_r": 0.4609375,
+      "intensity": 0.011495640528024584
+    },
+    {
+      "frequency_q": 0.2890625,
+      "frequency_r": -0.328125,
+      "intensity": 0.009912230230289799
+    },
+    {
+      "frequency_q": -0.2890625,
+      "frequency_r": 0.328125,
+      "intensity": 0.009912230230289799
+    },
+    {
+      "frequency_q": 0.234375,
+      "frequency_r": 0.1015625,
+      "intensity": 0.009686128619206997
+    },
+    {
+      "frequency_q": -0.234375,
+      "frequency_r": -0.1015625,
+      "intensity": 0.009686128619206993
+    },
+    {
+      "frequency_q": -0.296875,
+      "frequency_r": 0.328125,
+      "intensity": 0.009211824869302542
+    },
+    {
+      "frequency_q": 0.296875,
+      "frequency_r": -0.328125,
+      "intensity": 0.009211824869302542
+    },
+    {
+      "frequency_q": 0.3515625,
+      "frequency_r": 0.2421875,
+      "intensity": 0.007335190779119879
+    },
+    {
+      "frequency_q": -0.3515625,
+      "frequency_r": -0.2421875,
+      "intensity": 0.007335190779119876
+    },
+    {
+      "frequency_q": -0.2265625,
+      "frequency_r": -0.109375,
+      "intensity": 0.007165912988198249
+    },
+    {
+      "frequency_q": 0.2265625,
+      "frequency_r": 0.109375,
+      "intensity": 0.007165912988198246
+    }
+  ],
+  "artifacts": {
+    "figure": "evidence\\figures\\fig_aperiodic_repair.png",
+    "capture_gif": {
+      "path": "evidence\\figures\\gif_death_hexo_capture_loop.gif",
+      "frames": 52,
+      "bytes": 399632
+    },
+    "aperiodic_growth_gif": {
+      "path": "evidence\\figures\\gif_death_hexo_aperiodic_growth.gif",
+      "frames": 52,
+      "bytes": 585348
+    }
+  },
+  "wall_seconds": 45.69269379999605
+}
