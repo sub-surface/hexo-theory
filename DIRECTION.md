@@ -237,7 +237,17 @@ Full detail in SPEC.md's corrected §5/§6. The concrete fix is this ranked queu
    hedge if the Pisot conjecture doesn't survive item 1. *Still open, and now
    the natural next theory target* — the pairing-threshold and τ-LP theorems
    (verdicts §C, §E) are the same kind of bounded provable result and show the
-   machinery is in reach.
+   machinery is in reach. **Started 2026-07-19, revised 2026-07-20 after
+   external review** (a real candidate-generator completeness bug and two
+   overclaims found and fixed — see the note's Changelog): forcing-fragment
+   proof solver built and shaken down (`competition/proof_solver.py`,
+   `experiments/run_proof_solver.py`) — a one-sided forcing certifier, not a
+   finished proof system. Solid: obligation-graph/vertex-cover exactness,
+   the √3 zone certificate (proved, not just tested), hexanacci vs
+   pentanacci placement. Still open, on multiple fronts (§5 of the note):
+   the re-arming wire, a verified variable/clause gadget, whole-graph
+   isolation, a polynomial 3-CNF encoding, and both reduction directions.
+   See [docs/theory/2026-07-19-proof-solver-and-hexanacci.md](docs/theory/2026-07-19-proof-solver-and-hexanacci.md).
 
 The 2026-07-06 pass cleared items 1–3; item 4 (plus the two β/λ follow-ups
 above) is the live frontier. Compute plan below still applies for the N→10^5

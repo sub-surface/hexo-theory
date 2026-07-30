@@ -1,0 +1,291 @@
+{
+  "kbonacci": {
+    "pentanacci": {
+      "order": 5,
+      "constant": 1.965948236645486,
+      "max_conjugate_modulus": 0.871047941737176,
+      "is_pisot": true
+    },
+    "hexanacci": {
+      "order": 6,
+      "constant": 1.9835828434243288,
+      "max_conjugate_modulus": 0.9062149638126795,
+      "is_pisot": true
+    },
+    "identification": {
+      "pentanacci_object": "two-colour no-6-run line shift -- corpus capacity, Line A (evidence/results/line_automaton.json)",
+      "hexanacci_object": "one-colour Maker-live line shift (binary words avoiding 1^6, f(n)=sum f(n-1..n-6)) -- the proof solver's per-line automaton, Line B",
+      "note": "WIN_LENGTH=6 puts BOTH constants in play at different objects; both are Pisot (k-bonacci constants have all conjugates in the open unit disk). The 2026-07-08 doc's 3-axis coupled automaton remains a third, uncomputed object."
+    },
+    "one_colour_live_fraction": {
+      "6": 0.984375,
+      "12": 0.9375,
+      "18": 0.89227294921875,
+      "24": 0.8492193222045898,
+      "30": 0.8082430027425289
+    }
+  },
+  "battery": [
+    {
+      "name": "open4_win_now",
+      "depth": 1,
+      "expected": "proven",
+      "got": "proven",
+      "pass": true,
+      "mechanism": "immediate_win_now",
+      "or_nodes": 1,
+      "root_phi": null,
+      "cap_hits": 0,
+      "line": [
+        [
+          "A-win",
+          "((-2, 0), (-1, 0))"
+        ]
+      ],
+      "checks": {},
+      "note": "open-4 with the move completes: deficit-2 window, 2 stones"
+    },
+    {
+      "name": "broken4_win_now",
+      "depth": 1,
+      "expected": "proven",
+      "got": "proven",
+      "pass": true,
+      "mechanism": "immediate_win_now",
+      "or_nodes": 1,
+      "root_phi": null,
+      "cap_hits": 0,
+      "line": [
+        [
+          "A-win",
+          "((-1, 0), (3, 0))"
+        ]
+      ],
+      "checks": {},
+      "note": "gap-4: window [-1..4] has 4 own, empties {(-1,0),(3,0)}"
+    },
+    {
+      "name": "double_open3_depth2",
+      "depth": 2,
+      "expected": "proven",
+      "got": "proven",
+      "pass": true,
+      "mechanism": "single_pair_tau_gt2",
+      "or_nodes": 1,
+      "root_phi": null,
+      "cap_hits": 0,
+      "line": [
+        [
+          "A",
+          "((-2, 8), (-1, 0))"
+        ],
+        [
+          "D",
+          "cannot-cover: tau>2"
+        ]
+      ],
+      "checks": {
+        "pass": true,
+        "chosen_pair_exact_tau": 3,
+        "alt_symmetric_pair_exact_tau": 4
+      },
+      "note": "one pair pushes exact tau>2 (solver's chosen pair varies by set iteration order -- checked, not assumed, below; a hand-picked symmetric pair (3,0)+(3,8) reaches exact tau=4, two disjoint min-vertex-cover-2 paths, but that is not necessarily the pair the search finds). The SAT AND-gate seed."
+    },
+    {
+      "name": "single_open3_rail",
+      "depth": 3,
+      "expected": "refuted_fragment",
+      "got": "refuted_fragment",
+      "pass": true,
+      "mechanism": null,
+      "or_nodes": 30,
+      "root_phi": null,
+      "cap_hits": 0,
+      "line": [],
+      "checks": {
+        "pass": true,
+        "n_tau2_candidates": 17,
+        "n_with_unique_reply": 3,
+        "example_unique_reply_pair": [
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      },
+      "note": "at least one forcing pair pins the defender to a UNIQUE reply (the wire step); the fragment still refutes overall (no cap hits, so the refutation is over the full uncapped candidate set at this depth, not an artifact of truncation)"
+    },
+    {
+      "name": "radius2_zone_cert",
+      "depth": 4,
+      "expected": "refuted_cert",
+      "got": "refuted_cert",
+      "pass": true,
+      "mechanism": null,
+      "or_nodes": 0,
+      "root_phi": 0.0,
+      "cap_hits": 0,
+      "line": [],
+      "checks": {},
+      "note": "no 6-window fits in a radius-2 ball: Phi=0<1/9, hard refutation"
+    },
+    {
+      "name": "fork_plus_remote_block_regression",
+      "depth": 2,
+      "expected": "proven",
+      "got": "proven",
+      "pass": true,
+      "mechanism": "single_pair_tau_gt2",
+      "or_nodes": 1,
+      "root_phi": null,
+      "cap_hits": 0,
+      "line": [
+        [
+          "A",
+          "((0, 0), (103, 0))"
+        ],
+        [
+          "D",
+          "cannot-cover: tau>2"
+        ]
+      ],
+      "checks": {
+        "pass": true,
+        "chosen_pair": [
+          [
+            0,
+            0
+          ],
+          [
+            103,
+            0
+          ]
+        ]
+      },
+      "note": "reviewer counterexample, 2026-07-20: triple fork at (0,0) (exact tau=3 from ONE stone) + defender's single remaining win-now window {(103,0),(104,0)} blockable by either cell; was refuted_fragment before the _forcing_pairs fix"
+    }
+  ],
+  "battery_all_pass": true,
+  "cert_selftest": {
+    "n_samples": 400,
+    "root_fires": 76,
+    "false_prunes": 0,
+    "note": "cross-checked against the depth-3 fragment only -- the certificate claims more (all strategies, any depth); the analytic proof is in the theory note, this is the smoke test"
+  },
+  "mined": {
+    "n_positions": 111,
+    "depth": 3,
+    "proven": 153,
+    "refuted_fragment": 65,
+    "unknown": 4,
+    "or_nodes": 1293,
+    "pair_naive": 222928,
+    "pair_generated": 22921,
+    "pair_forcing": 6500,
+    "cap_hits": 15,
+    "defender_counterwins": 1676,
+    "proven_examples": [
+      {
+        "position_index": 1,
+        "attacker": 1,
+        "n_stones": 16,
+        "mechanism": "multi_turn_chain",
+        "line": [
+          [
+            "A",
+            "((-4, 1), (-3, 0))"
+          ],
+          [
+            "D",
+            "((-6, 1), (-3, -1))"
+          ],
+          [
+            "A",
+            "((-3, 3), (-2, -1))"
+          ],
+          [
+            "D",
+            "cannot-cover: tau>2"
+          ]
+        ]
+      },
+      {
+        "position_index": 3,
+        "attacker": 1,
+        "n_stones": 24,
+        "mechanism": "single_pair_tau_gt2",
+        "line": [
+          [
+            "A",
+            "((-3, 3), (-2, 3))"
+          ],
+          [
+            "D",
+            "cannot-cover: tau>2"
+          ]
+        ]
+      },
+      {
+        "position_index": 4,
+        "attacker": 1,
+        "n_stones": 28,
+        "mechanism": "single_pair_tau_gt2",
+        "line": [
+          [
+            "A",
+            "((-7, 3), (-3, -1))"
+          ],
+          [
+            "D",
+            "cannot-cover: tau>2"
+          ]
+        ]
+      },
+      {
+        "position_index": 4,
+        "attacker": 2,
+        "n_stones": 28,
+        "mechanism": "immediate_win_now",
+        "line": [
+          [
+            "A-win",
+            "((-4, -1), (-3, -1))"
+          ]
+        ]
+      },
+      {
+        "position_index": 5,
+        "attacker": 2,
+        "n_stones": 32,
+        "mechanism": "immediate_win_now",
+        "line": [
+          [
+            "A-win",
+            "((-4, -1), (-3, -1))"
+          ]
+        ]
+      }
+    ],
+    "proven_mechanism": {
+      "immediate_win_now": 115,
+      "single_pair_tau_gt2": 18,
+      "multi_turn_chain": 20
+    },
+    "cull": {
+      "naive_pairs_per_or_node": 172.41144624903325,
+      "generated_pairs_per_or_node": 17.726991492652747,
+      "forcing_pairs_per_or_node": 5.02706883217324,
+      "generated_over_naive": 0.10281795019019593,
+      "forcing_over_naive": 0.029157396109954783,
+      "note": "'naive' = C(arena.candidates,2), i.e. all pairs from cells ADJACENT to an existing stone (arena.py's own move generator baseline) -- not literally every legal cell on the infinite board. The ratio below is a reduction relative to that baseline, not an absolute search-space bound.",
+      "unknown_fraction_of_negative": 0.057971014492753624
+    }
+  },
+  "seed": 0,
+  "quick": false,
+  "wall_time_s": 6.5
+}
