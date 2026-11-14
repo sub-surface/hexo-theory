@@ -72,19 +72,27 @@ A sublattice Λ meets every u-line iff u generates ℤ²/Λ. So ℤ²/Λ ≅ ℤ
 - **R3:** n must be odd. Mod 2, the three axes are the three non-zero points of F₂² ≅ F₄ (2 is inert in ℤ[ω]), and no character to F₂ is non-zero on all three.
   Equivalently, 6 is not a norm a² − ab + b².
 - **R6:** gcd(n, 30) = 1.
-- **Best lattice blocker for k = 6:** density 1/5 (R3); none below density 1 (R6).
+- **Best lattice blocker for k = 6:** density 1/5 (R3); none below density 1 (R6). The lattice is *not* the best periodic blocker; see below.
 
 **Exact MILP over every period lattice** (Hermite normal form, index ≤ N), minimum hitting set of all k-windows:
 
 | reading, k | best density found | at index | search N |
 |---|---|---|---|
-| R3, k = 5 | 1/5 | 5 | see JSON |
-| R3, **k = 6** | **1/5** | 5 | see JSON |
-| R3, k = 7 | 1/7 | 7 | |
-| R6, k = 6 | 4/15 (quick, N = 30) | 30 | see JSON |
+| R3, k = 5 | 1/5 (= floor) | 5 | 30 |
+| R3, **k = 6** | **7/36 ≈ 0.194** | 36 (Λ = 6ℤ²) | 60 |
+| R3, k = 7 | 1/7 (= floor) | 7 | 30 |
+| R6, k = 5 | 1/3 | 12 | 30 |
+| R6, k = 6 | see JSON | | 60 |
 
-Under R3 at k = 6, nothing periodic beats the lattice up to the search bound.
-🔴 Open: is inf density = 1/5, or can large-period or aperiodic sets get into (1/6, 1/5)?
+**The lattice is not optimal 🟢.** On the 6×6 torus, 7 stones block every 6-window. This was verified independently on the plane: 19,200 windows, 0 uncovered.
+
+- The cells are (q, r) = (0,5), (1,3), (2,5), (3,0), (3,2), (4,4), (5,1).
+- Each of the three directions has exactly one doubled line.
+- A second construction explains it: take the best permutation in Fig. B, which is exact on rows and columns and hits 5 of 6 anti-diagonals, and add one stone on the missed anti-diagonal.
+- So Hall–Paige costs exactly **one stone per 6×6 period**: 7/36 against the unattainable 6/36.
+
+Known bounds: 1/6 < inf over periodic blockers ≤ 7/36.
+🔴 Open: does any period beyond the search bound get closer to 1/6? An aperiodic set might approach 1/6 in the limit.
 
 ## 4. Tiling draws: k ≥ 11 is a draw under 1-2-2 🟢
 

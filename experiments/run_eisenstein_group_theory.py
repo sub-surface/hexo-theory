@@ -745,7 +745,8 @@ def fig_hall_paige(d):
     _torus_draw(ax, 6, perm, "B  k = 6: impossible (Hall–Paige)", conflict={"hit": hit, "miss": miss})
     ax.text(0.0, -0.06,
             "Best possible: rows and columns exact, but only\n5 of 6 anti-diagonals (red: clash, white: missed).\n"
-            "Σ(q+r) = 2·(0+…+5) ≡ 0, but 0+…+5 ≡ 3 (mod 6).",
+            "Σ(q+r) = 2·(0+…+5) ≡ 0, but 0+…+5 ≡ 3 (mod 6).\n"
+            "A 7th stone on the white line blocks everything: density 7/36 < 1/5.",
             transform=ax.transAxes, fontsize=8, color=INK2, va="top")
     ax = fig.add_subplot(gs[2])
     for v, col, lab in (("R3", BLUE, "R3 hex rooks (the rule)"), ("R6", ORANGE, "R6 hex queens (+ corner lines)")):
@@ -812,7 +813,7 @@ def fig_blocking(d):
     ax.axhline(1 / 5, color=BLUE, lw=0.8, ls=(0, (1, 2)))
     ax.text(ns[-1], 1 / 6 - 0.006, "counting floor 1/6 — unattainable (Hall–Paige)", ha="right", va="top",
             fontsize=8, color=INK2)
-    ax.text(ns[-1], 1 / 5 + 0.005, "1/5", ha="right", va="bottom", fontsize=8, color=BLUE)
+    ax.text(ns[-1], 1 / 5 + 0.005, "1/5 = best sublattice", ha="right", va="bottom", fontsize=8, color=BLUE)
     ax.set_ylim(0.15, 0.42)
     ax.set_xlabel("period index N = $[\\mathbb{Z}[\\omega]:\\Lambda]$")
     ax.set_ylabel("least density hitting every 6-window")
@@ -826,7 +827,8 @@ def fig_blocking(d):
     S = periodic_cells(tuple(best["lattice"]), best["cells"], region)
     draw_stones(ax, S, BLUE, size=0.33)
     ax.set_title(f"C  An optimal R3 blocker (density {best['count']}/{best['index']})")
-    ax.text(0.0, -0.04, "Every six-cell window on all three axes\ncontains a blue cell.",
+    ax.text(0.0, -0.04, "Every six-cell window on all three axes\ncontains a blue cell. Not a lattice: 7 stones\n"
+            "per 6×6 period, one doubled line per direction.",
             transform=ax.transAxes, fontsize=8, color=INK2, va="top")
     finish_board(ax, region)
     return fig
