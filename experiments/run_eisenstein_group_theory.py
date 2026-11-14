@@ -276,10 +276,10 @@ def blocking_milp(args):
 
 
 def run_blocking(quick, pool):
-    N = 30 if quick else 60
     out = {}
     for v in ("R3", "R6"):
         for k in (5, 6, 7):
+            N = 60 if (k == 6 and not quick) else 30   # k = 5, 7 are sanity checks
             jobs = [(L, k, v, 20.0) for n in range(1, N + 1) for L in hnf_lattices(n)]
             best_by_index = {}
             best = (2.0, None)
