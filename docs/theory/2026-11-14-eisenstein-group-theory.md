@@ -82,7 +82,9 @@ A sublattice Λ meets every u-line iff u generates ℤ²/Λ. So ℤ²/Λ ≅ ℤ
 | R3, **k = 6** | **7/36 ≈ 0.194** | 36 (Λ = 6ℤ²) | 60 |
 | R3, k = 7 | 1/7 (= floor) | 7 | 30 |
 | R6, k = 5 | 1/3 | 12 | 30 |
-| R6, k = 6 | see JSON | | 60 |
+| R6, k = 6 | 1/4 (9/36) | 36 (Λ = 6ℤ²) | 60 (index 59 hit the 20 s limit) |
+
+All R3 solves were proved optimal by HiGHS within the 20 s limit. Search time was 71 min on 4 cores.
 
 **The lattice is not optimal 🟢.** On the 6×6 torus, 7 stones block every 6-window. This was verified independently on the plane: 19,200 windows, 0 uncovered.
 

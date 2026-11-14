@@ -789,15 +789,15 @@ def fig_blocking(d):
         dens = [1 / bi[str(k)] if bi[str(k)] else 1.0 for k in ks]
         ax.step(ks, dens, where="mid", color=col, lw=2, label=f"best lattice blocker, {lab}")
     ax.axvline(6, color=RED, lw=1, ls=(0, (2, 2)))
-    ax.annotate("k=6: lattice gives 1/5,\nnot 1/6 (2 is inert)", (6, 0.2), (8.2, 0.5), fontsize=8,
+    ax.annotate("k=6: lattice gives 1/5,\nnot 1/6 (2 is inert)", (6, 0.2), (8.6, 0.42), fontsize=8,
                 color=INK2, arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8))
     ax.set_xlabel("win length k")
     ax.set_xticks(range(2, 17, 2))
-    ax.text(2.2, 0.96, "R6: no lattice blocker\nuntil k = 7", fontsize=8, color=ORANGE, va="top")
+    ax.text(8.6, 0.62, "R6: no lattice blocker\nuntil k = 7", fontsize=8, color=ORANGE, va="top")
     ax.set_ylabel("density of blocking set")
     ax.set_ylim(0, 1.05)
     ax.yaxis.grid(True)
-    ax.legend(fontsize=8, loc="center right")
+    ax.legend(fontsize=8, loc="upper right")
     ax.set_title("A  Sublattice blockers")
     ax = fig.add_subplot(gs[1])
     for v, col, mk in (("R3", BLUE, "o"), ("R6", ORANGE, "s")):
@@ -813,7 +813,9 @@ def fig_blocking(d):
     ax.axhline(1 / 5, color=BLUE, lw=0.8, ls=(0, (1, 2)))
     ax.text(ns[-1], 1 / 6 - 0.006, "counting floor 1/6 — unattainable (Hall–Paige)", ha="right", va="top",
             fontsize=8, color=INK2)
-    ax.text(ns[-1], 1 / 5 + 0.005, "1/5 = best sublattice", ha="right", va="bottom", fontsize=8, color=BLUE)
+    ax.text(12, 1 / 5 + 0.004, "1/5 = best sublattice", ha="left", va="bottom", fontsize=8, color=BLUE)
+    ax.annotate("7/36", (36, 7 / 36), (42, 0.178), fontsize=8.5, color=INK, fontweight="bold",
+                arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8))
     ax.set_ylim(0.15, 0.42)
     ax.set_xlabel("period index N = $[\\mathbb{Z}[\\omega]:\\Lambda]$")
     ax.set_ylabel("least density hitting every 6-window")
@@ -826,7 +828,7 @@ def fig_blocking(d):
     draw_cells(ax, region)
     S = periodic_cells(tuple(best["lattice"]), best["cells"], region)
     draw_stones(ax, S, BLUE, size=0.33)
-    ax.set_title(f"C  An optimal R3 blocker (density {best['count']}/{best['index']})")
+    ax.set_title(f"C  Best R3 blocker, period ≤ 60 ({best['count']}/{best['index']})")
     ax.text(0.0, -0.04, "Every six-cell window on all three axes\ncontains a blue cell. Not a lattice: 7 stones\n"
             "per 6×6 period, one doubled line per direction.",
             transform=ax.transAxes, fontsize=8, color=INK2, va="top")
